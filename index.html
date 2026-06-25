@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pszichopedagógia Specială – Vizsgafelkészítő</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HOME SCREEN -->
+<div id="screen-home" class="screen active">
+  <div class="home-header">
+    <div class="owl-icon">🦉</div>
+    <h1>Pszichopedagógia Specială</h1>
+    <p class="subtitle">Titularizare 2026 – Vizsgafelkészítő</p>
+  </div>
+
+  <div class="progress-overview" id="home-progress">
+    <div class="stat-row">
+      <div class="stat-card">
+        <span class="stat-value" id="stat-total-xp">0</span>
+        <span class="stat-label">XP pont</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="stat-mastered">0</span>
+        <span class="stat-label">Elsajátított</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="stat-streak">0</span>
+        <span class="stat-label">Sorozat 🔥</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sync-bar">
+    <button class="btn-sync" onclick="exportProgress()" title="Haladás mentése fájlba">⬇ Haladás exportálása</button>
+    <button class="btn-sync" onclick="document.getElementById('import-file').click()" title="Haladás betöltése fájlból">⬆ Haladás importálása</button>
+    <input type="file" id="import-file" accept=".json" style="display:none" onchange="importProgress(event)">
+  </div>
+
+  <div class="mode-section">
+    <h2>Válassz gyakorlási módot</h2>
+    <div class="mode-cards">
+      <button class="mode-card" onclick="startSession(1)">
+        <div class="mode-icon">📋</div>
+        <div class="mode-info">
+          <h3>1. Változat</h3>
+          <p>Komplex értékelés · Foglalkozásterápia · Individualizált tervezés</p>
+        </div>
+        <div class="mode-progress" id="progress-w1">
+          <div class="progress-bar-mini"><div class="progress-fill" id="fill-w1"></div></div>
+          <span id="pct-w1">0%</span>
+        </div>
+      </button>
+
+      <button class="mode-card" onclick="startSession(2)">
+        <div class="mode-icon">🎓</div>
+        <div class="mode-info">
+          <h3>2. Változat</h3>
+          <p>Inkluzív oktatás · Érzékszervi fogyatékosságok · Olvasás-írás</p>
+        </div>
+        <div class="mode-progress" id="progress-w2">
+          <div class="progress-bar-mini"><div class="progress-fill" id="fill-w2"></div></div>
+          <span id="pct-w2">0%</span>
+        </div>
+      </button>
+
+      <button class="mode-card" onclick="startSession(3)">
+        <div class="mode-icon">🧠</div>
+        <div class="mode-info">
+          <h3>3. Változat</h3>
+          <p>Autizmus · ADHD · Kognitív stimuláció · UDL</p>
+        </div>
+        <div class="mode-progress" id="progress-w3">
+          <div class="progress-bar-mini"><div class="progress-fill" id="fill-w3"></div></div>
+          <span id="pct-w3">0%</span>
+        </div>
+      </button>
+
+      <button class="mode-card mode-mixed" onclick="startSession('mix')">
+        <div class="mode-icon">🔀</div>
+        <div class="mode-info">
+          <h3>Vegyes gyakorlás</h3>
+          <p>Mindhárom változat keverve – a legjobb felkészülési mód!</p>
+        </div>
+      </button>
+
+      <button class="mode-card mode-review" onclick="startSession('review')">
+        <div class="mode-icon">⚡</div>
+        <div class="mode-info">
+          <h3>Ismétlés szükséges</h3>
+          <p>Csak a hibásan megválaszolt kérdések – erősítsd meg a gyenge pontokat</p>
+        </div>
+        <span class="review-count" id="review-count">0 kérdés</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- EXERCISE SCREEN -->
+<div id="screen-exercise" class="screen">
+  <div class="exercise-header">
+    <button class="btn-icon" onclick="exitSession()" title="Kilépés">✕</button>
+    <div class="progress-bar-container">
+      <div class="progress-bar-ex" id="ex-progress-bar"></div>
+    </div>
+    <div class="lives-display" id="lives-display">❤️❤️❤️</div>
+  </div>
+
+  <div class="exercise-body" id="exercise-body">
+    <!-- Dynamically filled -->
+  </div>
+
+  <div class="exercise-footer">
+    <div class="feedback-panel" id="feedback-panel" style="display:none">
+      <div class="feedback-icon" id="feedback-icon"></div>
+      <div class="feedback-text">
+        <div class="feedback-title" id="feedback-title"></div>
+        <div class="feedback-explanation" id="feedback-explanation"></div>
+      </div>
+    </div>
+    <button class="btn-primary" id="btn-check" onclick="checkAnswer()">Ellenőrzés</button>
+    <button class="btn-primary btn-next" id="btn-next" onclick="nextExercise()" style="display:none">Tovább</button>
+  </div>
+</div>
+
+<!-- RESULTS SCREEN -->
+<div id="screen-results" class="screen">
+  <div class="results-content">
+    <div class="results-icon" id="results-icon">🏆</div>
+    <h2 id="results-title">Remek munka!</h2>
+    <div class="results-stats">
+      <div class="result-stat">
+        <span class="result-val" id="res-xp">+0</span>
+        <span class="result-lbl">XP pont</span>
+      </div>
+      <div class="result-stat">
+        <span class="result-val" id="res-correct">0/0</span>
+        <span class="result-lbl">Helyes válasz</span>
+      </div>
+      <div class="result-stat">
+        <span class="result-val" id="res-accuracy">0%</span>
+        <span class="result-lbl">Pontosság</span>
+      </div>
+    </div>
+
+    <div class="results-breakdown" id="results-breakdown"></div>
+
+    <div class="results-buttons">
+      <button class="btn-primary" onclick="goHome()">Vissza a főmenübe</button>
+      <button class="btn-secondary" id="btn-redo" onclick="redoSession()">Újra</button>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
