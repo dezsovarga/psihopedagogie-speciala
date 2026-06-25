@@ -6,9 +6,9 @@ Live at: https://dezsovarga.github.io/psihopedagogie-speciala/
 ## Source files
 
 `exam_subjects/` contains matched pairs:
-- `Gyakorlo_1_valtozat-2.pdf` ↔ `gyakorlas_1_megoldasok_cl.docx`
-- `Gyakorlo_2_valtozat-1.pdf` ↔ `gyakorlas_2_megoldasok_cl.docx`
-- `Gyakorlo_3_valtozat-3.pdf` ↔ `gyakorlas_3_megoldasok_cl.docx`
+- `gyakorlas_1_feladatsor.pdf` ↔ `gyakorlas_1_megoldasok_cl.docx`
+- `gyakorlas_2_feladatsor.pdf` ↔ `gyakorlas_2_megoldasok_cl.docx`
+- `gyakorlas_3_feladatsor.pdf` ↔ `gyakorlas_3_megoldasok_cl.docx`
 
 The solution `.docx` files are the source of truth. Never invent definitions or facts not found in them.
 
