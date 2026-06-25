@@ -1,0 +1,13 @@
+{
+  "name": "psihopedagogie-speciala",
+  "version": "1.0.0",
+  "description": "Exam prep app + exercise generator for Titularizare 2026",
+  "private": true,
+  "scripts": {
+    "generate": "node generate.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "mammoth": "^1.8.0"
+  }
+}
