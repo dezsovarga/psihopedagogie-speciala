@@ -1,5 +1,6 @@
 /* ─── Reset & Base ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 
 :root {
   --green: #58CC02;
@@ -507,12 +508,73 @@ body {
 .results-buttons { display: flex; flex-direction: column; gap: 10px; }
 
 /* ─── Responsive ─── */
-@media (max-width: 480px) {
-  .stat-value { font-size: 18px; }
+@media (max-width: 540px) {
+
+  /* Home */
+  .home-header { padding: 24px 16px 16px; }
+  .owl-icon { font-size: 44px; }
+  .home-header h1 { font-size: 20px; }
+
+  .stat-card { padding: 10px 6px; }
+  .stat-value { font-size: 20px; }
+  .stat-label { font-size: 10px; }
+
+  /* Sync bar: stack on very narrow screens */
+  .sync-bar { flex-direction: column; }
+  .btn-sync { padding: 12px; font-size: 13px; }
+
+  /* Mode cards: tighten up */
+  .mode-card { padding: 12px; gap: 10px; }
+  .mode-icon { font-size: 24px; }
+  .mode-info h3 { font-size: 14px; }
+  .mode-info p { font-size: 11px; }
+  .progress-bar-mini { width: 50px; }
+
+  /* Exercise screen */
+  .exercise-header { padding: 10px 12px; gap: 8px; }
+  .lives-display { font-size: 15px; letter-spacing: 1px; }
+
+  .exercise-body { padding: 16px 12px; }
   .ex-question { font-size: 16px; }
-  .matching-area { flex-direction: column; }
-  .matching-col { flex-direction: row; flex-wrap: wrap; }
-  .match-item { flex: 1; min-width: 120px; }
+
+  /* Options: ensure comfortable tap targets (min 48px) */
+  .option-btn { padding: 14px 12px; font-size: 14px; min-height: 48px; }
+
+  /* True/False: stack on very small screens */
+  .tf-buttons { flex-direction: column; }
+  .tf-btn { padding: 16px; font-size: 18px; }
+
+  /* Matching: left list then right list, full width */
+  .matching-area { flex-direction: column; gap: 8px; }
+  .matching-col { flex-direction: column; }
+  .match-item { min-height: 48px; font-size: 13px; }
+  .match-item.left { background: var(--gray-100); }
+
+  /* Ordering */
+  .order-chip { font-size: 12px; padding: 10px 10px; min-height: 44px; }
+  .order-slot { font-size: 12px; min-height: 44px; }
+
+  /* Fill */
+  .fill-container { font-size: 16px; line-height: 2.2; }
+  .blank-input { min-width: 110px; font-size: 15px; }
+
+  /* Short answer */
+  .short-answer-input { font-size: 14px; min-height: 80px; }
+
+  /* Footer */
+  .exercise-footer { padding: 10px 12px; }
+  .btn-primary { padding: 14px; font-size: 15px; }
+  .feedback-panel { padding: 12px; gap: 10px; }
+  .feedback-icon { font-size: 22px; }
+  .feedback-title { font-size: 14px; }
+  .feedback-explanation { font-size: 12px; }
+
+  /* Results */
+  .results-content { padding: 24px 16px; }
+  .results-icon { font-size: 56px; }
+  .results-content h2 { font-size: 22px; }
+  .result-val { font-size: 22px; }
+  .results-stats { gap: 12px; }
 }
 
 /* ─── Streak animation ─── */
