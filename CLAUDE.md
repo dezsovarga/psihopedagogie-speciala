@@ -20,13 +20,32 @@ exercises/
   worksheet_2.js   ← w:2 exercises
   worksheet_3.js   ← w:3 exercises
   mixed.js         ← w:0 shared exercises
+  essays.js        ← essay-type questions (Claude-evaluated; manually maintained)
 data.js            ← combines all exercise arrays + helper functions
 app.js             ← session logic, spaced repetition, progress (localStorage)
+                      mic/speech recognition, Claude API evaluation, settings
 style.css          ← Duolingo-inspired UI
-index.html         ← three screens: home, exercise, results
+index.html         ← three screens + settings modal: home, exercise, results
 generate.js        ← CLI tool: generates exercises from a solution DOCX
 package.json       ← npm deps: @anthropic-ai/sdk, mammoth
 ```
+
+## Microphone input
+
+All `short`, `fill`, and `essay` question types show a mic button (🎤). Uses
+Web Speech API (`lang: 'hu-HU'`, continuous mode). Works in Chrome; other
+browsers may lack `SpeechRecognition` support.
+
+## Claude-evaluated essay questions (essays.js)
+
+Essay questions (`type: 'essay'`) are evaluated by the Claude Haiku model via
+the Anthropic API. The user enters their API key once in Settings (⚙ icon) —
+it is stored only in `localStorage`.
+
+- Max 2 essay questions appear per session (to keep sessions manageable)
+- If no API key: the model answer is shown so the user can self-assess
+- Each essay has a `modelAnswer` (full expected answer) and `points` (exam value)
+- Cost: ~$0.01 per session
 
 ## Adding a new exam subject
 
@@ -61,11 +80,12 @@ package.json       ← npm deps: @anthropic-ai/sdk, mammoth
 ## Exercise format (for manual edits or review)
 
 ```js
+// Standard types (mc | tf | fill | match | order | short)
 {
   id: 'w4_01',        // unique; w = worksheet number (0 = shared)
   w: 4,
   topic: 'Fogalmak',  // shown in UI
-  type: 'mc',         // mc | tf | fill | match | order | short
+  type: 'mc',
   q: 'Question text',
   // type-specific:
   opts: [...],        // mc: exactly 4 options
@@ -75,6 +95,19 @@ package.json       ← npm deps: @anthropic-ai/sdk, mammoth
   keywords: [...],    // short: must appear in answer
   exp: 'Explanation shown after answering — always state the correct answer',
   diff: 1             // 1=easy, 2=medium, 3=hard
+}
+
+// Essay type (Claude-evaluated; maintain manually in essays.js)
+{
+  id: 'essay_w4_01',
+  w: 4,
+  topic: 'Fogalmak',
+  type: 'essay',
+  q: 'Exact exam subquestion text',
+  modelAnswer: 'Full expected answer from solution file',
+  exp: 'One-sentence summary of what the answer must contain',
+  points: 5,          // exam point value (used in score display and XP)
+  diff: 2             // 1=easy, 2=medium, 3=hard
 }
 ```
 

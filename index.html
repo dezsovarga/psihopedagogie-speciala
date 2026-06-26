@@ -11,6 +11,7 @@
 <!-- HOME SCREEN -->
 <div id="screen-home" class="screen active">
   <div class="home-header">
+    <button class="btn-settings-gear" onclick="openSettings()" title="Beállítások">⚙</button>
     <div class="owl-icon">🦉</div>
     <h1>Pszichopedagógia Specială</h1>
     <p class="subtitle">Titularizare 2026 – Vizsgafelkészítő</p>
@@ -120,6 +121,10 @@
         <div class="feedback-explanation" id="feedback-explanation"></div>
       </div>
     </div>
+    <div class="evaluating-state" id="evaluating-state" style="display:none">
+      <div class="evaluating-spinner"></div>
+      <span>Claude értékel...</span>
+    </div>
     <button class="btn-primary" id="btn-check" onclick="checkAnswer()">Ellenőrzés</button>
     <button class="btn-primary btn-next" id="btn-next" onclick="nextExercise()" style="display:none">Tovább</button>
   </div>
@@ -154,11 +159,32 @@
   </div>
 </div>
 
+<!-- SETTINGS MODAL -->
+<div id="settings-modal" class="modal-overlay" style="display:none" onclick="if(event.target===this)closeSettings()">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>⚙ Beállítások</h3>
+      <button class="btn-icon modal-close" onclick="closeSettings()">✕</button>
+    </div>
+    <div class="modal-body">
+      <label class="settings-label" for="api-key-input">Claude API kulcs</label>
+      <input type="password" id="api-key-input" class="settings-input" placeholder="sk-ant-api03-...">
+      <p class="settings-hint">Az esszékérdések Claude-os értékeléséhez szükséges. A kulcs kizárólag a te eszközödön tárolódik (localStorage), sehová nem kerül elküldésre.</p>
+      <div class="settings-status" id="settings-status"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="clearApiKey()" style="width:auto;padding:12px 24px;margin-right:8px">Törlés</button>
+      <button class="btn-primary" onclick="saveApiKey()" style="width:auto;padding:12px 32px">Mentés</button>
+    </div>
+  </div>
+</div>
+
 <!-- Worksheet exercise files — add one line here for each new worksheet -->
 <script src="exercises/worksheet_1.js"></script>
 <script src="exercises/worksheet_2.js"></script>
 <script src="exercises/worksheet_3.js"></script>
 <script src="exercises/mixed.js"></script>
+<script src="exercises/essays.js"></script>
 <script src="data.js"></script>
 <script src="app.js"></script>
 </body>

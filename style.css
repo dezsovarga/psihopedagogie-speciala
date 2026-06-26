@@ -626,3 +626,353 @@ body {
   color: var(--gray-700);
 }
 .model-answer-box strong { color: var(--gray-900); }
+
+/* ─── Settings gear button ─── */
+.home-header { position: relative; }
+.btn-settings-gear {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  background: var(--white);
+  border: 2px solid var(--gray-200);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .15s;
+  line-height: 1;
+}
+.btn-settings-gear:hover { border-color: var(--blue); background: var(--blue-light); }
+.btn-settings-gear.has-key { border-color: var(--green); color: var(--green-dark); }
+
+/* ─── Settings Modal ─── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+.modal-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.2);
+  overflow: hidden;
+  animation: modalIn .2s cubic-bezier(.2,1.2,.4,1);
+}
+@keyframes modalIn {
+  from { transform: scale(.92); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--gray-200);
+}
+.modal-header h3 { font-size: 17px; font-weight: 800; }
+.modal-close { font-size: 16px; }
+.modal-body { padding: 20px; }
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 14px 20px;
+  border-top: 1px solid var(--gray-200);
+  gap: 8px;
+}
+.settings-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin-bottom: 8px;
+}
+.settings-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: var(--font);
+  outline: none;
+  transition: border-color .1s;
+}
+.settings-input:focus { border-color: var(--blue); }
+.settings-hint {
+  font-size: 12px;
+  color: var(--gray-400);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.settings-status {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  min-height: 20px;
+}
+.settings-status.ok  { color: var(--green-dark); }
+.settings-status.err { color: var(--red); }
+
+/* ─── Essay question type ─── */
+.ex-type-badge.essay-badge {
+  background: #FFF0DB;
+  color: #C96A00;
+  border: 1px solid #FFD085;
+}
+.essay-input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-family: var(--font);
+  resize: vertical;
+  min-height: 160px;
+  color: var(--gray-900);
+  outline: none;
+  line-height: 1.6;
+  transition: border-color .1s;
+}
+.essay-input:focus { border-color: var(--blue); }
+.essay-input.correct { border-color: var(--green); background: var(--green-light); }
+.essay-input.wrong   { border-color: var(--red);   background: var(--red-light); }
+
+.essay-input-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.essay-points-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: #C96A00;
+  background: #FFF0DB;
+  border: 1px solid #FFD085;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+.no-api-notice {
+  background: var(--yellow-light);
+  border: 1px solid var(--yellow);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 12px;
+  color: var(--gray-700);
+}
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--blue);
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: var(--font);
+  text-decoration: underline;
+  padding: 0;
+}
+
+/* ─── Mic button ─── */
+.btn-mic {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--white);
+  border: 2px solid var(--gray-200);
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font);
+  color: var(--gray-700);
+  cursor: pointer;
+  transition: all .15s;
+}
+.btn-mic:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+.btn-mic.mic-recording {
+  border-color: var(--red);
+  background: var(--red-light);
+  color: var(--red);
+  animation: micPulse 1s infinite;
+}
+@keyframes micPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,75,75,.4); }
+  50%       { box-shadow: 0 0 0 6px rgba(255,75,75,0); }
+}
+
+.btn-mic-small {
+  padding: 6px 10px;
+  background: var(--white);
+  border: 2px solid var(--gray-200);
+  border-radius: 99px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .15s;
+  flex-shrink: 0;
+}
+.btn-mic-small:hover { border-color: var(--blue); background: var(--blue-light); }
+.btn-mic-small.mic-recording {
+  border-color: var(--red);
+  background: var(--red-light);
+  animation: micPulse 1s infinite;
+}
+
+.short-input-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.fill-mic-row { margin-top: 10px; }
+
+.mic-interim-preview {
+  min-height: 22px;
+  font-size: 13px;
+  color: var(--gray-400);
+  font-style: italic;
+  margin-top: 6px;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--gray-100);
+  display: none;
+  line-height: 1.4;
+}
+.mic-interim-preview:not(:empty) { display: block; }
+
+/* ─── Evaluating / loading state ─── */
+.evaluating-state {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--blue-light);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+}
+.evaluating-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--blue);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── Essay feedback panel ─── */
+.feedback-panel.essay-fb {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  max-height: 55vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.essay-feedback-content { padding: 14px 16px; }
+
+.essay-score-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.essay-score {
+  font-size: 22px;
+  font-weight: 800;
+}
+.correct-fb .essay-score { color: var(--green-dark); }
+.wrong-fb .essay-score   { color: var(--red); }
+
+.essay-verdict {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+.correct-fb .essay-verdict { background: var(--green); color: var(--white); }
+.wrong-fb   .essay-verdict { background: var(--red);   color: var(--white); }
+
+.essay-feedback-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gray-700);
+  margin-bottom: 10px;
+}
+
+.essay-section {
+  margin-bottom: 10px;
+}
+.essay-section-title {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-bottom: 5px;
+}
+.essay-section ul {
+  padding-left: 18px;
+  margin: 0;
+}
+.essay-section li {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--gray-700);
+  margin-bottom: 3px;
+}
+.strengths-section .essay-section-title { color: var(--green-dark); }
+.gaps-section     .essay-section-title { color: var(--red); }
+
+.model-answer-toggle {
+  margin-top: 10px;
+  border-top: 1px solid var(--gray-200);
+  padding-top: 10px;
+}
+.model-answer-toggle summary {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.model-answer-toggle summary::before {
+  content: '▶';
+  font-size: 10px;
+  transition: transform .15s;
+}
+.model-answer-toggle[open] summary::before { transform: rotate(90deg); }
+.model-answer-toggle .model-answer-box {
+  margin-top: 8px;
+  white-space: pre-line;
+}
+
+/* ─── Responsive additions ─── */
+@media (max-width: 540px) {
+  .btn-settings-gear { top: 10px; width: 36px; height: 36px; font-size: 16px; }
+  .essay-input { min-height: 120px; font-size: 14px; }
+  .essay-score { font-size: 18px; }
+  .feedback-panel.essay-fb { max-height: 60vh; }
+  .modal-box { margin: 0; border-radius: var(--radius) var(--radius) 0 0; align-self: flex-end; }
+  .modal-overlay { align-items: flex-end; padding: 0; }
+}

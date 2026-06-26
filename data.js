@@ -4,10 +4,11 @@
 // in index.html, and add it to the spread below.
 
 const EXERCISES = [
-  ...(typeof EXERCISES_W1    !== 'undefined' ? EXERCISES_W1    : []),
-  ...(typeof EXERCISES_W2    !== 'undefined' ? EXERCISES_W2    : []),
-  ...(typeof EXERCISES_W3    !== 'undefined' ? EXERCISES_W3    : []),
-  ...(typeof EXERCISES_MIXED !== 'undefined' ? EXERCISES_MIXED : []),
+  ...(typeof EXERCISES_W1     !== 'undefined' ? EXERCISES_W1     : []),
+  ...(typeof EXERCISES_W2     !== 'undefined' ? EXERCISES_W2     : []),
+  ...(typeof EXERCISES_W3     !== 'undefined' ? EXERCISES_W3     : []),
+  ...(typeof EXERCISES_MIXED  !== 'undefined' ? EXERCISES_MIXED  : []),
+  ...(typeof EXERCISES_ESSAYS !== 'undefined' ? EXERCISES_ESSAYS : []),
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────

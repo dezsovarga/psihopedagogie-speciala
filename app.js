@@ -1,7 +1,7 @@
 // ─── State ────────────────────────────────────────────────────────────────────
-let progress = {};        // { exerciseId: { seen, correct, interval } }
-let globalStats = {};     // { totalXp, streak, lastDate }
-let session = null;       // current session state
+let progress = {};
+let globalStats = {};
+let session = null;
 let lastSessionMode = null;
 
 function loadState() {
@@ -14,10 +14,51 @@ function saveState() {
   localStorage.setItem('psp_progress', JSON.stringify(progress));
   localStorage.setItem('psp_stats', JSON.stringify(globalStats));
 }
-
 function getProgress(id) {
   if (!progress[id]) progress[id] = {seen:0, correct:0, interval:1};
   return progress[id];
+}
+
+// ─── Settings / API key ───────────────────────────────────────────────────────
+function getApiKey() {
+  return localStorage.getItem('psp_api_key') || '';
+}
+function openSettings() {
+  const modal = document.getElementById('settings-modal');
+  const inp = document.getElementById('api-key-input');
+  inp.value = getApiKey();
+  document.getElementById('settings-status').textContent = '';
+  document.getElementById('settings-status').className = 'settings-status';
+  modal.style.display = 'flex';
+}
+function closeSettings() {
+  document.getElementById('settings-modal').style.display = 'none';
+}
+function saveApiKey() {
+  const val = document.getElementById('api-key-input').value.trim();
+  const status = document.getElementById('settings-status');
+  if (val && !val.startsWith('sk-ant-')) {
+    status.textContent = 'Érvénytelen kulcs formátum (sk-ant-... kell)';
+    status.className = 'settings-status err';
+    return;
+  }
+  localStorage.setItem('psp_api_key', val);
+  status.textContent = val ? '✓ API kulcs mentve' : 'API kulcs törölve';
+  status.className = 'settings-status ok';
+  updateSettingsGear();
+  setTimeout(closeSettings, 900);
+}
+function clearApiKey() {
+  document.getElementById('api-key-input').value = '';
+  localStorage.removeItem('psp_api_key');
+  const status = document.getElementById('settings-status');
+  status.textContent = 'API kulcs törölve';
+  status.className = 'settings-status ok';
+  updateSettingsGear();
+}
+function updateSettingsGear() {
+  const btn = document.querySelector('.btn-settings-gear');
+  if (btn) btn.classList.toggle('has-key', !!getApiKey());
 }
 
 // ─── Home Screen ──────────────────────────────────────────────────────────────
@@ -40,6 +81,7 @@ function updateHomeUI() {
     return p && p.seen > 0 && p.interval === 1;
   }).length;
   document.getElementById('review-count').textContent = reviewCount + ' kérdés';
+  updateSettingsGear();
 }
 
 // ─── Session ──────────────────────────────────────────────────────────────────
@@ -58,7 +100,6 @@ function startSession(mode) {
       : EXERCISES.filter(e => e.w === mode || e.w === 0);
   }
 
-  // Sort: unseen first, then lowest interval, then shuffle within groups
   pool = pool.slice().sort((a, b) => {
     const pa = getProgress(a.id), pb = getProgress(b.id);
     if (pa.seen === 0 && pb.seen > 0) return -1;
@@ -67,8 +108,10 @@ function startSession(mode) {
     return Math.random() - 0.5;
   });
 
-  // Take up to 15 for a session
-  const selected = pool.slice(0, 15);
+  // Limit essay questions to 2 per session
+  const nonEssay = pool.filter(e => e.type !== 'essay');
+  const essays   = pool.filter(e => e.type === 'essay');
+  const selected = [...nonEssay.slice(0, 13), ...essays.slice(0, 2)].slice(0, 15);
 
   session = {
     mode,
@@ -76,7 +119,7 @@ function startSession(mode) {
     index: 0,
     lives: 3,
     xpEarned: 0,
-    results: [],       // {id, correct, topic}
+    results: [],
     answered: false,
     selectedState: null
   };
@@ -86,6 +129,7 @@ function startSession(mode) {
 }
 
 function exitSession() {
+  stopMic();
   if (session && session.index > 0) {
     if (!confirm('Biztosan megszakítod a gyakorlást?')) return;
   }
@@ -99,45 +143,51 @@ function renderExercise() {
     return;
   }
 
+  stopMic();
   const ex = session.queue[session.index];
   session.answered = false;
   session.selectedState = null;
 
-  // Progress bar
   const pct = (session.index / session.queue.length) * 100;
   document.getElementById('ex-progress-bar').style.width = pct + '%';
 
-  // Lives
   const hearts = '❤️'.repeat(session.lives) + '🖤'.repeat(Math.max(0, 3 - session.lives));
   document.getElementById('lives-display').textContent = hearts;
 
-  // Reset footer
   document.getElementById('feedback-panel').style.display = 'none';
   document.getElementById('feedback-panel').className = 'feedback-panel';
+  document.getElementById('feedback-panel').innerHTML =
+    '<div class="feedback-icon" id="feedback-icon"></div>' +
+    '<div class="feedback-text">' +
+      '<div class="feedback-title" id="feedback-title"></div>' +
+      '<div class="feedback-explanation" id="feedback-explanation"></div>' +
+    '</div>';
+  document.getElementById('evaluating-state').style.display = 'none';
   const btnCheck = document.getElementById('btn-check');
-  const btnNext = document.getElementById('btn-next');
+  const btnNext  = document.getElementById('btn-next');
   btnCheck.style.display = 'block';
   btnCheck.disabled = true;
   btnNext.style.display = 'none';
 
-  // Render body
-  const body = document.getElementById('exercise-body');
-  body.innerHTML = buildExerciseHTML(ex);
+  document.getElementById('exercise-body').innerHTML = buildExerciseHTML(ex);
   attachExerciseListeners(ex);
 }
 
 function buildExerciseHTML(ex) {
   const typeBadge = {
-    mc: 'Feleletválasztós',
-    tf: 'Igaz / Hamis',
-    fill: 'Töltsd ki!',
-    match: 'Párosítás',
-    order: 'Sorrendezés',
-    short: 'Rövid válasz'
+    mc:     'Feleletválasztós',
+    tf:     'Igaz / Hamis',
+    fill:   'Töltsd ki!',
+    match:  'Párosítás',
+    order:  'Sorrendezés',
+    short:  'Rövid válasz',
+    essay:  'Esszékérdés'
   }[ex.type] || ex.type;
 
+  const badgeClass = ex.type === 'essay' ? 'ex-type-badge essay-badge' : 'ex-type-badge';
+
   let html = `
-    <span class="ex-type-badge">${typeBadge}</span>
+    <span class="${badgeClass}">${typeBadge}${ex.type === 'essay' ? ` · ${ex.points} pont` : ''}</span>
     <div class="ex-topic">${ex.topic}</div>
     <div class="ex-question">${ex.q}</div>
   `;
@@ -158,15 +208,17 @@ function buildExerciseHTML(ex) {
   }
 
   else if (ex.type === 'fill') {
-    // Replace ____________ with an inline input
     const qWithInput = ex.q.replace(/_{4,}/g, `<input class="blank-input" id="fill-main" type="text" autocomplete="off" placeholder="...">`);
-    // Remove the question from the header since it's now in the fill container
     html = html.replace(`<div class="ex-question">${ex.q}</div>`, '');
-    html += `<div class="fill-container" id="fill-container">${qWithInput}</div>`;
+    html += `<div class="fill-container" id="fill-container">${qWithInput}</div>
+    <div class="fill-mic-row">
+      <button class="btn-mic-small" id="btn-mic" onclick="toggleMic('fill-main')" title="Diktálás mikrofonnal">🎤</button>
+    </div>
+    <div id="mic-interim" class="mic-interim-preview"></div>`;
   }
 
   else if (ex.type === 'match') {
-    const pairs = shuffleArray([...ex.pairs]);
+    const pairs  = shuffleArray([...ex.pairs]);
     const rights = shuffleArray(pairs.map(p => p.R));
     html += `<p class="ordering-instruction">Kattints egy bal oldali elemre, majd a hozzá tartozó jobb oldali elemre!</p>
     <div class="matching-area">
@@ -200,7 +252,24 @@ function buildExerciseHTML(ex) {
 
   else if (ex.type === 'short') {
     html += `<textarea class="short-answer-input" id="short-input" placeholder="Írd be a választ..."></textarea>
-    <div class="answer-hint">Kulcsszavak: ${(ex.keywords||[]).slice(0,3).join(', ')}...</div>`;
+    <div class="short-input-footer">
+      <div class="answer-hint">Kulcsszavak: ${(ex.keywords||[]).slice(0,3).join(', ')}...</div>
+      <button class="btn-mic-small" id="btn-mic" onclick="toggleMic('short-input')" title="Diktálás mikrofonnal">🎤</button>
+    </div>
+    <div id="mic-interim" class="mic-interim-preview"></div>`;
+  }
+
+  else if (ex.type === 'essay') {
+    if (!getApiKey()) {
+      html += `<div class="no-api-notice">⚙ <strong>Claude API kulcs szükséges</strong> az esszé kiértékeléséhez.
+        <button class="link-btn" onclick="openSettings()">Beállítások →</button></div>`;
+    }
+    html += `<textarea class="essay-input" id="essay-input" placeholder="Írd be részletes válaszodat..."></textarea>
+    <div class="essay-input-footer">
+      <button class="btn-mic" id="btn-mic" onclick="toggleMic('essay-input')" title="Diktálás mikrofonnal">🎤 Diktálás</button>
+      <span class="essay-points-badge">${ex.points} pont</span>
+    </div>
+    <div id="mic-interim" class="mic-interim-preview"></div>`;
   }
 
   return html;
@@ -209,15 +278,107 @@ function buildExerciseHTML(ex) {
 function attachExerciseListeners(ex) {
   if (ex.type === 'fill') {
     const inp = document.getElementById('fill-main');
-    if (inp) inp.addEventListener('input', () => {
-      document.getElementById('btn-check').disabled = inp.value.trim().length < 2;
-    });
+    if (inp) {
+      inp.addEventListener('input', () => {
+        document.getElementById('btn-check').disabled = inp.value.trim().length < 2;
+      });
+      inp.focus();
+    }
   }
   if (ex.type === 'short') {
     const inp = document.getElementById('short-input');
     if (inp) inp.addEventListener('input', () => {
       document.getElementById('btn-check').disabled = inp.value.trim().length < 3;
     });
+  }
+  if (ex.type === 'essay') {
+    const inp = document.getElementById('essay-input');
+    if (inp) inp.addEventListener('input', () => {
+      document.getElementById('btn-check').disabled = inp.value.trim().length < 10;
+    });
+  }
+}
+
+// ─── Mic / Speech Recognition ─────────────────────────────────────────────────
+let micRecognition = null;
+let micActive = false;
+
+function toggleMic(targetId) {
+  if (micActive) {
+    stopMic();
+  } else {
+    startMic(targetId);
+  }
+}
+
+function startMic(targetId) {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) {
+    alert('A böngésződ nem támogatja a hangfelismerést. Kérlek használj Chrome-ot!');
+    return;
+  }
+
+  micActive = true;
+  micRecognition = new SR();
+  micRecognition.lang = 'hu-HU';
+  micRecognition.continuous = true;
+  micRecognition.interimResults = true;
+
+  micRecognition.onstart = () => updateMicButton(true);
+
+  micRecognition.onresult = (event) => {
+    let interim = '';
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+      const transcript = event.results[i][0].transcript;
+      if (event.results[i].isFinal) {
+        const inp = document.getElementById(targetId);
+        if (inp) {
+          const sep = inp.value.trim() ? ' ' : '';
+          inp.value = inp.value.trim() + sep + transcript;
+          inp.dispatchEvent(new Event('input'));
+        }
+      } else {
+        interim += transcript;
+      }
+    }
+    const preview = document.getElementById('mic-interim');
+    if (preview) preview.textContent = interim;
+  };
+
+  micRecognition.onerror = (e) => {
+    if (e.error !== 'no-speech') console.warn('Mic error:', e.error);
+    stopMic();
+  };
+
+  micRecognition.onend = () => {
+    if (micActive) {
+      try { micRecognition.start(); } catch(e) { stopMic(); }
+    }
+  };
+
+  micRecognition.start();
+}
+
+function stopMic() {
+  micActive = false;
+  if (micRecognition) {
+    try { micRecognition.stop(); } catch(e) {}
+    micRecognition = null;
+  }
+  updateMicButton(false);
+  const preview = document.getElementById('mic-interim');
+  if (preview) preview.textContent = '';
+}
+
+function updateMicButton(active) {
+  const btn = document.getElementById('btn-mic');
+  if (!btn) return;
+  if (active) {
+    btn.classList.add('mic-recording');
+    btn.textContent = btn.classList.contains('btn-mic') ? '⏹ Stop' : '⏹';
+  } else {
+    btn.classList.remove('mic-recording');
+    btn.innerHTML = btn.classList.contains('btn-mic') ? '🎤 Diktálás' : '🎤';
   }
 }
 
@@ -252,11 +413,10 @@ function selectMatchRight(el) {
   if (!session.selectedState || !session.selectedState.selectedLeft) return;
   if (el.classList.contains('matched-correct')) return;
 
-  const leftEl = session.selectedState.selectedLeft;
+  const leftEl   = session.selectedState.selectedLeft;
   const leftTerm = leftEl.dataset.term;
   const rightDef = el.dataset.def;
-
-  const correct = session.selectedState.pairs.find(p => p.L === leftTerm && p.R === rightDef);
+  const correct  = session.selectedState.pairs.find(p => p.L === leftTerm && p.R === rightDef);
 
   leftEl.classList.remove('selected');
 
@@ -265,7 +425,7 @@ function selectMatchRight(el) {
     leftEl.classList.add('matched-correct');
     el.classList.add('matched-correct');
     leftEl.innerHTML = `<span class="match-pair-number">${num}</span>${leftTerm}`;
-    el.innerHTML = `<span class="match-pair-number">${num}</span>${rightDef}`;
+    el.innerHTML     = `<span class="match-pair-number">${num}</span>${rightDef}`;
     session.selectedState.matched++;
     if (session.selectedState.matched === session.selectedState.pairs.length) {
       document.getElementById('btn-check').disabled = false;
@@ -277,8 +437,6 @@ function selectMatchRight(el) {
       leftEl.classList.remove('matched-wrong');
       el.classList.remove('matched-wrong');
     }, 600);
-    // Deduct for wrong match
-    session.selectedState.selectedLeft = null;
   }
   session.selectedState.selectedLeft = null;
 }
@@ -288,7 +446,7 @@ function selectOrderItem(el) {
   if (el.classList.contains('used')) return;
 
   const state = session.selectedState;
-  const idx = state.placed.length;
+  const idx   = state.placed.length;
   if (idx >= state.correct.length) return;
 
   state.placed.push(el.dataset.text);
@@ -306,9 +464,17 @@ function selectOrderItem(el) {
 // ─── Check Answer ─────────────────────────────────────────────────────────────
 function checkAnswer() {
   const ex = session.queue[session.index];
+
+  // Essay answers go through Claude
+  if (ex.type === 'essay') {
+    checkAnswerEssay(ex);
+    return;
+  }
+
   session.answered = true;
+  stopMic();
   document.getElementById('btn-check').style.display = 'none';
-  document.getElementById('btn-next').style.display = 'block';
+  document.getElementById('btn-next').style.display  = 'block';
 
   let isCorrect = false;
 
@@ -332,16 +498,12 @@ function checkAnswer() {
   }
 
   else if (ex.type === 'fill') {
-    const inp = document.getElementById('fill-main');
-    const userVal = (inp?.value || '').trim().toLowerCase();
-    const correct = (ex.ans || '').toLowerCase();
-    // Accept if answer contains the key term or is very similar
-    isCorrect = userVal.includes(correct) || correct.includes(userVal) ||
-      levenshtein(userVal, correct) <= 2;
+    const inp  = document.getElementById('fill-main');
+    const user = (inp?.value || '').trim().toLowerCase();
+    const ans  = (ex.ans || '').toLowerCase();
+    isCorrect  = user.includes(ans) || ans.includes(user) || levenshtein(user, ans) <= 2;
     if (inp) inp.classList.add(isCorrect ? 'correct' : 'wrong');
-    if (!isCorrect && inp) {
-      inp.value = ex.ans;
-    }
+    if (!isCorrect && inp) inp.value = ex.ans;
   }
 
   else if (ex.type === 'match') {
@@ -349,7 +511,7 @@ function checkAnswer() {
   }
 
   else if (ex.type === 'order') {
-    const placed = session.selectedState.placed;
+    const placed  = session.selectedState.placed;
     const correct = session.selectedState.correct;
     isCorrect = placed.every((item, i) => item === correct[i]);
     placed.forEach((item, i) => {
@@ -360,21 +522,72 @@ function checkAnswer() {
   }
 
   else if (ex.type === 'short') {
-    const inp = document.getElementById('short-input');
-    const userVal = (inp?.value || '').toLowerCase();
+    const inp      = document.getElementById('short-input');
+    const user     = (inp?.value || '').toLowerCase();
     const keywords = ex.keywords || [];
-    const matched = keywords.filter(kw => userVal.includes(kw.toLowerCase())).length;
+    const matched  = keywords.filter(kw => user.includes(kw.toLowerCase())).length;
     isCorrect = matched >= Math.ceil(keywords.length * 0.6);
     if (inp) inp.classList.add(isCorrect ? 'correct' : 'wrong');
   }
 
-  // Update progress
+  recordResult(ex, isCorrect);
+  showFeedback(isCorrect, ex.exp);
+
+  if (isCorrect) {
+    setTimeout(() => { if (session.answered) nextExercise(); }, 1800);
+  }
+}
+
+async function checkAnswerEssay(ex) {
+  const inp = document.getElementById('essay-input');
+  const userAnswer = (inp?.value || '').trim();
+  if (!userAnswer) return;
+
+  session.answered = true;
+  stopMic();
+  document.getElementById('btn-check').style.display = 'none';
+  document.getElementById('evaluating-state').style.display = 'flex';
+
+  const apiKey = getApiKey();
+  if (!apiKey) {
+    document.getElementById('evaluating-state').style.display = 'none';
+    showNoApiKeyFeedback(ex);
+    document.getElementById('btn-next').style.display = 'block';
+    return;
+  }
+
+  try {
+    const result = await evaluateWithClaude(ex, userAnswer, apiKey);
+    document.getElementById('evaluating-state').style.display = 'none';
+
+    const score    = Math.max(0, Math.min(result.score || 0, ex.points));
+    const isGood   = score >= Math.ceil(ex.points * 0.6);
+    const xp       = Math.round(score * (ex.diff === 1 ? 4 : ex.diff === 2 ? 5 : 6));
+
+    recordResult(ex, isGood, xp);
+    if (inp) inp.classList.add(isGood ? 'correct' : 'wrong');
+
+    showEssayFeedback(result, score, ex);
+    document.getElementById('btn-next').style.display = 'block';
+
+    if (isGood) {
+      setTimeout(() => { if (session.answered) nextExercise(); }, 4000);
+    }
+  } catch(err) {
+    document.getElementById('evaluating-state').style.display = 'none';
+    session.answered = false;
+    document.getElementById('btn-check').style.display = 'block';
+    showApiErrorFeedback(err.message);
+  }
+}
+
+function recordResult(ex, isCorrect, customXp) {
   const p = getProgress(ex.id);
   p.seen++;
   if (isCorrect) {
     p.correct++;
     p.interval = Math.min(p.interval * 2, 16);
-    const xp = ex.diff === 1 ? 10 : ex.diff === 2 ? 15 : 20;
+    const xp = customXp !== undefined ? customXp : (ex.diff === 1 ? 10 : ex.diff === 2 ? 15 : 20);
     session.xpEarned += xp;
     globalStats.totalXp = (globalStats.totalXp || 0) + xp;
     showXpFlash('+' + xp + ' XP');
@@ -382,28 +595,146 @@ function checkAnswer() {
     p.interval = 1;
     if (session.lives > 0) session.lives--;
   }
-
   session.results.push({ id: ex.id, correct: isCorrect, topic: ex.topic });
   saveState();
-
-  // Show feedback
-  showFeedback(isCorrect, ex.exp);
-
-  // Auto-advance on correct after delay
-  if (isCorrect) {
-    setTimeout(() => {
-      if (session.answered) nextExercise();
-    }, 1800);
-  }
 }
 
+// ─── Claude API ───────────────────────────────────────────────────────────────
+async function evaluateWithClaude(ex, userAnswer, apiKey) {
+  const prompt = `Te egy speciális nevelési igényű pedagógia titularizare vizsga értékelője vagy.
+Értékeld az alábbi vizsgakérdésre adott jelölti választ!
+
+Kérdés: ${ex.q}
+
+Várt válasz (mintaválasz): ${ex.modelAnswer}
+
+Jelölt válasza: ${userAnswer}
+
+Értékeld a választ szigorúan, ${ex.points} pontos skálán.
+Adj visszajelzést MAGYARUL az alábbi JSON formátumban:
+
+{
+  "score": <0–${ex.points} egész szám>,
+  "verdict": "<kiváló|jó|részleges|elégtelen>",
+  "strengths": ["<helyesen említett pont 1>", "<helyesen említett pont 2>"],
+  "gaps": ["<hiányzó vagy hibás pont 1>", "<hiányzó vagy hibás pont 2>"],
+  "feedback": "<2–3 mondatos összefoglaló visszajelzés magyarul>"
+}
+
+Csak a JSON-t add vissza, semmi más szöveget.`;
+
+  const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01'
+    },
+    body: JSON.stringify({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 600,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  });
+
+  if (!resp.ok) {
+    let msg = `API hiba (${resp.status})`;
+    try {
+      const err = await resp.json();
+      msg = err.error?.message || msg;
+    } catch(e) {}
+    throw new Error(msg);
+  }
+
+  const data = await resp.json();
+  const raw  = data.content[0].text.trim()
+    .replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/```\s*$/i, '').trim();
+
+  return JSON.parse(raw);
+}
+
+// ─── Feedback rendering ───────────────────────────────────────────────────────
 function showFeedback(correct, explanation) {
   const panel = document.getElementById('feedback-panel');
   panel.style.display = 'flex';
   panel.className = 'feedback-panel ' + (correct ? 'correct-fb' : 'wrong-fb');
-  document.getElementById('feedback-icon').textContent = correct ? '✅' : '❌';
-  document.getElementById('feedback-title').textContent = correct ? 'Helyes! Nagyszerű!' : 'Nem egészen...';
-  document.getElementById('feedback-explanation').textContent = explanation || '';
+  panel.innerHTML =
+    `<div class="feedback-icon">${correct ? '✅' : '❌'}</div>` +
+    `<div class="feedback-text">` +
+      `<div class="feedback-title">${correct ? 'Helyes! Nagyszerű!' : 'Nem egészen...'}</div>` +
+      `<div class="feedback-explanation">${explanation || ''}</div>` +
+    `</div>`;
+}
+
+function showEssayFeedback(result, score, ex) {
+  const isGood     = score >= Math.ceil(ex.points * 0.6);
+  const strengths  = result.strengths || [];
+  const gaps       = result.gaps || [];
+
+  const panel = document.getElementById('feedback-panel');
+  panel.style.display = 'flex';
+  panel.className = 'feedback-panel essay-fb ' + (isGood ? 'correct-fb' : 'wrong-fb');
+
+  let html = `<div class="essay-feedback-content">
+    <div class="essay-score-row">
+      <span class="essay-score">${score} / ${ex.points} pont</span>
+      <span class="essay-verdict">${result.verdict || ''}</span>
+    </div>`;
+
+  if (result.feedback) {
+    html += `<p class="essay-feedback-text">${result.feedback}</p>`;
+  }
+
+  if (strengths.length) {
+    html += `<div class="essay-section strengths-section">
+      <div class="essay-section-title">✅ Helyes elemek</div>
+      <ul>${strengths.map(s => `<li>${s}</li>`).join('')}</ul>
+    </div>`;
+  }
+
+  if (gaps.length) {
+    html += `<div class="essay-section gaps-section">
+      <div class="essay-section-title">📌 Hiányzott</div>
+      <ul>${gaps.map(g => `<li>${g}</li>`).join('')}</ul>
+    </div>`;
+  }
+
+  html += `<details class="model-answer-toggle">
+    <summary>Mintaválasz megtekintése</summary>
+    <div class="model-answer-box">${(ex.modelAnswer || '').replace(/\n/g, '<br>')}</div>
+  </details>
+  </div>`;
+
+  panel.innerHTML = html;
+}
+
+function showNoApiKeyFeedback(ex) {
+  const panel = document.getElementById('feedback-panel');
+  panel.style.display = 'flex';
+  panel.className = 'feedback-panel essay-fb wrong-fb';
+  panel.innerHTML = `<div class="essay-feedback-content">
+    <div class="essay-score-row">
+      <span class="essay-score" style="font-size:16px">⚙ API kulcs szükséges</span>
+    </div>
+    <p class="essay-feedback-text">Az esszékérdések kiértékeléséhez Claude API kulcs szükséges.
+      <button class="link-btn" onclick="openSettings()">Beállítások →</button></p>
+    <details class="model-answer-toggle">
+      <summary>Mintaválasz megtekintése</summary>
+      <div class="model-answer-box">${(ex.modelAnswer || '').replace(/\n/g, '<br>')}</div>
+    </details>
+  </div>`;
+}
+
+function showApiErrorFeedback(msg) {
+  const panel = document.getElementById('feedback-panel');
+  panel.style.display = 'flex';
+  panel.className = 'feedback-panel wrong-fb';
+  panel.innerHTML =
+    `<div class="feedback-icon">⚠️</div>` +
+    `<div class="feedback-text">` +
+      `<div class="feedback-title">API hiba</div>` +
+      `<div class="feedback-explanation">${msg || 'Ismeretlen hiba. Ellenőrizd az API kulcsot.'}</div>` +
+    `</div>`;
 }
 
 function showXpFlash(text) {
@@ -415,6 +746,7 @@ function showXpFlash(text) {
 }
 
 function nextExercise() {
+  stopMic();
   session.index++;
   if (session.lives <= 0 || session.index >= session.queue.length) {
     showResults();
@@ -425,24 +757,20 @@ function nextExercise() {
 
 // ─── Results ──────────────────────────────────────────────────────────────────
 function showResults() {
-  const correct = session.results.filter(r => r.correct).length;
-  const total = session.results.length;
+  const correct  = session.results.filter(r => r.correct).length;
+  const total    = session.results.length;
   const accuracy = total > 0 ? Math.round(correct / total * 100) : 0;
 
-  const icon = accuracy >= 80 ? '🏆' : accuracy >= 60 ? '🎉' : '💪';
-  const title = accuracy >= 80 ? 'Kiváló!' : accuracy >= 60 ? 'Jó munka!' : 'Tartsd ki, fejlődsz!';
+  document.getElementById('results-icon').textContent  = accuracy >= 80 ? '🏆' : accuracy >= 60 ? '🎉' : '💪';
+  document.getElementById('results-title').textContent = accuracy >= 80 ? 'Kiváló!' : accuracy >= 60 ? 'Jó munka!' : 'Tartsd ki, fejlődsz!';
+  document.getElementById('res-xp').textContent        = '+' + session.xpEarned;
+  document.getElementById('res-correct').textContent   = `${correct}/${total}`;
+  document.getElementById('res-accuracy').textContent  = accuracy + '%';
 
-  document.getElementById('results-icon').textContent = icon;
-  document.getElementById('results-title').textContent = title;
-  document.getElementById('res-xp').textContent = '+' + session.xpEarned;
-  document.getElementById('res-correct').textContent = `${correct}/${total}`;
-  document.getElementById('res-accuracy').textContent = accuracy + '%';
-
-  // Breakdown
   const breakdown = document.getElementById('results-breakdown');
-  const grouped = {};
+  const grouped   = {};
   session.results.forEach(r => {
-    if (!grouped[r.topic]) grouped[r.topic] = {correct:0,total:0};
+    if (!grouped[r.topic]) grouped[r.topic] = {correct:0, total:0};
     grouped[r.topic].total++;
     if (r.correct) grouped[r.topic].correct++;
   });
@@ -461,6 +789,7 @@ function showResults() {
 }
 
 function goHome() {
+  stopMic();
   session = null;
   showScreen('home');
   updateHomeUI();
@@ -492,9 +821,9 @@ function levenshtein(a, b) {
 function exportProgress() {
   const data = { progress, globalStats, exportedAt: new Date().toISOString() };
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
   a.download = 'psp_haladás_' + new Date().toISOString().slice(0,10) + '.json';
   a.click();
   URL.revokeObjectURL(url);
@@ -508,17 +837,15 @@ function importProgress(event) {
     try {
       const data = JSON.parse(e.target.result);
       if (data.progress && data.globalStats) {
-        progress = data.progress;
-        globalStats = data.globalStats;
+        progress     = data.progress;
+        globalStats  = data.globalStats;
         saveState();
         updateHomeUI();
         alert('Haladás sikeresen betöltve! ✅');
       } else {
         alert('Érvénytelen fájl – nem található haladási adat.');
       }
-    } catch {
-      alert('Hiba a fájl beolvasásakor.');
-    }
+    } catch { alert('Hiba a fájl beolvasásakor.'); }
     event.target.value = '';
   };
   reader.readAsText(file);
