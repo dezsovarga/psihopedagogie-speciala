@@ -20,8 +20,10 @@ function getProgress(id) {
 }
 
 // ─── Settings / Worker URL ────────────────────────────────────────────────────
+const DEFAULT_WORKER_URL = 'https://psp-claude-proxy.vargadezso.workers.dev';
+
 function getWorkerUrl() {
-  return localStorage.getItem('psp_worker_url') || '';
+  return localStorage.getItem('psp_worker_url') || DEFAULT_WORKER_URL;
 }
 function openSettings() {
   const modal = document.getElementById('settings-modal');
