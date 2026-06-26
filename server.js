@@ -1,14 +1,21 @@
 #!/usr/bin/env node
 // Local dev server — serves the app and proxies Claude API calls to avoid CORS.
-// Usage: node server.js
+// Usage: ANTHROPIC_API_KEY=sk-ant-... node server.js
 //   Then open http://localhost:3000 in your browser.
+// The API key is read from the environment — it never passes through the browser.
 
 const http  = require('http');
 const https = require('https');
 const fs    = require('fs');
 const path  = require('path');
 
-const PORT = 3000;
+const PORT   = 3000;
+const apiKey = process.env.ANTHROPIC_API_KEY || '';
+
+if (!apiKey) {
+  console.warn('\n⚠️  ANTHROPIC_API_KEY is not set — essay evaluation will fail.');
+  console.warn('   Set it with: ANTHROPIC_API_KEY=sk-ant-... node server.js\n');
+}
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -21,7 +28,6 @@ const MIME = {
 
 // ─── Claude proxy ─────────────────────────────────────────────────────────────
 function proxyClaude(req, res) {
-  const apiKey = req.headers['x-api-key'] || '';
   let body = '';
   req.on('data', chunk => { body += chunk; });
   req.on('end', () => {
@@ -31,10 +37,10 @@ function proxyClaude(req, res) {
       path: '/v1/messages',
       method: 'POST',
       headers: {
-        'Content-Type':    'application/json',
-        'x-api-key':       apiKey,
+        'Content-Type':      'application/json',
+        'x-api-key':         apiKey,
         'anthropic-version': '2023-06-01',
-        'Content-Length':  Buffer.byteLength(body),
+        'Content-Length':    Buffer.byteLength(body),
       },
     };
     const proxy = https.request(opts, pRes => {

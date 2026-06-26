@@ -19,14 +19,14 @@ function getProgress(id) {
   return progress[id];
 }
 
-// ─── Settings / API key ───────────────────────────────────────────────────────
-function getApiKey() {
-  return localStorage.getItem('psp_api_key') || '';
+// ─── Settings / Worker URL ────────────────────────────────────────────────────
+function getWorkerUrl() {
+  return localStorage.getItem('psp_worker_url') || '';
 }
 function openSettings() {
   const modal = document.getElementById('settings-modal');
   const inp = document.getElementById('api-key-input');
-  inp.value = getApiKey();
+  inp.value = getWorkerUrl();
   document.getElementById('settings-status').textContent = '';
   document.getElementById('settings-status').className = 'settings-status';
   modal.style.display = 'flex';
@@ -35,30 +35,36 @@ function closeSettings() {
   document.getElementById('settings-modal').style.display = 'none';
 }
 function saveApiKey() {
-  const val = document.getElementById('api-key-input').value.trim();
+  const val = document.getElementById('api-key-input').value.trim().replace(/\/$/, '');
   const status = document.getElementById('settings-status');
-  if (val && !val.startsWith('sk-ant-')) {
-    status.textContent = 'Érvénytelen kulcs formátum (sk-ant-... kell)';
-    status.className = 'settings-status err';
-    return;
+  if (val) {
+    try {
+      const u = new URL(val);
+      if (u.protocol !== 'https:') throw new Error();
+    } catch(e) {
+      status.textContent = 'Érvénytelen URL (https://... kell)';
+      status.className = 'settings-status err';
+      return;
+    }
   }
-  localStorage.setItem('psp_api_key', val);
-  status.textContent = val ? '✓ API kulcs mentve' : 'API kulcs törölve';
+  if (val) localStorage.setItem('psp_worker_url', val);
+  else      localStorage.removeItem('psp_worker_url');
+  status.textContent = val ? '✓ Worker URL mentve' : 'Worker URL törölve';
   status.className = 'settings-status ok';
   updateSettingsGear();
   setTimeout(closeSettings, 900);
 }
 function clearApiKey() {
   document.getElementById('api-key-input').value = '';
-  localStorage.removeItem('psp_api_key');
+  localStorage.removeItem('psp_worker_url');
   const status = document.getElementById('settings-status');
-  status.textContent = 'API kulcs törölve';
+  status.textContent = 'Worker URL törölve';
   status.className = 'settings-status ok';
   updateSettingsGear();
 }
 function updateSettingsGear() {
   const btn = document.querySelector('.btn-settings-gear');
-  if (btn) btn.classList.toggle('has-key', !!getApiKey());
+  if (btn) btn.classList.toggle('has-key', isLocalhost() || !!getWorkerUrl());
 }
 
 // ─── Home Screen ──────────────────────────────────────────────────────────────
@@ -260,8 +266,8 @@ function buildExerciseHTML(ex) {
   }
 
   else if (ex.type === 'essay') {
-    if (!getApiKey()) {
-      html += `<div class="no-api-notice">⚙ <strong>Claude API kulcs szükséges</strong> az esszé kiértékeléséhez.
+    if (!isLocalhost() && !getWorkerUrl()) {
+      html += `<div class="no-api-notice">⚙ <strong>Cloudflare Worker URL szükséges</strong> az esszé kiértékeléséhez.
         <button class="link-btn" onclick="openSettings()">Beállítások →</button></div>`;
     }
     html += `<textarea class="essay-input" id="essay-input" placeholder="Írd be részletes válaszodat..."></textarea>
@@ -548,8 +554,7 @@ async function checkAnswerEssay(ex) {
   document.getElementById('btn-check').style.display = 'none';
   document.getElementById('evaluating-state').style.display = 'flex';
 
-  const apiKey = getApiKey();
-  if (!apiKey) {
+  if (!isLocalhost() && !getWorkerUrl()) {
     document.getElementById('evaluating-state').style.display = 'none';
     showNoApiKeyFeedback(ex);
     document.getElementById('btn-next').style.display = 'block';
@@ -557,7 +562,7 @@ async function checkAnswerEssay(ex) {
   }
 
   try {
-    const result = await evaluateWithClaude(ex, userAnswer, apiKey);
+    const result = await evaluateWithClaude(ex, userAnswer);
     document.getElementById('evaluating-state').style.display = 'none';
 
     const score    = Math.max(0, Math.min(result.score || 0, ex.points));
@@ -614,7 +619,7 @@ function isLocalhost() {
   return location.hostname === 'localhost' || location.hostname === '127.0.0.1';
 }
 
-async function evaluateWithClaude(ex, userAnswer, apiKey) {
+async function evaluateWithClaude(ex, userAnswer) {
   const prompt = `Te egy speciális nevelési igényű pedagógia titularizare vizsga értékelője vagy.
 Értékeld az alábbi vizsgakérdésre adott jelölti választ!
 
@@ -637,21 +642,14 @@ Adj visszajelzést MAGYARUL az alábbi JSON formátumban:
 
 Csak a JSON-t add vissza, semmi más szöveget.`;
 
-  // On localhost use the local proxy (server.js) — no CORS issues.
-  // On GitHub Pages the direct API call will fail with CORS; the catch block
-  // in checkAnswerEssay handles that by falling back to self-assessment.
-  const endpoint = isLocalhost()
-    ? '/api/claude'
-    : 'https://api.anthropic.com/v1/messages';
-
-  const headers = { 'Content-Type': 'application/json', 'x-api-key': apiKey };
-  if (!isLocalhost()) {
-    headers['anthropic-version'] = '2023-06-01';
-  }
+  // Localhost: server.js proxy (ANTHROPIC_API_KEY from env, no CORS).
+  // Remote:    Cloudflare Worker URL (ANTHROPIC_API_KEY stored as CF secret).
+  // API key never passes through the browser in either path.
+  const endpoint = isLocalhost() ? '/api/claude' : getWorkerUrl();
 
   const resp = await fetch(endpoint, {
     method: 'POST',
-    headers,
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       model: 'claude-haiku-4-5-20251001',
       max_tokens: 600,
@@ -736,9 +734,9 @@ function showNoApiKeyFeedback(ex) {
   panel.className = 'feedback-panel essay-fb wrong-fb';
   panel.innerHTML = `<div class="essay-feedback-content">
     <div class="essay-score-row">
-      <span class="essay-score" style="font-size:16px">⚙ API kulcs szükséges</span>
+      <span class="essay-score" style="font-size:16px">⚙ Worker URL szükséges</span>
     </div>
-    <p class="essay-feedback-text">Az esszékérdések kiértékeléséhez Claude API kulcs szükséges.
+    <p class="essay-feedback-text">Állítsd be a Cloudflare Worker URL-t a Beállításokban a Claude-os értékeléshez.
       <button class="link-btn" onclick="openSettings()">Beállítások →</button></p>
     <details class="model-answer-toggle">
       <summary>Mintaválasz megtekintése</summary>
@@ -753,9 +751,7 @@ function showSelfAssessment(ex) {
   panel.className = 'feedback-panel essay-fb wrong-fb';
   panel.innerHTML = `<div class="essay-feedback-content">
     <p class="essay-feedback-text" style="margin-bottom:12px">
-      A Claude API böngészőből nem érhető el (CORS-korlátozás).
-      Helyi értékeléshez futtasd: <code style="background:var(--gray-100);padding:1px 5px;border-radius:4px;font-size:12px">node server.js</code>
-      és nyisd meg a <strong>localhost:3000</strong> címet.<br>
+      A Worker URL nem érhető el – ellenőrizd a Beállításokban.
       Addig: értékeld saját magad a mintaválasz alapján!
     </p>
     <details class="model-answer-toggle" open>

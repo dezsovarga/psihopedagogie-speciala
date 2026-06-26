@@ -167,9 +167,9 @@
       <button class="btn-icon modal-close" onclick="closeSettings()">✕</button>
     </div>
     <div class="modal-body">
-      <label class="settings-label" for="api-key-input">Claude API kulcs</label>
-      <input type="password" id="api-key-input" class="settings-input" placeholder="sk-ant-api03-...">
-      <p class="settings-hint">Az esszékérdések Claude-os értékeléséhez szükséges. A kulcs kizárólag a te eszközödön tárolódik (localStorage), sehová nem kerül elküldésre.</p>
+      <label class="settings-label" for="api-key-input">Cloudflare Worker URL</label>
+      <input type="url" id="api-key-input" class="settings-input" placeholder="https://abc123.your-name.workers.dev">
+      <p class="settings-hint">Az esszékérdések Claude-os értékeléséhez szükséges. Az API kulcsod a Cloudflare-en tárolódik titkosítva – soha nem kerül a böngészőbe. Lásd a <code>worker.js</code> fájlt a telepítési útmutatóért.</p>
       <div class="settings-status" id="settings-status"></div>
     </div>
     <div class="modal-footer">
