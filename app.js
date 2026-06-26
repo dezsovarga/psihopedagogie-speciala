@@ -610,6 +610,10 @@ function recordResult(ex, isCorrect, customXp) {
 }
 
 // ─── Claude API ───────────────────────────────────────────────────────────────
+function isLocalhost() {
+  return location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+}
+
 async function evaluateWithClaude(ex, userAnswer, apiKey) {
   const prompt = `Te egy speciális nevelési igényű pedagógia titularizare vizsga értékelője vagy.
 Értékeld az alábbi vizsgakérdésre adott jelölti választ!
@@ -633,14 +637,21 @@ Adj visszajelzést MAGYARUL az alábbi JSON formátumban:
 
 Csak a JSON-t add vissza, semmi más szöveget.`;
 
-  const resp = await fetch('https://api.anthropic.com/v1/messages', {
+  // On localhost use the local proxy (server.js) — no CORS issues.
+  // On GitHub Pages the direct API call will fail with CORS; the catch block
+  // in checkAnswerEssay handles that by falling back to self-assessment.
+  const endpoint = isLocalhost()
+    ? '/api/claude'
+    : 'https://api.anthropic.com/v1/messages';
+
+  const headers = { 'Content-Type': 'application/json', 'x-api-key': apiKey };
+  if (!isLocalhost()) {
+    headers['anthropic-version'] = '2023-06-01';
+  }
+
+  const resp = await fetch(endpoint, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-client-side-api-key-warning': 'disabled'
-    },
+    headers,
     body: JSON.stringify({
       model: 'claude-haiku-4-5-20251001',
       max_tokens: 600,
@@ -742,8 +753,10 @@ function showSelfAssessment(ex) {
   panel.className = 'feedback-panel essay-fb wrong-fb';
   panel.innerHTML = `<div class="essay-feedback-content">
     <p class="essay-feedback-text" style="margin-bottom:12px">
-      A Claude API ebből a böngészőből nem érhető el (CORS-korlátozás).
-      Értékeld saját magad a mintaválasz alapján!
+      A Claude API böngészőből nem érhető el (CORS-korlátozás).
+      Helyi értékeléshez futtasd: <code style="background:var(--gray-100);padding:1px 5px;border-radius:4px;font-size:12px">node server.js</code>
+      és nyisd meg a <strong>localhost:3000</strong> címet.<br>
+      Addig: értékeld saját magad a mintaválasz alapján!
     </p>
     <details class="model-answer-toggle" open>
       <summary>Mintaválasz</summary>
