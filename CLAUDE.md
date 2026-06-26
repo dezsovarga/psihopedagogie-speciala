@@ -111,6 +111,34 @@ it is stored only in `localStorage`.
 }
 ```
 
+## Testing
+
+Run the test suite before committing any change:
+
+```bash
+npm test
+```
+
+Tests live in `tests/` and use Jest. There are two test files:
+- `tests/exercises.test.js` — data integrity: file parsing, required fields, duplicate IDs, type-specific rules, session slot coverage
+- `tests/session.test.js` — session construction logic: correct counts per type, lives/early-exit behaviour
+
+### Test-driven development
+
+Follow TDD for all logic changes:
+
+1. **Write the test first.** Before implementing a new feature or fixing a bug, add a failing test that describes the expected behaviour.
+2. **Make it pass.** Implement the minimal change needed to make the test green.
+3. **Commit both together.** Tests and the code they cover go in the same commit.
+
+What must have tests before the code changes:
+- Any change to session selection logic (type caps, mode behaviour, early-exit conditions)
+- Any new exercise type
+- Any new field required on exercise objects
+- Bug fixes — the test should reproduce the bug first, then the fix makes it pass
+
+The `exercises.test.js` file automatically covers every exercise file on each run, so a syntax or schema error in any `exercises/*.js` file will be caught by `npm test` before it reaches production.
+
 ## Content rules
 
 - All UI text, questions, options, and explanations must be in Hungarian
