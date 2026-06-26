@@ -112,6 +112,8 @@ body {
 
 .mode-card.mode-mixed { border-color: var(--purple); }
 .mode-card.mode-mixed:hover { background: #FAF0FF; }
+.mode-card.mode-structured { border-color: var(--blue); }
+.mode-card.mode-structured:hover { background: var(--blue-light); }
 .mode-card.mode-review { border-color: var(--yellow); }
 .mode-card.mode-review:hover { background: var(--yellow-light); }
 

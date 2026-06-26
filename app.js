@@ -103,24 +103,36 @@ function startSession(mode) {
     });
     if (pool.length === 0) { alert('Nincs ismétlésre váró kérdés! Először végezd el valamelyik változatot.'); return; }
   } else {
-    pool = mode === 'mix'
+    pool = (mode === 'mix' || mode === 'structured')
       ? [...EXERCISES]
       : EXERCISES.filter(e => e.w === mode || e.w === 0);
   }
 
-  pool = pool.slice().sort((a, b) => {
-    const pa = getProgress(a.id), pb = getProgress(b.id);
-    if (pa.seen === 0 && pb.seen > 0) return -1;
-    if (pa.seen > 0 && pb.seen === 0) return 1;
-    if (pa.interval !== pb.interval) return pa.interval - pb.interval;
-    return Math.random() - 0.5;
-  });
+  function spSorted(arr) {
+    return arr.slice().sort((a, b) => {
+      const pa = getProgress(a.id), pb = getProgress(b.id);
+      if (pa.seen === 0 && pb.seen > 0) return -1;
+      if (pa.seen > 0 && pb.seen === 0) return 1;
+      if (pa.interval !== pb.interval) return pa.interval - pb.interval;
+      return Math.random() - 0.5;
+    });
+  }
 
-  // Limit essay questions to 2 and define questions to 4 per session
-  const other   = pool.filter(e => e.type !== 'essay' && e.type !== 'define');
-  const essays  = pool.filter(e => e.type === 'essay');
-  const defines = pool.filter(e => e.type === 'define');
-  const selected = [...other.slice(0, 9), ...defines.slice(0, 4), ...essays.slice(0, 2)].slice(0, 15);
+  let selected;
+  if (mode === 'structured') {
+    // Fixed format: exactly 10 other + 3 define + 2 essay = 15
+    const other   = spSorted(pool.filter(e => e.type !== 'essay' && e.type !== 'define'));
+    const defines = spSorted(pool.filter(e => e.type === 'define'));
+    const essays  = spSorted(pool.filter(e => e.type === 'essay'));
+    selected = shuffleArray([...other.slice(0, 10), ...defines.slice(0, 3), ...essays.slice(0, 2)]);
+  } else {
+    pool = spSorted(pool);
+    // Limit essay questions to 2 and define questions to 4 per session
+    const other   = pool.filter(e => e.type !== 'essay' && e.type !== 'define');
+    const essays  = pool.filter(e => e.type === 'essay');
+    const defines = pool.filter(e => e.type === 'define');
+    selected = [...other.slice(0, 9), ...defines.slice(0, 4), ...essays.slice(0, 2)].slice(0, 15);
+  }
 
   session = {
     mode,
