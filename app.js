@@ -575,9 +575,19 @@ async function checkAnswerEssay(ex) {
     }
   } catch(err) {
     document.getElementById('evaluating-state').style.display = 'none';
-    session.answered = false;
-    document.getElementById('btn-check').style.display = 'block';
-    showApiErrorFeedback(err.message);
+    // Network / CORS errors → fall back to self-assessment so the app still works
+    const isNetworkErr = err instanceof TypeError ||
+      err.message.includes('NetworkError') ||
+      err.message.includes('Failed to fetch') ||
+      err.message.includes('fetch');
+    if (isNetworkErr) {
+      session.answered = false; // let selfAssess() finalise
+      showSelfAssessment(ex);
+    } else {
+      session.answered = false;
+      document.getElementById('btn-check').style.display = 'block';
+      showApiErrorFeedback(err.message);
+    }
   }
 }
 
@@ -628,7 +638,8 @@ Csak a JSON-t add vissza, semmi más szöveget.`;
     headers: {
       'Content-Type': 'application/json',
       'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01'
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-client-side-api-key-warning': 'disabled'
     },
     body: JSON.stringify({
       model: 'claude-haiku-4-5-20251001',
@@ -723,6 +734,63 @@ function showNoApiKeyFeedback(ex) {
       <div class="model-answer-box">${(ex.modelAnswer || '').replace(/\n/g, '<br>')}</div>
     </details>
   </div>`;
+}
+
+function showSelfAssessment(ex) {
+  const panel = document.getElementById('feedback-panel');
+  panel.style.display = 'flex';
+  panel.className = 'feedback-panel essay-fb wrong-fb';
+  panel.innerHTML = `<div class="essay-feedback-content">
+    <p class="essay-feedback-text" style="margin-bottom:12px">
+      A Claude API ebből a böngészőből nem érhető el (CORS-korlátozás).
+      Értékeld saját magad a mintaválasz alapján!
+    </p>
+    <details class="model-answer-toggle" open>
+      <summary>Mintaválasz</summary>
+      <div class="model-answer-box">${(ex.modelAnswer || '').replace(/\n/g, '<br>')}</div>
+    </details>
+    <div class="self-assess-section">
+      <div class="self-assess-label">Mennyire volt helyes a válaszod?</div>
+      <div class="self-assess-btns">
+        <button class="sa-btn sa-full"    onclick="selfAssess(1.0)">✅ Teljes<br><small>${ex.points}/${ex.points} pont</small></button>
+        <button class="sa-btn sa-partial" onclick="selfAssess(0.6)">🔶 Részleges<br><small>${Math.ceil(ex.points * 0.6)}/${ex.points} pont</small></button>
+        <button class="sa-btn sa-none"    onclick="selfAssess(0)">❌ Nem tudtam<br><small>0/${ex.points} pont</small></button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function selfAssess(ratio) {
+  const ex = session.queue[session.index];
+  const score  = Math.round(ex.points * ratio);
+  const isGood = ratio >= 0.6;
+  const xp     = isGood ? Math.round(score * (ex.diff === 1 ? 4 : ex.diff === 2 ? 5 : 6)) : 0;
+
+  session.answered = true;
+  recordResult(ex, isGood, xp);
+
+  const inp = document.getElementById('essay-input');
+  if (inp) inp.classList.add(isGood ? 'correct' : 'wrong');
+
+  const panel = document.getElementById('feedback-panel');
+  panel.className = 'feedback-panel essay-fb ' + (isGood ? 'correct-fb' : 'wrong-fb');
+
+  // Prepend score row and remove the buttons
+  const content = panel.querySelector('.essay-feedback-content');
+  if (content) {
+    const verdicts = ['', 'elégtelen', 'részleges', 'jó', 'kiváló'];
+    const verdictIdx = ratio >= 1 ? 4 : ratio >= 0.6 ? 2 : 1;
+    const scoreRow = document.createElement('div');
+    scoreRow.className = 'essay-score-row';
+    scoreRow.innerHTML = `<span class="essay-score">${score} / ${ex.points} pont</span>
+      <span class="essay-verdict">${verdicts[verdictIdx]}</span>`;
+    content.insertBefore(scoreRow, content.firstChild);
+    const btnSection = content.querySelector('.self-assess-section');
+    if (btnSection) btnSection.remove();
+  }
+
+  document.getElementById('btn-next').style.display = 'block';
+  if (isGood) setTimeout(() => { if (session.answered) nextExercise(); }, 3000);
 }
 
 function showApiErrorFeedback(msg) {

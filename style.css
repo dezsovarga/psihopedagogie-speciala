@@ -967,6 +967,45 @@ body {
   white-space: pre-line;
 }
 
+/* ─── Self-assessment (CORS fallback) ─── */
+.self-assess-section {
+  margin-top: 14px;
+  border-top: 1px solid var(--gray-200);
+  padding-top: 12px;
+}
+.self-assess-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin-bottom: 10px;
+}
+.self-assess-btns {
+  display: flex;
+  gap: 8px;
+}
+.sa-btn {
+  flex: 1;
+  padding: 10px 6px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font);
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.5;
+  transition: all .1s;
+}
+.sa-btn small { font-weight: 400; font-size: 11px; }
+.sa-btn:hover { transform: translateY(-1px); }
+.sa-full    { border-color: var(--green); color: var(--green-dark); }
+.sa-full:hover    { background: var(--green-light); }
+.sa-partial { border-color: #F5A623; color: #B36A00; }
+.sa-partial:hover { background: #FFF0DB; }
+.sa-none    { border-color: var(--red); color: var(--red); }
+.sa-none:hover    { background: var(--red-light); }
+
 /* ─── Responsive additions ─── */
 @media (max-width: 540px) {
   .btn-settings-gear { top: 10px; width: 36px; height: 36px; font-size: 16px; }
