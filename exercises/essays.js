@@ -198,4 +198,98 @@ Segítség fokozatos elhalványítása (prompt fading): Az intervenció kezdeté
   exp:'Az UDL 3 alapelve: (1) reprezentáció többféle módja, (2) cselekvés és kifejezés többféle módja, (3) érdeklődés és motiváció többféle módja – mindegyikhez konkrét példával.'
 }
 
+
+// ══════════════════════════════════════════════
+// VÁLTOZAT 4
+// ══════════════════════════════════════════════
+{
+  id:'essay_w4_01', w:4, topic:'Fogalommeghatározások', type:'essay', diff:2, points:5,
+  q:'Határozza meg a következő fogalmakat: hiányosság (deficiență), fogyatékosság (dizabilitate), CES (Cerințe Educaționale Speciale), kompenzáció, habilitáció/rehabilitáció!',
+  modelAnswer:`Hiányosság (deficiență): Szervi vagy funkcionális szintű eltérés, károsodás, amely az egyén biológiai struktúráiban vagy funkcióiban jelenik meg. Az orvosi modell szerinti legalsó szint – pl. hallószervi károsodás vagy genetikai rendellenesség.
+
+Fogyatékosság (dizabilitate): Az egyén és a környezet kölcsönhatásából eredő funkcionális korlátok összessége, amelyek akadályozzák a teljes és egyenlő társadalmi részvételt. A modern (biopszicho-szociális) modell szerint nem kizárólag az egyénben, hanem a személy és az akadályozó környezet találkozásában keletkezik.
+
+CES (Cerințe Educaționale Speciale – Sajátos nevelési igény): Olyan oktatási kategória, amely azokat a tanulókat foglalja magában, akiknek tanulási, fejlődési vagy alkalmazkodási nehézségeik miatt a standard oktatási kereten túlmutató, személyre szabott pedagógiai támogatásra van szükségük. Szélesebb kategória, mint a fogyatékosság – magában foglalja a tanulási zavarokat, a magatartási nehézségeket és a szociális hátrányból eredő igényeket is.
+
+Kompenzáció: Az a fejlődési folyamat, amelynek során a fogyatékossággal élő egyén meglévő, sértetlen funkcióit mozgósítja a sérült vagy hiányzó funkciók hatásának ellensúlyozására. Vigotszkij értelmezésében nem automatikusan zajlik – megfelelő nevelői beavatkozást igényel.
+
+Habilitáció / rehabilitáció: A habilitáció olyan képességek és készségek kialakítását jelenti, amelyek a fogyatékossággal élő személynél soha nem fejlődtek ki (pl. kommunikációs készség veleszületett siketségnél). A rehabilitáció korábban meglévő, majd elveszített funkciók visszaállítására irányul (pl. stroke utáni beszédterápia).`,
+  exp:'Mind az 5 fogalom pontos meghatározása szükséges: hiányosság (biológiai szint), fogyatékosság (személy–környezet kölcsönhatása), CES (pedagógiai kategória), kompenzáció (Vigotszkij), habilitáció vs. rehabilitáció.'
+},
+{
+  id:'essay_w4_02', w:4, topic:'Komplex integrált oktatási terápia', type:'essay', diff:3, points:6,
+  q:'Jellemezze a komplex, integrált oktatási terápia természetét! Mutassa be a négy terápiás modult, és hozzon három konkrét példát a terápiás tevékenységek oktatási-nevelési értékeire!',
+  modelAnswer:`A komplex, integrált oktatási terápia jellege: Holisztikus fejlesztési megközelítés, amely a CES tanuló oktatását, nevelését és terápiáját egyetlen egységes keretben szervezi meg. Nem párhuzamos, egymástól független tevékenységeket jelent, hanem szerves integrációt: a terápiás elemek beépülnek az oktatásba, és az oktatás terápiás értékkel bír. Alapelve, hogy minden mozzanat egyidejűleg pedagógiai és terápiás értékkel rendelkezik.
+
+Négy terápiás modul:
+1. Kognitív stimulációs és tanulástámogatási modul – figyelem, emlékezet, gondolkodás, problémamegoldás, olvasás-írás és számolás speciális módszerei.
+2. Kommunikációs és logopédiai modul – beszéd, nyelv, kommunikáció fejlesztése; artikulációs terápia, AAC, szövegértés.
+3. Pszichomotoros és foglalkozásterápiás modul – nagy- és finommotorika, testséma, térbeli tájékozódás, önkiszolgálás.
+4. Szocioemocionális és viselkedéstámogató modul – érzelmi szabályozás, szociális készségek, önkép, PBS.
+
+Három konkrét példa:
+1. Homokterápiás tevékenység: A tanuló homokban betűket rajzol. Fejleszti a finommotorikát, taktilis észlelést, betű-hang kapcsolatot. Oktatási érték: írás-olvasás előkészítése; nevelési érték: sikerélmény szorongásmentes közegben.
+2. Dramatikus játék / szerepjáték: Mindennapi szituációt játszanak el (pl. bolti vásárlás). Fejleszti a szociális kommunikációt, szókincset, perspektívafelvételt. Oktatási érték: anyanyelvi és matematikai kompetenciák; nevelési érték: empátia és önbizalom.
+3. Ritmus- és zenei tevékenységek: Ütőhangszeren ritmussorokat ismételnek vissza. Fejleszti az auditív figyelmet, munkamemóriát, mozgáskoordinációt. Oktatási érték: fonológiai tudatosság; nevelési érték: önkifejezés öröme.`,
+  exp:'A komplex integrált terápia holisztikus jellegének leírása, a 4 modul felsorolása, és 3 tevékenységpélda oktatási + nevelési értékekkel párosítva szükséges.'
+},
+{
+  id:'essay_w4_03', w:4, topic:'Multidiszciplináris team', type:'essay', diff:2, points:5,
+  q:'Mutassa be a multidiszciplináris team működését! Ismertesse négy teamtag feladatát, és nevezzen meg két etikai követelményt!',
+  modelAnswer:`Négy teamtag és feladataik:
+
+Gyógypedagógus: A CES tanulók oktatási fejlesztésének koordinátora; elvégzi a pszichopedagógiai értékelést, kidolgozza és megvalósítja a PIP-et, együttműködik a többségi pedagógussal az inkluzív osztályban.
+
+Pszichológus: A tanuló érzelmi, szociális és kognitív funkcionálásának értékelése; pszichológiai terápia, szülőtanácsadás, pszichológiai szempontú konzultáció a team számára.
+
+Logopédus: A kommunikációs és nyelvi zavarok diagnosztikája és terápiája; augmentatív kommunikációs rendszerek bevezetése; pedagógusok módszertani támogatása.
+
+Szociális munkás: A tanuló és a család szociális helyzetének felmérése; szociális szolgáltatásokhoz való hozzáférés biztosítása; veszélyeztetett tanulók védelme és közösségi erőforrások mozgósítása.
+
+Két etikai követelmény:
+
+Titoktartás és adatvédelem: A tanuló és a család személyes adatai, az értékelési eredmények és a fejlesztési terv tartalma kizárólag az érintett szakemberek és a szülők előtt ismert – harmadik félnek csak írásos beleegyezéssel adható ki.
+
+Informált beleegyezés és a tanuló méltóságának tisztelete: Minden beavatkozáshoz – értékeléshez, terápiához, intézményi elhelyezési javaslathoz – a szülők (és életkortól függően a tanuló) tájékozott és önkéntes beleegyezése szükséges.`,
+  exp:'4 teamtag (gyógypedagógus, pszichológus, logopédus, szociális munkás) feladatai és 2 etikai követelmény (titoktartás, informált beleegyezés) szükséges.'
+},
+{
+  id:'essay_w4_04', w:4, topic:'Artikulációs terápia', type:'essay', diff:3, points:6,
+  q:'Mutassa be az artikulációs zavar terápiájának öt szakaszát! Minden szakasznál jelölje meg a célt és egy jellemző módszert vagy feladatot!',
+  modelAnswer:`1. Előkészítő szakasz: Cél: az auditív diszkrimináció, légzés és artikulációs szervek előkészítése. A tanuló megtanulja megkülönböztetni a célhangot, és tudatosul benne a helyes/helytelen ejtés különbsége. Jellemző feladat: fújás, szívás, nyelvtorna – artikulációs szervek tudatos mozgatásának gyakorlatai.
+
+2. Hangkialakítási szakasz: Cél: a hiányzó vagy torzított hang helyes képzésének megtanítása. A logopédus bemutatja a hangképzés módját, a tanuló utánozza és tükör előtt ellenőrzi saját artikulációját. Jellemző módszer: tapintásos visszajelzés, segítő hangok és mozdulatsorok.
+
+3. Rögzítési szakasz: Cél: a helyesen kialakított hang stabillá tétele izoláltan, majd szótagokban és szavakban. Jellemző feladat: játékos hangutánzó és ritmusos feladatok, sok ismétléssel.
+
+4. Differenciálási szakasz: Cél: a célhang megkülönböztetése a hasonló, korábban összekevert hangoktól (pl. sz–s, r–l). Jellemző feladat: auditív diszkriminációs feladatok és minimális párokat tartalmazó szókártyák.
+
+5. Automatizálási szakasz: Cél: a hang beépítése a spontán, folyamatos beszédbe. Jellemző feladat: képmesélés, párbeszéd, versek – ahol a célhang tudatos erőfeszítés nélkül jelenik meg. A transzfer kiterjed otthoni helyzetekre is.`,
+  exp:'A terápia 5 szakasza sorban: előkészítő, hangkialakítási, rögzítési, differenciálási, automatizálási – mindegyikhez cél és módszer/feladat szükséges.'
+},
+{
+  id:'essay_w4_05', w:4, topic:'Kooperatív tanulás adaptálása', type:'essay', diff:3, points:8,
+  q:'Írja le a kooperatív tanulás egy konkrét technikáját (pl. Puzzle/Jigsaw)! Indokolja alkalmazhatóságát CES tanulóknál, és adaptálja enyhe intellektuális fogyatékossággal élő, illetve autizmus spektrumon lévő tanulóra!',
+  modelAnswer:`Választott technika: Puzzle (Jigsaw)
+
+Leírás: A tanulókat kis csoportokra osztják; minden csoporttag egy résztémát dolgoz fel, majd "szakértőként" visszatér és megtanítja a többieknek a saját részét. Mindenki egyszerre tanuló és tanító szerepben van; a csoport sikere az egyén felelősségvállalásától függ.
+
+Indoklás CES tanulóknál: Az aktív részvétel, a személyes felelősség és a társas tanulás fenntartja a motivációt, fejleszti a szociális készségeket, és a saját tempóhoz igazított feldolgozást tesz lehetővé. A szerepvállalás erősíti az önképet és az önhatékonyság érzését.
+
+Adaptálás enyhe intellektuális fogyatékossággal élő tanuló számára:
+– A tanuló résztémája egyszerűbb, kevesebb tartalommal és több képi elemmel.
+– A feldolgozáshoz vizuális útmutató (képes kérdések, kulcsszókártyák) áll rendelkezésre.
+– A "tanítás" képkártyák megmutatásával és egyszerű mondatokkal valósul meg.
+– A pedagógus vagy egy "buddy" tanuló diszkréten jelen van segítségnyújtásra.
+– A feladat elvégzési ideje rugalmasabb.
+
+Adaptálás autizmus spektrumon lévő tanuló számára:
+– A szerepek és feladatlépések előre részletesen elmagyarázottak és vizuálisan rögzítve (lépéskártyák).
+– A csoporttagok száma kisebb (2–3 fő), hogy a szociális komplexitás kezelhető maradjon.
+– A tanuló előre tudja, mikor kerül rá a sor és pontosan mit várnak tőle – a kiszámíthatóság csökkenti a szorongást.
+– Csendesebb munkakörnyezet az esetleges szenzoros túlterhelés megelőzésére.
+– A sikeres részvételt konkrét, pozitív visszajelzéssel nyugtázzák.`,
+  exp:'A Puzzle technika leírása, CES alkalmazhatóságának indoklása, majd két adaptáció (enyhe értelmi fogyatékosság + ASD) részletes bemutatása szükséges.'
+},
+
 ]; // end EXERCISES_ESSAYS
