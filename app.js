@@ -172,8 +172,12 @@ function renderExercise() {
   const pct = (session.index / session.queue.length) * 100;
   document.getElementById('ex-progress-bar').style.width = pct + '%';
 
-  const hearts = '❤️'.repeat(session.lives) + '🖤'.repeat(Math.max(0, 3 - session.lives));
-  document.getElementById('lives-display').textContent = hearts;
+  const livesEl = document.getElementById('lives-display');
+  if (session.mode === 'structured') {
+    livesEl.textContent = '';
+  } else {
+    livesEl.textContent = '❤️'.repeat(session.lives) + '🖤'.repeat(Math.max(0, 3 - session.lives));
+  }
 
   document.getElementById('feedback-panel').style.display = 'none';
   document.getElementById('feedback-panel').className = 'feedback-panel';
@@ -871,7 +875,8 @@ function showXpFlash(text) {
 function nextExercise() {
   stopMic();
   session.index++;
-  if (session.lives <= 0 || session.index >= session.queue.length) {
+  const livesOut = session.mode !== 'structured' && session.lives <= 0;
+  if (livesOut || session.index >= session.queue.length) {
     showResults();
   } else {
     renderExercise();

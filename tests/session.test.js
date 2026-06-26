@@ -71,6 +71,31 @@ function makePool({ mc = 0, tf = 0, fill = 0, essay = 0, define: def = 0 } = {})
 
 // ─── Structured mode ─────────────────────────────────────────────────────────
 
+// ─── Lives / early-exit behaviour ────────────────────────────────────────────
+
+function shouldEndOnLives(mode, lives) {
+  return mode !== 'structured' && lives <= 0;
+}
+
+describe('lives early-exit logic', () => {
+  test('structured mode never ends early on lives', () => {
+    expect(shouldEndOnLives('structured', 0)).toBe(false);
+    expect(shouldEndOnLives('structured', -1)).toBe(false);
+  });
+
+  test('other modes end when lives reach 0', () => {
+    expect(shouldEndOnLives('mix', 0)).toBe(true);
+    expect(shouldEndOnLives(1,    0)).toBe(true);
+  });
+
+  test('other modes do not end while lives remain', () => {
+    expect(shouldEndOnLives('mix', 1)).toBe(false);
+    expect(shouldEndOnLives(1,    2)).toBe(false);
+  });
+});
+
+// ─── Structured mode ─────────────────────────────────────────────────────────
+
 describe('structured mode', () => {
   const POOL = makePool({ mc: 50, essay: 10, define: 10 });
 
