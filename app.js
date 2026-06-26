@@ -116,10 +116,11 @@ function startSession(mode) {
     return Math.random() - 0.5;
   });
 
-  // Limit essay questions to 2 per session
-  const nonEssay = pool.filter(e => e.type !== 'essay');
-  const essays   = pool.filter(e => e.type === 'essay');
-  const selected = [...nonEssay.slice(0, 13), ...essays.slice(0, 2)].slice(0, 15);
+  // Limit essay questions to 2 and define questions to 4 per session
+  const other   = pool.filter(e => e.type !== 'essay' && e.type !== 'define');
+  const essays  = pool.filter(e => e.type === 'essay');
+  const defines = pool.filter(e => e.type === 'define');
+  const selected = [...other.slice(0, 9), ...defines.slice(0, 4), ...essays.slice(0, 2)].slice(0, 15);
 
   session = {
     mode,
@@ -189,13 +190,15 @@ function buildExerciseHTML(ex) {
     match:  'Párosítás',
     order:  'Sorrendezés',
     short:  'Rövid válasz',
-    essay:  'Esszékérdés'
+    essay:  'Esszékérdés',
+    define: 'Fogalommeghatározás'
   }[ex.type] || ex.type;
 
-  const badgeClass = ex.type === 'essay' ? 'ex-type-badge essay-badge' : 'ex-type-badge';
+  const isClaudeType = ex.type === 'essay' || ex.type === 'define';
+  const badgeClass = isClaudeType ? 'ex-type-badge essay-badge' : 'ex-type-badge';
 
   let html = `
-    <span class="${badgeClass}">${typeBadge}${ex.type === 'essay' ? ` · ${ex.points} pont` : ''}</span>
+    <span class="${badgeClass}">${typeBadge}${isClaudeType ? ` · ${ex.points} pont` : ''}</span>
     <div class="ex-topic">${ex.topic}</div>
     <div class="ex-question">${ex.q}</div>
   `;
@@ -267,12 +270,15 @@ function buildExerciseHTML(ex) {
     <div id="mic-interim" class="mic-interim-preview"></div>`;
   }
 
-  else if (ex.type === 'essay') {
+  else if (ex.type === 'essay' || ex.type === 'define') {
     if (!isLocalhost() && !getWorkerUrl()) {
-      html += `<div class="no-api-notice">⚙ <strong>Cloudflare Worker URL szükséges</strong> az esszé kiértékeléséhez.
+      html += `<div class="no-api-notice">⚙ <strong>Cloudflare Worker URL szükséges</strong> a kiértékeléshez.
         <button class="link-btn" onclick="openSettings()">Beállítások →</button></div>`;
     }
-    html += `<textarea class="essay-input" id="essay-input" placeholder="Írd be részletes válaszodat..."></textarea>
+    const placeholder = ex.type === 'define'
+      ? 'Fogalmazd meg saját szavaiddal...'
+      : 'Írd be részletes válaszodat...';
+    html += `<textarea class="essay-input" id="essay-input" placeholder="${placeholder}"></textarea>
     <div class="essay-input-footer">
       <button class="btn-mic" id="btn-mic" onclick="toggleMic('essay-input')" title="Diktálás mikrofonnal">🎤 Diktálás</button>
       <span class="essay-points-badge">${ex.points} pont</span>
@@ -299,10 +305,10 @@ function attachExerciseListeners(ex) {
       document.getElementById('btn-check').disabled = inp.value.trim().length < 3;
     });
   }
-  if (ex.type === 'essay') {
+  if (ex.type === 'essay' || ex.type === 'define') {
     const inp = document.getElementById('essay-input');
     if (inp) inp.addEventListener('input', () => {
-      document.getElementById('btn-check').disabled = inp.value.trim().length < 10;
+      document.getElementById('btn-check').disabled = inp.value.trim().length < 5;
     });
   }
 }
@@ -473,8 +479,8 @@ function selectOrderItem(el) {
 function checkAnswer() {
   const ex = session.queue[session.index];
 
-  // Essay answers go through Claude
-  if (ex.type === 'essay') {
+  // Essay and define answers go through Claude
+  if (ex.type === 'essay' || ex.type === 'define') {
     checkAnswerEssay(ex);
     return;
   }
@@ -622,7 +628,33 @@ function isLocalhost() {
 }
 
 async function evaluateWithClaude(ex, userAnswer) {
-  const prompt = `Te egy speciális nevelési igényű pedagógia titularizare vizsga értékelője vagy.
+  const prompt = ex.type === 'define'
+    ? `Te egy pszichopedagógia szakos vizsgafelkészítő vagy.
+A tanuló saját szavaival fogalmazott meg egy definíciót. Értékeld, hogy a meghatározás tartalmazza-e a fogalom lényeges elemeit!
+
+Fogalom / kérdés: ${ex.q}
+
+Helyes meghatározás (mintaválasz): ${ex.modelAnswer}
+
+Tanuló meghatározása: ${userAnswer}
+
+Értékelési szempontok:
+- Lényeges-e a tartalom? (nem szó szerinti egyezés kell, a kulcselemek megléte számít)
+- Pontosan adja-e vissza a fogalom lényegét?
+- Nem tartalmaz-e lényeges tévedést?
+
+Értékeld ${ex.points} pontos skálán. Adj visszajelzést MAGYARUL az alábbi JSON formátumban:
+
+{
+  "score": <0–${ex.points} egész szám>,
+  "verdict": "<kiváló|jó|részleges|elégtelen>",
+  "strengths": ["<helyesen említett kulcselem>"],
+  "gaps": ["<hiányzó vagy hibás kulcselem>"],
+  "feedback": "<1–2 mondatos összefoglaló visszajelzés magyarul>"
+}
+
+Csak a JSON-t add vissza, semmi más szöveget.`
+    : `Te egy speciális nevelési igényű pedagógia titularizare vizsga értékelője vagy.
 Értékeld az alábbi vizsgakérdésre adott jelölti választ!
 
 Kérdés: ${ex.q}

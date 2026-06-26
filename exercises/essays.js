@@ -3,6 +3,82 @@
 const EXERCISES_ESSAYS = [
 
 // ══════════════════════════════════════════════
+// FOGALOMMEGHATÁROZÁSOK – 1. VÁLTOZAT (I. FELADAT)
+// ══════════════════════════════════════════════
+{
+  id:'def_w1_01', w:1, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Határozza meg a szűrés (screening) fogalmát!',
+  modelAnswer:'Szűrés (screening): Elsődleges, gyors eljárás, amelynek célja azon gyermekek azonosítása, akiknél fejlődési eltérés, lemaradás vagy fogyatékosság gyanúja merül fel, és mélyebb vizsgálatra van szükség. Nem diagnosztikus jellegű, csupán jelzőrendszerként működik.',
+  exp:'A szűrés nem diagnosztikus – célja a mélyebb vizsgálatra szoruló gyermekek kiszűrése, nem a diagnózis felállítása.'
+},
+{
+  id:'def_w1_02', w:1, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Mit jelent a pszichopedagógiai értékelés fogalma?',
+  modelAnswer:'Pszichopedagógiai értékelés: Komplex, multidiszciplináris folyamat, amelynek során a tanuló kognitív, érzelmi, szociális, kommunikációs és motorikus fejlődését vizsgálják standardizált és nem standardizált eszközök segítségével, a fejlesztési szükségletek meghatározása céljából.',
+  exp:'Kulcselemek: komplex, multidiszciplináris folyamat, amely a fejlesztési szükségletek meghatározására irányul.'
+},
+{
+  id:'def_w1_03', w:1, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Határozza meg a diagnózis fogalmát a pszichopedagógiában!',
+  modelAnswer:'Diagnózis: A pszichopedagógiai értékelés alapján felállított szakmai megállapítás, amely megnevezi a fogyatékosság vagy sajátos nevelési igény típusát és súlyosságát, és alapul szolgál az intervencióhoz.',
+  exp:'A diagnózis az értékelés eredménye – megnevezi a CES típusát és súlyosságát, és az intervenció alapja.'
+},
+{
+  id:'def_w1_04', w:1, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Mit jelent a formatív pszichodiagnosztika?',
+  modelAnswer:'Formatív pszichodiagnosztika: Olyan értékelési megközelítés, amely nem lezárást, hanem fejlődési folyamatot vizsgál – a tanuló meglévő képességeire, fejleszthető területeire és tanulási potenciáljára fókuszál, dinamikus és folyamatos jellegű.',
+  exp:'A formatív pszichodiagnosztika dinamikus, folyamatos értékelés – nem lezárást, hanem a fejlesztési potenciált vizsgálja.'
+},
+{
+  id:'def_w1_05', w:1, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Mit ért funkcionális profil alatt a pszichopedagógiában?',
+  modelAnswer:'Funkcionális profil: A tanuló erősségeinek és nehézségeinek átfogó leírása különböző fejlődési területeken (kognitív, kommunikációs, szociális, motorikus stb.), amely az egyéni intervenciós terv alapját képezi.',
+  exp:'A funkcionális profil az erősségeket és nehézségeket foglalja össze fejlődési területenként – a PIP alapja.'
+},
+{
+  id:'def_w1_06', w:1, topic:'Értékelés alapelvei', type:'define', diff:1, points:2,
+  q:'Mit jelent a komplexitás elve a pszichopedagógiai értékelésben?',
+  modelAnswer:'Komplexitás elve: Az értékelés a tanuló személyiségének valamennyi területét felöleli, nem csupán egy-egy részterületre koncentrál.',
+  exp:'A komplexitás elve szerint az értékelés nem szűkül le egy területre – a tanuló teljes személyiségét vizsgálja.'
+},
+{
+  id:'def_w1_07', w:1, topic:'Értékelés alapelvei', type:'define', diff:1, points:2,
+  q:'Mit jelent a dinamikusság elve a pszichopedagógiai értékelésben?',
+  modelAnswer:'Dinamikusság elve: Az értékelés nem egyszeri, statikus aktus, hanem folyamatos, a fejlődést nyomon követő folyamat.',
+  exp:'A dinamikusság elve szerint az értékelés nem egyszeri – folyamatosan követi a tanuló fejlődését.'
+},
+{
+  id:'def_w1_08', w:1, topic:'Értékelés alapelvei', type:'define', diff:2, points:2,
+  q:'Mit jelent a multidiszciplinaritás elve a pszichopedagógiai értékelésben?',
+  modelAnswer:'Multidiszciplinaritás elve: Az értékelés különböző szakemberek (pszichológus, logopédus, gyógypedagógus, orvos, szociális munkás) együttműködésével valósul meg.',
+  exp:'A multidiszciplinaritás elvének lényege a különböző szakemberek (pszichológus, logopédus, gyógypedagógus, orvos, szociális munkás) együttműködése.'
+},
+{
+  id:'def_w1_09', w:1, topic:'Fejlődési területek', type:'define', diff:2, points:2,
+  q:'Határozza meg az adaptív viselkedés fogalmát, mint a CES tanulók értékelésének egyik fejlődési területét!',
+  modelAnswer:'Adaptív viselkedés: Önkiszolgálás, mindennapi életvitel, iskolai alkalmazkodás, önállóság mértéke – azok a funkcionális készségek, amelyek szükségesek a mindennapi élet önálló viteléhez és a környezethez való alkalmazkodáshoz.',
+  exp:'Az adaptív viselkedés az önkiszolgálást, mindennapi életvitelt és az önállóság mértékét foglalja magában.'
+},
+{
+  id:'def_w1_10', w:1, topic:'Fejlődési területek', type:'define', diff:2, points:2,
+  q:'Mit foglal magában a pszichomotoros fejlődés vizsgálata a CES tanulók értékelésében?',
+  modelAnswer:'Pszichomotoros fejlődés: Nagy- és finommotoros készségek, térbeli tájékozódás, testséma vizsgálata – a mozgásos fejlődés és a mozgással összefüggő észlelési funkciók értékelése.',
+  exp:'A pszichomotoros fejlődés területe a nagy- és finommotoros készségeket, a testsémát és a térbeli tájékozódást foglalja magában.'
+},
+{
+  id:'def_w1_11', w:1, topic:'Dinamikus értékelés', type:'define', diff:2, points:2,
+  q:'Mit jelent a dinamikus értékelés (tesztelés–tanítás–újratesztelés) eljárása?',
+  modelAnswer:'Dinamikus értékelés: A gyógypedagógus először felméri a tanuló teljesítményét, ezután rövid, célzott segítséget nyújt, majd ugyanolyan típusú feladattal újra értékeli. A különbség megmutatja a tanuló tanulási kapacitását és a szükséges támogatás mértékét. Vigotszkij legközelebbi fejlődési zónájának (ZPD) elvén alapul.',
+  exp:'A dinamikus értékelés 3 lépése: tesztelés → célzott segítség → újratesztelés. A különbség a ZPD-t mutatja.'
+},
+{
+  id:'def_w1_12', w:1, topic:'Dinamikus értékelés', type:'define', diff:2, points:2,
+  q:'Mit jelent Vigotszkij legközelebbi fejlődési zónájának (ZPD) fogalma?',
+  modelAnswer:'Legközelebbi fejlődési zóna (ZPD): A különbség aközött, amit a tanuló önállóan képes teljesíteni, és aközött, amit megfelelő segítséggel (felnőtt vagy fejlettebb társ irányításával) el tud érni. A ZPD a fejlesztés optimális célterülete.',
+  exp:'A ZPD az önálló teljesítmény és a segítséggel elérhető teljesítmény közötti különbség – a fejlesztés célterülete.'
+},
+
+// ══════════════════════════════════════════════
 // VÁLTOZAT 1
 // ══════════════════════════════════════════════
 {
