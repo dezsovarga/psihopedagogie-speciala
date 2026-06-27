@@ -171,6 +171,28 @@ describe('define questions', () => {
     const bad = EXERCISES.filter(e => e.type === 'define' && (!e.modelAnswer || typeof e.points !== 'number'));
     expect(bad.map(e => e.id)).toEqual([]);
   });
+
+  test('points are a positive integer', () => {
+    const bad = EXERCISES.filter(e => e.type === 'define' && (e.points < 1 || !Number.isInteger(e.points)));
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+
+  test('w is a valid worksheet number (1–4), not shared (0)', () => {
+    const bad = EXERCISES.filter(e => e.type === 'define' && ![1,2,3,4].includes(e.w));
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+});
+
+describe('essay questions', () => {
+  test('points are a positive integer', () => {
+    const bad = EXERCISES.filter(e => e.type === 'essay' && (e.points < 1 || !Number.isInteger(e.points)));
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+
+  test('w is a valid worksheet number (1–4), not shared (0)', () => {
+    const bad = EXERCISES.filter(e => e.type === 'essay' && ![1,2,3,4].includes(e.w));
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
 });
 
 // ─── Session slot coverage ────────────────────────────────────────────────────
@@ -194,5 +216,18 @@ describe('Session slot coverage', () => {
   test.each([1, 2, 3, 4])('worksheet %i has enough questions for a full session (need >= 10)', (w) => {
     const count = EXERCISES.filter(e => e.w === w).length;
     expect(count).toBeGreaterThanOrEqual(10);
+  });
+
+  // Worksheets with define questions must have at least 3 (enough for one structured session slot).
+  // W3 and W4 defines are not yet written — add them to this list when they are.
+  test.each([1, 2])('worksheet %i has at least 3 define questions', (w) => {
+    const count = EXERCISES.filter(e => e.type === 'define' && e.w === w).length;
+    expect(count).toBeGreaterThanOrEqual(3);
+  });
+
+  test.each([3, 4])('worksheet %i define questions TODO: add defines (currently 0)', (w) => {
+    // This test documents the gap — change to >= 3 once defines are added for this worksheet.
+    const count = EXERCISES.filter(e => e.type === 'define' && e.w === w).length;
+    expect(count).toBeGreaterThanOrEqual(0);
   });
 });
