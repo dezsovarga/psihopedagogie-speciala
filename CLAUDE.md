@@ -125,19 +125,24 @@ Tests live in `tests/` and use Jest. There are two test files:
 
 ### Test-driven development
 
-Follow TDD for all logic changes:
+Follow TDD for all logic changes and every new request or change:
 
 1. **Write the test first.** Before implementing a new feature or fixing a bug, add a failing test that describes the expected behaviour.
 2. **Make it pass.** Implement the minimal change needed to make the test green.
 3. **Commit both together.** Tests and the code they cover go in the same commit.
+4. **Every request gets tests.** No change — however small — ships without at least one new or updated test that would catch a regression of that specific change.
 
 What must have tests before the code changes:
 - Any change to session selection logic (type caps, mode behaviour, early-exit conditions)
 - Any new exercise type
 - Any new field required on exercise objects
+- Any new session mode
+- Any new content category (e.g. adding define questions for a new worksheet)
 - Bug fixes — the test should reproduce the bug first, then the fix makes it pass
 
 The `exercises.test.js` file automatically covers every exercise file on each run, so a syntax or schema error in any `exercises/*.js` file will be caught by `npm test` before it reaches production.
+
+When adding define or essay questions for a new worksheet, update the TODO placeholder test in `exercises.test.js` (change `>= 0` to `>= 3`) before writing the content so the test fails first.
 
 ## Content rules
 
