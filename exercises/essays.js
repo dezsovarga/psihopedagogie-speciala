@@ -78,6 +78,32 @@ const EXERCISES_ESSAYS = [
   exp:'A ZPD az önálló teljesítmény és a segítséggel elérhető teljesítmény közötti különbség – a fejlesztés célterülete.'
 },
 
+// W1 II. FELADAT – Foglalkozásterápia és pszichomotorika
+{
+  id:'def_w1_13', w:1, topic:'Foglalkozásterápia', type:'define', diff:1, points:2,
+  q:'Határozza meg a foglalkozásterápia fogalmát!',
+  modelAnswer:'Foglalkozásterápia (terapia ocupațională): Egészségügyi és rehabilitációs szakdiszciplína, amely célirányos, értelmes tevékenységek segítségével fejleszti vagy helyreállítja az egyén funkcionális képességeit, elősegítve önállóságát és társadalmi részvételét. Fogyatékossággal élő személyek esetén a mindennapi életviteli készségek, a munkavégzési képességek és a szabadidős tevékenységekben való részvétel fejlesztésére irányul.',
+  exp:'A foglalkozásterápia célirányos tevékenységekkel fejleszti a funkcionális képességeket az önállóság és társadalmi részvétel elősegítéséért.'
+},
+{
+  id:'def_w1_14', w:1, topic:'Pszichomotorika', type:'define', diff:2, points:2,
+  q:'Mit jelent a testséma (schema corporală) fogalma a pszichomotorika összetevői között?',
+  modelAnswer:'Testséma (schema corporală): A saját test részeinek, határainak és mozgáslehetőségeinek tudatos ismerete és érzékelése. A testséma megalapozza a térbeli tájékozódást és a mozgásos tevékenységek koordinációját.',
+  exp:'A testséma a saját test részeinek, határainak és mozgáslehetőségeinek tudatos érzékelése – alapja a térbeli tájékozódásnak.'
+},
+{
+  id:'def_w1_15', w:1, topic:'Pszichomotorika', type:'define', diff:2, points:2,
+  q:'Mit jelent a lateralitás fogalma, és miért fontos az olvasás-írás tanulásában?',
+  modelAnswer:'Lateralitás (lateralitatea): A domináns oldal (jobb vagy bal kéz, láb, szem) következetes alkalmazása mozgásos tevékenységek során. A tiszta lateralitás kialakítása fontos az olvasás-írás tanulásában, mivel a bal-jobb irányultság és a következetes kézhasználat a betűk és szavak helyes azonosításának alapfeltétele.',
+  exp:'A lateralitás a domináns oldal következetes alkalmazása – tiszta kialakítása az olvasás-írás bal-jobb irányultságának alapfeltétele.'
+},
+{
+  id:'def_w1_16', w:1, topic:'Foglalkozásterápia', type:'define', diff:2, points:2,
+  q:'Mit jelent az ADL (Activities of Daily Living – mindennapi életviteli tevékenységek) fogalma a foglalkozásterápiában?',
+  modelAnswer:'ADL (Activities of Daily Living – mindennapi életviteli tevékenységek): Az önkiszolgáláshoz és az önálló életvitelhez szükséges alapvető tevékenységek összessége, mint az öltözködés, étkezés és higiénia. A foglalkozásterápiában ezek valós vagy szimulált környezetben való gyakorlása az autonómiafejlesztés egyik legfontosabb módja.',
+  exp:'Az ADL az önkiszolgálási alapkészségek (öltözés, étkezés, higiénia) összessége – valós/szimulált környezetben való gyakorlása az autonómiafejlesztés alapja.'
+},
+
 // ══════════════════════════════════════════════
 // VÁLTOZAT 1
 // ══════════════════════════════════════════════

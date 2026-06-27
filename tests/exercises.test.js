@@ -219,13 +219,20 @@ describe('Session slot coverage', () => {
     expect(count).toBeGreaterThanOrEqual(10);
   });
 
-  test.each([1, 2, 3, 4])('worksheet %i has at least 3 define questions', (w) => {
+  test.each([2, 3, 4, 5])('worksheet %i has at least 3 define questions', (w) => {
     const count = EXERCISES.filter(e => e.type === 'define' && e.w === w).length;
     expect(count).toBeGreaterThanOrEqual(3);
   });
 
-  test('worksheet 5 has at least 3 define questions', () => {
-    const count = EXERCISES.filter(e => e.type === 'define' && e.w === 5).length;
-    expect(count).toBeGreaterThanOrEqual(3);
+  // W1 has defines from all three feladatok — keep the threshold higher
+  test('worksheet 1 has at least 16 define questions (covers I–II. feladat)', () => {
+    const count = EXERCISES.filter(e => e.type === 'define' && e.w === 1).length;
+    expect(count).toBeGreaterThanOrEqual(16);
+  });
+
+  // Each worksheet must have defines from more than just I. feladat (Fogalommeghatározás)
+  test.each([1, 2, 3, 4, 5])('worksheet %i has define questions outside the Fogalommeghatározás topic', (w) => {
+    const count = EXERCISES.filter(e => e.type === 'define' && e.w === w && e.topic !== 'Fogalommeghatározás').length;
+    expect(count).toBeGreaterThanOrEqual(1);
   });
 });
