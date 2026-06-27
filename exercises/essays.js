@@ -428,6 +428,82 @@ Segítség fokozatos elhalványítása (prompt fading): Az intervenció kezdeté
 
 
 // ══════════════════════════════════════════════
+// FOGALOMMEGHATÁROZÁSOK – 4. VÁLTOZAT (I–III. FELADAT)
+// ══════════════════════════════════════════════
+{
+  id:'def_w4_01', w:4, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Határozza meg a hiányosság (deficiență) fogalmát!',
+  modelAnswer:'Hiányosság (deficiență): Szervi vagy funkcionális szintű eltérés, károsodás, amely az egyén biológiai struktúráiban vagy funkcióiban jelenik meg. Az orvosi modell szerinti legalsó szint – pl. hallószervi károsodás vagy genetikai rendellenesség.',
+  exp:'A hiányosság szervi/funkcionális szintű biológiai eltérés – az orvosi modell legalsó szintje.'
+},
+{
+  id:'def_w4_02', w:4, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Határozza meg a fogyatékosság (dizabilitate) fogalmát a biopszicho-szociális modell szerint!',
+  modelAnswer:'Fogyatékosság (dizabilitate): Az egyén és a környezet kölcsönhatásából eredő funkcionális korlátok összessége, amelyek akadályozzák a teljes és egyenlő társadalmi részvételt. A modern (biopszicho-szociális) modell szerint a fogyatékosság nem kizárólag az egyénben, hanem a személy és az akadályozó környezet találkozásában keletkezik.',
+  exp:'A fogyatékosság biopszicho-szociális modell szerint: nem az egyénben, hanem a személy és az akadályozó környezet kölcsönhatásában keletkezik.'
+},
+{
+  id:'def_w4_03', w:4, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Mit jelent a CES (Cerințe Educaționale Speciale – Sajátos nevelési igény) fogalma?',
+  modelAnswer:'CES (Sajátos nevelési igény): Olyan oktatási kategória, amely azokat a tanulókat foglalja magában, akiknek tanulási, fejlődési vagy alkalmazkodási nehézségeik miatt a standard oktatási kereten túlmutató, személyre szabott pedagógiai támogatásra van szükségük. A CES szélesebb kategória, mint a fogyatékosság – magában foglalhatja a tanulási zavarokat, a magatartási nehézségeket és a szociális hátrányból eredő igényeket is.',
+  exp:'A CES tágabb kategória a fogyatékosságnál: személyre szabott pedagógiai támogatást igénylő tanulók – tanulási zavar, magatartási nehézség, szociális hátrány is ide tartozhat.'
+},
+{
+  id:'def_w4_04', w:4, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Mit jelent a kompenzáció fogalma a pszichopedagógiában (Vigotszkij értelmezése szerint)?',
+  modelAnswer:'Kompenzáció: Az a fejlődési folyamat, amelynek során a fogyatékossággal élő egyén meglévő, sértetlen funkcióit mozgósítja és fejleszti a sérült vagy hiányzó funkciók hatásának ellensúlyozására. Vigotszkij értelmezésében a kompenzáció nem automatikusan zajlik – megfelelő nevelői beavatkozást igényel.',
+  exp:'A kompenzáció sértetlen funkciók fejlesztésével ellensúlyozza a hiányzó funkciókat – Vigotszkij szerint nem automatikus, nevelői beavatkozást igényel.'
+},
+{
+  id:'def_w4_05', w:4, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Mi a különbség a habilitáció és a rehabilitáció fogalma között?',
+  modelAnswer:'Habilitáció: Olyan képességek és készségek kialakítása, amelyek a fogyatékossággal élő személynél soha nem fejlődtek ki (pl. kommunikációs készség kialakítása veleszületett siketségnél). Rehabilitáció: Korábban meglévő, majd elveszített funkciók visszaállítása (pl. stroke utáni beszédterápia).',
+  exp:'Habilitáció = soha nem volt készség kialakítása; rehabilitáció = korábban meglévő, elveszített funkció visszaállítása.'
+},
+{
+  id:'def_w4_06', w:4, topic:'Nyelv és beszéd', type:'define', diff:1, points:2,
+  q:'Mi a különbség a nyelv és a beszéd fogalma között?',
+  modelAnswer:'Nyelv: Társadalmilag kialakult, szabályrendszer által meghatározott szimbolikus kommunikációs rendszer; elvont, mentális reprezentáció – az emberi kommunikáció kódrendszere. Beszéd: A nyelv hangzó megvalósítása; a kommunikációs szándék artikulált, akusztikai formában való kivetítése – egyéni, motorikus tevékenység.',
+  exp:'Nyelv = elvont, társadalmi kódrendszer; beszéd = ennek egyéni, motorikus, hangzó megvalósítása.'
+},
+{
+  id:'def_w4_07', w:4, topic:'Nyelv és beszéd', type:'define', diff:2, points:2,
+  q:'Határozza meg a nyelvi zavar fogalmát!',
+  modelAnswer:'Nyelvi zavar: A nyelv megértésének és/vagy produkciójának tartós nehézsége, amely eltér az adott életkori normától, és nem magyarázható kizárólag hallássérüléssel, intellektuális fogyatékossággal vagy más domináns állapottal. Érintheti a fonológiai, morfológiai, szintaktikai, szemantikai vagy pragmatikai szintet.',
+  exp:'A nyelvi zavar megértést és/vagy produkciót érintő, életkori normától eltérő tartós nehézség – érintheti a fonológiai, szintaktikai, szemantikai vagy pragmatikai szintet.'
+},
+{
+  id:'def_w4_08', w:4, topic:'AAC', type:'define', diff:2, points:2,
+  q:'Mi az augmentatív és alternatív kommunikáció (AAC) fogalma és indoklása?',
+  modelAnswer:'AAC (Augmentatív és alternatív kommunikáció): A hangzó beszéd kiegészítése vagy helyettesítése olyan esetekben, amikor a személy nem képes szóban hatékonyan kommunikálni. Lehet alacsony technológiájú (képkártyák, kommunikációs táblák) vagy magas technológiájú (tablet alapú alkalmazások). Az AAC bevezetése nem akadályozza, hanem elősegíti a hangzó beszéd fejlődését, mivel csökkenti a kommunikációs frusztrációt.',
+  exp:'Az AAC nem a hangzó beszéd feladása, hanem kiegészítése/helyettesítése – nem akadályozza, hanem elősegíti a verbális fejlődést.'
+},
+{
+  id:'def_w4_09', w:4, topic:'Módszertan', type:'define', diff:2, points:2,
+  q:'Mit jelent a modellálás (modelling) módszere a speciális pedagógiában?',
+  modelAnswer:'Modellálás: A pedagógus vagy egy társas modell bemutatja a kívánt viselkedést, készséget vagy megoldásmódot – szóban, hangosan gondolkodva is kísérve a cselekvést. A modellálás mintát nyújt arra, hogyan kell gondolkodni és cselekedni egy feladathelyzetben. CES tanulók esetén a vizuálisan megerősített (pl. videómodellezés) forma különösen hatékony.',
+  exp:'A modellálás bemutatással nyújt mintát a kívánt viselkedésre/készségre – CES tanulóknál a videómodellezés is hatékony forma.'
+},
+{
+  id:'def_w4_10', w:4, topic:'Módszertan', type:'define', diff:2, points:2,
+  q:'Mit jelent a láncolás (chaining) módszere, és melyek a fő formái?',
+  modelAnswer:'Láncolás (chaining): A feladatelemzésen alapuló tanítási eljárás, amely a lépéseket egymáshoz kapcsolja. Előretartó láncolás: a tanuló az első lépéstől kezd önállóan dolgozni, fokozatosan adódnak hozzá a következők. Visszatartó láncolás: a pedagógus elvégzi az összes lépést, kivéve az utolsót – a tanuló mindig a befejező lépésnél él át sikerélményt, majd fokozatosan veszi át a korábbi lépések felelősségét.',
+  exp:'A láncolás feladatelemzésen alapul; két formája: előretartó (első lépéstől) és visszatartó (utolsó lépéstől visszafelé).'
+},
+{
+  id:'def_w4_11', w:4, topic:'Módszertan', type:'define', diff:1, points:2,
+  q:'Mi a kooperatív tanulás lényege, és miért előnyös CES tanulók számára?',
+  modelAnswer:'Kooperatív tanulás: Kis csoportokban, egymást segítve megoldott feladatok, ahol mindenki személyesen felelős a csoport sikeréért. Aktív részvételt, személyes felelősséget és társas tanulást igényel. CES tanulók számára előnyös, mert fenntartja a motivációt, fejleszti a szociális készségeket, és az önképet, önhatékonyság érzését erősíti.',
+  exp:'A kooperatív tanulás kis csoportos, kölcsönös felelősségen alapuló módszer – CES tanulóknál erősíti a motivációt, szociális készségeket és önképet.'
+},
+{
+  id:'def_w4_12', w:4, topic:'Módszertan', type:'define', diff:2, points:2,
+  q:'Mi a különbség a hagyományos és az aktív-részvételi oktatási módszerek között?',
+  modelAnswer:'Hagyományos módszerek: A tanár áll a tanítási folyamat középpontjában, az információ egyirányúan, a pedagógustól a tanuló felé áramlik – a tanuló befogadó szerepben van (pl. magyarázat, bemutatás). Aktív-részvételi módszerek: A tanuló aktív, cselekvő résztvevője a tanulásnak; a tudás felfedezésen, együttműködésen és tapasztalaton keresztül épül fel – a pedagógus facilitátorként vesz részt (pl. kooperatív tanulás, projektmunka).',
+  exp:'Hagyományos = tanárközpontú, egyirányú (magyarázat, bemutatás); aktív-részvételi = tanulóközpontú, felfedezéses, együttműködésen alapuló (kooperatív, projekt).'
+},
+
+// ══════════════════════════════════════════════
 // VÁLTOZAT 4
 // ══════════════════════════════════════════════
 {

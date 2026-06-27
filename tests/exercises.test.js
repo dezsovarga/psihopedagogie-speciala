@@ -230,9 +230,8 @@ describe('Session slot coverage', () => {
     expect(count).toBeGreaterThanOrEqual(3);
   });
 
-  test('worksheet 4 define questions TODO: add defines (currently 0)', () => {
-    // Change to >= 3 once defines are added for worksheet 4.
+  test('worksheet 4 has at least 3 define questions', () => {
     const count = EXERCISES.filter(e => e.type === 'define' && e.w === 4).length;
-    expect(count).toBeGreaterThanOrEqual(0);
+    expect(count).toBeGreaterThanOrEqual(3);
   });
 });
