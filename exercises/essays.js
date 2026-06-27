@@ -596,4 +596,81 @@ Adaptálás autizmus spektrumon lévő tanuló számára:
   exp:'A Puzzle technika leírása, CES alkalmazhatóságának indoklása, majd két adaptáció (enyhe értelmi fogyatékosság + ASD) részletes bemutatása szükséges.'
 },
 
+
+// ══════════════════════════════════════════════
+// FOGALOMMEGHATÁROZÁSOK – 5. VÁLTOZAT (I–III. FELADAT)
+// ══════════════════════════════════════════════
+{
+  id:'def_w5_01', w:5, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Határozza meg az etiológia fogalmát a pszichopedagógiában!',
+  modelAnswer:'Etiológia: A fogyatékosságok, zavarok vagy betegségek okait, eredetét és kiváltó tényezőit vizsgáló tudományág. A pedagógiai gyakorlatban az etiológia ismerete segíti a megelőzést, a korai felismerést és a célzott intervenciót.',
+  exp:'Az etiológia a fogyatékosságok okait vizsgálja – ismerete a megelőzést, korai felismerést és célzott intervenciót segíti.'
+},
+{
+  id:'def_w5_02', w:5, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Mi az endogén ok fogalma a fogyatékosságok etiológiájában?',
+  modelAnswer:'Endogén ok: Belső, az egyén biológiai adottságaiból eredő tényező, amely fogyatékosságot vagy fejlődési eltérést okozhat. Ide tartoznak a genetikai rendellenességek, kromoszóma-anomáliák és öröklött anyagcsere-zavarok (pl. Down-szindróma, fenilketonúria).',
+  exp:'Endogén ok = belső, biológiai/genetikai tényező (pl. Down-szindróma, kromoszóma-anomália).'
+},
+{
+  id:'def_w5_03', w:5, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Mi az exogén ok fogalma, és mikor hathat a fejlődésre?',
+  modelAnswer:'Exogén ok: Külső, a környezetből érkező tényező, amely a fejlődést kedvezőtlenül befolyásolja. Lehet prenatális (pl. anyai fertőzés, mérgező anyagok), perinatális (pl. szülési trauma, oxigénhiány) vagy posztnatális (pl. agysérülés, súlyos elhanyagolás).',
+  exp:'Exogén ok = külső tényező; három időszak: prenatális, perinatális, posztnatális.'
+},
+{
+  id:'def_w5_04', w:5, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Mit jelent a rizikótényező fogalma a fogyatékosságok kontextusában?',
+  modelAnswer:'Rizikótényező: Olyan biológiai, pszichológiai vagy szociális körülmény, amely önmagában nem feltétlenül okoz fogyatékosságot, de jelentősen növeli annak valószínűségét (pl. koraszülöttség, alacsony születési súly, szülői szenvedélybetegség, szegénység).',
+  exp:'A rizikótényező nem okoz bizonyosan fogyatékosságot, de növeli a valószínűségét – lehet biológiai, pszichológiai vagy szociális.'
+},
+{
+  id:'def_w5_05', w:5, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Határozza meg a szindróma fogalmát!',
+  modelAnswer:'Szindróma: Tünetek, jelek és fejlődési jellemzők olyan együttese, amely rendszeresen együtt jelenik meg, és felismerhető, azonosítható klinikai képet alkot. A szindróma lehet genetikai (pl. Down-, Fragile X-szindróma), fejlődési (pl. Asperger) vagy szerzett (pl. Landau–Kleffner-szindróma).',
+  exp:'A szindróma rendszeresen együtt megjelenő tünetek azonosítható együttese – lehet genetikai, fejlődési vagy szerzett.'
+},
+{
+  id:'def_w5_06', w:5, topic:'Fejlődés és nevelés', type:'define', diff:2, points:2,
+  q:'Mit ír le az interakcionista modell az öröklés, a környezet és a nevelés viszonyáról?',
+  modelAnswer:'Az interakcionista modell szerint az öröklés (genetikai adottságok), a környezet (fizikai, szociális, kulturális körülmények) és a nevelés (tudatosan tervezett pedagógiai hatásrendszer) nem egymástól függetlenül, hanem folyamatos kölcsönhatásban alakítja a fejlődést. A genotípus csupán a fejlődési lehetőségek terét jelöli ki, nem a végeredményt.',
+  exp:'Az interakcionista modell: öröklés + környezet + nevelés folyamatos kölcsönhatásban hat – a genotípus lehetőségtér, nem végeredmény.'
+},
+{
+  id:'def_w5_07', w:5, topic:'Fejlődés és nevelés', type:'define', diff:2, points:2,
+  q:'Mit jelent a kompenzációs fejlődés Vigotszkij értelmezésében?',
+  modelAnswer:'Kompenzációs fejlődés: Az a folyamat, amelynek során a fogyatékossággal élő személy – megfelelő nevelés hatására – meglévő, sértetlen funkcióit mozgósítja és fejleszti a sérült vagy hiányzó funkciók hatásának ellensúlyozására. A kompenzáció nem a hiány eltüntetése, hanem az egyén funkcionális egészének más utakon való újjászervezése. Vigotszkij szerint nem automatikusan zajlik – nevelői beavatkozást igényel.',
+  exp:'A kompenzációs fejlődés sértetlen funkciók erősítésével ellensúlyozza a hiányzó funkciókat – Vigotszkij szerint nevelői beavatkozást igényel.'
+},
+{
+  id:'def_w5_08', w:5, topic:'Fejlődés és nevelés', type:'define', diff:2, points:2,
+  q:'Mit jelent az elsajátított tehetetlenség (learned helplessness) fogalma CES tanulóknál?',
+  modelAnswer:'Elsajátított tehetetlenség: Az a jelenség, amikor a tanuló – ismételt kudarcok, folyamatos külső segítség és a saját hatékonyság megtapasztalásának hiánya következtében – elveszíti a hitét abban, hogy erőfeszítéseivel képes befolyásolni a kimeneteleket. Feladja a próbálkozást, mielőtt megkísérelné a feladatot. CES tanulóknál komoly kockázat, ha a fejlesztés nem épít rendszeres sikerélményekre és nem biztosít valódi autonómiát.',
+  exp:'Az elsajátított tehetetlenség: ismételt kudarcok után a tanuló feladja a próbálkozást – megelőzése: sikerélmény és autonómia biztosítása.'
+},
+{
+  id:'def_w5_09', w:5, topic:'Fejlődés és nevelés', type:'define', diff:2, points:2,
+  q:'Mit jelent a fejlődési plaszticitás (neuroplaszticitás) fogalma, és miért fontos a korai fejlesztésben?',
+  modelAnswer:'Fejlődési plaszticitás (neuroplaszticitás): Az idegrendszer azon képessége, hogy a tapasztalatok, ingerek és beavatkozások hatására szerkezetileg és funkcionálisan átalakuljon. A csecsemő- és kisgyermekkorban a plaszticitás a legmagasabb, ezért a korai fejlesztő beavatkozás – különösen CES gyermekeknél – hatékonysága messze felülmúlja a késői intervenciókét.',
+  exp:'A neuroplaszticitás az idegrendszer alakíthatósága – korai életévekben a legnagyobb, ezért a korai fejlesztés a leghatékonyabb.'
+},
+{
+  id:'def_w5_10', w:5, topic:'Curriculum', type:'define', diff:1, points:2,
+  q:'Határozza meg a curriculum fogalmát!',
+  modelAnswer:'Curriculum: Az oktatás tervezésének, szervezésének és értékelésének átfogó rendszere, amely magában foglalja az oktatási célokat, tartalmakat, tanulási tevékenységeket, módszereket és értékelési eljárásokat. Tágabb értelemben a rejtett curriculumot is magában foglalja – azokat a normákat, elvárásokat és értékeket, amelyeket a tanuló az iskolai élet szövetéből elsajátít.',
+  exp:'A curriculum az oktatás tervezésének átfogó rendszere (célok, tartalmak, módszerek, értékelés) + a rejtett curriculum (iskolai élet normái).'
+},
+{
+  id:'def_w5_11', w:5, topic:'Curriculum', type:'define', diff:2, points:2,
+  q:'Melyek a speciális curriculum főbb sajátosságai CES tanulók esetén?',
+  modelAnswer:'Speciális curriculum sajátosságai: (1) Funkcionális és életszerű tartalmak hangsúlya (önkiszolgálás, kommunikáció, közlekedés). (2) Egyénre szabottság – a tanuló funkcionális profiljára épül, PIP dokumentálja, félévente felülvizsgálják. (3) Terápiás elemek integrációja (logopédia, pszichomotoros fejlesztés) az oktatási folyamatba. (4) Lassabb tempó, kisebb egységek, több ismétlés – az előrehaladás egyéni ütemhez, nem évfolyamhoz kötött.',
+  exp:'A speciális curriculum 4 sajátossága: funkcionális tartalmak, egyénre szabottság (PIP), terápiás integráció, lassabb tempó.'
+},
+{
+  id:'def_w5_12', w:5, topic:'Curriculum', type:'define', diff:2, points:2,
+  q:'Mit jelent az operacionalizált cél fogalma, és melyek a fő elemei?',
+  modelAnswer:'Operacionalizált cél: Pontosan meghatározott fejlesztési cél, amely megfigyelhető és mérhető viselkedésben fogalmazódik meg. Három kötelező eleme: (1) Megfigyelhető viselkedés – mit fog a tanuló tenni. (2) Feltétel – milyen körülmények között (eszköz, helyszín, segítség szintje). (3) Teljesítménykritérium – mikor tekinthető teljesítettnek (pl. 4-ből 3 alkalom, 80% pontosság).',
+  exp:'Az operacionalizált cél 3 eleme: megfigyelhető viselkedés + feltétel + teljesítménykritérium (arány/pontosság + időkeret).'
+},
+
 ]; // end EXERCISES_ESSAYS

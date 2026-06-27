@@ -15,6 +15,7 @@ const EXERCISE_FILES = [
   'exercises/worksheet_2.js',
   'exercises/worksheet_3.js',
   'exercises/worksheet_4.js',
+  'exercises/worksheet_5.js',
   'exercises/mixed.js',
   'exercises/essays.js',
 ];
@@ -177,8 +178,8 @@ describe('define questions', () => {
     expect(bad.map(e => e.id)).toEqual([]);
   });
 
-  test('w is a valid worksheet number (1–4), not shared (0)', () => {
-    const bad = EXERCISES.filter(e => e.type === 'define' && ![1,2,3,4].includes(e.w));
+  test('w is a valid worksheet number (1–5), not shared (0)', () => {
+    const bad = EXERCISES.filter(e => e.type === 'define' && ![1,2,3,4,5].includes(e.w));
     expect(bad.map(e => e.id)).toEqual([]);
   });
 });
@@ -189,8 +190,8 @@ describe('essay questions', () => {
     expect(bad.map(e => e.id)).toEqual([]);
   });
 
-  test('w is a valid worksheet number (1–4), not shared (0)', () => {
-    const bad = EXERCISES.filter(e => e.type === 'essay' && ![1,2,3,4].includes(e.w));
+  test('w is a valid worksheet number (1–5), not shared (0)', () => {
+    const bad = EXERCISES.filter(e => e.type === 'essay' && ![1,2,3,4,5].includes(e.w));
     expect(bad.map(e => e.id)).toEqual([]);
   });
 });
@@ -213,25 +214,18 @@ describe('Session slot coverage', () => {
     expect(count).toBeGreaterThanOrEqual(2);
   });
 
-  test.each([1, 2, 3, 4])('worksheet %i has enough questions for a full session (need >= 10)', (w) => {
+  test.each([1, 2, 3, 4, 5])('worksheet %i has enough questions for a full session (need >= 10)', (w) => {
     const count = EXERCISES.filter(e => e.w === w).length;
     expect(count).toBeGreaterThanOrEqual(10);
   });
 
-  // Worksheets with define questions must have at least 3 (enough for one structured session slot).
-  // W3 and W4 defines are not yet written — add them to this list when they are.
-  test.each([1, 2])('worksheet %i has at least 3 define questions', (w) => {
+  test.each([1, 2, 3, 4])('worksheet %i has at least 3 define questions', (w) => {
     const count = EXERCISES.filter(e => e.type === 'define' && e.w === w).length;
     expect(count).toBeGreaterThanOrEqual(3);
   });
 
-  test('worksheet 3 has at least 3 define questions', () => {
-    const count = EXERCISES.filter(e => e.type === 'define' && e.w === 3).length;
-    expect(count).toBeGreaterThanOrEqual(3);
-  });
-
-  test('worksheet 4 has at least 3 define questions', () => {
-    const count = EXERCISES.filter(e => e.type === 'define' && e.w === 4).length;
+  test('worksheet 5 has at least 3 define questions', () => {
+    const count = EXERCISES.filter(e => e.type === 'define' && e.w === 5).length;
     expect(count).toBeGreaterThanOrEqual(3);
   });
 });

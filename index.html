@@ -91,11 +91,23 @@
         </div>
       </button>
 
+      <button class="mode-card" onclick="startSession(5)">
+        <div class="mode-icon">🧬</div>
+        <div class="mode-info">
+          <h3>5. Változat</h3>
+          <p>Etiológia · Öröklés és fejlődés · Curriculum · Speciális curriculum</p>
+        </div>
+        <div class="mode-progress" id="progress-w5">
+          <div class="progress-bar-mini"><div class="progress-fill" id="fill-w5"></div></div>
+          <span id="pct-w5">0%</span>
+        </div>
+      </button>
+
       <button class="mode-card mode-mixed" onclick="startSession('mix')">
         <div class="mode-icon">🔀</div>
         <div class="mode-info">
           <h3>Vegyes gyakorlás</h3>
-          <p>Mindhárom változat keverve – a legjobb felkészülési mód!</p>
+          <p>Mind az 5 változat keverve – a legjobb felkészülési mód!</p>
         </div>
       </button>
 
@@ -205,6 +217,7 @@
 <script src="exercises/worksheet_3.js"></script>
 <script src="exercises/mixed.js"></script>
 <script src="exercises/worksheet_4.js"></script>
+<script src="exercises/worksheet_5.js"></script>
 <script src="exercises/essays.js"></script>
 <script src="data.js"></script>
 <script src="app.js"></script>
