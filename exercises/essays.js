@@ -161,6 +161,82 @@ SMART cél – autizmus spektrumon lévő tanuló:
 },
 
 // ══════════════════════════════════════════════
+// FOGALOMMEGHATÁROZÁSOK – 2. VÁLTOZAT (I. FELADAT)
+// ══════════════════════════════════════════════
+{
+  id:'def_w2_01', w:2, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Határozza meg az integráció fogalmát az inkluzív nevelés kontextusában!',
+  modelAnswer:'Integráció: A sajátos nevelési igényű tanulók elhelyezése a többségi oktatási intézményekben, ahol bizonyos mértékű alkalmazkodás történik az igényeikhez, de az iskola alapstruktúrája és elvárásrendszere lényegében változatlan marad.',
+  exp:'Az integráció esetén a CES tanuló illeszkedik a meglévő rendszerhez – az iskola csak részben alkalmazkodik.'
+},
+{
+  id:'def_w2_02', w:2, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Határozza meg az inklúzió fogalmát, és emelje ki, miben tér el az integrációtól!',
+  modelAnswer:'Inklúzió: Az integráción túlmutató szemlélet, amely szerint az iskola alkalmazkodik minden tanuló szükségletéhez – nem a tanuló illeszkedik a rendszerhez, hanem a rendszer alakul a tanulóhoz. Az inklúzió a sokféleséget értékként kezeli.',
+  exp:'Az inklúzió és az integráció különbsége: integrációban a tanuló alkalmazkodik a rendszerhez, inklúzióban a rendszer alkalmazkodik a tanulóhoz.'
+},
+{
+  id:'def_w2_03', w:2, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Mit jelent a normalizáció elve a fogyatékossággal élő személyek oktatásában?',
+  modelAnswer:'Normalizáció: Az az elv, amely szerint a fogyatékossággal élő személyeknek joguk van a társadalom többi tagjával azonos életkörülményekhez, napi ritmushoz és életlehetőségekhez hozzáférni. Az oktatásban ez azt jelenti, hogy a CES tanulók lehetőség szerint a lakóhelyükön, a kortársaikkal tanulhatnak.',
+  exp:'A normalizáció elvének lényege: azonos életkörülmények, napi ritmus, kortársakkal való tanulás joga.'
+},
+{
+  id:'def_w2_04', w:2, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Mit jelent az inkluzív iskola fogalma?',
+  modelAnswer:'Inkluzív iskola: Olyan oktatási intézmény, amely strukturálisan, pedagógiailag és szemléletileg felkészült arra, hogy minden tanulót – beleértve a fogyatékossággal élőket – befogadjon, és mindegyikük számára biztosítsa a minőségi oktatáshoz való hozzáférést.',
+  exp:'Az inkluzív iskola strukturálisan, pedagógiailag és szemléletileg is felkészült minden tanuló befogadására.'
+},
+{
+  id:'def_w2_05', w:2, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Határozza meg az ésszerű alkalmazkodás fogalmát!',
+  modelAnswer:'Ésszerű alkalmazkodás: Olyan módosítások és kiigazítások összessége, amelyek nem jelentenek aránytalan terhet az intézmény számára, mégis lehetővé teszik, hogy a fogyatékossággal élő személy egyenlő alapon élvezhesse jogait és részt vehessen az oktatásban (pl. adaptált tananyag, hosszabb vizsgaidő, akadálymentesítés).',
+  exp:'Az ésszerű alkalmazkodás arányos terhet nem jelent az intézménynek, mégis egyenlő részvételt biztosít.'
+},
+{
+  id:'def_w2_06', w:2, topic:'Inklúzió alapelvei', type:'define', diff:1, points:2,
+  q:'Mit jelent az egyenlő hozzáférés elve az inkluzív oktatásban?',
+  modelAnswer:'Az egyenlő hozzáférés elve: Minden gyermeknek joga van a minőségi oktatáshoz, fogyatékosságától, képességszintjétől vagy társadalmi hátterétől függetlenül.',
+  exp:'Az egyenlő hozzáférés elve szerint fogyatékosságtól vagy képességszinttől függetlenül mindenkit megillet a minőségi oktatás joga.'
+},
+{
+  id:'def_w2_07', w:2, topic:'Inklúzió alapelvei', type:'define', diff:1, points:2,
+  q:'Mit jelent a részvétel és befogadás elve az inkluzív oktatásban?',
+  modelAnswer:'A részvétel és a befogadás elve: A CES tanulók nem csupán fizikailag vannak jelen az iskolában, hanem aktívan részt vesznek a tanulási és közösségi folyamatokban.',
+  exp:'A befogadás elvének lényege: nem elég a fizikai jelenlét – a CES tanulóknak aktívan részt kell venniük a tanulásban és a közösségi életben.'
+},
+{
+  id:'def_w2_08', w:2, topic:'Kommunikáció – Hallássérülés', type:'define', diff:2, points:2,
+  q:'Mit jelent a demutizálás fogalma a siket tanulók fejlesztésében?',
+  modelAnswer:'A demutizálás olyan speciális pedagógiai folyamat, amelynek célja a siket vagy súlyos kommunikációs zavarral küzdő (mutizált) gyermekek hangzó beszédre tanítása, vagy a meglévő hangadás tudatos és kommunikatív célú fejlesztése. A folyamat célja nem csupán a hang előhívása, hanem a funkcionális kommunikáció kialakítása.',
+  exp:'A demutizálás célja a funkcionális kommunikáció kialakítása – nem csupán a hang előhívása, hanem a hangzó beszéd kommunikatív alkalmazása.'
+},
+{
+  id:'def_w2_09', w:2, topic:'Érzékszervi fogyatékosságok', type:'define', diff:2, points:2,
+  q:'Jellemezze a siketvaságot (deafblindness) mint önálló fogyatékossági kategóriát!',
+  modelAnswer:'A siketvaság a hallás és a látás egyidejű súlyos sérülése, amely egyedi és komplex kommunikációs, tájékozódási és tanulási nehézségeket okoz. Nem csupán a két érzékszervi fogyatékosság egyszerű összeadódása, hanem önálló fogyatékossági kategória, amelynek hatása jóval meghaladja a részfogyatékosságok külön-külön vett következményeit. A siketvak személy elsődlegesen tapintásos csatornán keresztül tájékozódik és kommunikál.',
+  exp:'A siketvaság önálló kategória – nem az összeadódása a két sérülésnek; a siketvak személy elsősorban tapintásos csatornán kommunikál.'
+},
+{
+  id:'def_w2_10', w:2, topic:'Olvasás-írás előfeltételei', type:'define', diff:2, points:2,
+  q:'Mit jelent a fonológiai tudatosság, és miért előfeltétele az olvasás-írás tanulásának?',
+  modelAnswer:'Auditív diszkrimináció és fonológiai tudatosság: A tanuló képes azonosítani és megkülönböztetni a hangokat, szótagokat, rímelő szavakat; felismeri, hogy a szavak hangokból épülnek fel. Ez az olvasás-írás alapvető előfeltétele, mert a betű-hang megfeleltetés megtanulásához szükséges a hangok tudatos észlelése.',
+  exp:'A fonológiai tudatosság = hangok, szótagok, rímek azonosítása; a betű-hang megfeleltetés alapja, ezért az olvasás-írás előfeltétele.'
+},
+{
+  id:'def_w2_11', w:2, topic:'Olvasás-írás szakaszai', type:'define', diff:2, points:2,
+  q:'Jellemezze az olvasás-írás elsajátításának előábécés (logografikus) szakaszát!',
+  modelAnswer:'Előábécés szakasz (logografikus szakasz): A gyermek még nem ismeri a betűket, de képes egyes szavakat globálisan, vizuális formájuk alapján felismerni (pl. a saját nevét, ismert márkaneveket). Ebben a szakaszban alakul ki a könyvek és a nyomtatott szöveg iránti érdeklődés, a bal-jobb olvasási irány érzékelése. A fejlesztés célja a fonológiai tudatosság, a vizuális diszkrimináció és a finommotorika előkészítése.',
+  exp:'A logografikus szakaszban a gyermek még nem tud betűket, de szavakat globálisan felismer vizuális formájuk alapján.'
+},
+{
+  id:'def_w2_12', w:2, topic:'Olvasás-írás szakaszai', type:'define', diff:2, points:2,
+  q:'Jellemezze az olvasás-írás elsajátításának ábécés (alfabetikus) és ábécé utáni (ortografikus) szakaszát!',
+  modelAnswer:'Ábécés szakasz: A tanuló elsajátítja a betű-hang megfeleltetést, és képessé válik szavakat dekódolni. Először betűnként olvas, majd szótagol, végül folyékonyabb szóolvasásig jut. CES tanulóknál ez a szakasz hosszabb és intenzívebb fejlesztést igényel. Ábécé utáni szakasz: A tanuló már szóegységenként, szóképek alapján olvas; a dekódolás automatizálódik, és a figyelem a szöveg tartalmára irányulhat. Megjelenik a helyesírási tudatosság.',
+  exp:'Alfabetikus szakasz = betű-hang dekódolás; ortografikus szakasz = automatizált szóolvasás, figyelem a tartalomra irányul.'
+},
+
+// ══════════════════════════════════════════════
 // VÁLTOZAT 2
 // ══════════════════════════════════════════════
 {
