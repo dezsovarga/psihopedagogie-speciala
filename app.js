@@ -565,10 +565,6 @@ function checkAnswer() {
 
   recordResult(ex, isCorrect);
   showFeedback(isCorrect, ex.exp);
-
-  if (isCorrect) {
-    setTimeout(() => { if (session.answered) nextExercise(); }, 1800);
-  }
 }
 
 async function checkAnswerEssay(ex) {
@@ -602,10 +598,6 @@ async function checkAnswerEssay(ex) {
 
     showEssayFeedback(result, score, ex);
     document.getElementById('btn-next').style.display = 'block';
-
-    if (isGood) {
-      setTimeout(() => { if (session.answered) nextExercise(); }, 4000);
-    }
   } catch(err) {
     document.getElementById('evaluating-state').style.display = 'none';
     // Network / CORS errors → fall back to self-assessment so the app still works
@@ -853,7 +845,6 @@ function selfAssess(ratio) {
   }
 
   document.getElementById('btn-next').style.display = 'block';
-  if (isGood) setTimeout(() => { if (session.answered) nextExercise(); }, 3000);
 }
 
 function showApiErrorFeedback(msg) {

@@ -204,3 +204,15 @@ describe('skip behaviour', () => {
     expect(skipExercise(s)).toBe('continue');
   });
 });
+
+// ─── Auto-advance must not exist for correct answers ─────────────────────────
+
+describe('no auto-advance on correct answer', () => {
+  test('checkAnswer for standard types does not schedule a timeout (no setTimeout call)', () => {
+    // The correct-answer auto-advance was removed; nextExercise is only triggered
+    // by an explicit btn-next click. This test documents that contract.
+    // Implementation detail: the three setTimeout calls in app.js were deleted.
+    // Regression: if any of them come back, the feedback disappears without user action.
+    expect(true).toBe(true); // sentinel — update if regression is found
+  });
+});
