@@ -296,6 +296,82 @@ Három alkalmazható kommunikációs módszer:
 },
 
 // ══════════════════════════════════════════════
+// FOGALOMMEGHATÁROZÁSOK – 3. VÁLTOZAT (I–III. FELADAT)
+// ══════════════════════════════════════════════
+{
+  id:'def_w3_01', w:3, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Határozza meg az autizmus spektrum (ASD) fogalmát!',
+  modelAnswer:'Autizmus spektrum (ASD): Neurofejlődési állapot, amelyet a szociális kommunikáció és interakció tartós nehézségei, valamint korlátozott, ismétlődő viselkedésminták és érdeklődési körök jellemeznek. Spektrumjellegű: az érintett személyek képességei és szükségletei rendkívül széles skálán mozognak.',
+  exp:'Az ASD két fő jellemzője: (1) szociális kommunikáció és interakció nehézségei, (2) korlátozott, ismétlődő viselkedésminták. Spektrumjellegű állapot.'
+},
+{
+  id:'def_w3_02', w:3, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Határozza meg az ADHD (figyelemhiányos hiperaktivitás-zavar) fogalmát!',
+  modelAnswer:'ADHD: Neurofejlődési állapot, amelynek fő jellemzői a figyelmetlenség, az impulzivitás és/vagy a hiperaktivitás, amelyek legalább két különböző környezetben (pl. otthon és iskolában) megjelennek, és jelentősen befolyásolják a mindennapi működést.',
+  exp:'Az ADHD három fő tünete: figyelmetlenség, impulzivitás, hiperaktivitás – legalább két környezetben kell megjelennie.'
+},
+{
+  id:'def_w3_03', w:3, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Mit jelent a végrehajtó funkció fogalma?',
+  modelAnswer:'Végrehajtó funkció: A frontális lebenyhez kötött magasabb rendű kognitív folyamatok összessége, amelyek a célirányos viselkedés tervezését, szervezését, indítását, monitorozását és rugalmas módosítását teszik lehetővé. Ide tartozik a munkamemória, az inhibíció, a kognitív rugalmasság és a tervezés.',
+  exp:'A végrehajtó funkciók a frontális lebenyhez kötöttek; fő összetevői: munkamemória, inhibíció, kognitív rugalmasság, tervezés.'
+},
+{
+  id:'def_w3_04', w:3, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Mit jelent az önszabályozás fogalma a pszichopedagógiában?',
+  modelAnswer:'Önszabályozás: Az egyén azon képessége, hogy tudatosan irányítsa érzelmeit, gondolatait és viselkedését a helyzetnek megfelelően. Magában foglalja az impulzusok gátlását, az érzelmek kezelését és a figyelmi erőforrások tudatos elosztását.',
+  exp:'Az önszabályozás = impulzusgátlás + érzelemkezelés + figyelmi erőforrások tudatos elosztása.'
+},
+{
+  id:'def_w3_05', w:3, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Határozza meg a funkcionális viselkedéselemzés (FBA) fogalmát!',
+  modelAnswer:'Funkcionális viselkedéselemzés (FBA): Olyan strukturált értékelési folyamat, amely egy problémás viselkedés mögöttes okát (funkcióját) azonosítja. Vizsgálja a viselkedést megelőző tényezőket (antecedensek), magát a viselkedést és annak következményeit (ABC-modell), hogy célzott intervenciós terv legyen kidolgozható.',
+  exp:'Az FBA az ABC-modellen alapul: antecedensek – viselkedés – következmények; célja a viselkedés funkciójának azonosítása.'
+},
+{
+  id:'def_w3_06', w:3, topic:'ABA / TEACCH / PECS', type:'define', diff:2, points:2,
+  q:'Mi az ABA (Applied Behavior Analysis – Alkalmazott viselkedéselemzés) lényege?',
+  modelAnswer:'ABA: A viselkedéslélektan elvein alapuló, strukturált intervenciós megközelítés. Kívánatos viselkedéseket megerősítéssel erősít meg, a nem kívánatosakat következetesen nem jutalmazza, miközben a helyettesítő viselkedést tanítja. A tanítás kis, mérhető lépésekre bontott, és adatokon alapuló folyamatos monitorozással kísért.',
+  exp:'Az ABA lényege: megerősítésen alapuló, adatvezérelt, lépésekre bontott viselkedésfejlesztés.'
+},
+{
+  id:'def_w3_07', w:3, topic:'ABA / TEACCH / PECS', type:'define', diff:2, points:2,
+  q:'Mi a TEACCH-módszer lényege ASD tanulók fejlesztésében?',
+  modelAnswer:'TEACCH: ASD tanulók számára strukturált tanulási környezetet és vizuálisan szervezett feladatrendszert kínál. Alapelve a „strukturált tanítás": az osztályterem fizikailag és időben egyaránt egyértelműen tagolt (munkaállomások, vizuális napi rend, feladatdobozok). Csökkenti a bizonytalanságból eredő szorongást és fejleszti az önálló munkavégzést.',
+  exp:'A TEACCH alapelve a strukturált tanítás: vizuálisan és fizikailag tagolt környezet, napi rend, feladatdobozok – csökkenti a szorongást.'
+},
+{
+  id:'def_w3_08', w:3, topic:'ABA / TEACCH / PECS', type:'define', diff:2, points:2,
+  q:'Mi a PECS (Picture Exchange Communication System) lényege, és kinek szól?',
+  modelAnswer:'PECS: Augmentatív és alternatív kommunikációs rendszer (AAC), amely a nem vagy alig verbális ASD tanulók számára képkártyák cseréjén alapuló kommunikációt tanít. Hat fázisban halad: a tanuló először egyetlen képet ad a kommunikációs partnernek egy kért tárgyért cserébe, majd fokozatosan bővül a mondatszerkesztés és a spontán kommunikáció felé.',
+  exp:'A PECS nem verbális ASD tanulók AAC-rendszere; 6 fázisban tanít képcsere-alapú kommunikációt.'
+},
+{
+  id:'def_w3_09', w:3, topic:'Kognitív stimuláció', type:'define', diff:2, points:2,
+  q:'Határozza meg a kognitív stimuláció fogalmát!',
+  modelAnswer:'Kognitív stimuláció: Tervezett, strukturált tevékenységrendszer, amely az egyén kognitív funkcióinak – figyelem, emlékezet, észlelés, gondolkodás, problémamegoldás, nyelv – fenntartását, fejlesztését vagy rehabilitációját célozza. CES tanulók esetén a meglévő képességekre épít, figyelembe véve a fejlődési szintet és a tanulási stílust.',
+  exp:'A kognitív stimuláció tervezett tevékenységrendszer a kognitív funkciók (figyelem, emlékezet, gondolkodás) fejlesztésére vagy rehabilitációjára.'
+},
+{
+  id:'def_w3_10', w:3, topic:'Autonómiafejlesztés', type:'define', diff:2, points:2,
+  q:'Mit jelent a feladatelemzés (task analysis) módszere az autonómiafejlesztésben?',
+  modelAnswer:'Feladatelemzés (task analysis): Összetett, több lépésből álló készségeket (pl. fogmosás, öltözködés) apró, egymást követő, mérhető lépésekre bontunk. Lehetővé teszi, hogy a tanuló lépésről lépésre sajátítsa el az egyes részeket, és a pedagógus pontosan azonosítani tudja, melyik lépésnél szorul segítségre.',
+  exp:'A feladatelemzés összetett készséget apró, mérhető lépésekre bont – azonosítható, melyik lépésnél van szükség segítségre.'
+},
+{
+  id:'def_w3_11', w:3, topic:'Autonómiafejlesztés', type:'define', diff:2, points:2,
+  q:'Mit jelent a segítség fokozatos elhalványítása (prompt fading)?',
+  modelAnswer:'Segítség fokozatos elhalványítása (prompt fading): Az intervenció kezdetén a tanuló intenzív segítséget kap (fizikai irányítás, modellezés, verbális utasítás). Ahogy a készség megszilárdul, a segítség fokozatosan csökken – fizikaiból gesztusra, majd verbális jelzésre, végül önálló végrehajtásra. Megakadályozza a segítségre való ráutaltsági állapot (prompt dependency) kialakulását.',
+  exp:'A prompt fading lényege: intenzív segítségtől fokozatosan az önállóság felé haladás, a prompt dependency elkerülése érdekében.'
+},
+{
+  id:'def_w3_12', w:3, topic:'Curriculum és UDL', type:'define', diff:2, points:2,
+  q:'Határozza meg az univerzális tanulástervezés (UDL/DUA) fogalmát!',
+  modelAnswer:'Univerzális tanulástervezés (UDL/DUA): Olyan tervezési keretrendszer, amely az oktatási tartalom, módszer és értékelés rugalmas, eleve sokféle tanulóra gondolt kialakítását célozza, csökkentve az utólagos adaptáció szükségességét. Alapelve: a különbség nem kivétel, hanem norma.',
+  exp:'Az UDL/DUA elve: a tanítást eleve rugalmasan, sokféle tanulóra tervezni – a különbség norma, nem kivétel.'
+},
+
+// ══════════════════════════════════════════════
 // VÁLTOZAT 3
 // ══════════════════════════════════════════════
 {
