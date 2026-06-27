@@ -164,3 +164,43 @@ describe('standard modes', () => {
     expect(buildSessionQueue(small, 'mix')).toHaveLength(5);
   });
 });
+
+// ─── Skip behaviour ───────────────────────────────────────────────────────────
+
+function skipExercise(session) {
+  // Skip: advance index without touching lives or progress
+  session.index++;
+  const livesOut = session.mode !== 'structured' && session.lives <= 0;
+  return livesOut || session.index >= session.queue.length ? 'results' : 'continue';
+}
+
+describe('skip behaviour', () => {
+  test('skip advances the index', () => {
+    const s = { index: 0, lives: 3, mode: 'mix', queue: makePool({ mc: 5 }) };
+    skipExercise(s);
+    expect(s.index).toBe(1);
+  });
+
+  test('skip does not reduce lives', () => {
+    const s = { index: 0, lives: 3, mode: 'mix', queue: makePool({ mc: 5 }) };
+    skipExercise(s);
+    expect(s.lives).toBe(3);
+  });
+
+  test('skip on last question triggers results', () => {
+    const s = { index: 4, lives: 3, mode: 'mix', queue: makePool({ mc: 5 }) };
+    expect(skipExercise(s)).toBe('results');
+  });
+
+  test('skip mid-session continues', () => {
+    const s = { index: 0, lives: 3, mode: 'mix', queue: makePool({ mc: 5 }) };
+    expect(skipExercise(s)).toBe('continue');
+  });
+
+  test('skip works in structured mode even with 0 lives', () => {
+    const s = { index: 0, lives: 0, mode: 'structured', queue: makePool({ mc: 5 }) };
+    skipExercise(s);
+    expect(s.lives).toBe(0);
+    expect(skipExercise(s)).toBe('continue');
+  });
+});

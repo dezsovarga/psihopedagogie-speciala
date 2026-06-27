@@ -442,6 +442,22 @@ body {
 .btn-next { background: var(--blue); box-shadow: 0 4px 0 #0090D0; }
 .btn-next:hover { background: #18A0E0; }
 
+.btn-skip {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: none;
+  border: 2px solid var(--gray-200);
+  border-radius: 12px;
+  color: var(--gray-400);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.btn-skip:hover { border-color: var(--gray-400); color: var(--gray-600); }
+
 .btn-secondary {
   width: 100%;
   padding: 14px;

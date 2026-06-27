@@ -190,9 +190,11 @@ function renderExercise() {
   document.getElementById('evaluating-state').style.display = 'none';
   const btnCheck = document.getElementById('btn-check');
   const btnNext  = document.getElementById('btn-next');
+  const btnSkip  = document.getElementById('btn-skip');
   btnCheck.style.display = 'block';
   btnCheck.disabled = true;
   btnNext.style.display = 'none';
+  btnSkip.style.display = 'block';
 
   document.getElementById('exercise-body').innerHTML = buildExerciseHTML(ex);
   attachExerciseListeners(ex);
@@ -504,6 +506,7 @@ function checkAnswer() {
   session.answered = true;
   stopMic();
   document.getElementById('btn-check').style.display = 'none';
+  document.getElementById('btn-skip').style.display  = 'none';
   document.getElementById('btn-next').style.display  = 'block';
 
   let isCorrect = false;
@@ -576,6 +579,7 @@ async function checkAnswerEssay(ex) {
   session.answered = true;
   stopMic();
   document.getElementById('btn-check').style.display = 'none';
+  document.getElementById('btn-skip').style.display  = 'none';
   document.getElementById('evaluating-state').style.display = 'flex';
 
   if (!isLocalhost() && !getWorkerUrl()) {
@@ -870,6 +874,16 @@ function showXpFlash(text) {
   el.textContent = text;
   document.body.appendChild(el);
   setTimeout(() => el.remove(), 1200);
+}
+
+function skipExercise() {
+  stopMic();
+  session.index++;
+  if (session.index >= session.queue.length) {
+    showResults();
+  } else {
+    renderExercise();
+  }
 }
 
 function nextExercise() {
