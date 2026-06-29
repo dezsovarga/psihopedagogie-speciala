@@ -530,7 +530,7 @@ body {
 .results-buttons { display: flex; flex-direction: column; gap: 10px; }
 
 /* ─── Chapter selection screen ─── */
-#screen-chapters { display: flex; flex-direction: column; padding: 0; }
+#screen-chapters { flex-direction: column; padding: 0; }
 
 .chapters-header {
   display: flex; align-items: center; gap: 16px;
