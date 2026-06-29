@@ -43,6 +43,30 @@
   <div class="mode-section">
     <h2>Válassz gyakorlási módot</h2>
     <div class="mode-cards">
+      <button class="mode-card mode-mixed" onclick="startSession('mix')">
+        <div class="mode-icon">🔀</div>
+        <div class="mode-info">
+          <h3>Vegyes gyakorlás</h3>
+          <p>Mind az 5 változat keverve – a legjobb felkészülési mód!</p>
+        </div>
+      </button>
+
+      <button class="mode-card mode-structured" onclick="startSession('structured')">
+        <div class="mode-icon">📐</div>
+        <div class="mode-info">
+          <h3>Strukturált foglalkozás</h3>
+          <p>Mindig 15 kérdés: 10 feladat · 3 fogalommeghatározás · 2 esszé – minden alkalommal egyforma felépítés</p>
+        </div>
+      </button>
+
+      <button class="mode-card mode-random" onclick="startSession('random')">
+        <div class="mode-icon">🎲</div>
+        <div class="mode-info">
+          <h3>Véletlenszerű</h3>
+          <p>15 kérdés véletlenszerűen: 12 feladat · 2 fogalommeghatározás · 1 esszé – minden alkalommal más összeállítás</p>
+        </div>
+      </button>
+
       <button class="mode-card" onclick="startSession(1)">
         <div class="mode-icon">📋</div>
         <div class="mode-info">
@@ -100,30 +124,6 @@
         <div class="mode-progress" id="progress-w5">
           <div class="progress-bar-mini"><div class="progress-fill" id="fill-w5"></div></div>
           <span id="pct-w5">0%</span>
-        </div>
-      </button>
-
-      <button class="mode-card mode-mixed" onclick="startSession('mix')">
-        <div class="mode-icon">🔀</div>
-        <div class="mode-info">
-          <h3>Vegyes gyakorlás</h3>
-          <p>Mind az 5 változat keverve – a legjobb felkészülési mód!</p>
-        </div>
-      </button>
-
-      <button class="mode-card mode-structured" onclick="startSession('structured')">
-        <div class="mode-icon">📐</div>
-        <div class="mode-info">
-          <h3>Strukturált foglalkozás</h3>
-          <p>Mindig 15 kérdés: 10 feladat · 3 fogalommeghatározás · 2 esszé – minden alkalommal egyforma felépítés</p>
-        </div>
-      </button>
-
-      <button class="mode-card mode-random" onclick="startSession('random')">
-        <div class="mode-icon">🎲</div>
-        <div class="mode-info">
-          <h3>Véletlenszerű</h3>
-          <p>15 kérdés véletlenszerűen: 12 feladat · 2 fogalommeghatározás · 1 esszé – minden alkalommal más összeállítás</p>
         </div>
       </button>
 
