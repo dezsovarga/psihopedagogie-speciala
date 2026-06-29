@@ -240,6 +240,13 @@ describe('random mode', () => {
     const small = makePool({ mc: 5, essay: 0, define: 1 });
     expect(buildSessionQueue(small, 'random').length).toBeLessThan(15);
   });
+
+  test('draws from full pool — not just w:0 shared exercises', () => {
+    // Regression: pool must include all worksheets, not EXERCISES.filter(w === 'random')
+    const fullPool = makePool({ mc: 50, essay: 10, define: 10 });
+    const q = buildSessionQueue(fullPool, 'random');
+    expect(q).toHaveLength(15);
+  });
 });
 
 // ─── Auto-advance must not exist for correct answers ─────────────────────────

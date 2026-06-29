@@ -103,7 +103,7 @@ function startSession(mode) {
     });
     if (pool.length === 0) { alert('Nincs ismétlésre váró kérdés! Először végezd el valamelyik változatot.'); return; }
   } else {
-    pool = (mode === 'mix' || mode === 'structured')
+    pool = (mode === 'mix' || mode === 'structured' || mode === 'random')
       ? [...EXERCISES]
       : EXERCISES.filter(e => e.w === mode || e.w === 0);
   }
