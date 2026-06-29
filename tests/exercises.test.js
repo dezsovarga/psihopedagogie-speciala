@@ -19,6 +19,7 @@ const EXERCISE_FILES = [
   'exercises/mixed.js',
   'exercises/essays.js',
   'exercises/gyalap_ch1.js',
+  'exercises/gyalap_ch2.js',
 ];
 
 function loadExercises() {
@@ -247,6 +248,18 @@ describe('Session slot coverage', () => {
     const gyalapCh1 = EXERCISES.filter(e => e.id && e.id.startsWith('gyalap_ch1_'));
     expect(gyalapCh1.length).toBeGreaterThan(0);
     const wrongW = gyalapCh1.filter(e => e.w !== 101);
+    expect(wrongW.map(e => e.id)).toEqual([]);
+  });
+
+  test('gyalap chapter 2 (w:102) has at least 10 exercises', () => {
+    const count = EXERCISES.filter(e => e.w === 102).length;
+    expect(count).toBeGreaterThanOrEqual(10);
+  });
+
+  test('all gyalap chapter 2 exercises have w: 102', () => {
+    const gyalapCh2 = EXERCISES.filter(e => e.id && e.id.startsWith('gyalap_ch2_'));
+    expect(gyalapCh2.length).toBeGreaterThan(0);
+    const wrongW = gyalapCh2.filter(e => e.w !== 102);
     expect(wrongW.map(e => e.id)).toEqual([]);
   });
 });
