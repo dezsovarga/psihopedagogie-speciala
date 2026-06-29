@@ -15,6 +15,7 @@ const EXERCISES = [
   // w: 101–114 (100 + chapter number). Add new chapters here in order.
   ...(typeof EXERCISES_GYALAP_CH1  !== 'undefined' ? EXERCISES_GYALAP_CH1  : []),
   ...(typeof EXERCISES_GYALAP_CH2  !== 'undefined' ? EXERCISES_GYALAP_CH2  : []),
+  ...(typeof EXERCISES_GYALAP_CH3  !== 'undefined' ? EXERCISES_GYALAP_CH3  : []),
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
