@@ -18,6 +18,7 @@ const EXERCISE_FILES = [
   'exercises/worksheet_5.js',
   'exercises/mixed.js',
   'exercises/essays.js',
+  'exercises/gyalap_ch1.js',
 ];
 
 function loadExercises() {
@@ -234,5 +235,18 @@ describe('Session slot coverage', () => {
   test.each([1, 2, 3, 4, 5])('worksheet %i has define questions outside the Fogalommeghatározás topic', (w) => {
     const count = EXERCISES.filter(e => e.type === 'define' && e.w === w && e.topic !== 'Fogalommeghatározás').length;
     expect(count).toBeGreaterThanOrEqual(1);
+  });
+
+  // Gyógypedagógiai Alapismeretek chapter coverage
+  test('gyalap chapter 1 (w:101) has at least 10 exercises', () => {
+    const count = EXERCISES.filter(e => e.w === 101).length;
+    expect(count).toBeGreaterThanOrEqual(10);
+  });
+
+  test('all gyalap chapter 1 exercises have w: 101', () => {
+    const gyalapCh1 = EXERCISES.filter(e => e.id && e.id.startsWith('gyalap_ch1_'));
+    expect(gyalapCh1.length).toBeGreaterThan(0);
+    const wrongW = gyalapCh1.filter(e => e.w !== 101);
+    expect(wrongW.map(e => e.id)).toEqual([]);
   });
 });

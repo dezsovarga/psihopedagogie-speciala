@@ -105,7 +105,9 @@ function startSession(mode) {
   } else {
     pool = (mode === 'mix' || mode === 'structured' || mode === 'random')
       ? [...EXERCISES]
-      : EXERCISES.filter(e => e.w === mode || e.w === 0);
+      : (typeof mode === 'number' && mode >= 100)
+        ? EXERCISES.filter(e => e.w === mode)           // gyalap chapter: exact match only
+        : EXERCISES.filter(e => e.w === mode || e.w === 0);
   }
 
   function spSorted(arr) {
@@ -930,6 +932,15 @@ function showResults() {
 function goHome() {
   stopMic();
   session = null;
+  showScreen('home');
+  updateHomeUI();
+}
+
+function showChapters() {
+  showScreen('chapters');
+}
+
+function goHomeFromChapters() {
   showScreen('home');
   updateHomeUI();
 }

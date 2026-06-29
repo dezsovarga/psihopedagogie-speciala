@@ -4,13 +4,16 @@
 // in index.html, and add it to the spread below.
 
 const EXERCISES = [
-  ...(typeof EXERCISES_W1     !== 'undefined' ? EXERCISES_W1     : []),
-  ...(typeof EXERCISES_W2     !== 'undefined' ? EXERCISES_W2     : []),
-  ...(typeof EXERCISES_W3     !== 'undefined' ? EXERCISES_W3     : []),
-  ...(typeof EXERCISES_W4     !== 'undefined' ? EXERCISES_W4     : []),
-  ...(typeof EXERCISES_W5     !== 'undefined' ? EXERCISES_W5     : []),
-  ...(typeof EXERCISES_MIXED  !== 'undefined' ? EXERCISES_MIXED  : []),
-  ...(typeof EXERCISES_ESSAYS !== 'undefined' ? EXERCISES_ESSAYS : []),
+  ...(typeof EXERCISES_W1          !== 'undefined' ? EXERCISES_W1          : []),
+  ...(typeof EXERCISES_W2          !== 'undefined' ? EXERCISES_W2          : []),
+  ...(typeof EXERCISES_W3          !== 'undefined' ? EXERCISES_W3          : []),
+  ...(typeof EXERCISES_W4          !== 'undefined' ? EXERCISES_W4          : []),
+  ...(typeof EXERCISES_W5          !== 'undefined' ? EXERCISES_W5          : []),
+  ...(typeof EXERCISES_MIXED       !== 'undefined' ? EXERCISES_MIXED       : []),
+  ...(typeof EXERCISES_ESSAYS      !== 'undefined' ? EXERCISES_ESSAYS      : []),
+  // Gyógypedagógiai Alapismeretek – Tanulmányi Útmutató (2018)
+  // w: 101–114 (100 + chapter number). Add new chapters here in order.
+  ...(typeof EXERCISES_GYALAP_CH1  !== 'undefined' ? EXERCISES_GYALAP_CH1  : []),
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────

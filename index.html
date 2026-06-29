@@ -127,6 +127,14 @@
         </div>
       </button>
 
+      <button class="mode-card mode-gyalap" onclick="showChapters()">
+        <div class="mode-icon">📚</div>
+        <div class="mode-info">
+          <h3>Gyógyped. Alapismeretek</h3>
+          <p>Gyógypedagógiai Alapismeretek – Tanulmányi Útmutató (2018) – fejezetenkénti gyakorlás</p>
+        </div>
+      </button>
+
       <button class="mode-card mode-review" onclick="startSession('review')">
         <div class="mode-icon">⚡</div>
         <div class="mode-info">
@@ -136,6 +144,133 @@
         <span class="review-count" id="review-count">0 kérdés</span>
       </button>
     </div>
+  </div>
+</div>
+
+<!-- CHAPTER SELECT SCREEN (Gyógypedagógiai Alapismeretek) -->
+<div id="screen-chapters" class="screen">
+  <div class="chapters-header">
+    <button class="btn-icon" onclick="goHomeFromChapters()" title="Vissza">←</button>
+    <div class="chapters-title">
+      <div class="chapters-icon">📚</div>
+      <h2>Gyógypedagógiai Alapismeretek</h2>
+      <p>Tanulmányi Útmutató – 2018</p>
+    </div>
+  </div>
+  <div class="chapter-cards">
+
+    <button class="chapter-card chapter-available" onclick="startSession(101)">
+      <span class="chapter-num">1.</span>
+      <div class="chapter-info">
+        <strong>A gyógypedagógia fogalma, története</strong>
+        <span class="chapter-topics">Modellek · LKK · Bronfenbrenner</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">2.</span>
+      <div class="chapter-info">
+        <strong>Paradigmaváltások a gyógypedagógiában</strong>
+        <span class="chapter-topics">WHO nómenklatúra · Speciális intézetek</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">3.</span>
+      <div class="chapter-info">
+        <strong>Speciális igényű gyermekek a családban</strong>
+        <span class="chapter-topics">Krízisszakaszok · Tanácsadás</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">4.</span>
+      <div class="chapter-info">
+        <strong>Etiológiai tényezők</strong>
+        <span class="chapter-topics">Fejlődési rendellenességek · Rizikótényezők</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">5.</span>
+      <div class="chapter-info">
+        <strong>A mozgássérülés és ellátása</strong>
+        <span class="chapter-topics">Szomatopedagógia · Konduktív nevelés</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">6.</span>
+      <div class="chapter-info">
+        <strong>A látássérülés és ellátása</strong>
+        <span class="chapter-topics">Vakság · Gyengénlátás · Segédeszközök</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">7.</span>
+      <div class="chapter-info">
+        <strong>A hallássérülés és ellátása</strong>
+        <span class="chapter-topics">Audiológia · Jelnyelv</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">8.</span>
+      <div class="chapter-info">
+        <strong>Intellektuális képességzavar</strong>
+        <span class="chapter-topics">Osztályozás · Epilepszia · Pszeudodebilitás</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">9.</span>
+      <div class="chapter-info">
+        <strong>Az autizmus és ellátása</strong>
+        <span class="chapter-topics">Diagnózis · Klinikai jellemzők · Fejlesztés</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">10.</span>
+      <div class="chapter-info">
+        <strong>Beszédzavarok és logopédiai ellátás</strong>
+        <span class="chapter-topics">Logopédia · Artikuláció · Afázia</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">11.</span>
+      <div class="chapter-info">
+        <strong>Viselkedészavarok az iskolában</strong>
+        <span class="chapter-topics">ADHD · Diagnózis · Kezelés</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">12.</span>
+      <div class="chapter-info">
+        <strong>Speciális tanulási zavarok fogalma</strong>
+        <span class="chapter-topics">Diszlexia · Diszgráfia · Diszkalkulia</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">13.</span>
+      <div class="chapter-info">
+        <strong>Speciális tanulási zavaros gyermekek</strong>
+        <span class="chapter-topics">Olvasástanítási módszerek · Meixner</span>
+      </div>
+    </button>
+
+    <button class="chapter-card chapter-soon" disabled>
+      <span class="chapter-num">14.</span>
+      <div class="chapter-info">
+        <strong>Komplex és intenzív ellátást igénylők</strong>
+        <span class="chapter-topics">Süketvakság · KITI · Bazális stimuláció</span>
+      </div>
+    </button>
+
   </div>
 </div>
 
@@ -228,6 +363,7 @@
 <script src="exercises/worksheet_4.js"></script>
 <script src="exercises/worksheet_5.js"></script>
 <script src="exercises/essays.js"></script>
+<script src="exercises/gyalap_ch1.js"></script>
 <script src="data.js"></script>
 <script src="app.js"></script>
 </body>
