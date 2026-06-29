@@ -34,6 +34,11 @@ function buildSessionQueue(pool, mode) {
     const defines = spSorted(pool.filter(e => e.type === 'define'));
     const essays  = spSorted(pool.filter(e => e.type === 'essay'));
     return shuffleArray([...other.slice(0, 10), ...defines.slice(0, 3), ...essays.slice(0, 2)]);
+  } else if (mode === 'random') {
+    const other   = shuffleArray(pool.filter(e => e.type !== 'essay' && e.type !== 'define'));
+    const defines = shuffleArray(pool.filter(e => e.type === 'define'));
+    const essays  = shuffleArray(pool.filter(e => e.type === 'essay'));
+    return shuffleArray([...other.slice(0, 12), ...defines.slice(0, 2), ...essays.slice(0, 1)]);
   } else {
     const sorted  = spSorted(pool);
     const other   = sorted.filter(e => e.type !== 'essay' && e.type !== 'define');
@@ -202,6 +207,38 @@ describe('skip behaviour', () => {
     skipExercise(s);
     expect(s.lives).toBe(0);
     expect(skipExercise(s)).toBe('continue');
+  });
+});
+
+// ─── Random mode ─────────────────────────────────────────────────────────────
+
+describe('random mode', () => {
+  const POOL = makePool({ mc: 50, essay: 10, define: 10 });
+
+  test('always returns exactly 15 questions', () => {
+    for (let i = 0; i < 10; i++) {
+      expect(buildSessionQueue(POOL, 'random')).toHaveLength(15);
+    }
+  });
+
+  test('contains exactly 1 essay', () => {
+    const q = buildSessionQueue(POOL, 'random');
+    expect(q.filter(e => e.type === 'essay')).toHaveLength(1);
+  });
+
+  test('contains exactly 2 define questions', () => {
+    const q = buildSessionQueue(POOL, 'random');
+    expect(q.filter(e => e.type === 'define')).toHaveLength(2);
+  });
+
+  test('contains exactly 12 other questions', () => {
+    const q = buildSessionQueue(POOL, 'random');
+    expect(q.filter(e => e.type !== 'essay' && e.type !== 'define')).toHaveLength(12);
+  });
+
+  test('returns fewer than 15 when pool is too small', () => {
+    const small = makePool({ mc: 5, essay: 0, define: 1 });
+    expect(buildSessionQueue(small, 'random').length).toBeLessThan(15);
   });
 });
 

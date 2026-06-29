@@ -125,6 +125,12 @@ function startSession(mode) {
     const defines = spSorted(pool.filter(e => e.type === 'define'));
     const essays  = spSorted(pool.filter(e => e.type === 'essay'));
     selected = shuffleArray([...other.slice(0, 10), ...defines.slice(0, 3), ...essays.slice(0, 2)]);
+  } else if (mode === 'random') {
+    // Fully random: exactly 12 other + 2 define + 1 essay = 15
+    const other   = shuffleArray(pool.filter(e => e.type !== 'essay' && e.type !== 'define'));
+    const defines = shuffleArray(pool.filter(e => e.type === 'define'));
+    const essays  = shuffleArray(pool.filter(e => e.type === 'essay'));
+    selected = shuffleArray([...other.slice(0, 12), ...defines.slice(0, 2), ...essays.slice(0, 1)]);
   } else {
     pool = spSorted(pool);
     // Limit essay questions to 2 and define questions to 4 per session

@@ -116,6 +116,8 @@ body {
 .mode-card.mode-structured:hover { background: var(--blue-light); }
 .mode-card.mode-review { border-color: var(--yellow); }
 .mode-card.mode-review:hover { background: var(--yellow-light); }
+.mode-card.mode-random { border-color: var(--orange, #FF9600); }
+.mode-card.mode-random:hover { background: #FFF5E6; }
 
 .mode-icon { font-size: 30px; flex-shrink: 0; }
 .mode-info { flex: 1; }
