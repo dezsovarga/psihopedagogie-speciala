@@ -98,16 +98,16 @@ function startSession(mode) {
   let pool;
   if (mode === 'review') {
     pool = EXERCISES.filter(e => {
+      if (e.w >= 100) return false;   // gyalap disabled — never surfaced in review
       const p = progress[e.id];
       return p && p.seen > 0 && p.interval === 1;
     });
     if (pool.length === 0) { alert('Nincs ismétlésre váró kérdés! Először végezd el valamelyik változatot.'); return; }
   } else {
+    // Gyógyped. Alapismeretek questions (w >= 100) are disabled — excluded from every session.
     pool = (mode === 'mix' || mode === 'structured' || mode === 'random')
-      ? [...EXERCISES]
-      : (typeof mode === 'number' && mode >= 100)
-        ? EXERCISES.filter(e => e.w === mode)           // gyalap chapter: exact match only
-        : EXERCISES.filter(e => e.w === mode || e.w === 0);
+      ? EXERCISES.filter(e => e.w < 100)
+      : EXERCISES.filter(e => e.w === mode || e.w === 0);
   }
 
   function spSorted(arr) {

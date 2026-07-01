@@ -48,6 +48,16 @@ function buildSessionQueue(pool, mode) {
   }
 }
 
+// ─── Pool selection (mirrors startSession in app.js) ─────────────────────────
+
+function selectPool(allExercises, mode) {
+  // Gyógyped. Alapismeretek questions (w >= 100) are disabled — never in any pool.
+  if (mode === 'mix' || mode === 'structured' || mode === 'random') {
+    return allExercises.filter(e => e.w < 100);
+  }
+  return allExercises.filter(e => e.w === mode || e.w === 0);
+}
+
 // ─── Fixture data ─────────────────────────────────────────────────────────────
 
 function makeEx(id, type, w = 1, diff = 1) {
@@ -246,6 +256,45 @@ describe('random mode', () => {
     const fullPool = makePool({ mc: 50, essay: 10, define: 10 });
     const q = buildSessionQueue(fullPool, 'random');
     expect(q).toHaveLength(15);
+  });
+});
+
+// ─── Gyógyped. Alapismeretek (gyalap) disabled ───────────────────────────────
+
+describe('gyalap questions (w >= 100) are disabled', () => {
+  const ALL = [
+    ...makePool({ mc: 20, essay: 5, define: 5 }),                 // w:1 worksheet questions
+    { id: 'gyalap_ch1_01', type: 'mc', w: 101, diff: 1, q: 'Q', topic: 'T', opts: ['a','b','c','d'], ans: 0, exp: 'E' },
+    { id: 'gyalap_ch2_01', type: 'tf', w: 102, diff: 1, q: 'Q', topic: 'T', ans: true, exp: 'E' },
+    { id: 'gyalap_ch3_01', type: 'mc', w: 103, diff: 1, q: 'Q', topic: 'T', opts: ['a','b','c','d'], ans: 0, exp: 'E' },
+  ];
+
+  test.each(['mix', 'structured', 'random'])('%s pool excludes every w >= 100 question', (mode) => {
+    const pool = selectPool(ALL, mode);
+    expect(pool.some(e => e.w >= 100)).toBe(false);
+    expect(pool.length).toBe(30); // 20 mc + 5 essay + 5 define, no gyalap
+  });
+
+  test('gyalap questions never reach a built session queue', () => {
+    for (const mode of ['mix', 'structured', 'random']) {
+      const q = buildSessionQueue(selectPool(ALL, mode), mode);
+      expect(q.some(e => e.id.startsWith('gyalap_'))).toBe(false);
+    }
+  });
+
+  test('review mode excludes gyalap even when previously seen', () => {
+    // Mirrors the review filter in startSession: w >= 100 is dropped before the progress check.
+    const progress = {
+      mc_1:         { seen: 3, interval: 1 },
+      gyalap_ch1_01:{ seen: 3, interval: 1 },   // seen + due, but must NOT appear
+    };
+    const reviewPool = ALL.filter(e => {
+      if (e.w >= 100) return false;
+      const p = progress[e.id];
+      return p && p.seen > 0 && p.interval === 1;
+    });
+    expect(reviewPool.some(e => e.w >= 100)).toBe(false);
+    expect(reviewPool.map(e => e.id)).toEqual(['mc_1']);
   });
 });
 
