@@ -699,4 +699,66 @@ Adaptálás autizmus spektrumon lévő tanuló számára:
   exp:'Az operacionalizált cél 3 eleme: megfigyelhető viselkedés + feltétel + teljesítménykritérium (arány/pontosság + időkeret).'
 },
 
+// ══════════════════════════════════════════════
+// FOGALOMMEGHATÁROZÁSOK – 6. VÁLTOZAT (I–III. FELADAT)
+// ══════════════════════════════════════════════
+{
+  id:'def_w6_01', w:6, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Határozza meg az intellektuális fogyatékosság fogalmát az AAIDD/DSM-5 alapján!',
+  modelAnswer:'Intellektuális fogyatékosság (dizabilitate intelectuală): Olyan fejlődési állapot, amely az intellektuális működés jelentős, átlag alatti szintjében (IQ kb. 70 alatt) ÉS egyidejűleg az adaptív viselkedés legalább két területén (konceptuális, szociális, gyakorlati) mutatkozó korlátozottságban nyilvánul meg, és 18 éves kor előtt jelentkezik. A meghatározás lényege, hogy nem önmagában az IQ-szám dönt, hanem a mindennapi működőképesség.',
+  exp:'Intellektuális fogyatékosság = átlag alatti intellektuális működés + adaptív viselkedés korlátozottsága (2 területen) + 18 éves kor előtti kezdet; nem csak az IQ dönt.'
+},
+{
+  id:'def_w6_02', w:6, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Mit jelent az adaptív viselkedés fogalma?',
+  modelAnswer:'Adaptív viselkedés (comportament adaptativ): Azoknak a fogalmi (konceptuális), szociális és gyakorlati készségeknek az összessége, amelyeket az egyén a mindennapi élet önálló irányításához tanul meg és alkalmaz (pl. kommunikáció, önellátás, szociális szabályok követése, munkavégzés).',
+  exp:'Az adaptív viselkedés a konceptuális, szociális és gyakorlati készségek összessége a mindennapi önálló életvitelhez.'
+},
+{
+  id:'def_w6_03', w:6, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Mit jelent a támogatási szükséglet fogalma az AAIDD megközelítésében?',
+  modelAnswer:'Támogatási szükséglet (necesități de sprijin): Az az intenzitás és típus (időszakos, korlátozott, kiterjedt, átfogó – AAIDD szerint), amellyel a környezetnek segítenie kell az egyént ahhoz, hogy funkcionálni tudjon. A fogyatékosság súlyosságát ma inkább a szükséges támogatás mértékével, mint az IQ-val írjuk le.',
+  exp:'A támogatási szükséglet a segítség intenzitása és típusa (időszakos → átfogó); ma ezzel írjuk le a súlyosságot, nem az IQ-val.'
+},
+{
+  id:'def_w6_04', w:6, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Határozza meg a ludoterápia fogalmát!',
+  modelAnswer:'Ludoterápia (ludoterapie): A játékot mint terápiás és fejlesztő eszközt alkalmazó módszer, amelynek célja, hogy a gyermek – főként szimbolikus, szabad vagy irányított játéktevékenységen keresztül – kifejezze érzelmeit, feldolgozza tapasztalatait, és fejlessze kognitív, szociális, emocionális készségeit egy biztonságos, elfogadó terápiás kapcsolat keretében. Alapja, hogy a játék a gyermek „természetes nyelve”.',
+  exp:'A ludoterápia a játékot terápiás-fejlesztő eszközként alkalmazza; alapja, hogy a játék a gyermek természetes nyelve.'
+},
+{
+  id:'def_w6_05', w:6, topic:'Didaktikai játék', type:'define', diff:2, points:2,
+  q:'Melyek a didaktikai játék négy alkotóeleme?',
+  modelAnswer:'A didaktikai játék négy alkotóeleme: (1) Didaktikai cél – a fejlesztendő készség/tartalom pontos meghatározása. (2) Játékos tartalom (elemek) – a téma köré épített cselekvéses/fantáziaelem, amely motiválóvá teszi a feladatot. (3) Játékszabályok – az elvárt viselkedést, sorrendet, együttműködési módot rögzítő, egyértelmű keretek. (4) Játékos akció (eszközök, cselekvések) – a konkrét manipulatív tevékenység és eszközök, amelyekkel a tanuló dolgozik.',
+  exp:'A didaktikai játék 4 alkotóeleme: didaktikai cél, játékos tartalom, játékszabályok, játékos akció (eszközök/cselekvések).'
+},
+{
+  id:'def_w6_06', w:6, topic:'Tanulásszervezés', type:'define', diff:2, points:2,
+  q:'Mit jelent a team-teaching (co-teaching) fogalma az integrált oktatásban?',
+  modelAnswer:'Team-teaching (predare în echipă / co-teaching): Olyan tanulásszervezési forma, amelyben két (vagy több) pedagógus – például a szaktanár és a szakpszichopedagógus/segítő tanító – közös tervezéssel és felelősségmegosztással, egyidejűleg tart órát ugyanabban az osztályteremben. A szerepek rugalmasan, óráról órára cserélődhetnek (pl. „one teach, one support”, station-, parallel- vagy alternating teaching).',
+  exp:'A team-teaching két vagy több pedagógus közös tervezésű, egyidejű órája ugyanabban a teremben, rugalmas szerepmegosztással.'
+},
+{
+  id:'def_w6_07', w:6, topic:'Tanulásszervezés', type:'define', diff:2, points:2,
+  q:'Mit jelent a többszintű tanulás (instruire diferențiată pe niveluri) fogalma?',
+  modelAnswer:'Többszintű tanulás (învățare pe niveluri): Ugyanazon téma feldolgozása eltérő nehézségi és támogatási szinteken úgy, hogy minden tanuló a saját képességszintjén, de közös célhoz kapcsolódóan haladjon. Például egy szöveg feldolgozásánál az alap szint kiterjedt támogatással (képsorrend), a középszint segítséggel (kérdések, kulcsszó-térkép), a haladó szint önállóan (értelmezés, saját befejezés) dolgozik – mindhárom ugyanahhoz a közös célhoz kötődik.',
+  exp:'A többszintű tanulás azonos témát dolgoz fel eltérő nehézségi/támogatási szinteken, közös célhoz kapcsolódva.'
+},
+
+// ══════════════════════════════════════════════
+// ESSZÉ KÉRDÉSEK – 6. VÁLTOZAT
+// ══════════════════════════════════════════════
+{
+  id:'essay_w6_01', w:6, topic:'Intellektuális fogyatékosság', type:'essay', diff:3, points:5,
+  q:'Ismertesse az intellektuális fogyatékosság komplex értékelésének öt szempontját a modern (AAIDD, ICF-alapú) megközelítésben!',
+  modelAnswer:'A modern megközelítés multidimenzionális, nem kizárólag pszichometriai. Öt fő szempont:\n\n1. Intellektuális képességek: Standardizált intelligenciatesztekkel (pl. WISC) mért általános kognitív működés, figyelembe véve a mérési hibahatárt.\n\n2. Adaptív viselkedés: A konceptuális, szociális és gyakorlati készségek szintje, standardizált adaptív skálákkal (pl. Vineland) mérve.\n\n3. Részvétel, interakciók, szociális szerepek: Az egyén tényleges társadalmi beágyazottsága, kapcsolatai, szerepvállalása a családban, iskolában, közösségben (ICF részvételi dimenzió).\n\n4. Egészségi állapot: A fizikai és mentális egészség, esetleges társult zavarok (epilepszia, érzékszervi problémák, pszichiátriai komorbiditás) hatása a működésre.\n\n5. Kontextus: Környezeti (fizikai, szociális, attitűdbeli) és személyes tényezők, amelyek gátolhatják vagy elősegíthetik a részvételt (pl. iskolai hozzáférhetőség, családi támogatás, tanári attitűd).\n\nA komplex értékelés (evaluare complexă, CJRAE/CMBRAE szinten) ezen öt terület együttes, csapatmunkában (pszichológus, pszichopedagógus, orvos, tanár, szociális munkás) történő vizsgálatán alapul; a cél nem a „besorolás”, hanem az egyénre szabott támogatási terv (PIP) megalapozása.',
+  exp:'Az 5 szempont: intellektuális képességek, adaptív viselkedés, részvétel/szociális szerepek, egészségi állapot, kontextus – csapatmunkában, a PIP megalapozására.'
+},
+{
+  id:'essay_w6_02', w:6, topic:'Ludoterápia', type:'essay', diff:2, points:5,
+  q:'Mutassa be a játék fejlődésének három szakaszát, és nevezzen meg három játékformát mint tanulási-fejlesztési lehetőséget!',
+  modelAnswer:'A játék fejlődésének három szakasza (Piaget nyomán):\n\n1. Gyakorlójáték / szenzomotoros játék (kb. 0–2 év): Ismétlődő, manipulatív, a testi mozgásra és érzékelésre épülő cselekvések (pl. tárgyak dobálása, rágcsálása).\n\n2. Szimbolikus / szerepjáték (kb. 2–7 év): „Mintha” játék, szerepek felvétele, tárgyak jelképes használata (pl. a seprű „lóvá” válik); ekkor jelenik meg a fantázia és az érzelmi feldolgozás lehetősége.\n\n3. Szabályjáték (kb. 7 év felett): A gyermek képes elfogadni és betartani előre rögzített szabályokat, együttműködni és versengeni, ami az önszabályozás és a szociális kogníció fejlődését jelzi.\n\nHárom játékforma mint fejlesztési lehetőség:\n- Szimbolikus/szerepjáték: fejleszti a nyelvi kifejezőkészséget, empátiát, szociális szerepek megértését (pl. orvosos, boltos játék).\n- Konstrukciós játék (építőkockák, puzzle): fejleszti a téri-vizuális készségeket, finommotorikát, problémamegoldást, kitartást.\n- Szabályjáték / társasjáték: fejleszti a szabálykövetést, türelmet, kudarctűrést, együttműködést és a stratégiai gondolkodást.',
+  exp:'A három szakasz: gyakorló-/szenzomotoros (0–2), szimbolikus/szerepjáték (2–7), szabályjáték (7+). Három forma: szerepjáték, konstrukciós, szabályjáték – mindegyik más készséget fejleszt.'
+},
+
 ]; // end EXERCISES_ESSAYS
