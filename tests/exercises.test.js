@@ -56,7 +56,7 @@ describe('File parsing', () => {
 
 // ─── Fields required on every exercise ───────────────────────────────────────
 
-const VALID_TYPES = ['mc', 'tf', 'fill', 'match', 'order', 'short', 'essay', 'define'];
+const VALID_TYPES = ['mc', 'tf', 'fill', 'match', 'order', 'short', 'essay', 'define', 'list'];
 
 describe('Required fields on every exercise', () => {
   test('all exercises have id, w, topic, type, q, diff', () => {
@@ -164,6 +164,34 @@ describe('short questions', () => {
   });
 });
 
+describe('list (enumeration) questions', () => {
+  const lists = () => EXERCISES.filter(e => e.type === 'list');
+
+  test('items is an array of at least 2 entries', () => {
+    const bad = lists().filter(e => !Array.isArray(e.items) || e.items.length < 2);
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+
+  test('each item is a non-empty string or an object with a non-empty label', () => {
+    const bad = lists().filter(e => (e.items || []).some(it => {
+      if (typeof it === 'string') return !it.trim();
+      return !it || typeof it.label !== 'string' || !it.label.trim();
+    }));
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+
+  test('optional need is an integer between 1 and items.length', () => {
+    const bad = lists().filter(e => e.need !== undefined &&
+      (!Number.isInteger(e.need) || e.need < 1 || e.need > e.items.length));
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+
+  test('have exp', () => {
+    const bad = lists().filter(e => !e.exp);
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+});
+
 describe('essay questions', () => {
   test('have modelAnswer and points', () => {
     const bad = EXERCISES.filter(e => e.type === 'essay' && (!e.modelAnswer || typeof e.points !== 'number'));
@@ -238,6 +266,12 @@ describe('Session slot coverage', () => {
   test.each([1, 2, 3, 4, 5, 6])('worksheet %i has define questions outside the Fogalommeghatározás topic', (w) => {
     const count = EXERCISES.filter(e => e.type === 'define' && e.w === w && e.topic !== 'Fogalommeghatározás').length;
     expect(count).toBeGreaterThanOrEqual(1);
+  });
+
+  // Enumeration (list) type — first rolled out on worksheet 6
+  test('worksheet 6 has at least 5 list (enumeration) questions', () => {
+    const count = EXERCISES.filter(e => e.type === 'list' && e.w === 6).length;
+    expect(count).toBeGreaterThanOrEqual(5);
   });
 
   // Gyógypedagógiai Alapismeretek chapter coverage

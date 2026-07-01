@@ -217,7 +217,8 @@ function buildExerciseHTML(ex) {
     order:  'Sorrendezés',
     short:  'Rövid válasz',
     essay:  'Esszékérdés',
-    define: 'Fogalommeghatározás'
+    define: 'Fogalommeghatározás',
+    list:   'Felsorolás'
   }[ex.type] || ex.type;
 
   const isClaudeType = ex.type === 'essay' || ex.type === 'define';
@@ -296,6 +297,17 @@ function buildExerciseHTML(ex) {
     <div id="mic-interim" class="mic-interim-preview"></div>`;
   }
 
+  else if (ex.type === 'list') {
+    const total = (ex.items || []).length;
+    const need  = ex.need || total;
+    html += `<textarea class="short-answer-input" id="list-input" placeholder="Sorold fel az elemeket – vesszővel vagy új sorban..."></textarea>
+    <div class="short-input-footer">
+      <div class="answer-hint">${total} elemet kell felsorolnod${need < total ? ` (legalább ${need} kell a sikerhez)` : ''}</div>
+      <button class="btn-mic-small" id="btn-mic" onclick="toggleMic('list-input')" title="Diktálás mikrofonnal">🎤</button>
+    </div>
+    <div id="mic-interim" class="mic-interim-preview"></div>`;
+  }
+
   else if (ex.type === 'essay' || ex.type === 'define') {
     if (!isLocalhost() && !getWorkerUrl()) {
       html += `<div class="no-api-notice">⚙ <strong>Cloudflare Worker URL szükséges</strong> a kiértékeléshez.
@@ -329,6 +341,12 @@ function attachExerciseListeners(ex) {
     const inp = document.getElementById('short-input');
     if (inp) inp.addEventListener('input', () => {
       document.getElementById('btn-check').disabled = inp.value.trim().length < 3;
+    });
+  }
+  if (ex.type === 'list') {
+    const inp = document.getElementById('list-input');
+    if (inp) inp.addEventListener('input', () => {
+      document.getElementById('btn-check').disabled = inp.value.trim().length < 2;
     });
   }
   if (ex.type === 'essay' || ex.type === 'define') {
@@ -571,8 +589,33 @@ function checkAnswer() {
     if (inp) inp.classList.add(isCorrect ? 'correct' : 'wrong');
   }
 
+  else if (ex.type === 'list') {
+    const inp     = document.getElementById('list-input');
+    const user    = (inp?.value || '').toLowerCase();
+    const items   = ex.items || [];
+    const results = items.map(it => {
+      const { label, forms } = listItemForms(it);
+      return { label, hit: forms.some(f => user.includes(f)) };
+    });
+    const matched = results.filter(r => r.hit).length;
+    const need    = ex.need || items.length;
+    isCorrect     = matched >= need;
+    if (inp) inp.classList.add(isCorrect ? 'correct' : 'wrong');
+    recordResult(ex, isCorrect);
+    showListFeedback(ex, results, matched, isCorrect);
+    return;   // custom checklist feedback — skip the generic panel below
+  }
+
   recordResult(ex, isCorrect);
   showFeedback(isCorrect, ex.exp);
+}
+
+// A list item is either a plain string, or { label, alt: [...] }.
+// It counts as recalled if the user's text contains the label or any alt form.
+function listItemForms(item) {
+  const label = typeof item === 'string' ? item : item.label;
+  const alts  = (item && Array.isArray(item.alt)) ? item.alt : [];
+  return { label, forms: [label, ...alts].map(s => s.toLowerCase()) };
 }
 
 async function checkAnswerEssay(ex) {
@@ -738,6 +781,29 @@ function showFeedback(correct, explanation) {
       `<div class="feedback-title">${correct ? 'Helyes! Nagyszerű!' : 'Nem egészen...'}</div>` +
       `<div class="feedback-explanation">${explanation || ''}</div>` +
     `</div>`;
+}
+
+function showListFeedback(ex, results, matched, isCorrect) {
+  const total = results.length;
+  const need  = ex.need || total;
+  const panel = document.getElementById('feedback-panel');
+  panel.style.display = 'flex';
+  panel.className = 'feedback-panel essay-fb ' + (isCorrect ? 'correct-fb' : 'wrong-fb');
+
+  let html = `<div class="essay-feedback-content">
+    <div class="essay-score-row">
+      <span class="essay-score">${matched} / ${total} elem</span>
+      <span class="essay-verdict">${isCorrect ? 'Megvan! 🎉' : (need < total ? `Legalább ${need} kellett` : 'Nem teljes')}</span>
+    </div>
+    <ul class="list-checklist">`;
+  for (const r of results) {
+    html += `<li class="list-check-item ${r.hit ? 'hit' : 'miss'}">${r.hit ? '✅' : '⬜'} ${r.label}</li>`;
+  }
+  html += `</ul>`;
+  if (ex.exp) html += `<p class="essay-feedback-text">${ex.exp}</p>`;
+  html += `</div>`;
+
+  panel.innerHTML = html;
 }
 
 function showEssayFeedback(result, score, ex) {

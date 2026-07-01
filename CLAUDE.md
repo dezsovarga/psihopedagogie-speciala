@@ -113,7 +113,7 @@ Worksheet 6 is the latest. Full checklist to add worksheet N:
 ## Exercise format (for manual edits or review)
 
 ```js
-// Standard types (mc | tf | fill | match | order | short)
+// Standard types (mc | tf | fill | match | order | short | list)
 {
   id: 'w4_01',        // unique; w = worksheet number (0 = shared)
   w: 4,
@@ -128,6 +128,23 @@ Worksheet 6 is the latest. Full checklist to add worksheet N:
   keywords: [...],    // short: must appear in answer
   exp: 'Explanation shown after answering — always state the correct answer',
   diff: 1             // 1=easy, 2=medium, 3=hard
+}
+
+// Enumeration type (list) — free-text recall of a set, locally graded with a
+// partial-credit checklist. Best for "Sorolja fel a(z) N …" questions.
+{
+  id: 'w6_32',
+  w: 6,
+  topic: 'Fogalmak',
+  type: 'list',
+  q: 'Sorolja fel a(z) N elemet!',
+  items: [                        // each entry: a string, or { label, alt: [...] }
+    'Első elem',                  //   string form: label IS the matcher
+    { label: 'Második elem', alt: ['synonym', 'rövid alak'] }  // matches label or any alt
+  ],
+  need: 4,            // optional: how many items pass the question (default = all)
+  exp: 'Explanation / full list shown after answering',
+  diff: 2
 }
 
 // AI-evaluated types (define | essay; maintain manually in essays.js)
