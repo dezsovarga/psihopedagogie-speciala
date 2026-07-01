@@ -761,4 +761,66 @@ Adaptálás autizmus spektrumon lévő tanuló számára:
   exp:'A három szakasz: gyakorló-/szenzomotoros (0–2), szimbolikus/szerepjáték (2–7), szabályjáték (7+). Három forma: szerepjáték, konstrukciós, szabályjáték – mindegyik más készséget fejleszt.'
 },
 
+// ══════════════════════════════════════════════
+// FOGALOMMEGHATÁROZÁSOK – 7. VÁLTOZAT (I–III. TÉTEL)
+// ══════════════════════════════════════════════
+{
+  id:'def_w7_01', w:7, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Határozza meg a specifikus tanulási zavar (SLD) fogalmát!',
+  modelAnswer:'Specifikus tanulási zavar (SLD): Neurobiológiai eredetű, az iskoláskor elején jelentkező és élethosszig tartó állapot, amely az olvasás, írás vagy számolás alapkészségeinek elsajátítását tartósan és jelentősen nehezíti annak ellenére, hogy a tanuló intelligenciaszintje átlagos vagy átlag feletti, megfelelő oktatásban részesült, érzékszervei épek, és nem áll fenn súlyos szociokulturális depriváció. A diagnózis kizárásos és teljesítmény-diszkrepancia alapú kritériumokra, egyre inkább a válasz-a-beavatkozásra (RTI) modellre épül.',
+  exp:'Az SLD neurobiológiai eredetű, tartós állapot, amely az olvasás/írás/számolás alapkészségeit nehezíti átlagos vagy átlag feletti intelligencia és ép érzékszervek mellett.'
+},
+{
+  id:'def_w7_02', w:7, topic:'Fogalommeghatározás', type:'define', diff:1, points:2,
+  q:'Határozza meg a diszlexia fogalmát!',
+  modelAnswer:'Diszlexia: A specifikus olvasási zavar, amelyet a szóolvasás pontosságának és/vagy folyékonyságának tartós, az életkori elvárásoktól jelentősen elmaradó szintje jellemez, hátterében jellemzően fonológiai feldolgozási deficittel.',
+  exp:'A diszlexia specifikus olvasási zavar: a szóolvasás pontossága/folyékonysága tartósan elmarad, hátterében fonológiai feldolgozási deficittel.'
+},
+{
+  id:'def_w7_03', w:7, topic:'Fogalommeghatározás', type:'define', diff:2, points:2,
+  q:'Határozza meg a diszkalkulia fogalmát!',
+  modelAnswer:'Diszkalkulia: Specifikus számolási zavar, amely a számfogalom kialakulását, a számműveletek elsajátítását és a matematikai szimbólumrendszer, illetve a mennyiségi viszonyok megértését érinti tartósan. Jellemző tünete a mennyiség és a számjegy közötti azonnali megfeleltetés nehézsége (a szubitizáció hiánya) és a tartós ujjszámolás.',
+  exp:'A diszkalkulia specifikus számolási zavar: a számfogalom, a műveletek és a mennyiségi viszonyok megértését érinti tartósan.'
+},
+{
+  id:'def_w7_04', w:7, topic:'Alapfunkciók', type:'define', diff:2, points:2,
+  q:'Mit jelent a fonológiai tudatosság, és miért fontos az iskolai tanulásban?',
+  modelAnswer:'Fonológiai tudatosság: A beszédhangok tudatos felismerésének és manipulálásának (szegmentálás, szintézis, rímfelismerés) képessége. Az olvasás-írás elsajátításának alapvető előfeltétele; gyengesége szoros összefüggésben áll az olvasási nehézségekkel és a diszlexiával.',
+  exp:'A fonológiai tudatosság a beszédhangok tudatos felismerése és manipulálása – az olvasás-írás alapfeltétele.'
+},
+{
+  id:'def_w7_05', w:7, topic:'Alapfunkciók', type:'define', diff:2, points:2,
+  q:'Mit jelent a munkamemória, és milyen tanulási következménye van a gyengeségének?',
+  modelAnswer:'Munkamemória: Az információ rövid távú tárolásáért és egyidejű feldolgozásáért felelős rendszer. Gyenge munkamemória esetén a tanuló nehezen tudja követni a többlépéses utasításokat, és elveszíti a fonalat hosszabb szövegek vagy feladatok során.',
+  exp:'A munkamemória az információ rövid távú tárolása és egyidejű feldolgozása; gyengesége a többlépéses utasítások követését nehezíti.'
+},
+{
+  id:'def_w7_06', w:7, topic:'Értékelés', type:'define', diff:2, points:2,
+  q:'Határozza meg a kritériumorientált és a normaorientált értékelés közötti különbséget!',
+  modelAnswer:'Kritériumorientált értékelés: A tanuló teljesítményét előre meghatározott, konkrét követelményekhez/standardokhoz viszonyítjuk, függetlenül attól, hogy mások hogyan teljesítettek. Normaorientált értékelés: A tanuló teljesítményét a referenciacsoport (pl. osztálytársak, azonos korosztály) átlagos teljesítményéhez viszonyítjuk, relatív rangsorolást eredményezve.',
+  exp:'Kritériumorientált = előre adott standardhoz viszonyít; normaorientált = a referenciacsoport átlagához viszonyít (relatív rangsor).'
+},
+{
+  id:'def_w7_07', w:7, topic:'Értékelés', type:'define', diff:2, points:2,
+  q:'Mit jelent az egyéni fejlődéshez viszonyított (ipszatív) értékelés, és miért fontos CES tanulóknál?',
+  modelAnswer:'Ipszatív (egyéni fejlődéshez viszonyított) értékelés: A tanuló aktuális teljesítményét a saját korábbi teljesítményéhez viszonyítjuk, a fejlődés mértékét helyezve a középpontba. Különösen fontos a tanulási nehézséggel/zavarral küzdő tanulóknál, mert a haladást a tanuló saját kiindulópontjához mérve teszi láthatóvá és motiválóvá, nem a társakhoz hasonlítva.',
+  exp:'Az ipszatív értékelés a tanuló saját korábbi teljesítményéhez viszonyít – a fejlődést teszi láthatóvá és motiválóvá.'
+},
+
+// ══════════════════════════════════════════════
+// ESSZÉ KÉRDÉSEK – 7. VÁLTOZAT
+// ══════════════════════════════════════════════
+{
+  id:'essay_w7_01', w:7, topic:'Azonosítás', type:'essay', diff:3, points:5,
+  q:'Ismertesse a specifikus tanulási zavar azonosításának és komplex értékelésének négy alapvető lépését!',
+  modelAnswer:'A folyamat négy lépése:\n\n1. Észlelés / szűrés: Az osztálytanító, szülő vagy óvodapedagógus jelzése, illetve standardizált szűrőeljárások (pl. olvasási sebesség és pontosság mérése) alapján felmerülő gyanú rögzítése.\n\n2. Beutalás és előzetes konzultáció: A tanuló irányítása a CJRAE/CMBRAE iskolapszichológusához vagy logopédusához, a szülői beleegyezés megszerzése.\n\n3. Komplex, multidiszciplináris kivizsgálás: A kognitív képességek felmérése (pl. WISC-típusú intelligenciateszt), specifikus pszichopedagógiai próbák az olvasás/írás/számolás területén, pedagógiai megfigyelés, a tanulói produktumok elemzése, valamint orvosi kizáró vizsgálatok (látás, hallás).\n\n4. Diagnózis és beavatkozási terv: A diagnózis megfogalmazása és az egyéni beavatkozási terv (Plan de Intervenție Personalizat – PIP) kidolgozása, a család és a pedagógusok tájékoztatása, tanácsadása, szükség esetén az igazoló dokumentum (certificat de orientare școlară și profesională) kiállítása.',
+  exp:'A négy lépés: 1. észlelés/szűrés, 2. beutalás és konzultáció (CJRAE/CMBRAE, szülői beleegyezés), 3. komplex multidiszciplináris kivizsgálás, 4. diagnózis és PIP kidolgozása.'
+},
+{
+  id:'essay_w7_02', w:7, topic:'Értékelés', type:'essay', diff:3, points:5,
+  q:'Fejtse ki, hogyan kell a pedagógusnak megterveznie és adaptálnia az értékelést CES-besorolású tanulók esetében!',
+  modelAnswer:'A CES-besorolású tanulók értékelésének tervezésekor a pedagógusnak a PIP-ben rögzített egyéni célokhoz kell igazítania:\n\n- az értékelési módszert (pl. szóbeli helyett írásbeli, vagy fordítva, a tanuló zavarának megfelelően);\n- az item-típusokat (pl. objektív itemek túlsúlya diszgráfiás tanulónál, aki nehezen ír hosszan);\n- az időkeretet (hosszabb idő biztosítása) és a segédeszközök használatát (pl. számolótábla, felolvasás, billentyűzet).\n\nAlapelv, hogy az értékelés a tanuló tudását és fejlődését mérje, ne pedig a fogyatékosságából/zavarából eredő korlátait büntesse. Ehhez ajánlott az egyéni fejlődéshez viszonyított (ipszatív) értékelés alkalmazása. Kerülni kell az értékelési torzításokat (halo-effektus, Pygmalion-/elvárás-hatás), és biztosítani kell az etikai követelményeket: az értékelési szempontok előzetes, érthető kommunikálását, valamint az adaptált feltételek diszkrimináció és megbélyegzés nélküli, következetes biztosítását. Mindez összhangban áll a román oktatási jogszabályi kerettel (Legea Educației Naționale nr. 1/2011 és a CES-tanulókra vonatkozó miniszteri rendeletek), amely előírja az egyéniesített, adaptált értékelést.',
+  exp:'Az értékelést a PIP céljaihoz kell igazítani: módszer, item-típus, időkeret és segédeszközök adaptálása; ipszatív szemlélet; a torzítások (halo, Pygmalion) kerülése; etikus, megbélyegzésmentes lebonyolítás.'
+},
+
 ]; // end EXERCISES_ESSAYS

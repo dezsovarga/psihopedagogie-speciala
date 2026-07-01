@@ -422,5 +422,85 @@ const EXERCISES_LISTS = [
       { label:'Lezárás és értékelés', alt:['lezárás', 'értékelés'] }
     ],
     exp:'A négy lépés: bevezetés (motiváció), a szabályok elmagyarázása, a játék lebonyolítása, lezárás és értékelés.'
+  },
+
+  // ══════════════════════════════════════════════
+  // 7. VÁLTOZAT
+  // ══════════════════════════════════════════════
+  {
+    id:'list_w7_01', w:7, topic:'Tanulási zavarok', type:'list', diff:1, need:3,
+    q:'Sorolja fel a specifikus tanulási zavarok három fő típusát!',
+    items:[
+      { label:'Diszlexia (olvasás)', alt:['diszlexia'] },
+      { label:'Diszgráfia (írás)', alt:['diszgráfia'] },
+      { label:'Diszkalkulia (számolás)', alt:['diszkalkulia'] }
+    ],
+    exp:'A három fő típus: diszlexia (olvasási zavar), diszgráfia (írászavar) és diszkalkulia (számolási zavar).'
+  },
+  {
+    id:'list_w7_02', w:7, topic:'Azonosítás', type:'list', diff:2, need:3,
+    q:'Sorolja fel a tanulási zavar azonosításának és komplex értékelésének négy lépését!',
+    items:[
+      { label:'Észlelés / szűrés', alt:['észlelés', 'szűrés'] },
+      { label:'Beutalás és előzetes konzultáció', alt:['beutalás', 'konzultáció', 'cjrae', 'cmbrae'] },
+      { label:'Komplex, multidiszciplináris kivizsgálás', alt:['kivizsgálás', 'multidiszciplin', 'komplex'] },
+      { label:'Diagnózis és beavatkozási terv (PIP)', alt:['diagnózis', 'pip', 'beavatkozási terv'] }
+    ],
+    exp:'A négy lépés: észlelés/szűrés, beutalás és konzultáció (CJRAE/CMBRAE), komplex multidiszciplináris kivizsgálás, diagnózis és PIP.'
+  },
+  {
+    id:'list_w7_03', w:7, topic:'Alapfunkciók', type:'list', diff:3, need:4,
+    q:'Sorolja fel az iskolai tanuláshoz kapcsolódó öt kognitív alapfunkciót!',
+    items:[
+      { label:'Fonológiai tudatosság', alt:['fonológiai'] },
+      { label:'Munkamemória', alt:['munkamemória'] },
+      { label:'Végrehajtó funkciók', alt:['végrehajtó'] },
+      { label:'Verbális megértés', alt:['verbális', 'nyelvi megértés'] },
+      { label:'Feldolgozási sebesség', alt:['feldolgozási', 'sebesség'] }
+    ],
+    exp:'Az öt alapfunkció: fonológiai tudatosság, munkamemória, végrehajtó funkciók, verbális megértés, feldolgozási sebesség.'
+  },
+  {
+    id:'list_w7_04', w:7, topic:'Metakogníció', type:'list', diff:2, need:3,
+    q:'Sorolja fel a négy metakognitív tanulási stratégiát!',
+    items:[
+      { label:'Tervezés', alt:['tervezés'] },
+      { label:'Önmonitorozás', alt:['önmonitoroz', 'önellenőrzés'] },
+      { label:'Önértékelés', alt:['önértékelés'] },
+      { label:'Stratégiaválasztás és -váltás', alt:['stratégiaválasztás', 'stratégia'] }
+    ],
+    exp:'A négy stratégia: tervezés, önmonitorozás, önértékelés, valamint stratégiaválasztás és -váltás.'
+  },
+  {
+    id:'list_w7_05', w:7, topic:'Értékelés', type:'list', diff:3, need:4,
+    q:'Sorolja fel az értékelés öt funkcióját!',
+    items:[
+      { label:'Diagnosztikus funkció', alt:['diagnosztik'] },
+      { label:'Prognosztikus funkció', alt:['prognosztik', 'előrejelz'] },
+      { label:'Motivációs funkció', alt:['motiváció'] },
+      { label:'Szelekciós / minősítő funkció', alt:['szelekció', 'minősít', 'osztályoz'] },
+      { label:'Szabályozó / fejlesztő funkció', alt:['szabályozó', 'fejlesztő', 'korrekció'] }
+    ],
+    exp:'Az öt funkció: diagnosztikus, prognosztikus, motivációs, szelekciós/minősítő, szabályozó/fejlesztő.'
+  },
+  {
+    id:'list_w7_06', w:7, topic:'Értékelés', type:'list', diff:2, need:3,
+    q:'Sorolja fel az értékelés három formáját az időzítése (a folyamatban elfoglalt helye) szerint!',
+    items:[
+      { label:'Kezdő / diagnosztikus értékelés', alt:['kezdő', 'diagnosztikus', 'inițial'] },
+      { label:'Formatív / folyamatos értékelés', alt:['formatív', 'folyamatos'] },
+      { label:'Szummatív / záró értékelés', alt:['szummatív', 'záró', 'sumativ'] }
+    ],
+    exp:'Időzítés szerint: kezdő/diagnosztikus, formatív/folyamatos és szummatív/záró értékelés.'
+  },
+  {
+    id:'list_w7_07', w:7, topic:'Értékelés', type:'list', diff:2, need:3,
+    q:'Sorolja fel a viszonyítás alapja szerinti három értékelési módot!',
+    items:[
+      { label:'Kritériumorientált', alt:['kritérium'] },
+      { label:'Normaorientált', alt:['norma'] },
+      { label:'Egyéni fejlődéshez viszonyított (ipszatív)', alt:['ipszatív', 'egyéni fejlődés', 'saját korábbi'] }
+    ],
+    exp:'A három mód: kritériumorientált (standardhoz), normaorientált (csoportátlaghoz) és ipszatív (saját korábbi teljesítményhez) viszonyító értékelés.'
   }
 ];
