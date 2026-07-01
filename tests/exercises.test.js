@@ -19,6 +19,7 @@ const EXERCISE_FILES = [
   'exercises/worksheet_6.js',
   'exercises/mixed.js',
   'exercises/essays.js',
+  'exercises/lists.js',
   'exercises/gyalap_ch1.js',
   'exercises/gyalap_ch2.js',
   'exercises/gyalap_ch3.js',
@@ -268,9 +269,9 @@ describe('Session slot coverage', () => {
     expect(count).toBeGreaterThanOrEqual(1);
   });
 
-  // Enumeration (list) type — first rolled out on worksheet 6
-  test('worksheet 6 has at least 5 list (enumeration) questions', () => {
-    const count = EXERCISES.filter(e => e.type === 'list' && e.w === 6).length;
+  // Enumeration (list) type — every worksheet must have enough list questions
+  test.each([1, 2, 3, 4, 5, 6])('worksheet %i has at least 5 list (enumeration) questions', (w) => {
+    const count = EXERCISES.filter(e => e.type === 'list' && e.w === w).length;
     expect(count).toBeGreaterThanOrEqual(5);
   });
 

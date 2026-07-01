@@ -29,6 +29,7 @@ exercises/
   gyalap_ch1.js … gyalap_ch3.js    ← w:101–114 Gyógyped. Alapismeretek (DISABLED)
   mixed.js         ← w:0 shared exercises
   essays.js        ← define + essay questions (AI-evaluated; manually maintained)
+  lists.js         ← list (enumeration) questions for all worksheets; hand-maintained
 data.js            ← combines all exercise arrays + helper functions
 app.js             ← session logic, spaced repetition, progress (localStorage)
                       mic/speech recognition, Claude API evaluation, settings
@@ -92,8 +93,9 @@ Worksheet 6 is the latest. Full checklist to add worksheet N:
      curly `„…”` (U+201E/U+201D) inside JS strings, never a straight `"`.
 
 3. Add the `define` (≥3, at least one outside topic `Fogalommeghatározás`) and
-   `essay` questions for `w: N` to `exercises/essays.js` — these are always
-   maintained by hand, the generator does not touch them.
+   `essay` questions for `w: N` to `exercises/essays.js`, and the `list`
+   (enumeration, ≥5) questions to `exercises/lists.js` — these separate files
+   are always maintained by hand, the generator does not touch them.
 
 4. Wire it in:
    - **index.html** — `<script src="exercises/worksheet_N.js"></script>` before

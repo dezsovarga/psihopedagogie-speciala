@@ -12,6 +12,7 @@ const EXERCISES = [
   ...(typeof EXERCISES_W6          !== 'undefined' ? EXERCISES_W6          : []),
   ...(typeof EXERCISES_MIXED       !== 'undefined' ? EXERCISES_MIXED       : []),
   ...(typeof EXERCISES_ESSAYS      !== 'undefined' ? EXERCISES_ESSAYS      : []),
+  ...(typeof EXERCISES_LISTS       !== 'undefined' ? EXERCISES_LISTS       : []),
   // Gyógypedagógiai Alapismeretek – Tanulmányi Útmutató (2018)
   // w: 101–114 (100 + chapter number). Add new chapters here in order.
   ...(typeof EXERCISES_GYALAP_CH1  !== 'undefined' ? EXERCISES_GYALAP_CH1  : []),
