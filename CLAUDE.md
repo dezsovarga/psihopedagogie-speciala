@@ -9,73 +9,106 @@ Live at: https://dezsovarga.github.io/psihopedagogie-speciala/
 - `gyakorlas_1_feladatsor.pdf` ↔ `gyakorlas_1_megoldasok_cl.docx`
 - `gyakorlas_2_feladatsor.pdf` ↔ `gyakorlas_2_megoldasok_cl.docx`
 - `gyakorlas_3_feladatsor.pdf` ↔ `gyakorlas_3_megoldasok_cl.docx`
+- `gyakorlas_4_feladatsor.pdf` ↔ `gyakorlas_4_megoldasok_cl.docx`
+- `gyakorlas_5_feladatsor.pdf` ↔ `gyakorlas_5_magoldasok_cl.docx`
+- `gyakorlas_6_feladatsor.pdf` ↔ `gyakorlas_6_megoldasok_cl.docx`
 
 The solution `.docx` files are the source of truth. Never invent definitions or facts not found in them.
+
+`other_materials/` holds the "Gyógypedagógiai Alapismeretek" study guide (14 chapters).
+Its exercises live in `exercises/gyalap_ch*.js` (w: 101–114). **This mode is
+currently disabled** — the home-screen card is commented out and questions with
+`w >= 100` are excluded from every session (see `app.js`). The data files and
+chapter-select screen markup are kept so it can be re-enabled later.
 
 ## App structure
 
 ```
 exercises/
-  worksheet_1.js   ← w:1 exercises (auto-managed)
-  worksheet_2.js   ← w:2 exercises
-  worksheet_3.js   ← w:3 exercises
+  worksheet_1.js … worksheet_6.js  ← w:1–6 exercises (standard types)
+  gyalap_ch1.js … gyalap_ch3.js    ← w:101–114 Gyógyped. Alapismeretek (DISABLED)
   mixed.js         ← w:0 shared exercises
-  essays.js        ← essay-type questions (Claude-evaluated; manually maintained)
+  essays.js        ← define + essay questions (AI-evaluated; manually maintained)
 data.js            ← combines all exercise arrays + helper functions
 app.js             ← session logic, spaced repetition, progress (localStorage)
                       mic/speech recognition, Claude API evaluation, settings
+server.js          ← local dev proxy: POST /api/claude → Anthropic (reads env key)
 style.css          ← Duolingo-inspired UI
-index.html         ← three screens + settings modal: home, exercise, results
-generate.js        ← CLI tool: generates exercises from a solution DOCX
+index.html         ← screens + settings modal: home, chapters, exercise, results
+generate.js        ← CLI tool: generates worksheet_N.js from a solution DOCX
+tests/             ← Jest: exercises.test.js, session.test.js
 package.json       ← npm deps: @anthropic-ai/sdk, mammoth
 ```
 
+The Cloudflare Worker proxy source is not in this repo; it lives in the
+Cloudflare dashboard (see the essay-evaluation section below).
+
 ## Microphone input
 
-All `short`, `fill`, and `essay` question types show a mic button (🎤). Uses
-Web Speech API (`lang: 'hu-HU'`, continuous mode). Works in Chrome; other
-browsers may lack `SpeechRecognition` support.
+All free-text types — `short`, `fill`, `essay`, and `define` — show a mic
+button (🎤); `essay` and `define` share the same textarea. Uses the Web Speech
+API (`lang: 'hu-HU'`, continuous mode). Works in Chrome; other browsers may lack
+`SpeechRecognition` support.
 
-## Claude-evaluated essay questions (essays.js)
+## AI-evaluated questions (essays.js): `define` + `essay`
 
-Essay questions (`type: 'essay'`) are evaluated by the Claude Haiku model via
-the Anthropic API. The user enters their API key once in Settings (⚙ icon) —
-it is stored only in `localStorage`.
+Both `type: 'define'` and `type: 'essay'` answers are free-text and scored by
+Claude (`claude-haiku-4-5-20251001`) via `evaluateWithClaude()` in `app.js`. The
+model returns a JSON verdict (score, verdict, strengths, gaps, feedback — all in
+Hungarian) rendered as the feedback panel. All other types are checked locally.
 
-- Max 2 essay questions appear per session (to keep sessions manageable)
-- If no API key: the model answer is shown so the user can self-assess
-- Each essay has a `modelAnswer` (full expected answer) and `points` (exam value)
-- Cost: ~$0.01 per session
+**The Anthropic API key never passes through the browser.** Requests go to a
+proxy that adds the key server-side:
+- **Production** (GitHub Pages): a **Cloudflare Worker**, default
+  `https://psp-claude-proxy.vargadezso.workers.dev`. The key is stored as an
+  encrypted Cloudflare **secret**; the worker forwards to Anthropic.
+- **Localhost**: `POST /api/claude`, served by `server.js`, which reads
+  `ANTHROPIC_API_KEY` from the environment.
 
-## Adding a new exam subject
+The ⚙ Settings modal stores only the **Worker URL** (`localStorage` key
+`psp_worker_url`), not an API key — the input id is `api-key-input` for legacy
+reasons. It defaults to the built-in worker, so users normally never touch it.
 
-1. Drop the files into `exam_subjects/`:
-   - `gyakorlas_4_feladatsor.pdf`
-   - `gyakorlas_4_megoldasok_cl.docx`
+- Max 2 essay + define questions of each kind appear per session (per-type caps
+  in `startSession`)
+- If not localhost and no worker URL resolves: `showNoApiKeyFeedback()` shows the
+  `modelAnswer` for self-assessment instead of calling the API
+- Each define/essay has a `modelAnswer` (full expected answer) and `points`
+- **Never commit an API key.** It lives only as the Cloudflare secret / local env var.
 
-2. Run the generator (needs `ANTHROPIC_API_KEY`):
-   ```bash
-   export ANTHROPIC_API_KEY=sk-ant-...
-   node generate.js exam_subjects/gyakorlas_4_megoldasok_cl.docx
-   ```
-   This creates `exercises/worksheet_4.js` automatically.
+## Adding a new exam subject (worksheet N)
 
-3. Two manual edits the script will remind you about:
+Worksheet 6 is the latest. Full checklist to add worksheet N:
 
-   **index.html** — add before `data.js`:
-   ```html
-   <script src="exercises/worksheet_4.js"></script>
-   ```
+1. Drop the pair into `exam_subjects/` (`gyakorlas_N_feladatsor.pdf` +
+   `gyakorlas_N_megoldasok_cl.docx`).
 
-   **data.js** — add to the EXERCISES spread:
-   ```js
-   ...(typeof EXERCISES_W4 !== 'undefined' ? EXERCISES_W4 : []),
-   ```
+2. Create the standard-type questions in `exercises/worksheet_N.js`
+   (`EXERCISES_WN`, `w: N`, types mc/tf/fill/match/order/short). Two ways:
+   - **Generator** (writes only this file): `export ANTHROPIC_API_KEY=sk-ant-...`
+     then `node generate.js exam_subjects/gyakorlas_N_megoldasok_cl.docx`.
+   - **Manual**: extract the DOCX with `mammoth` and author the questions
+     directly (how worksheet 6 was done). Watch Hungarian quotes: use the
+     curly `„…”` (U+201E/U+201D) inside JS strings, never a straight `"`.
 
-4. Deploy:
-   ```bash
-   git add -A && git commit -m "Add worksheet 4" && git push
-   ```
+3. Add the `define` (≥3, at least one outside topic `Fogalommeghatározás`) and
+   `essay` questions for `w: N` to `exercises/essays.js` — these are always
+   maintained by hand, the generator does not touch them.
+
+4. Wire it in:
+   - **index.html** — `<script src="exercises/worksheet_N.js"></script>` before
+     `data.js`, and a `startSession(N)` mode card (with `progress-wN`, `fill-wN`,
+     `pct-wN` ids) in the home screen.
+   - **data.js** — add `...(typeof EXERCISES_WN !== 'undefined' ? EXERCISES_WN : []),`
+     to the EXERCISES spread.
+   - **app.js** — extend the home-progress loop `[1, 2, …, N].forEach(...)`.
+
+5. Tests first, per TDD (see below):
+   - Add `'exercises/worksheet_N.js'` to `EXERCISE_FILES` in `exercises.test.js`.
+   - Extend the worksheet ranges: the `test.each([...])` blocks and the
+     `define`/`essay` "w is a valid worksheet number" arrays must include N.
+
+6. `npm test`, then `git add -A && git commit -m "Add worksheet N" && git push`.
 
 ## Exercise format (for manual edits or review)
 
@@ -97,12 +130,12 @@ it is stored only in `localStorage`.
   diff: 1             // 1=easy, 2=medium, 3=hard
 }
 
-// Essay type (Claude-evaluated; maintain manually in essays.js)
+// AI-evaluated types (define | essay; maintain manually in essays.js)
 {
-  id: 'essay_w4_01',
+  id: 'essay_w4_01',  // or 'def_w4_01' for a define
   w: 4,
   topic: 'Fogalmak',
-  type: 'essay',
+  type: 'essay',      // or 'define' — both are free-text, scored by Claude
   q: 'Exact exam subquestion text',
   modelAnswer: 'Full expected answer from solution file',
   exp: 'One-sentence summary of what the answer must contain',
@@ -110,6 +143,9 @@ it is stored only in `localStorage`.
   diff: 2             // 1=easy, 2=medium, 3=hard
 }
 ```
+
+`define` and `essay` share the same schema; `define` is used for short
+"Határozza meg a … fogalmát" concept questions, `essay` for longer subquestions.
 
 ## Testing
 
@@ -140,9 +176,9 @@ What must have tests before the code changes:
 - Any new content category (e.g. adding define questions for a new worksheet)
 - Bug fixes — the test should reproduce the bug first, then the fix makes it pass
 
-The `exercises.test.js` file automatically covers every exercise file on each run, so a syntax or schema error in any `exercises/*.js` file will be caught by `npm test` before it reaches production.
+The `exercises.test.js` file automatically covers every exercise file on each run, so a syntax or schema error in any `exercises/*.js` file will be caught by `npm test` before it reaches production — but only for files listed in its `EXERCISE_FILES` array, so add each new file there first.
 
-When adding define or essay questions for a new worksheet, update the TODO placeholder test in `exercises.test.js` (change `>= 0` to `>= 3`) before writing the content so the test fails first.
+When adding a new worksheet, extend the `test.each([...])` worksheet ranges and the `define`/`essay` "w is a valid worksheet number" arrays to include the new number *before* writing the content, so the new-worksheet coverage tests fail first (`>= 3` define per worksheet, etc.).
 
 ## Content rules
 
