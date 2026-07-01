@@ -208,6 +208,13 @@ function renderExercise() {
   attachExerciseListeners(ex);
 }
 
+// Human-readable source label for an exercise's worksheet number.
+function worksheetLabel(w) {
+  if (w === 0) return 'Vegyes';
+  if (w >= 100) return 'Gyógyped. Alapismeretek';
+  return `${w}. Változat`;
+}
+
 function buildExerciseHTML(ex) {
   const typeBadge = {
     mc:     'Feleletválasztós',
@@ -224,8 +231,13 @@ function buildExerciseHTML(ex) {
   const isClaudeType = ex.type === 'essay' || ex.type === 'define';
   const badgeClass = isClaudeType ? 'ex-type-badge essay-badge' : 'ex-type-badge';
 
+  // In random mode the questions are drawn from all worksheets, so show the source.
+  const wsBadge = (session && session.mode === 'random')
+    ? `<span class="ex-type-badge ex-ws-badge">${worksheetLabel(ex.w)}</span>`
+    : '';
+
   let html = `
-    <span class="${badgeClass}">${typeBadge}${isClaudeType ? ` · ${ex.points} pont` : ''}</span>
+    ${wsBadge}<span class="${badgeClass}">${typeBadge}${isClaudeType ? ` · ${ex.points} pont` : ''}</span>
     <div class="ex-topic">${ex.topic}</div>
     <div class="ex-question">${ex.q}</div>
   `;

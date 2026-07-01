@@ -208,6 +208,11 @@ body {
   border-radius: 99px;
   margin-bottom: 12px;
 }
+.ex-type-badge.ex-ws-badge {
+  background: #E7F7EC;
+  color: var(--green-dark);
+  margin-right: 6px;
+}
 .ex-topic {
   font-size: 12px;
   color: var(--gray-400);

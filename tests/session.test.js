@@ -48,6 +48,29 @@ function buildSessionQueue(pool, mode) {
   }
 }
 
+// ─── Worksheet label (mirrors worksheetLabel in app.js) ──────────────────────
+// Shown next to the question in random ('véletlenszerű') mode so the learner
+// knows which worksheet each question comes from.
+
+function worksheetLabel(w) {
+  if (w === 0) return 'Vegyes';
+  if (w >= 100) return 'Gyógyped. Alapismeretek';
+  return `${w}. Változat`;
+}
+
+describe('worksheet label (shown in random mode)', () => {
+  test('worksheet numbers 1–7 map to "N. Változat"', () => {
+    expect(worksheetLabel(1)).toBe('1. Változat');
+    expect(worksheetLabel(7)).toBe('7. Változat');
+  });
+  test('shared exercises (w:0) map to "Vegyes"', () => {
+    expect(worksheetLabel(0)).toBe('Vegyes');
+  });
+  test('gyógyped. alapismeretek (w >= 100) map to a readable label', () => {
+    expect(worksheetLabel(101)).toBe('Gyógyped. Alapismeretek');
+  });
+});
+
 // ─── Pool selection (mirrors startSession in app.js) ─────────────────────────
 
 function selectPool(allExercises, mode) {
