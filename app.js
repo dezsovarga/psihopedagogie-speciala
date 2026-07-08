@@ -6,7 +6,7 @@ let lastSessionMode = null;
 
 // Real past-exam year sections (w = year). Add each new year here + a home card
 // (fill-y<year> / pct-y<year>) and a <script src="exercises/real_<year>.js">.
-const REAL_EXAM_YEARS = [2017];
+const REAL_EXAM_YEARS = [2017, 2018];
 
 function loadState() {
   try {
