@@ -213,6 +213,64 @@ body {
   color: var(--green-dark);
   margin-right: 6px;
 }
+
+/* ─── Session tip card (Tipp & trükk) ─── */
+.session-tip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0 16px;
+  padding: 12px 14px;
+  background: #F3E8FF;
+  border: 2px solid #C99BF0;
+  border-left: 6px solid #7E3FF2;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 0 rgba(126, 63, 242, .12);
+  animation: tip-pop .25s ease;
+}
+@keyframes tip-pop {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.tip-bulb {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: var(--yellow);
+  border-radius: 50%;
+  box-shadow: 0 2px 0 rgba(0,0,0,.08);
+}
+.tip-content { flex: 1; min-width: 0; }
+.tip-label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  color: #7E3FF2;
+  margin-bottom: 3px;
+}
+.tip-text {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--gray-700);
+  font-weight: 600;
+}
+.tip-close {
+  flex-shrink: 0;
+  align-self: flex-start;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #A57BD6;
+  font-size: 14px;
+  padding: 2px 4px;
+  line-height: 1;
+}
+.tip-close:hover { color: #7E3FF2; }
 .ex-topic {
   font-size: 12px;
   color: var(--gray-400);

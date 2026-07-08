@@ -71,6 +71,29 @@ describe('worksheet label (shown in random mode)', () => {
   });
 });
 
+// ─── Random tip picking (mirrors pickRandomTip in app.js) ────────────────────
+
+function pickRandomTip(tips) {
+  if (!Array.isArray(tips) || tips.length === 0) return null;
+  return tips[Math.floor(Math.random() * tips.length)];
+}
+
+describe('pickRandomTip (shown once per session)', () => {
+  const TIPS = ['Tipp A', 'Tipp B', 'Tipp C'];
+
+  test('returns a tip from the list', () => {
+    for (let i = 0; i < 20; i++) {
+      expect(TIPS).toContain(pickRandomTip(TIPS));
+    }
+  });
+
+  test('returns null for an empty or invalid list', () => {
+    expect(pickRandomTip([])).toBeNull();
+    expect(pickRandomTip(null)).toBeNull();
+    expect(pickRandomTip(undefined)).toBeNull();
+  });
+});
+
 // ─── Pool selection (mirrors startSession in app.js) ─────────────────────────
 
 function selectPool(allExercises, mode) {

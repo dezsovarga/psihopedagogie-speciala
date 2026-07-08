@@ -153,8 +153,30 @@ function startSession(mode) {
     selectedState: null
   };
 
+  showSessionTip();
   showScreen('exercise');
   renderExercise();
+}
+
+// ─── Exam tips ────────────────────────────────────────────────────────────────
+// One random tip (from tips.js) is shown per session on the exercise screen.
+function pickRandomTip(tips) {
+  if (!Array.isArray(tips) || tips.length === 0) return null;
+  return tips[Math.floor(Math.random() * tips.length)];
+}
+
+function showSessionTip() {
+  const el = document.getElementById('session-tip');
+  if (!el) return;
+  const tip = pickRandomTip(typeof EXAM_TIPS !== 'undefined' ? EXAM_TIPS : []);
+  if (!tip) { el.style.display = 'none'; return; }
+  document.getElementById('tip-text').textContent = tip;
+  el.style.display = 'flex';
+}
+
+function dismissTip() {
+  const el = document.getElementById('session-tip');
+  if (el) el.style.display = 'none';
 }
 
 function exitSession() {

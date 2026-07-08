@@ -312,3 +312,31 @@ describe('Session slot coverage', () => {
     expect(ch.filter(e => e.w !== 103).map(e => e.id)).toEqual([]);
   });
 });
+
+// ─── Exam tips (tips.js) ──────────────────────────────────────────────────────
+
+describe('exam tips (tips.js)', () => {
+  function loadTips() {
+    const src = fs.readFileSync(path.resolve(__dirname, '..', 'tips.js'), 'utf8');
+    const patched = src.replace(/\bconst\s+(EXAM_TIPS)/, 'var $1');
+    const ctx = {};
+    vm.runInNewContext(patched, ctx);           // throws on syntax error
+    return ctx.EXAM_TIPS;
+  }
+
+  test('tips.js parses and exports a non-empty EXAM_TIPS array', () => {
+    const tips = loadTips();
+    expect(Array.isArray(tips)).toBe(true);
+    expect(tips.length).toBeGreaterThanOrEqual(10);
+  });
+
+  test('every tip is a non-empty string', () => {
+    const bad = loadTips().filter(t => typeof t !== 'string' || !t.trim());
+    expect(bad).toEqual([]);
+  });
+
+  test('tips are unique', () => {
+    const tips = loadTips();
+    expect(new Set(tips).size).toBe(tips.length);
+  });
+});

@@ -310,6 +310,15 @@
     <div class="lives-display" id="lives-display">❤️❤️❤️</div>
   </div>
 
+  <div class="session-tip" id="session-tip" style="display:none">
+    <div class="tip-bulb">💡</div>
+    <div class="tip-content">
+      <div class="tip-label">Tipp &amp; trükk</div>
+      <div class="tip-text" id="tip-text"></div>
+    </div>
+    <button class="tip-close" onclick="dismissTip()" title="Bezárás">✕</button>
+  </div>
+
   <div class="exercise-body" id="exercise-body">
     <!-- Dynamically filled -->
   </div>
@@ -395,6 +404,7 @@
 <script src="exercises/gyalap_ch1.js"></script>
 <script src="exercises/gyalap_ch2.js"></script>
 <script src="exercises/gyalap_ch3.js"></script>
+<script src="tips.js"></script>
 <script src="data.js"></script>
 <script src="app.js"></script>
 </body>

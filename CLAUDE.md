@@ -30,6 +30,7 @@ exercises/
   mixed.js         ← w:0 shared exercises
   essays.js        ← define + essay questions (AI-evaluated; manually maintained)
   lists.js         ← list (enumeration) questions for all worksheets; hand-maintained
+tips.js            ← EXAM_TIPS: exam tips shown one-per-session on the exercise screen
 data.js            ← combines all exercise arrays + helper functions
 app.js             ← session logic, spaced repetition, progress (localStorage)
                       mic/speech recognition, Claude API evaluation, settings
