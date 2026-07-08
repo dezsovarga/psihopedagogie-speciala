@@ -54,6 +54,7 @@ function buildSessionQueue(pool, mode) {
 
 function worksheetLabel(w) {
   if (w === 0) return 'Vegyes';
+  if (w >= 2000) return `${w}-es változat`;        // real exam year
   if (w >= 100) return 'Gyógyped. Alapismeretek';
   return `${w}. Változat`;
 }
@@ -108,9 +109,14 @@ describe('pickRandomTip (rotates every question)', () => {
 // ─── Pool selection (mirrors startSession in app.js) ─────────────────────────
 
 function selectPool(allExercises, mode) {
-  // Gyógyped. Alapismeretek questions (w >= 100) are disabled — never in any pool.
+  // General modes draw from worksheets only (w < 100): gyalap (100–999, disabled)
+  // and real exams (w = year, >= 2000) are excluded from the general mix.
   if (mode === 'mix' || mode === 'structured' || mode === 'random') {
     return allExercises.filter(e => e.w < 100);
+  }
+  // Gyalap chapter or real-exam year: exact match only (no w:0 shared questions).
+  if (typeof mode === 'number' && mode >= 100) {
+    return allExercises.filter(e => e.w === mode);
   }
   return allExercises.filter(e => e.w === mode || e.w === 0);
 }
@@ -352,6 +358,30 @@ describe('gyalap questions (w >= 100) are disabled', () => {
     });
     expect(reviewPool.some(e => e.w >= 100)).toBe(false);
     expect(reviewPool.map(e => e.id)).toEqual(['mc_1']);
+  });
+});
+
+// ─── Real past-exam years (separate sections, w = year) ──────────────────────
+
+describe('real exam years (w = year, e.g. 2017)', () => {
+  const ALL = [
+    ...makePool({ mc: 10, essay: 2, define: 2 }),                        // w:1 worksheet questions
+    { id: 'shared_1', type: 'mc', w: 0, diff: 1, q: 'Q', topic: 'T', opts: ['a','b','c','d'], ans: 0, exp: 'E' },
+    { id: 'real_2017_01', type: 'mc', w: 2017, diff: 1, q: 'Q', topic: 'T', opts: ['a','b','c','d'], ans: 0, exp: 'E' },
+    { id: 'real_2017_02', type: 'define', w: 2017, diff: 1, q: 'Q', topic: 'T', modelAnswer: 'MA', points: 2 },
+    { id: 'real_2018_01', type: 'mc', w: 2018, diff: 1, q: 'Q', topic: 'T', opts: ['a','b','c','d'], ans: 0, exp: 'E' },
+  ];
+
+  test('a real-exam year mode selects only that year, not w:0 shared', () => {
+    const pool = selectPool(ALL, 2017);
+    expect(pool.map(e => e.id).sort()).toEqual(['real_2017_01', 'real_2017_02']);
+    expect(pool.some(e => e.w === 0)).toBe(false);      // no shared
+    expect(pool.some(e => e.w === 2018)).toBe(false);   // no other year
+  });
+
+  test.each(['mix', 'structured', 'random'])('%s pool excludes real-exam questions', (mode) => {
+    const pool = selectPool(ALL, mode);
+    expect(pool.some(e => e.w >= 2000)).toBe(false);
   });
 });
 

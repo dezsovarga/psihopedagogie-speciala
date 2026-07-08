@@ -94,6 +94,20 @@ body {
 
 .mode-cards { display: flex; flex-direction: column; gap: 12px; }
 
+/* Sub-heading inside the mode list (e.g. "Valós vizsgatételek") */
+.mode-subhead {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--gray-400);
+  margin: 10px 2px 0;
+}
+
+/* Real past-exam year cards */
+.mode-card.mode-real { border-color: #C99BF0; }
+.mode-card.mode-real:hover { background: #F6EEFF; }
+
 .mode-card {
   display: flex;
   align-items: center;

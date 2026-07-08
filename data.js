@@ -19,6 +19,8 @@ const EXERCISES = [
   ...(typeof EXERCISES_GYALAP_CH1  !== 'undefined' ? EXERCISES_GYALAP_CH1  : []),
   ...(typeof EXERCISES_GYALAP_CH2  !== 'undefined' ? EXERCISES_GYALAP_CH2  : []),
   ...(typeof EXERCISES_GYALAP_CH3  !== 'undefined' ? EXERCISES_GYALAP_CH3  : []),
+  // Valós vizsgatételek – korábbi évek (w = év, pl. 2017). Új évet ide adj hozzá.
+  ...(typeof EXERCISES_REAL_2017   !== 'undefined' ? EXERCISES_REAL_2017   : []),
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────

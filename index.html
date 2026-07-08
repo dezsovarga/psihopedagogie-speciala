@@ -151,6 +151,20 @@
         </div>
       </button>
 
+      <div class="mode-subhead">Valós vizsgatételek</div>
+
+      <button class="mode-card mode-real" onclick="startSession(2017)">
+        <div class="mode-icon">📅</div>
+        <div class="mode-info">
+          <h3>2017-es változat</h3>
+          <p>Valós titularizációs vizsgatétel (2017) – speciális pszichopedagógia, nyelvi terápiák, módszertan</p>
+        </div>
+        <div class="mode-progress" id="progress-y2017">
+          <div class="progress-bar-mini"><div class="progress-fill" id="fill-y2017"></div></div>
+          <span id="pct-y2017">0%</span>
+        </div>
+      </button>
+
       <!-- Gyógyped. Alapismeretek mód letiltva – a kérdések (w >= 100) egyetlen munkamenetben sem jelennek meg.
       <button class="mode-card mode-gyalap" onclick="showChapters()">
         <div class="mode-icon">📚</div>
@@ -401,6 +415,7 @@
 <script src="exercises/worksheet_7.js"></script>
 <script src="exercises/essays.js"></script>
 <script src="exercises/lists.js"></script>
+<script src="exercises/real_2017.js"></script>
 <script src="exercises/gyalap_ch1.js"></script>
 <script src="exercises/gyalap_ch2.js"></script>
 <script src="exercises/gyalap_ch3.js"></script>

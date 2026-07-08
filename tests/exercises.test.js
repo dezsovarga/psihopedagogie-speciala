@@ -21,6 +21,7 @@ const EXERCISE_FILES = [
   'exercises/mixed.js',
   'exercises/essays.js',
   'exercises/lists.js',
+  'exercises/real_2017.js',
   'exercises/gyalap_ch1.js',
   'exercises/gyalap_ch2.js',
   'exercises/gyalap_ch3.js',
@@ -212,8 +213,8 @@ describe('define questions', () => {
     expect(bad.map(e => e.id)).toEqual([]);
   });
 
-  test('w is a valid worksheet number (1–5), not shared (0)', () => {
-    const bad = EXERCISES.filter(e => e.type === 'define' && ![1,2,3,4,5,6,7].includes(e.w));
+  test('w is a valid worksheet (1–7) or real-exam year (>= 2000), not shared (0)', () => {
+    const bad = EXERCISES.filter(e => e.type === 'define' && ![1,2,3,4,5,6,7].includes(e.w) && e.w < 2000);
     expect(bad.map(e => e.id)).toEqual([]);
   });
 });
@@ -224,8 +225,8 @@ describe('essay questions', () => {
     expect(bad.map(e => e.id)).toEqual([]);
   });
 
-  test('w is a valid worksheet number (1–5), not shared (0)', () => {
-    const bad = EXERCISES.filter(e => e.type === 'essay' && ![1,2,3,4,5,6,7].includes(e.w));
+  test('w is a valid worksheet (1–7) or real-exam year (>= 2000), not shared (0)', () => {
+    const bad = EXERCISES.filter(e => e.type === 'essay' && ![1,2,3,4,5,6,7].includes(e.w) && e.w < 2000);
     expect(bad.map(e => e.id)).toEqual([]);
   });
 });
@@ -310,6 +311,20 @@ describe('Session slot coverage', () => {
     const ch = EXERCISES.filter(e => e.id && e.id.startsWith('gyalap_ch3_'));
     expect(ch.length).toBeGreaterThan(0);
     expect(ch.filter(e => e.w !== 103).map(e => e.id)).toEqual([]);
+  });
+
+  // Real past-exam years (w = year, e.g. 2017). Add each new year here.
+  const REAL_EXAM_YEARS = [2017];
+
+  test.each(REAL_EXAM_YEARS)('real exam %i has at least 15 questions for a full session', (year) => {
+    const count = EXERCISES.filter(e => e.w === year).length;
+    expect(count).toBeGreaterThanOrEqual(15);
+  });
+
+  test.each(REAL_EXAM_YEARS)('all real_%i exercises have w = %i', (year) => {
+    const ex = EXERCISES.filter(e => e.id && e.id.startsWith(`real_${year}_`));
+    expect(ex.length).toBeGreaterThan(0);
+    expect(ex.filter(e => e.w !== year).map(e => e.id)).toEqual([]);
   });
 });
 

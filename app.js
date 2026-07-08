@@ -4,6 +4,10 @@ let globalStats = {};
 let session = null;
 let lastSessionMode = null;
 
+// Real past-exam year sections (w = year). Add each new year here + a home card
+// (fill-y<year> / pct-y<year>) and a <script src="exercises/real_<year>.js">.
+const REAL_EXAM_YEARS = [2017];
+
 function loadState() {
   try {
     progress = JSON.parse(localStorage.getItem('psp_progress') || '{}');
@@ -84,6 +88,17 @@ function updateHomeUI() {
     document.getElementById(`pct-w${w}`).textContent = pct + '%';
   });
 
+  // Real past-exam years (w = year). Add each new year to this list.
+  REAL_EXAM_YEARS.forEach(year => {
+    const yEx = EXERCISES.filter(e => e.w === year);
+    const done = yEx.filter(e => (progress[e.id]?.interval||1) >= 2).length;
+    const pct = yEx.length ? Math.round(done / yEx.length * 100) : 0;
+    const fill = document.getElementById(`fill-y${year}`);
+    const lbl  = document.getElementById(`pct-y${year}`);
+    if (fill) fill.style.width = pct + '%';
+    if (lbl)  lbl.textContent = pct + '%';
+  });
+
   const reviewCount = EXERCISES.filter(e => {
     const p = progress[e.id];
     return p && p.seen > 0 && p.interval === 1;
@@ -104,10 +119,13 @@ function startSession(mode) {
     });
     if (pool.length === 0) { alert('Nincs ismétlésre váró kérdés! Először végezd el valamelyik változatot.'); return; }
   } else {
-    // Gyógyped. Alapismeretek questions (w >= 100) are disabled — excluded from every session.
+    // General modes draw from worksheets only (w < 100): gyalap (100–999, disabled)
+    // and real exams (w = year, >= 2000) are kept out of the general mix.
     pool = (mode === 'mix' || mode === 'structured' || mode === 'random')
       ? EXERCISES.filter(e => e.w < 100)
-      : EXERCISES.filter(e => e.w === mode || e.w === 0);
+      : (typeof mode === 'number' && mode >= 100)
+        ? EXERCISES.filter(e => e.w === mode)            // gyalap chapter / real-exam year: exact match, no w:0 shared
+        : EXERCISES.filter(e => e.w === mode || e.w === 0);
   }
 
   function spSorted(arr) {

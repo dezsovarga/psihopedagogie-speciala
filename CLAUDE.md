@@ -30,6 +30,7 @@ exercises/
   mixed.js         ← w:0 shared exercises
   essays.js        ← define + essay questions (AI-evaluated; manually maintained)
   lists.js         ← list (enumeration) questions for all worksheets; hand-maintained
+  real_2017.js …   ← real past-exam years (w = year, e.g. 2017); one file per year
 tips.js            ← EXAM_TIPS: exam tips shown one-per-session on the exercise screen
 data.js            ← combines all exercise arrays + helper functions
 app.js             ← session logic, spaced repetition, progress (localStorage)
@@ -112,6 +113,30 @@ Worksheet 6 is the latest. Full checklist to add worksheet N:
      `define`/`essay` "w is a valid worksheet number" arrays must include N.
 
 6. `npm test`, then `git add -A && git commit -m "Add worksheet N" && git push`.
+
+## Adding a real past-exam year (Valós vizsgatételek)
+
+Real past exams from `real_exam_subjects/` are **separate year sections**, distinct
+from the practice worksheets. Numbering: **`w = year`** (e.g. `2017`). Because the
+year is `>= 100`, these questions are excluded from the general mix/structured/
+random pools and from review; the year mode selects **only** that year (exact
+match, no `w:0` shared). To add year YYYY:
+
+1. Drop `gyakorlas_YYYY_feladatsor.docx` + `gyakorlas_YYYY_megoldasok.docx` into
+   `real_exam_subjects/` (solutions are the source of truth).
+2. Create `exercises/real_YYYY.js` — one self-contained file with **all** question
+   types (standard + `define` + `essay` + `list`), every entry `w: YYYY`, ids
+   `real_YYYY_*`. Export `const EXERCISES_REAL_YYYY = [...]`.
+3. Wire it in:
+   - **data.js** — add the `EXERCISES_REAL_YYYY` spread.
+   - **index.html** — `<script src="exercises/real_YYYY.js">` before `data.js`, and
+     a mode card under the "Valós vizsgatételek" sub-heading with
+     `onclick="startSession(YYYY)"` and `fill-yYYYY` / `pct-yYYYY` ids.
+   - **app.js** — add `YYYY` to the `REAL_EXAM_YEARS` array (drives the home
+     progress bar; the pool logic already handles any `w >= 100`).
+4. Tests first (TDD): add `'exercises/real_YYYY.js'` to `EXERCISE_FILES` and `YYYY`
+   to the `REAL_EXAM_YEARS` array in `exercises.test.js`.
+5. `npm test`, commit, push.
 
 ## Exercise format (for manual edits or review)
 
