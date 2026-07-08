@@ -119,10 +119,10 @@ function startSession(mode) {
     });
     if (pool.length === 0) { alert('Nincs ismétlésre váró kérdés! Először végezd el valamelyik változatot.'); return; }
   } else {
-    // General modes draw from worksheets only (w < 100): gyalap (100–999, disabled)
-    // and real exams (w = year, >= 2000) are kept out of the general mix.
+    // General modes draw from worksheets (w < 100) AND real exams (w >= 2000);
+    // only the disabled gyalap chapters (100–999) are excluded.
     pool = (mode === 'mix' || mode === 'structured' || mode === 'random')
-      ? EXERCISES.filter(e => e.w < 100)
+      ? EXERCISES.filter(e => e.w < 100 || e.w >= 2000)
       : (typeof mode === 'number' && mode >= 100)
         ? EXERCISES.filter(e => e.w === mode)            // gyalap chapter / real-exam year: exact match, no w:0 shared
         : EXERCISES.filter(e => e.w === mode || e.w === 0);
@@ -254,8 +254,11 @@ function renderExercise() {
 }
 
 // Human-readable source label for an exercise's worksheet number.
+// Correct Hungarian section labels for real-exam years (irregular -es/-as suffix).
+const REAL_EXAM_LABELS = { 2017: '2017-es változat', 2018: '2018-as változat' };
 function worksheetLabel(w) {
   if (w === 0) return 'Vegyes';
+  if (w >= 2000) return REAL_EXAM_LABELS[w] || `${w}. évi vizsga`;   // real exam year
   if (w >= 100) return 'Gyógyped. Alapismeretek';
   return `${w}. Változat`;
 }

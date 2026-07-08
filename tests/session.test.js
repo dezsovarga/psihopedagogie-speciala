@@ -52,9 +52,10 @@ function buildSessionQueue(pool, mode) {
 // Shown next to the question in random ('véletlenszerű') mode so the learner
 // knows which worksheet each question comes from.
 
+const REAL_EXAM_LABELS = { 2017: '2017-es változat', 2018: '2018-as változat' };
 function worksheetLabel(w) {
   if (w === 0) return 'Vegyes';
-  if (w >= 2000) return `${w}-es változat`;        // real exam year
+  if (w >= 2000) return REAL_EXAM_LABELS[w] || `${w}. évi vizsga`;   // real exam year
   if (w >= 100) return 'Gyógyped. Alapismeretek';
   return `${w}. Változat`;
 }
@@ -69,6 +70,10 @@ describe('worksheet label (shown in random mode)', () => {
   });
   test('gyógyped. alapismeretek (w >= 100) map to a readable label', () => {
     expect(worksheetLabel(101)).toBe('Gyógyped. Alapismeretek');
+  });
+  test('real-exam years map to their section label', () => {
+    expect(worksheetLabel(2017)).toBe('2017-es változat');
+    expect(worksheetLabel(2018)).toBe('2018-as változat');
   });
 });
 
@@ -109,10 +114,10 @@ describe('pickRandomTip (rotates every question)', () => {
 // ─── Pool selection (mirrors startSession in app.js) ─────────────────────────
 
 function selectPool(allExercises, mode) {
-  // General modes draw from worksheets only (w < 100): gyalap (100–999, disabled)
-  // and real exams (w = year, >= 2000) are excluded from the general mix.
+  // General modes draw from worksheets (w < 100) AND real exams (w >= 2000);
+  // only gyalap (100–999, disabled) is excluded.
   if (mode === 'mix' || mode === 'structured' || mode === 'random') {
-    return allExercises.filter(e => e.w < 100);
+    return allExercises.filter(e => e.w < 100 || e.w >= 2000);
   }
   // Gyalap chapter or real-exam year: exact match only (no w:0 shared questions).
   if (typeof mode === 'number' && mode >= 100) {
@@ -379,9 +384,16 @@ describe('real exam years (w = year, e.g. 2017)', () => {
     expect(pool.some(e => e.w === 2018)).toBe(false);   // no other year
   });
 
-  test.each(['mix', 'structured', 'random'])('%s pool excludes real-exam questions', (mode) => {
+  test.each(['mix', 'structured', 'random'])('%s pool includes real-exam questions (both years)', (mode) => {
     const pool = selectPool(ALL, mode);
-    expect(pool.some(e => e.w >= 2000)).toBe(false);
+    expect(pool.some(e => e.w === 2017)).toBe(true);
+    expect(pool.some(e => e.w === 2018)).toBe(true);
+  });
+
+  test.each(['mix', 'structured', 'random'])('%s pool still excludes disabled gyalap (100–999)', (mode) => {
+    const withGyalap = [...ALL, { id: 'gyalap_ch1_01', type: 'mc', w: 101, diff: 1, q: 'Q', topic: 'T', opts: ['a','b','c','d'], ans: 0, exp: 'E' }];
+    const pool = selectPool(withGyalap, mode);
+    expect(pool.some(e => e.w >= 100 && e.w < 2000)).toBe(false);
   });
 });
 
