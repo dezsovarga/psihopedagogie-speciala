@@ -282,6 +282,54 @@ const EXERCISES_REAL_2017 = [
     modelAnswer:'Személyre szabott beavatkozási terv (PIP): olyan egyéni pedagógiai dokumentum, amely egy SNI/CES tanuló sajátos szükségleteihez igazított célokat, módszereket, erőforrásokat és értékelési eljárásokat határoz meg, támogatva pedagógiai és szociális-érzelmi fejlődését.',
     exp:'Egyéni pedagógiai dokumentum, amely az SNI/CES tanuló szükségleteihez igazított célokat, módszereket, erőforrásokat és értékelési eljárásokat rögzít.'
   },
+  {
+    id:'real_2017_def_06', w:2017, topic:'Nevelési-terápiás eljárások', type:'define', diff:2, points:2,
+    q:'Határozza meg a játékterápia fogalmát!',
+    modelAnswer:'Játékterápia: olyan nevelési-terápiás eljárás, amely a játékot használja az SNI/CES gyermekek kognitív, szociális-érzelmi és mozgásos készségeinek fejlesztésére, strukturált és szabad helyzetekben egyaránt hasznosítva kifejezési és kreatív lehetőségeiket.',
+    exp:'Nevelési-terápiás eljárás, amely a játékot használja az SNI/CES gyermekek kognitív, szociális-érzelmi és mozgásos készségeinek fejlesztésére, strukturált és szabad helyzetekben egyaránt.'
+  },
+  {
+    id:'real_2017_def_07', w:2017, topic:'Nevelési-terápiás eljárások', type:'define', diff:2, points:2,
+    q:'Határozza meg a logopédiai beavatkozás fogalmát!',
+    modelAnswer:'Logopédiai beavatkozás: a nyelvi zavarok – például pöszeség, diszlexia és dadogás – korrigálására, valamint a funkcionális kommunikáció és a társadalmi beilleszkedés fejlesztésére irányuló terápiás tevékenység.',
+    exp:'A nyelvi zavarok (pöszeség, diszlexia, dadogás) korrigálására, valamint a funkcionális kommunikáció és a társadalmi beilleszkedés fejlesztésére irányuló beavatkozás.'
+  },
+  {
+    id:'real_2017_def_08', w:2017, topic:'Nyelvi terápiák', type:'define', diff:2, points:2,
+    q:'Határozza meg a nyelvi zavarok terápiájának fogalmát!',
+    modelAnswer:'A nyelvi zavarok terápiája: a beszélt vagy írott nyelv zavarainak – például pöszeség, diszlexia, dadogás – korrigálására, enyhítésére vagy kompenzálására alkalmazott logopédiai módszerek és technikák összessége.',
+    exp:'A beszélt vagy írott nyelv zavarainak korrigálására, enyhítésére vagy kompenzálására alkalmazott logopédiai módszerek és technikák összessége.'
+  },
+  {
+    id:'real_2017_def_09', w:2017, topic:'Nyelvi terápiák', type:'define', diff:3, points:2,
+    q:'Határozza meg a pedagógiai és technológiai audiológia fogalmát!',
+    modelAnswer:'Pedagógiai és technológiai audiológia: interdiszciplináris terület, amely a hallássérült tanulók hallásának értékelésével, hallási rehabilitációjával és kommunikációjuk fejlesztését szolgáló technológiai támogatással foglalkozik, például hallókészülékek és cochleáris implantátumok alkalmazásával.',
+    exp:'Interdiszciplináris terület a hallássérült tanulók hallásának értékelésére, hallási rehabilitációjára és technológiai támogatására (hallókészülék, cochleáris implantátum).'
+  },
+  {
+    id:'real_2017_def_10', w:2017, topic:'Nyelvi terápiák', type:'define', diff:2, points:2,
+    q:'Határozza meg a térbeli tájékozódás és mobilitás fogalmát!',
+    modelAnswer:'Térbeli tájékozódás és mobilitás: a látássérült személyek térbeli tájékozódási és önálló közlekedési képességének fejlesztésére alkalmazott pedagógiai technikák összessége.',
+    exp:'A látássérült személyek térbeli tájékozódási és önálló közlekedési képességének fejlesztésére alkalmazott pedagógiai technikák összessége.'
+  },
+  {
+    id:'real_2017_def_11', w:2017, topic:'Vizuális-percepciós nevelés', type:'define', diff:3, points:2,
+    q:'Határozza meg a vizuális-percepciós nevelés fogalmát!',
+    modelAnswer:'Vizuális-percepciós nevelés: a vizuális megkülönböztetés, a formafelismerés, a térbeli tájékozódás és a vizuomotoros integráció képességének kialakítása; elsősorban látássérült vagy vizuális feldolgozási nehézségekkel küzdő gyermekeknél alkalmazzák.',
+    exp:'A vizuális megkülönböztetés, formafelismerés, térbeli tájékozódás és vizuomotoros integráció kialakítása, főként látássérült vagy vizuális feldolgozási nehézségű gyermekeknél.'
+  },
+  {
+    id:'real_2017_def_12', w:2017, topic:'Módszertani fogalmak', type:'define', diff:2, points:2,
+    q:'Határozza meg az interdiszciplináris tanulási tevékenység fogalmát!',
+    modelAnswer:'Interdiszciplináris tanulási tevékenység: több tantárgy tartalmait és módszereit egyesítő didaktikai tevékenység, amely a valós életben is hasznosítható integrált kompetenciák fejlesztését szolgálja.',
+    exp:'Több tantárgy tartalmait és módszereit egyesítő didaktikai tevékenység, amely a valós életben hasznosítható integrált kompetenciákat fejleszt.'
+  },
+  {
+    id:'real_2017_def_13', w:2017, topic:'Módszertani fogalmak', type:'define', diff:3, points:2,
+    q:'Határozza meg az oktatási-nevelési-rehabilitációs-kompenzáló folyamat értékelésének fogalmát!',
+    modelAnswer:'Az oktatási-nevelési-rehabilitációs-kompenzáló folyamat értékelése: a tanulók fejlődésének a pedagógiai célokhoz viszonyított rendszeres nyomon követése és elemzése, amely a beavatkozások eredményességet javító módosítását célozza.',
+    exp:'A tanulók fejlődésének a pedagógiai célokhoz viszonyított rendszeres nyomon követése és elemzése, a beavatkozások eredményességet javító módosítása céljából.'
+  },
 
   // ─── Esszé (essay) – Claude által értékelt ────────────────────────────────
   {

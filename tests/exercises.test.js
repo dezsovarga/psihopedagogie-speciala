@@ -326,6 +326,11 @@ describe('Session slot coverage', () => {
     expect(ex.length).toBeGreaterThan(0);
     expect(ex.filter(e => e.w !== year).map(e => e.id)).toEqual([]);
   });
+
+  test.each(REAL_EXAM_YEARS)('real exam %i has a solid set of define questions (>= 10)', (year) => {
+    const count = EXERCISES.filter(e => e.type === 'define' && e.w === year).length;
+    expect(count).toBeGreaterThanOrEqual(10);
+  });
 });
 
 // ─── Exam tips (tips.js) ──────────────────────────────────────────────────────
