@@ -73,12 +73,13 @@ describe('worksheet label (shown in random mode)', () => {
 
 // ─── Random tip picking (mirrors pickRandomTip in app.js) ────────────────────
 
-function pickRandomTip(tips) {
+function pickRandomTip(tips, exclude) {
   if (!Array.isArray(tips) || tips.length === 0) return null;
-  return tips[Math.floor(Math.random() * tips.length)];
+  const pool = (tips.length > 1 && exclude != null) ? tips.filter(t => t !== exclude) : tips;
+  return pool[Math.floor(Math.random() * pool.length)];
 }
 
-describe('pickRandomTip (shown once per session)', () => {
+describe('pickRandomTip (rotates every question)', () => {
   const TIPS = ['Tipp A', 'Tipp B', 'Tipp C'];
 
   test('returns a tip from the list', () => {
@@ -91,6 +92,16 @@ describe('pickRandomTip (shown once per session)', () => {
     expect(pickRandomTip([])).toBeNull();
     expect(pickRandomTip(null)).toBeNull();
     expect(pickRandomTip(undefined)).toBeNull();
+  });
+
+  test('never repeats the excluded (previous) tip when others exist', () => {
+    for (let i = 0; i < 30; i++) {
+      expect(pickRandomTip(TIPS, 'Tipp B')).not.toBe('Tipp B');
+    }
+  });
+
+  test('returns the only tip even if it equals the excluded one', () => {
+    expect(pickRandomTip(['Only'], 'Only')).toBe('Only');
   });
 });
 

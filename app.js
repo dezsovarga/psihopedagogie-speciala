@@ -153,23 +153,27 @@ function startSession(mode) {
     selectedState: null
   };
 
-  showSessionTip();
   showScreen('exercise');
   renderExercise();
 }
 
 // ─── Exam tips ────────────────────────────────────────────────────────────────
-// One random tip (from tips.js) is shown per session on the exercise screen.
-function pickRandomTip(tips) {
+// A fresh random tip (from tips.js) is shown on every question, never repeating
+// the immediately previous one.
+let lastTip = null;
+
+function pickRandomTip(tips, exclude) {
   if (!Array.isArray(tips) || tips.length === 0) return null;
-  return tips[Math.floor(Math.random() * tips.length)];
+  const pool = (tips.length > 1 && exclude != null) ? tips.filter(t => t !== exclude) : tips;
+  return pool[Math.floor(Math.random() * pool.length)];
 }
 
 function showSessionTip() {
   const el = document.getElementById('session-tip');
   if (!el) return;
-  const tip = pickRandomTip(typeof EXAM_TIPS !== 'undefined' ? EXAM_TIPS : []);
+  const tip = pickRandomTip(typeof EXAM_TIPS !== 'undefined' ? EXAM_TIPS : [], lastTip);
   if (!tip) { el.style.display = 'none'; return; }
+  lastTip = tip;
   document.getElementById('tip-text').textContent = tip;
   el.style.display = 'flex';
 }
@@ -195,6 +199,7 @@ function renderExercise() {
   }
 
   stopMic();
+  showSessionTip();                 // fresh tip on every question
   const ex = session.queue[session.index];
   session.answered = false;
   session.selectedState = null;
