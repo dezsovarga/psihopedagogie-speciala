@@ -195,6 +195,22 @@ describe('list (enumeration) questions', () => {
   });
 });
 
+// ─── Questions must be self-contained ────────────────────────────────────────
+// A question may not lean on exam-internal structure (a task/tétel) that the
+// learner never sees in the app — e.g. "Sorolja fel az I. feladat ... fogalmát".
+describe('questions are standalone', () => {
+  const FORBIDDEN = [
+    /\b[IVX]+\.\s*feladat/,     // "I. feladat", "II. feladat", ...
+    /tétel szerint/i,           // "(a tétel szerint)"
+    /tételben szerepl/i,        // "a tételben szereplő ..."
+    /feladat szerint/i,         // "(a ... feladat szerint)"
+  ];
+  test('no question text references an unseen task/tétel', () => {
+    const bad = EXERCISES.filter(e => FORBIDDEN.some(re => re.test(e.q)));
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+});
+
 describe('essay questions', () => {
   test('have modelAnswer and points', () => {
     const bad = EXERCISES.filter(e => e.type === 'essay' && (!e.modelAnswer || typeof e.points !== 'number'));

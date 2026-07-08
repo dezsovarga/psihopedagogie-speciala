@@ -184,7 +184,7 @@ const EXERCISES_LISTS = [
   },
   {
     id:'list_w3_04', w:3, topic:'Autizmus', type:'list', diff:2, need:3,
-    q:'Sorolja fel az ASD tanulóknál alkalmazott négy módszert (a tétel szerint)!',
+    q:'Sorolja fel az autizmus spektrumzavarral élő tanulóknál alkalmazott négy jól ismert módszert!',
     items:[
       { label:'ABA (alkalmazott viselkedéselemzés)', alt:['aba', 'viselkedéselemzés'] },
       { label:'TEACCH (strukturált tanítás)', alt:['teacch', 'strukturált tanítás'] },
@@ -267,7 +267,7 @@ const EXERCISES_LISTS = [
   },
   {
     id:'list_w4_05', w:4, topic:'Oktatási eszközök', type:'list', diff:2, need:3,
-    q:'Sorolja fel a tételben szereplő három speciális oktatási eszközt (eszközcsoportot)!',
+    q:'Nevezzen meg három speciális oktatási eszközcsoportot, amelyet SNI/CES tanulók fejlesztésében alkalmaznak!',
     items:[
       { label:'Kommunikációs táblák / PECS-kártyák', alt:['kommunikációs tábla', 'pecs', 'képkártya'] },
       { label:'Érzékszervi integrációs eszközök', alt:['érzékszervi', 'szenzoros', 'súlyozott takaró'] },
@@ -324,7 +324,7 @@ const EXERCISES_LISTS = [
   },
   {
     id:'list_w5_05', w:5, topic:'Fejlődési szakaszok', type:'list', diff:2, need:3,
-    q:'Sorolja fel a CES gyermek három ontogenetikus fejlődési szakaszát (a tétel szerint)!',
+    q:'Sorolja fel a CES gyermek három ontogenetikus fejlődési szakaszát!',
     items:[
       { label:'Csecsemő- és kisgyermekkor (0–3 év, korai fejlesztés)', alt:['csecsemő', 'kisgyermekkor', 'korai fejlesztés'] },
       { label:'Óvodáskor (3–7 év, szocializáció)', alt:['óvodáskor', 'szocializáció'] },

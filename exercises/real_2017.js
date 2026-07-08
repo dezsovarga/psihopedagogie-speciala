@@ -203,7 +203,7 @@ const EXERCISES_REAL_2017 = [
   // ─── Felsorolás (list) típus ──────────────────────────────────────────────
   {
     id:'real_2017_21', w:2017, topic:'Alapfogalmak', type:'list', diff:2, need:3,
-    q:'Sorolja fel az I. feladat három meghatározandó alapfogalmát!',
+    q:'Sorolja fel azt a három alapfogalmat, amely a speciális pszichopedagógia tárgyát meghatározza: a szakterületet, a fogyatékossággal élők társadalmi beilleszkedését és a többlet-támogatási szükségletet!',
     items:[
       { label:'Speciális pszichopedagógia', alt:['pszichopedagógia'] },
       { label:'Pszichoszociális beilleszkedés', alt:['pszichoszociális', 'beilleszkedés'] },
@@ -213,7 +213,7 @@ const EXERCISES_REAL_2017 = [
   },
   {
     id:'real_2017_22', w:2017, topic:'Interdiszciplinaritás', type:'list', diff:1, need:3,
-    q:'Sorolja fel azt a három társtudományt, amellyel a speciális pszichopedagógia kapcsolatát az I. feladat vizsgálja!',
+    q:'Sorolja fel azt a három társtudományt, amellyel a speciális pszichopedagógia a legszorosabban kapcsolódik!',
     items:[
       { label:'Pszichológia', alt:['pszichológ'] },
       { label:'Pedagógia', alt:['pedagóg'] },
@@ -223,7 +223,7 @@ const EXERCISES_REAL_2017 = [
   },
   {
     id:'real_2017_23', w:2017, topic:'Nyelvi terápiák', type:'list', diff:2, need:3,
-    q:'Sorolja fel a II. feladat három meghatározandó fogalmát a nyelv kompenzálásával kapcsolatban!',
+    q:'Sorolja fel a beszélt és írott nyelv kompenzálásához kapcsolódó három szakterületi fogalmat (a nyelvi zavarok, a hallássérülés és a látássérülés területéről)!',
     items:[
       { label:'A nyelvi zavarok terápiája', alt:['nyelvi zavar', 'logopéd'] },
       { label:'Pedagógiai és technológiai audiológia', alt:['audiológia'] },
@@ -243,7 +243,7 @@ const EXERCISES_REAL_2017 = [
   },
   {
     id:'real_2017_25', w:2017, topic:'Oktatási alapelvek', type:'list', diff:2, need:2,
-    q:'Sorolja fel az SNI/CES tanulók oktatási folyamatának két alapelvét (a III. feladat szerint)!',
+    q:'Sorolja fel az SNI/CES tanulók oktatási folyamatának két alapelvét!',
     items:[
       { label:'Az individualizálás és személyre szabás elve', alt:['individualizál', 'személyre szab'] },
       { label:'Az aktív részvétel elve', alt:['aktív részvétel'] }
