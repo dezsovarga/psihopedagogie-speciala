@@ -1,30 +1,91 @@
-# Session Handoff — 2026-07-03
+# Session Handoff — 2026-07-09
 
-> Previous handoff was 2026-06-26 (essay type, mic input, Claude eval, Cloudflare
-> proxy). This rewrite covers everything added since: worksheets 4–7, the
-> disabled Gyógyped. Alapismeretek mode, the `define` and `list` question types,
-> session/UI changes, and forward-looking ideas for more question types.
+> History: 2026-06-26 (essay type, mic input, Claude eval, Cloudflare proxy) →
+> 2026-07-03 (worksheets 4–7, disabled gyalap mode, `define`/`list` types) →
+> **2026-07-09 (this session): exam tips, and the "Valós vizsgatételek" real
+> past-exam sections for 2017–2020).** The 2026-07-09 additions are summarized
+> first; the 2026-07-03 details follow below as reference.
 
 ## Current state at a glance
 
-- **460 exercises total**, live at https://dezsovarga.github.io/psihopedagogie-speciala/
+- **617 exercises total**, live at https://dezsovarga.github.io/psihopedagogie-speciala/
 - **7 worksheets** (`w:1`–`7`), each a full exam variant, plus `w:0` shared (Vegyes)
+- **4 real past-exam years** — "Valós vizsgatételek": 2017, 2018, 2019, 2020 (`w = year`)
 - **Gyógyped. Alapismeretek** study-guide mode (`w:101`–`103`) exists but is **DISABLED**
 - Question types and counts:
 
   | Type | Count | Graded by |
   |------|-------|-----------|
-  | `mc` (feleletválasztós) | 199 | local |
-  | `define` (fogalommeghatározás) | 78 | Claude Haiku |
-  | `list` (felsorolás / enumeration) | 43 | local, partial-credit checklist |
-  | `tf` (igaz/hamis) | 39 | local |
-  | `fill` (kiegészítés) | 23 | local |
-  | `essay` (esszé) | 22 | Claude Haiku |
-  | `order` (sorrendezés) | 21 | local |
-  | `short` (rövid válasz) | 18 | local (keyword) |
-  | `match` (párosítás) | 17 | local |
+  | `mc` (feleletválasztós) | 244 | local |
+  | `define` (fogalommeghatározás) | 128 | Claude Haiku |
+  | `list` (felsorolás / enumeration) | 63 | local, partial-credit checklist |
+  | `tf` (igaz/hamis) | 51 | local |
+  | `essay` (esszé) | 30 | Claude Haiku |
+  | `fill` (kiegészítés) | 28 | local |
+  | `order` (sorrendezés) | 25 | local |
+  | `match` (párosítás) | 25 | local |
+  | `short` (rövid válasz) | 23 | local (keyword) |
 
-## What was built since the last handoff
+- **141 tests pass** (`npm test`).
+
+## What was built THIS session (2026-07-09)
+
+### A. Exam tips — "Tippek és tanácsok" (`tips.js`)
+One random exam tip is shown on the exercise screen, styled as a lightbulb card
+(💡, purple/yellow) echoing a Tips & Tricks reference image.
+
+- **Source**: extracted from the methodology section
+  ("A TITULARIZÁCIÓS VERSENYVIZSGA MÓDSZERTANA") of the 438-page PDF in
+  `tips_for_the_exam/`, via a Python venv + pypdf (large-PDF extraction).
+- `tips.js` exports `EXAM_TIPS` — **14 tips** drawn strictly from the four
+  methodology subsections (exam structure/scoring, essay-writing guidance,
+  success advice).
+- **Rotates on every question** (moved from once-per-session): `showSessionTip()`
+  runs in `renderExercise()`; `pickRandomTip(tips, exclude)` never repeats the
+  immediately previous tip (`lastTip`). Dismissible with ✕.
+- Card label is **"Tippek és tanácsok"**. Styling in `style.css` (`.session-tip`).
+
+### B. "Valós vizsgatételek" — real past-exam sections (2017–2020)
+Real past exams from `real_exam_subjects/` are **separate year sections**, one per
+year, under a "Valós vizsgatételek" sub-heading on the home screen. **157
+questions across 4 years** (2017: 40, 2018: 38, 2019: 40, 2020: 39).
+
+- **Numbering: `w = year`** (2017…2020) — self-documenting, collision-free
+  (worksheets 1–7, gyalap 101–114). One self-contained file per year
+  (`exercises/real_YYYY.js`) with **all** question types (standard + define +
+  essay + list), ids `real_YYYY_*`.
+- Each year has **≥10 define questions** (13/11/13/13) — a real-exam coverage
+  test enforces this. Model answers verbatim from the `_megoldasok.docx` solution.
+- **Topics**: 2017 — spec. pszichopedagógia, nyelvi terápiák/demutizáció,
+  módszertan; 2018 — etiológia (endogén/exogén), didaktikai játék, tantervi
+  tervezés; 2019 — értékelés, öröklődés/környezet/nevelés, módszertani
+  kompetenciák; 2020 — same I/II themes + differenciált tanterv, tantárgyi
+  program, matematika-tanítás, IKT.
+- **Reusable pattern** (documented in `CLAUDE.md`, "Adding a real past-exam year"):
+  drop the DOCX pair → create `exercises/real_YYYY.js` → 3 one-line wirings
+  (`data.js` spread, `index.html` script tag + card, `REAL_EXAM_YEARS` /
+  `REAL_EXAM_LABELS` in `app.js`) → register in tests.
+- `REAL_EXAM_LABELS` holds the correct (irregular) Hungarian labels — 2017-**es**,
+  2018-**as**, 2019-**es**, 2020-**as** — used for the random-mode source badge.
+
+### C. Pool behaviour: real exams included in the general modes
+Per request, real-exam questions now **also** appear in **Vegyes / Strukturált /
+Véletlenszerű** (not only their dedicated year sections). The general-mode filter
+is `e.w < 100 || e.w >= 2000`; only the disabled gyalap (100–999) is excluded.
+Dedicated year mode still selects `e.w === year` exactly (no `w:0` shared).
+> Note: the global **Ismétlés (review)** mode still excludes `w >= 100`, so
+> real-exam questions are not yet surfaced in review — a one-line tweak if wanted.
+
+### D. Questions made standalone (regression-guarded)
+Rewrote 7 list questions that referenced exam-internal structure the learner never
+sees (e.g. "Sorolja fel az I. feladat…", "(a tétel szerint)"). Added a test that
+flags any question text referencing an unseen task/tétel (regex for "N. feladat",
+"tétel szerint", "tételben szereplő").
+
+### E. 2017 defines expanded 5 → 13
+Turned every remaining clearly-defined concept in the 2017 solution into a define.
+
+## What was built 2026-07-03 (reference)
 
 ### 1. Worksheets 4, 5, 6, 7 added
 Each is a complete exam variant authored from its `gyakorlas_N_megoldasok_cl.docx`
@@ -61,10 +122,12 @@ A study-guide practice mode built from `other_materials/` (14-chapter guide),
 with a chapter-select sub-screen. Chapters 1–3 were authored (`gyalap_ch*.js`,
 `w:101`–`103`, 90 questions).
 
-**It is currently disabled**: the home-screen mode card is commented out, and
-questions with `w >= 100` are filtered out of every session pool (mix / structured
-/ random / worksheet / review) in `app.js`. Data files and the chapters screen
-markup are kept so it can be re-enabled by uncommenting the one mode card.
+**It is currently disabled**: the home-screen mode card is commented out, and the
+gyalap questions (`w` 100–999) are filtered out of every session pool in `app.js`.
+Data files and the chapters screen markup are kept so it can be re-enabled by
+uncommenting the one mode card.
+> Updated 2026-07-09: the general-mode filter is now `e.w < 100 || e.w >= 2000`,
+> so only gyalap (100–999) is excluded — real exams (`w >= 2000`) are included.
 
 ### 5. Session modes + selection logic
 - **Vegyes (`mix`)**, **Strukturált (`structured`)**, **Véletlenszerű (`random`)**
@@ -166,7 +229,7 @@ define share a textarea). Web Speech API, `lang: 'hu-HU'`, continuous. **Chrome 
 `npm test` (Jest). Two files: `tests/exercises.test.js` (data integrity — every
 `exercises/*.js` file listed in `EXERCISE_FILES`, required fields, dup IDs,
 type-specific rules, per-worksheet coverage) and `tests/session.test.js` (session
-construction, type caps, lives/early-exit, `worksheetLabel`). **109 tests pass.**
+construction, type caps, lives/early-exit, `worksheetLabel`). **141 tests pass.**
 Every change ships with a test per `CLAUDE.md`'s TDD rule.
 
 ---
