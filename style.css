@@ -898,11 +898,16 @@ body {
   flex-shrink: 0;
 }
 .type-filter-count {
-  margin-top: 10px;
-  font-size: 13px;
+  grid-column: 1 / -1;
+  margin-bottom: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--blue);
+  background: var(--blue-light);
+  border-radius: 8px;
 }
+.type-filter-count strong { font-size: 15px; }
 @media (max-width: 480px) {
   .type-filter-list { grid-template-columns: 1fr; }
 }

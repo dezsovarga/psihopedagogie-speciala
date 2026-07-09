@@ -64,23 +64,21 @@ function countAvailableQuestions(enabledTypes) {
   return EXERCISES.filter(e => (e.w < 100 || e.w >= 2000) && enabledTypes.includes(e.type)).length;
 }
 
-function updateTypeFilterCount() {
-  const el = document.getElementById('type-filter-count');
-  if (!el) return;
-  el.textContent = `Elérhető kérdések: ${countAvailableQuestions(getEnabledTypes())}`;
-}
-
 function renderTypeFilter() {
   const box = document.getElementById('type-filter-list');
   if (!box) return;
   const enabled = getEnabledTypes();
-  box.innerHTML = ALL_QUESTION_TYPES.map(t => `
+  const count = countAvailableQuestions(enabled);
+  // The count is rendered inside this container (before the checkboxes) so it
+  // shows even if index.html predates the standalone count element.
+  box.innerHTML =
+    `<div class="type-filter-count" id="type-filter-count">Elérhető kérdés: <strong>${count}</strong></div>` +
+    ALL_QUESTION_TYPES.map(t => `
     <label class="type-filter-row">
       <input type="checkbox" data-type="${t}" ${enabled.includes(t) ? 'checked' : ''}
              onchange="toggleQuestionType('${t}', this.checked)">
       <span>${QUESTION_TYPE_LABELS[t]}</span>
     </label>`).join('');
-  updateTypeFilterCount();
 }
 
 function toggleQuestionType(type, checked) {
@@ -99,7 +97,7 @@ function toggleQuestionType(type, checked) {
   }
   // Store in canonical order.
   localStorage.setItem('psp_enabled_types', JSON.stringify(ALL_QUESTION_TYPES.filter(t => enabled.includes(t))));
-  updateTypeFilterCount();
+  renderTypeFilter();   // refresh checkboxes + live count
   if (status) { status.textContent = '✓ Kérdéstípus-szűrő mentve'; status.className = 'settings-status ok'; }
 }
 
