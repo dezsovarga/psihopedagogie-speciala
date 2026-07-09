@@ -58,6 +58,18 @@ function getEnabledTypes() {
   }
 }
 
+// Number of questions that could appear given the current type selection —
+// within the practiceable pool (worksheets + real exams; disabled gyalap excluded).
+function countAvailableQuestions(enabledTypes) {
+  return EXERCISES.filter(e => (e.w < 100 || e.w >= 2000) && enabledTypes.includes(e.type)).length;
+}
+
+function updateTypeFilterCount() {
+  const el = document.getElementById('type-filter-count');
+  if (!el) return;
+  el.textContent = `Elérhető kérdések: ${countAvailableQuestions(getEnabledTypes())}`;
+}
+
 function renderTypeFilter() {
   const box = document.getElementById('type-filter-list');
   if (!box) return;
@@ -68,6 +80,7 @@ function renderTypeFilter() {
              onchange="toggleQuestionType('${t}', this.checked)">
       <span>${QUESTION_TYPE_LABELS[t]}</span>
     </label>`).join('');
+  updateTypeFilterCount();
 }
 
 function toggleQuestionType(type, checked) {
@@ -86,6 +99,7 @@ function toggleQuestionType(type, checked) {
   }
   // Store in canonical order.
   localStorage.setItem('psp_enabled_types', JSON.stringify(ALL_QUESTION_TYPES.filter(t => enabled.includes(t))));
+  updateTypeFilterCount();
   if (status) { status.textContent = '✓ Kérdéstípus-szűrő mentve'; status.className = 'settings-status ok'; }
 }
 

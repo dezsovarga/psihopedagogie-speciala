@@ -192,6 +192,31 @@ describe('question-type filter (Settings)', () => {
   });
 });
 
+// Live "available questions" count shown under the checkboxes (mirrors
+// countAvailableQuestions in app.js): enabled types within the practiceable pool
+// (worksheets w<100 + real exams w>=2000; disabled gyalap 100–999 never counted).
+function countAvailable(pool, enabled) {
+  return pool.filter(e => (e.w < 100 || e.w >= 2000) && enabled.includes(e.type)).length;
+}
+
+describe('available-question count', () => {
+  const POOL = [
+    makeEx('a', 'mc', 1),      // practiceable
+    makeEx('b', 'define', 1),  // practiceable
+    makeEx('c', 'mc', 101),    // gyalap — never counted
+    makeEx('d', 'tf', 2017),   // real exam — practiceable
+  ];
+
+  test('counts only enabled types within the practiceable pool', () => {
+    expect(countAvailable(POOL, ['mc', 'tf'])).toBe(2);   // a (mc/w1) + d (tf/w2017); c gyalap-excluded, b disabled
+  });
+
+  test('disabling a type lowers the count', () => {
+    expect(countAvailable(POOL, ['mc', 'tf', 'define'])).toBe(3);
+    expect(countAvailable(POOL, ['tf'])).toBe(1);
+  });
+});
+
 // ─── Pool selection (mirrors startSession in app.js) ─────────────────────────
 
 function selectPool(allExercises, mode) {

@@ -892,6 +892,12 @@ body {
   cursor: pointer;
   flex-shrink: 0;
 }
+.type-filter-count {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue);
+}
 @media (max-width: 480px) {
   .type-filter-list { grid-template-columns: 1fr; }
 }
