@@ -5,33 +5,36 @@ Live at: https://dezsovarga.github.io/psihopedagogie-speciala/
 
 ## Source files
 
-`exam_subjects/` contains matched pairs (number is the pairing key):
-- `gyakorlas_1_feladatsor.pdf` ↔ `gyakorlas_1_megoldasok_cl.docx`
-- `gyakorlas_2_feladatsor.pdf` ↔ `gyakorlas_2_megoldasok_cl.docx`
-- `gyakorlas_3_feladatsor.pdf` ↔ `gyakorlas_3_megoldasok_cl.docx`
-- `gyakorlas_4_feladatsor.pdf` ↔ `gyakorlas_4_megoldasok_cl.docx`
-- `gyakorlas_5_feladatsor.pdf` ↔ `gyakorlas_5_magoldasok_cl.docx`
-- `gyakorlas_6_feladatsor.pdf` ↔ `gyakorlas_6_megoldasok_cl.docx`
+`exam_subjects/` holds the practice worksheets (1–7), matched pairs (number is
+the pairing key): `gyakorlas_N_feladatsor.pdf` ↔ `gyakorlas_N_megoldasok_cl.docx`
+for N = 1…7 (note: 5's solution is spelled `gyakorlas_5_magoldasok_cl.docx`).
+
+`real_exam_subjects/` holds the **real past-exam** pairs, one per year:
+`gyakorlas_YYYY_feladatsor.docx` ↔ `gyakorlas_YYYY_megoldasok.docx` (2017–2020 so
+far). These drive the "Valós vizsgatételek" sections (see below).
 
 The solution `.docx` files are the source of truth. Never invent definitions or facts not found in them.
 
 `other_materials/` holds the "Gyógypedagógiai Alapismeretek" study guide (14 chapters).
 Its exercises live in `exercises/gyalap_ch*.js` (w: 101–114). **This mode is
-currently disabled** — the home-screen card is commented out and questions with
-`w >= 100` are excluded from every session (see `app.js`). The data files and
+currently disabled** — the home-screen card is commented out and gyalap questions
+(`w` 100–999) are excluded from every session (see `app.js`). The data files and
 chapter-select screen markup are kept so it can be re-enabled later.
+
+`tips_for_the_exam/` holds a study PDF whose methodology section is the source of
+`tips.js` (see "Exam tips" below).
 
 ## App structure
 
 ```
 exercises/
-  worksheet_1.js … worksheet_6.js  ← w:1–6 exercises (standard types)
+  worksheet_1.js … worksheet_7.js  ← w:1–7 exercises (standard types)
   gyalap_ch1.js … gyalap_ch3.js    ← w:101–114 Gyógyped. Alapismeretek (DISABLED)
+  real_2017.js … real_2020.js      ← real past-exam years (w = year); one file per year
   mixed.js         ← w:0 shared exercises
   essays.js        ← define + essay questions (AI-evaluated; manually maintained)
   lists.js         ← list (enumeration) questions for all worksheets; hand-maintained
-  real_2017.js …   ← real past-exam years (w = year, e.g. 2017); one file per year
-tips.js            ← EXAM_TIPS: exam tips shown one-per-session on the exercise screen
+tips.js            ← EXAM_TIPS: one random exam tip, rotated per question on the exercise screen
 data.js            ← combines all exercise arrays + helper functions
 app.js             ← session logic, spaced repetition, progress (localStorage)
                       mic/speech recognition, Claude API evaluation, settings
@@ -81,7 +84,7 @@ reasons. It defaults to the built-in worker, so users normally never touch it.
 
 ## Adding a new exam subject (worksheet N)
 
-Worksheet 6 is the latest. Full checklist to add worksheet N:
+Worksheet 7 is the latest. Full checklist to add worksheet N:
 
 1. Drop the pair into `exam_subjects/` (`gyakorlas_N_feladatsor.pdf` +
    `gyakorlas_N_megoldasok_cl.docx`).
@@ -116,14 +119,26 @@ Worksheet 6 is the latest. Full checklist to add worksheet N:
 
 ## Adding a real past-exam year (Valós vizsgatételek)
 
-Real past exams from `real_exam_subjects/` are **separate year sections**, distinct
-from the practice worksheets. Numbering: **`w = year`** (e.g. `2017`). Because the
-year is `>= 100`, these questions are excluded from the general mix/structured/
-random pools and from review; the year mode selects **only** that year (exact
-match, no `w:0` shared). To add year YYYY:
+Real past exams from `real_exam_subjects/` are **year sections** (2017–2020 so far),
+each `w = year`. Pool behaviour (in `startSession`, mirrored by `selectPool` in
+`session.test.js`):
+- The **year mode** (`startSession(YYYY)`) selects **only** that year — exact
+  match, no `w:0` shared questions.
+- Real-exam questions **are included** in the general **mix / structured / random**
+  pools (filter `e.w < 100 || e.w >= 2000`); only the disabled gyalap (100–999)
+  is excluded.
+- The global **Ismétlés (review)** mode still excludes `w >= 100`, so real-exam
+  questions are not currently surfaced in review (one-line change if wanted).
+
+Each year needs **≥10 define questions** (enforced by a coverage test). Every
+question must be **standalone** — no references to the exam's task structure
+(e.g. "Sorolja fel az I. feladat …", "(a tétel szerint)"); a test guards this.
+
+To add year YYYY:
 
 1. Drop `gyakorlas_YYYY_feladatsor.docx` + `gyakorlas_YYYY_megoldasok.docx` into
-   `real_exam_subjects/` (solutions are the source of truth).
+   `real_exam_subjects/` (solutions are the source of truth). For large PDFs use a
+   Python venv + `pypdf`; DOCX extract with `mammoth`.
 2. Create `exercises/real_YYYY.js` — one self-contained file with **all** question
    types (standard + `define` + `essay` + `list`), every entry `w: YYYY`, ids
    `real_YYYY_*`. Export `const EXERCISES_REAL_YYYY = [...]`.
@@ -133,10 +148,23 @@ match, no `w:0` shared). To add year YYYY:
      a mode card under the "Valós vizsgatételek" sub-heading with
      `onclick="startSession(YYYY)"` and `fill-yYYYY` / `pct-yYYYY` ids.
    - **app.js** — add `YYYY` to the `REAL_EXAM_YEARS` array (drives the home
-     progress bar; the pool logic already handles any `w >= 100`).
+     progress bar), and add `YYYY: 'YYYY-es/as változat'` to `REAL_EXAM_LABELS`
+     (the Hungarian suffix is irregular — 2017-es, 2018-as, 2019-es, 2020-as — so
+     it is stored explicitly; used for the random-mode source badge).
 4. Tests first (TDD): add `'exercises/real_YYYY.js'` to `EXERCISE_FILES` and `YYYY`
-   to the `REAL_EXAM_YEARS` array in `exercises.test.js`.
+   to `REAL_EXAM_YEARS` in `exercises.test.js`, and to `REAL_EXAM_LABELS` +
+   `worksheetLabel` assertions in `session.test.js`.
 5. `npm test`, commit, push.
+
+## Exam tips (tips.js)
+
+`tips.js` exports `EXAM_TIPS` (an array of Hungarian strings) extracted from the
+methodology section of the `tips_for_the_exam/` PDF. One random tip shows on the
+exercise screen as a "Tippek és tanácsok" lightbulb card, **rotated on every
+question** — `showSessionTip()` runs in `renderExercise()`, and
+`pickRandomTip(tips, exclude)` never repeats the immediately previous tip. Wired
+via a `<script src="tips.js">` before `data.js`; integrity tested in
+`exercises.test.js`.
 
 ## Exercise format (for manual edits or review)
 
@@ -231,3 +259,6 @@ When adding a new worksheet, extend the `test.each([...])` worksheet ranges and 
 - Only use facts and definitions from the solution files — never invent
 - Each major topic needs at least 3–4 exercises
 - `exp` must always reference the correct answer from the solution
+- **Questions must be standalone** — never reference the source exam's task
+  structure the learner can't see (e.g. "az I. feladat …", "a tétel szerint");
+  a test in `exercises.test.js` enforces this
