@@ -6,7 +6,7 @@ let lastSessionMode = null;
 
 // Real past-exam year sections (w = year). Add each new year here + a home card
 // (fill-y<year> / pct-y<year>) and a <script src="exercises/real_<year>.js">.
-const REAL_EXAM_YEARS = [2017, 2018, 2019];
+const REAL_EXAM_YEARS = [2017, 2018, 2019, 2020];
 
 function loadState() {
   try {
@@ -255,7 +255,7 @@ function renderExercise() {
 
 // Human-readable source label for an exercise's worksheet number.
 // Correct Hungarian section labels for real-exam years (irregular -es/-as suffix).
-const REAL_EXAM_LABELS = { 2017: '2017-es változat', 2018: '2018-as változat', 2019: '2019-es változat' };
+const REAL_EXAM_LABELS = { 2017: '2017-es változat', 2018: '2018-as változat', 2019: '2019-es változat', 2020: '2020-as változat' };
 function worksheetLabel(w) {
   if (w === 0) return 'Vegyes';
   if (w >= 2000) return REAL_EXAM_LABELS[w] || `${w}. évi vizsga`;   // real exam year

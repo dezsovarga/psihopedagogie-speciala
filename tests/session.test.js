@@ -52,7 +52,7 @@ function buildSessionQueue(pool, mode) {
 // Shown next to the question in random ('véletlenszerű') mode so the learner
 // knows which worksheet each question comes from.
 
-const REAL_EXAM_LABELS = { 2017: '2017-es változat', 2018: '2018-as változat', 2019: '2019-es változat' };
+const REAL_EXAM_LABELS = { 2017: '2017-es változat', 2018: '2018-as változat', 2019: '2019-es változat', 2020: '2020-as változat' };
 function worksheetLabel(w) {
   if (w === 0) return 'Vegyes';
   if (w >= 2000) return REAL_EXAM_LABELS[w] || `${w}. évi vizsga`;   // real exam year
@@ -75,6 +75,7 @@ describe('worksheet label (shown in random mode)', () => {
     expect(worksheetLabel(2017)).toBe('2017-es változat');
     expect(worksheetLabel(2018)).toBe('2018-as változat');
     expect(worksheetLabel(2019)).toBe('2019-es változat');
+    expect(worksheetLabel(2020)).toBe('2020-as változat');
   });
 });
 

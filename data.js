@@ -23,6 +23,7 @@ const EXERCISES = [
   ...(typeof EXERCISES_REAL_2017   !== 'undefined' ? EXERCISES_REAL_2017   : []),
   ...(typeof EXERCISES_REAL_2018   !== 'undefined' ? EXERCISES_REAL_2018   : []),
   ...(typeof EXERCISES_REAL_2019   !== 'undefined' ? EXERCISES_REAL_2019   : []),
+  ...(typeof EXERCISES_REAL_2020   !== 'undefined' ? EXERCISES_REAL_2020   : []),
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
