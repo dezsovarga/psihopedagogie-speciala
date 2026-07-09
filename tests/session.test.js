@@ -115,6 +115,59 @@ describe('pickRandomTip (rotates every question)', () => {
   });
 });
 
+// ─── Cloze blank matching (mirrors app.js) ───────────────────────────────────
+
+function levenshtein(a, b) {
+  const m = a.length, n = b.length;
+  const d = Array.from({ length: m + 1 }, (_, i) => [i, ...Array(n).fill(0)]);
+  for (let j = 0; j <= n; j++) d[0][j] = j;
+  for (let i = 1; i <= m; i++)
+    for (let j = 1; j <= n; j++)
+      d[i][j] = Math.min(d[i-1][j] + 1, d[i][j-1] + 1, d[i-1][j-1] + (a[i-1] === b[j-1] ? 0 : 1));
+  return d[m][n];
+}
+
+function foldHungarianAccents(s) {
+  return s.toLowerCase()
+    .replace(/[áàâ]/g, 'a')
+    .replace(/[éèê]/g, 'e')
+    .replace(/[íì]/g, 'i')
+    .replace(/[óòôöő]/g, 'o')
+    .replace(/[úùûüű]/g, 'u');
+}
+
+function clozeBlankMatches(user, answer) {
+  user = (user || '').trim();
+  if (!user) return false;
+  const u = foldHungarianAccents(user), a = foldHungarianAccents(answer);
+  return u === a || levenshtein(u, a) <= 1;
+}
+
+describe('cloze blank matching', () => {
+  test('exact match (case-insensitive)', () => {
+    expect(clozeBlankMatches('Gyors', 'gyors')).toBe(true);
+  });
+  test('missing Hungarian accents are tolerated', () => {
+    expect(clozeBlankMatches('szocialis', 'szociális')).toBe(true);      // á→a
+    expect(clozeBlankMatches('konceptualis', 'konceptuális')).toBe(true);
+    expect(clozeBlankMatches('feldolgozasaert', 'feldolgozásáért')).toBe(true); // two accents
+    expect(clozeBlankMatches('serult', 'sérült')).toBe(true);            // é→e, ü→u
+    expect(clozeBlankMatches('tarolasaert', 'tárolásáért')).toBe(true);
+  });
+  test('one extra typo on top of accent-folding is tolerated', () => {
+    expect(clozeBlankMatches('gyorss', 'gyors')).toBe(true);             // 1 insertion
+    expect(clozeBlankMatches('feldolgozasaer', 'feldolgozásáért')).toBe(true); // accents + 1 deletion
+  });
+  test('two or more real typos are rejected', () => {
+    expect(clozeBlankMatches('konzeptulis', 'konceptuális')).toBe(false);
+    expect(clozeBlankMatches('xyz', 'gyors')).toBe(false);
+  });
+  test('empty input never matches', () => {
+    expect(clozeBlankMatches('', 'gyors')).toBe(false);
+    expect(clozeBlankMatches('   ', 'gyors')).toBe(false);
+  });
+});
+
 // ─── Cloze parsing (mirrors parseCloze in app.js) ────────────────────────────
 
 function parseCloze(text) {

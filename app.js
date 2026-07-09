@@ -795,8 +795,7 @@ function checkAnswer() {
     const results = answers.map((answer, i) => {
       const inp  = document.getElementById(`cloze-blank-${i}`);
       const user = (inp?.value || '').trim();
-      const hit  = user.length > 0 &&
-        (user.toLowerCase() === answer.toLowerCase() || levenshtein(user.toLowerCase(), answer.toLowerCase()) <= 1);
+      const hit  = clozeBlankMatches(user, answer);
       if (inp) {
         inp.disabled = true;
         inp.classList.add(hit ? 'correct' : 'wrong');
@@ -1260,6 +1259,25 @@ function levenshtein(a, b) {
       dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] :
         1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
   return dp[a.length][b.length];
+}
+
+// Fold Hungarian accented vowels to their base letter (á→a, é→e, ő/ö→o, ű/ü→u …)
+// so a missing accent isn't counted as an error.
+function foldHungarianAccents(s) {
+  return s.toLowerCase()
+    .replace(/[áàâ]/g, 'a')
+    .replace(/[éèê]/g, 'e')
+    .replace(/[íì]/g, 'i')
+    .replace(/[óòôöő]/g, 'o')
+    .replace(/[úùûüű]/g, 'u');
+}
+
+// Cloze blank grading: accent-insensitive, plus one edit of typo tolerance.
+function clozeBlankMatches(user, answer) {
+  user = (user || '').trim();
+  if (!user) return false;
+  const u = foldHungarianAccents(user), a = foldHungarianAccents(answer);
+  return u === a || levenshtein(u, a) <= 1;
 }
 
 // ─── Export / Import ──────────────────────────────────────────────────────────
