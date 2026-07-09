@@ -115,6 +115,41 @@ describe('pickRandomTip (rotates every question)', () => {
   });
 });
 
+// ─── Cloze parsing (mirrors parseCloze in app.js) ────────────────────────────
+
+function parseCloze(text) {
+  const parts = [];
+  const answers = [];
+  const re = /\{\{(.+?)\}\}/g;
+  let last = 0, m;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) parts.push({ text: text.slice(last, m.index) });
+    parts.push({ blank: true, answer: m[1], i: answers.length });
+    answers.push(m[1]);
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push({ text: text.slice(last) });
+  return { parts, answers };
+}
+
+describe('parseCloze', () => {
+  test('extracts blanks and the surrounding literal text', () => {
+    const { parts, answers } = parseCloze('A {{alma}} és a {{körte}} gyümölcs.');
+    expect(answers).toEqual(['alma', 'körte']);
+    expect(parts.filter(p => p.blank).length).toBe(2);
+    expect(parts.filter(p => p.text).map(p => p.text)).toEqual(['A ', ' és a ', ' gyümölcs.']);
+  });
+
+  test('blanks carry a 0-based index', () => {
+    const { parts } = parseCloze('{{egy}} meg {{kettő}}');
+    expect(parts.filter(p => p.blank).map(p => p.i)).toEqual([0, 1]);
+  });
+
+  test('text with no blanks yields an empty answer list', () => {
+    expect(parseCloze('Nincs kihagyás.').answers).toEqual([]);
+  });
+});
+
 // ─── Pool selection (mirrors startSession in app.js) ─────────────────────────
 
 function selectPool(allExercises, mode) {

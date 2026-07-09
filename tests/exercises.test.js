@@ -21,6 +21,7 @@ const EXERCISE_FILES = [
   'exercises/mixed.js',
   'exercises/essays.js',
   'exercises/lists.js',
+  'exercises/cloze.js',
   'exercises/real_2017.js',
   'exercises/real_2018.js',
   'exercises/real_2019.js',
@@ -64,7 +65,7 @@ describe('File parsing', () => {
 
 // ─── Fields required on every exercise ───────────────────────────────────────
 
-const VALID_TYPES = ['mc', 'tf', 'fill', 'match', 'order', 'short', 'essay', 'define', 'list'];
+const VALID_TYPES = ['mc', 'tf', 'fill', 'match', 'order', 'short', 'essay', 'define', 'list', 'cloze'];
 
 describe('Required fields on every exercise', () => {
   test('all exercises have id, w, topic, type, q, diff', () => {
@@ -200,6 +201,25 @@ describe('list (enumeration) questions', () => {
   });
 });
 
+describe('cloze questions', () => {
+  const clozes = () => EXERCISES.filter(e => e.type === 'cloze');
+
+  test('text is a string with at least one {{blank}}', () => {
+    const bad = clozes().filter(e => typeof e.text !== 'string' || !/\{\{.+?\}\}/.test(e.text));
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+
+  test('every blank is non-empty', () => {
+    const bad = clozes().filter(e => (e.text.match(/\{\{(.*?)\}\}/g) || []).some(b => !b.slice(2, -2).trim()));
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+
+  test('have exp', () => {
+    const bad = clozes().filter(e => !e.exp);
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+});
+
 // ─── Questions must be self-contained ────────────────────────────────────────
 // A question may not lean on exam-internal structure (a task/tétel) that the
 // learner never sees in the app — e.g. "Sorolja fel az I. feladat ... fogalmát".
@@ -211,7 +231,10 @@ describe('questions are standalone', () => {
     /feladat szerint/i,         // "(a ... feladat szerint)"
   ];
   test('no question text references an unseen task/tétel', () => {
-    const bad = EXERCISES.filter(e => FORBIDDEN.some(re => re.test(e.q)));
+    const bad = EXERCISES.filter(e => {
+      const body = (e.q || '') + ' ' + (e.text || '');
+      return FORBIDDEN.some(re => re.test(body));
+    });
     expect(bad.map(e => e.id)).toEqual([]);
   });
 });

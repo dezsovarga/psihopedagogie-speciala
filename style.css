@@ -1097,6 +1097,30 @@ body {
 .list-check-item.hit  { background: #E7F7EC; color: var(--green-dark); }
 .list-check-item.miss { background: #FDECEC; color: var(--red); }
 
+/* ─── Cloze (szövegkiegészítés) ─── */
+.cloze-body {
+  font-size: 16px;
+  line-height: 2.4;
+  color: var(--gray-900);
+}
+.cloze-blank {
+  min-width: 4ch;
+  margin: 0 2px;
+  padding: 2px 6px;
+  font-size: 15px;
+  font-family: inherit;
+  text-align: center;
+  border: none;
+  border-bottom: 2px solid var(--blue);
+  background: var(--blue-light);
+  border-radius: 6px 6px 0 0;
+  outline: none;
+}
+.cloze-blank::placeholder { color: var(--gray-400); font-style: italic; }
+.cloze-blank:focus { background: #CDEBFF; }
+.cloze-blank.correct { background: var(--green-light); border-bottom-color: var(--green-dark); color: var(--green-dark); font-weight: 700; }
+.cloze-blank.wrong   { background: var(--red-light);  border-bottom-color: var(--red);       color: var(--red);       font-weight: 700; }
+
 .model-answer-toggle {
   margin-top: 10px;
   border-top: 1px solid var(--gray-200);

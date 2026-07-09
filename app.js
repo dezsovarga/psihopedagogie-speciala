@@ -253,6 +253,22 @@ function renderExercise() {
   attachExerciseListeners(ex);
 }
 
+// Split a cloze `text` into literal segments and {{blank}} tokens.
+function parseCloze(text) {
+  const parts = [];
+  const answers = [];
+  const re = /\{\{(.+?)\}\}/g;
+  let last = 0, m;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) parts.push({ text: text.slice(last, m.index) });
+    parts.push({ blank: true, answer: m[1], i: answers.length });
+    answers.push(m[1]);
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push({ text: text.slice(last) });
+  return { parts, answers };
+}
+
 // Human-readable source label for an exercise's worksheet number.
 // Correct Hungarian section labels for real-exam years (irregular -es/-as suffix).
 const REAL_EXAM_LABELS = { 2017: '2017-es változat', 2018: '2018-as változat', 2019: '2019-es változat', 2020: '2020-as változat', 2021: '2021-es változat', 2022: '2022-es változat' };
@@ -273,7 +289,8 @@ function buildExerciseHTML(ex) {
     short:  'Rövid válasz',
     essay:  'Esszékérdés',
     define: 'Fogalommeghatározás',
-    list:   'Felsorolás'
+    list:   'Felsorolás',
+    cloze:  'Szövegkiegészítés'
   }[ex.type] || ex.type;
 
   const isClaudeType = ex.type === 'essay' || ex.type === 'define';
@@ -368,6 +385,22 @@ function buildExerciseHTML(ex) {
     <div id="mic-interim" class="mic-interim-preview"></div>`;
   }
 
+  else if (ex.type === 'cloze') {
+    const { parts } = parseCloze(ex.text || '');
+    let body = `<div class="cloze-body">`;
+    for (const p of parts) {
+      if (p.blank) {
+        const hint = p.answer.charAt(0);
+        const w = Math.max(4, p.answer.length);
+        body += `<input class="cloze-blank" id="cloze-blank-${p.i}" type="text" autocomplete="off" autocapitalize="off" placeholder="${hint}…" style="width:${w}ch">`;
+      } else {
+        body += p.text;
+      }
+    }
+    body += `</div>`;
+    html += body;
+  }
+
   else if (ex.type === 'essay' || ex.type === 'define') {
     if (!isLocalhost() && !getWorkerUrl()) {
       html += `<div class="no-api-notice">⚙ <strong>Cloudflare Worker URL szükséges</strong> a kiértékeléshez.
@@ -408,6 +441,15 @@ function attachExerciseListeners(ex) {
     if (inp) inp.addEventListener('input', () => {
       document.getElementById('btn-check').disabled = inp.value.trim().length < 2;
     });
+  }
+  if (ex.type === 'cloze') {
+    const { answers } = parseCloze(ex.text || '');
+    const inputs = answers.map((_, i) => document.getElementById(`cloze-blank-${i}`));
+    const update = () => {
+      document.getElementById('btn-check').disabled = !inputs.every(inp => inp && inp.value.trim().length > 0);
+    };
+    inputs.forEach(inp => inp && inp.addEventListener('input', update));
+    if (inputs[0]) inputs[0].focus();
   }
   if (ex.type === 'essay' || ex.type === 'define') {
     const inp = document.getElementById('essay-input');
@@ -666,6 +708,27 @@ function checkAnswer() {
     return;   // custom checklist feedback — skip the generic panel below
   }
 
+  else if (ex.type === 'cloze') {
+    const { answers } = parseCloze(ex.text || '');
+    const results = answers.map((answer, i) => {
+      const inp  = document.getElementById(`cloze-blank-${i}`);
+      const user = (inp?.value || '').trim();
+      const hit  = user.length > 0 &&
+        (user.toLowerCase() === answer.toLowerCase() || levenshtein(user.toLowerCase(), answer.toLowerCase()) <= 1);
+      if (inp) {
+        inp.disabled = true;
+        inp.classList.add(hit ? 'correct' : 'wrong');
+        if (!hit) inp.value = answer;    // reveal the correct word
+      }
+      return { answer, user, hit };
+    });
+    const matched = results.filter(r => r.hit).length;
+    isCorrect = matched === answers.length;
+    recordResult(ex, isCorrect);
+    showClozeFeedback(ex, results, matched, isCorrect);
+    return;   // custom checklist feedback — skip the generic panel below
+  }
+
   recordResult(ex, isCorrect);
   showFeedback(isCorrect, ex.exp);
 }
@@ -858,6 +921,30 @@ function showListFeedback(ex, results, matched, isCorrect) {
     <ul class="list-checklist">`;
   for (const r of results) {
     html += `<li class="list-check-item ${r.hit ? 'hit' : 'miss'}">${r.hit ? '✅' : '⬜'} ${r.label}</li>`;
+  }
+  html += `</ul>`;
+  if (ex.exp) html += `<p class="essay-feedback-text">${ex.exp}</p>`;
+  html += `</div>`;
+
+  panel.innerHTML = html;
+}
+
+function showClozeFeedback(ex, results, matched, isCorrect) {
+  const total = results.length;
+  const panel = document.getElementById('feedback-panel');
+  panel.style.display = 'flex';
+  panel.className = 'feedback-panel essay-fb ' + (isCorrect ? 'correct-fb' : 'wrong-fb');
+
+  let html = `<div class="essay-feedback-content">
+    <div class="essay-score-row">
+      <span class="essay-score">${matched} / ${total} kitöltés</span>
+      <span class="essay-verdict">${isCorrect ? 'Hibátlan! 🎉' : 'Nézd át a megoldást'}</span>
+    </div>
+    <ul class="list-checklist">`;
+  for (const r of results) {
+    html += r.hit
+      ? `<li class="list-check-item hit">✅ ${r.answer}</li>`
+      : `<li class="list-check-item miss">❌ <s>${r.user || '—'}</s> → <strong>${r.answer}</strong></li>`;
   }
   html += `</ul>`;
   if (ex.exp) html += `<p class="essay-feedback-text">${ex.exp}</p>`;
