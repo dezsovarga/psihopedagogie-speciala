@@ -201,6 +201,30 @@
         </div>
       </button>
 
+      <button class="mode-card mode-real" onclick="startSession(2021)">
+        <div class="mode-icon">📒</div>
+        <div class="mode-info">
+          <h3>2021-es változat</h3>
+          <p>Valós titularizációs vizsgatétel (2021) – nyelvi zavarok, komplex értékelés, esettanulmány, IKT</p>
+        </div>
+        <div class="mode-progress" id="progress-y2021">
+          <div class="progress-bar-mini"><div class="progress-fill" id="fill-y2021"></div></div>
+          <span id="pct-y2021">0%</span>
+        </div>
+      </button>
+
+      <button class="mode-card mode-real" onclick="startSession(2022)">
+        <div class="mode-icon">📕</div>
+        <div class="mode-info">
+          <h3>2022-es változat</h3>
+          <p>Valós titularizációs vizsgatétel (2022) – spec. pszichopedagógia, hallássérülés, problémafelvető tanulás</p>
+        </div>
+        <div class="mode-progress" id="progress-y2022">
+          <div class="progress-bar-mini"><div class="progress-fill" id="fill-y2022"></div></div>
+          <span id="pct-y2022">0%</span>
+        </div>
+      </button>
+
       <!-- Gyógyped. Alapismeretek mód letiltva – a kérdések (w >= 100) egyetlen munkamenetben sem jelennek meg.
       <button class="mode-card mode-gyalap" onclick="showChapters()">
         <div class="mode-icon">📚</div>
@@ -455,6 +479,8 @@
 <script src="exercises/real_2018.js"></script>
 <script src="exercises/real_2019.js"></script>
 <script src="exercises/real_2020.js"></script>
+<script src="exercises/real_2021.js"></script>
+<script src="exercises/real_2022.js"></script>
 <script src="exercises/gyalap_ch1.js"></script>
 <script src="exercises/gyalap_ch2.js"></script>
 <script src="exercises/gyalap_ch3.js"></script>

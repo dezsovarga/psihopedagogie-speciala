@@ -24,6 +24,8 @@ const EXERCISES = [
   ...(typeof EXERCISES_REAL_2018   !== 'undefined' ? EXERCISES_REAL_2018   : []),
   ...(typeof EXERCISES_REAL_2019   !== 'undefined' ? EXERCISES_REAL_2019   : []),
   ...(typeof EXERCISES_REAL_2020   !== 'undefined' ? EXERCISES_REAL_2020   : []),
+  ...(typeof EXERCISES_REAL_2021   !== 'undefined' ? EXERCISES_REAL_2021   : []),
+  ...(typeof EXERCISES_REAL_2022   !== 'undefined' ? EXERCISES_REAL_2022   : []),
 ];
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
