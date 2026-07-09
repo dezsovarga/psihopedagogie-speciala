@@ -29,12 +29,73 @@ const DEFAULT_WORKER_URL = 'https://psp-claude-proxy.vargadezso.workers.dev';
 function getWorkerUrl() {
   return localStorage.getItem('psp_worker_url') || DEFAULT_WORKER_URL;
 }
+
+// ─── Question-type filter (Settings) ─────────────────────────────────────────
+const ALL_QUESTION_TYPES = ['mc', 'tf', 'fill', 'match', 'order', 'short', 'list', 'cloze', 'define', 'essay'];
+const QUESTION_TYPE_LABELS = {
+  mc:     'Feleletválasztós',
+  tf:     'Igaz / Hamis',
+  fill:   'Kiegészítés',
+  match:  'Párosítás',
+  order:  'Sorrendezés',
+  short:  'Rövid válasz',
+  list:   'Felsorolás',
+  cloze:  'Szövegkiegészítés',
+  define: 'Fogalommeghatározás',
+  essay:  'Esszékérdés'
+};
+
+// Returns the enabled types (defaults to ALL if unset/invalid; never empty).
+function getEnabledTypes() {
+  try {
+    const raw = localStorage.getItem('psp_enabled_types');
+    if (!raw) return [...ALL_QUESTION_TYPES];
+    const arr = JSON.parse(raw);
+    const filtered = ALL_QUESTION_TYPES.filter(t => Array.isArray(arr) && arr.includes(t));
+    return filtered.length ? filtered : [...ALL_QUESTION_TYPES];
+  } catch (e) {
+    return [...ALL_QUESTION_TYPES];
+  }
+}
+
+function renderTypeFilter() {
+  const box = document.getElementById('type-filter-list');
+  if (!box) return;
+  const enabled = getEnabledTypes();
+  box.innerHTML = ALL_QUESTION_TYPES.map(t => `
+    <label class="type-filter-row">
+      <input type="checkbox" data-type="${t}" ${enabled.includes(t) ? 'checked' : ''}
+             onchange="toggleQuestionType('${t}', this.checked)">
+      <span>${QUESTION_TYPE_LABELS[t]}</span>
+    </label>`).join('');
+}
+
+function toggleQuestionType(type, checked) {
+  let enabled = getEnabledTypes();
+  if (checked) {
+    if (!enabled.includes(type)) enabled.push(type);
+  } else {
+    enabled = enabled.filter(t => t !== type);
+  }
+  const status = document.getElementById('settings-status');
+  if (enabled.length === 0) {
+    // Never allow an empty selection — revert the toggle.
+    renderTypeFilter();
+    if (status) { status.textContent = 'Legalább egy kérdéstípus maradjon kiválasztva.'; status.className = 'settings-status err'; }
+    return;
+  }
+  // Store in canonical order.
+  localStorage.setItem('psp_enabled_types', JSON.stringify(ALL_QUESTION_TYPES.filter(t => enabled.includes(t))));
+  if (status) { status.textContent = '✓ Kérdéstípus-szűrő mentve'; status.className = 'settings-status ok'; }
+}
+
 function openSettings() {
   const modal = document.getElementById('settings-modal');
   const inp = document.getElementById('api-key-input');
   inp.value = getWorkerUrl();
   document.getElementById('settings-status').textContent = '';
   document.getElementById('settings-status').className = 'settings-status';
+  renderTypeFilter();
   modal.style.display = 'flex';
 }
 function closeSettings() {
@@ -127,6 +188,15 @@ function startSession(mode) {
         ? EXERCISES.filter(e => e.w === mode)            // gyalap chapter / real-exam year: exact match, no w:0 shared
         : EXERCISES.filter(e => e.w === mode || e.w === 0);
   }
+
+  // Apply the user's question-type filter (⚙ Settings). Only enabled types appear.
+  const enabledTypes = getEnabledTypes();
+  const typed = pool.filter(e => enabledTypes.includes(e.type));
+  if (typed.length === 0) {
+    alert('A kiválasztott kérdéstípusokból nincs elérhető kérdés ehhez a módhoz. Módosítsd a szűrőt a ⚙ Beállításokban!');
+    return;
+  }
+  pool = typed;
 
   function spSorted(arr) {
     return arr.slice().sort((a, b) => {

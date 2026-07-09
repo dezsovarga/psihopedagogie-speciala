@@ -71,9 +71,13 @@ proxy that adds the key server-side:
 - **Localhost**: `POST /api/claude`, served by `server.js`, which reads
   `ANTHROPIC_API_KEY` from the environment.
 
-The ⚙ Settings modal stores only the **Worker URL** (`localStorage` key
-`psp_worker_url`), not an API key — the input id is `api-key-input` for legacy
-reasons. It defaults to the built-in worker, so users normally never touch it.
+The ⚙ Settings modal stores the **Worker URL** (`localStorage` key
+`psp_worker_url`; input id `api-key-input` for legacy reasons — defaults to the
+built-in worker) **and** the **question-type filter** (`localStorage` key
+`psp_enabled_types`, a JSON array of enabled types). The type filter is applied
+to the session `pool` in `startSession` (`getEnabledTypes()`), so only the
+checked types appear in any practice session; it defaults to all types and is
+never allowed to be empty. Toggling a checkbox saves immediately.
 
 - Max 2 essay + define questions of each kind appear per session (per-type caps
   in `startSession`)

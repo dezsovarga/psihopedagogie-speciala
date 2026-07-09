@@ -861,6 +861,41 @@ body {
 .settings-status.ok  { color: var(--green-dark); }
 .settings-status.err { color: var(--red); }
 
+/* ─── Question-type filter checkboxes ─── */
+.settings-sep {
+  border: none;
+  border-top: 1px solid var(--gray-200);
+  margin: 20px 0 16px;
+}
+.type-filter-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 14px;
+  margin-top: 4px;
+}
+.type-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--gray-700);
+  font-weight: 600;
+}
+.type-filter-row:hover { background: var(--gray-100); }
+.type-filter-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--blue);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+@media (max-width: 480px) {
+  .type-filter-list { grid-template-columns: 1fr; }
+}
+
 /* ─── Essay question type ─── */
 .ex-type-badge.essay-badge {
   background: #FFF0DB;

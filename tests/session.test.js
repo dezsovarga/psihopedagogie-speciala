@@ -150,6 +150,48 @@ describe('parseCloze', () => {
   });
 });
 
+// ─── Question-type filter (mirrors getEnabledTypes/pool filter in app.js) ────
+
+const ALL_QUESTION_TYPES = ['mc', 'tf', 'fill', 'match', 'order', 'short', 'list', 'cloze', 'define', 'essay'];
+
+function enabledTypesFromStorage(raw) {
+  if (!raw) return [...ALL_QUESTION_TYPES];
+  let arr;
+  try { arr = JSON.parse(raw); } catch (e) { return [...ALL_QUESTION_TYPES]; }
+  const f = ALL_QUESTION_TYPES.filter(t => Array.isArray(arr) && arr.includes(t));
+  return f.length ? f : [...ALL_QUESTION_TYPES];   // never an empty selection
+}
+
+function filterByTypes(pool, enabled) {
+  return pool.filter(e => enabled.includes(e.type));
+}
+
+describe('question-type filter (Settings)', () => {
+  test('no stored value → all types enabled', () => {
+    expect(enabledTypesFromStorage(null).sort()).toEqual([...ALL_QUESTION_TYPES].sort());
+  });
+
+  test('stored subset → only those types', () => {
+    expect(enabledTypesFromStorage(JSON.stringify(['mc', 'tf']))).toEqual(['mc', 'tf']);
+  });
+
+  test('empty or invalid stored value → falls back to all', () => {
+    expect(enabledTypesFromStorage('[]').length).toBe(ALL_QUESTION_TYPES.length);
+    expect(enabledTypesFromStorage('not json').length).toBe(ALL_QUESTION_TYPES.length);
+  });
+
+  test('filter drops questions of disabled types', () => {
+    const pool = [makeEx('a', 'mc'), makeEx('b', 'define'), makeEx('c', 'essay'), makeEx('d', 'tf')];
+    const out = filterByTypes(pool, ['mc', 'tf']);
+    expect(out.map(e => e.id).sort()).toEqual(['a', 'd']);
+  });
+
+  test('all types enabled → pool unchanged', () => {
+    const pool = [makeEx('a', 'mc'), makeEx('b', 'define')];
+    expect(filterByTypes(pool, ALL_QUESTION_TYPES).length).toBe(2);
+  });
+});
+
 // ─── Pool selection (mirrors startSession in app.js) ─────────────────────────
 
 function selectPool(allExercises, mode) {

@@ -452,6 +452,12 @@
       <button class="btn-icon modal-close" onclick="closeSettings()">✕</button>
     </div>
     <div class="modal-body">
+      <label class="settings-label">Megjelenő kérdéstípusok</label>
+      <p class="settings-hint">Csak a bejelölt típusokból kapsz kérdéseket a gyakorlás során. A módosítás automatikusan mentődik.</p>
+      <div class="type-filter-list" id="type-filter-list"></div>
+
+      <hr class="settings-sep">
+
       <label class="settings-label" for="api-key-input">Cloudflare Worker URL</label>
       <input type="url" id="api-key-input" class="settings-input" placeholder="https://abc123.your-name.workers.dev">
       <p class="settings-hint">Az esszékérdések Claude-os értékeléséhez szükséges. Az API kulcsod a Cloudflare-en tárolódik titkosítva – soha nem kerül a böngészőbe. Lásd a <code>worker.js</code> fájlt a telepítési útmutatóért.</p>
