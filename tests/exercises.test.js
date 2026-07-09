@@ -23,6 +23,7 @@ const EXERCISE_FILES = [
   'exercises/lists.js',
   'exercises/real_2017.js',
   'exercises/real_2018.js',
+  'exercises/real_2019.js',
   'exercises/gyalap_ch1.js',
   'exercises/gyalap_ch2.js',
   'exercises/gyalap_ch3.js',
@@ -331,7 +332,7 @@ describe('Session slot coverage', () => {
   });
 
   // Real past-exam years (w = year, e.g. 2017). Add each new year here.
-  const REAL_EXAM_YEARS = [2017, 2018];
+  const REAL_EXAM_YEARS = [2017, 2018, 2019];
 
   test.each(REAL_EXAM_YEARS)('real exam %i has at least 15 questions for a full session', (year) => {
     const count = EXERCISES.filter(e => e.w === year).length;
