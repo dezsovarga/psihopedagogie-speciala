@@ -298,6 +298,16 @@ describe('Session slot coverage', () => {
     expect(count).toBeGreaterThanOrEqual(10);
   });
 
+  test('worksheet 7 has an expanded define set (>= 18)', () => {
+    const count = EXERCISES.filter(e => e.type === 'define' && e.w === 7).length;
+    expect(count).toBeGreaterThanOrEqual(18);
+  });
+
+  test('worksheet 7 has many cloze questions (>= 20)', () => {
+    const count = EXERCISES.filter(e => e.type === 'cloze' && e.w === 7).length;
+    expect(count).toBeGreaterThanOrEqual(20);
+  });
+
   test.each([2, 3, 4, 5, 6, 7])('worksheet %i has at least 3 define questions', (w) => {
     const count = EXERCISES.filter(e => e.type === 'define' && e.w === w).length;
     expect(count).toBeGreaterThanOrEqual(3);

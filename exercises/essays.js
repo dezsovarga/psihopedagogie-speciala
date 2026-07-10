@@ -806,6 +806,84 @@ Adaptálás autizmus spektrumon lévő tanuló számára:
   modelAnswer:'Ipszatív (egyéni fejlődéshez viszonyított) értékelés: A tanuló aktuális teljesítményét a saját korábbi teljesítményéhez viszonyítjuk, a fejlődés mértékét helyezve a középpontba. Különösen fontos a tanulási nehézséggel/zavarral küzdő tanulóknál, mert a haladást a tanuló saját kiindulópontjához mérve teszi láthatóvá és motiválóvá, nem a társakhoz hasonlítva.',
   exp:'Az ipszatív értékelés a tanuló saját korábbi teljesítményéhez viszonyít – a fejlődést teszi láthatóvá és motiválóvá.'
 },
+{
+  id:'def_w7_08', w:7, topic:'Tanulási zavarok', type:'define', diff:2, points:2,
+  q:'Határozza meg a diszgráfia fogalmát!',
+  modelAnswer:'Diszgráfia: specifikus írászavar, amely érintheti az írás grafomotoros kivitelezését (betűformálás, íráskép rendezettsége) és/vagy a helyesírási készséget (ortográfiai kódolás).',
+  exp:'Specifikus írászavar, amely az írás grafomotoros kivitelezését és/vagy a helyesírási készséget érinti.'
+},
+{
+  id:'def_w7_09', w:7, topic:'Tanulási nehézség', type:'define', diff:2, points:2,
+  q:'Határozza meg az (iskolai) tanulási nehézség fogalmát!',
+  modelAnswer:'Tanulási nehézség: tágabb gyűjtőfogalom, amely bármely – átmeneti vagy tartós – okra (motivációs, érzelmi, módszertani, egészségügyi, családi, szociokulturális) visszavezethető lemaradást jelöl a tanulásban; nem feltételez neurobiológiai alapú, specifikus zavart, és megfelelő pedagógiai beavatkozással gyakran teljesen kompenzálható.',
+  exp:'Tágabb gyűjtőfogalom bármely okra visszavezethető lemaradásra; nem neurobiológiai zavar, gyakran kompenzálható.'
+},
+{
+  id:'def_w7_10', w:7, topic:'Alapfunkciók', type:'define', diff:3, points:2,
+  q:'Határozza meg a végrehajtó funkciók fogalmát!',
+  modelAnswer:'Végrehajtó funkciók: a tervezés, a gátlás, a kognitív rugalmasság és az önmonitorozás képességei, amelyek a célirányos, szervezett tanulási viselkedést teszik lehetővé; gyengeségük figyelmetlenséghez, impulzivitáshoz és szervezetlen munkavégzéshez vezet.',
+  exp:'A tervezés, gátlás, kognitív rugalmasság és önmonitorozás képességei, amelyek a célirányos tanulást teszik lehetővé.'
+},
+{
+  id:'def_w7_11', w:7, topic:'Alapfunkciók', type:'define', diff:2, points:2,
+  q:'Határozza meg a verbális megértés fogalmát!',
+  modelAnswer:'Verbális megértés: a nyelvi információ (szókincs, mondatszerkezet, szövegkohézió) feldolgozásának és értelmezésének képessége, amely minden tantárgy tanulásának alapja.',
+  exp:'A nyelvi információ (szókincs, mondatszerkezet, szövegkohézió) feldolgozásának és értelmezésének képessége.'
+},
+{
+  id:'def_w7_12', w:7, topic:'Alapfunkciók', type:'define', diff:2, points:2,
+  q:'Határozza meg a feldolgozási sebesség fogalmát!',
+  modelAnswer:'Feldolgozási sebesség: az információ gyors és automatikus feldolgozásának képessége; lassú feldolgozási sebesség esetén a tanuló több időt igényel az azonos feladatok elvégzéséhez, ami fáradáshoz és lemaradáshoz vezethet.',
+  exp:'Az információ gyors, automatikus feldolgozásának képessége; lassúsága több időigényhez és fáradáshoz vezet.'
+},
+{
+  id:'def_w7_13', w:7, topic:'Értékelés', type:'define', diff:2, points:2,
+  q:'Határozza meg az objektív item fogalmát!',
+  modelAnswer:'Objektív item: olyan értékelési feladat, amelynek egyértelmű, előre meghatározott helyes válasza van és gyorsan javítható (pl. feleletválasztós, igaz-hamis, párosítás). Főleg a felismerést méri; a téves válaszlehetőségek (disztraktorok) legyenek reálisak, a megfogalmazás egyértelmű.',
+  exp:'Egyértelmű, előre meghatározott helyes válaszú, gyorsan javítható feladat; főleg a felismerést méri.'
+},
+{
+  id:'def_w7_14', w:7, topic:'Értékelés', type:'define', diff:3, points:2,
+  q:'Határozza meg a félig objektív item fogalmát!',
+  modelAnswer:'Félig objektív item: olyan feladat, amelyre a válasz rövid, de nem előre megadott lehetőségek közül választandó (pl. rövid választ igénylő, kiegészítéses feladat). A kérdésfeltevés egyetlen helyes választ engedjen; a javítás kis mértékben szubjektív lehet a megfogalmazás változatossága miatt.',
+  exp:'Rövid, de nem előre megadott választ igénylő feladat (kiegészítés); egyetlen helyes választ engedjen.'
+},
+{
+  id:'def_w7_15', w:7, topic:'Értékelés', type:'define', diff:2, points:2,
+  q:'Határozza meg a szubjektív item fogalmát!',
+  modelAnswer:'Szubjektív item: szabad, önálló válaszalkotást igénylő feladat (pl. esszé, kifejtős feladat), amely magasabb rendű gondolkodási műveleteket (elemzés, érvelés, szintézis) mér. Az objektivitás növelésére részletes, pontokra bontott javítási útmutató (barem) szükséges.',
+  exp:'Szabad válaszalkotást igénylő feladat (esszé), amely magasabb rendű gondolkodást mér; baremmel értékelt.'
+},
+{
+  id:'def_w7_16', w:7, topic:'Értékelés', type:'define', diff:2, points:2,
+  q:'Határozza meg a barem (pontozási útmutató) fogalmát!',
+  modelAnswer:'Barem (pontozási/javítási útmutató): részletes, pontokra bontott értékelési útmutató, amely a szubjektív (kifejtős) itemek javításának objektivitását és a javítók közötti egyezést növeli azzal, hogy meghatározza, mely tartalmi elemekért hány pont jár.',
+  exp:'Pontokra bontott javítási útmutató, amely a kifejtős itemek javításának objektivitását és a javítók egyezését növeli.'
+},
+{
+  id:'def_w7_17', w:7, topic:'Értékelés', type:'define', diff:2, points:2,
+  q:'Határozza meg a portfólió mint értékelési módszer fogalmát!',
+  modelAnswer:'Portfólió: korszerű értékelési módszer, amely a tanuló saját munkáit gyűjti össze és időben követi a fejlődési folyamatot, lehetőséget adva a reflexióra. Korlátja, hogy időigényes összeállítani és értékelni, valamint nehezebben standardizálható.',
+  exp:'Korszerű módszer: a tanuló munkáit gyűjti és időben követi a fejlődést; időigényes és nehezen standardizálható.'
+},
+{
+  id:'def_w7_18', w:7, topic:'Értékelés', type:'define', diff:2, points:2,
+  q:'Határozza meg a halo-effektus fogalmát az értékelésben!',
+  modelAnswer:'Halo-effektus: értékelési torzítás, amelyben a tanulóról korábban kialakult általános benyomás (pl. „jó tanuló”) befolyásolja egy adott feladat objektív megítélését.',
+  exp:'Értékelési torzítás: a korábbi általános benyomás befolyásolja egy konkrét feladat objektív megítélését.'
+},
+{
+  id:'def_w7_19', w:7, topic:'Értékelés', type:'define', diff:3, points:2,
+  q:'Határozza meg az elvárás-hatás (Pygmalion-effektus) fogalmát!',
+  modelAnswer:'Elvárás-hatás (Pygmalion-effektus): értékelési torzítás, amelyben a pedagógus előzetes elvárásai (pl. a CES-besorolás ismerete) tudattalanul befolyásolják az értékelés szigorát vagy engedékenységét.',
+  exp:'Értékelési torzítás: a pedagógus előzetes elvárásai tudattalanul befolyásolják az értékelés szigorát.'
+},
+{
+  id:'def_w7_20', w:7, topic:'Fejlesztési módszerek', type:'define', diff:3, points:2,
+  q:'Határozza meg a multiszenzoros, Orton-Gillingham elvű nyelvi fejlesztés fogalmát!',
+  modelAnswer:'Multiszenzoros, strukturált-szekvenciális nyelvi fejlesztés (Orton-Gillingham elvű megközelítés): a betű-hang megfeleltetést egyidejűleg vizuális, auditív, kinesztetikus és taktilis csatornán tanítja, hogy a mozgásos memória is megerősítse a vizuális-auditív kapcsolatot.',
+  exp:'A betű-hang megfeleltetést egyszerre vizuális, auditív, kinesztetikus és taktilis csatornán tanító, strukturált fejlesztés.'
+},
 
 // ══════════════════════════════════════════════
 // ESSZÉ KÉRDÉSEK – 7. VÁLTOZAT
