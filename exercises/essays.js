@@ -321,6 +321,78 @@ SMART cél – autizmus spektrumon lévő tanuló:
   modelAnswer:'Ábécés szakasz: A tanuló elsajátítja a betű-hang megfeleltetést, és képessé válik szavakat dekódolni. Először betűnként olvas, majd szótagol, végül folyékonyabb szóolvasásig jut. CES tanulóknál ez a szakasz hosszabb és intenzívebb fejlesztést igényel. Ábécé utáni szakasz: A tanuló már szóegységenként, szóképek alapján olvas; a dekódolás automatizálódik, és a figyelem a szöveg tartalmára irányulhat. Megjelenik a helyesírási tudatosság.',
   exp:'Alfabetikus szakasz = betű-hang dekódolás; ortografikus szakasz = automatizált szóolvasás, figyelem a tartalomra irányul.'
 },
+{
+  id:'def_w2_13', w:2, topic:'Inkluzív oktatás', type:'define', diff:2, points:2,
+  q:'Mit jelent a sokféleség tiszteletének elve az inkluzív oktatásban?',
+  modelAnswer:'A sokféleség tiszteletének elve: az inkluzív oktatás alapelve, amely szerint a különbségek nem problémák, hanem a tanulás természetes velejárói és gazdagító tényezők.',
+  exp:'A különbségek nem problémák, hanem a tanulás természetes, gazdagító velejárói.'
+},
+{
+  id:'def_w2_14', w:2, topic:'Inkluzív oktatás', type:'define', diff:2, points:2,
+  q:'Mit jelent az együttműködés elve az inkluzív oktatásban?',
+  modelAnswer:'Az együttműködés elve: az az inkluzív alapelv, amely szerint a sikeres inklúzió feltétele a pedagógusok, szakemberek, szülők és a helyi közösség összehangolt munkája.',
+  exp:'A sikeres inklúzió feltétele a pedagógusok, szakemberek, szülők és a közösség összehangolt munkája.'
+},
+{
+  id:'def_w2_15', w:2, topic:'Integrációs modellek', type:'define', diff:2, points:2,
+  q:'Határozza meg a teljes integráció fogalmát!',
+  modelAnswer:'Teljes integráció: olyan integrációs modell, amelyben a CES tanuló teljes munkaidőben a többségi osztályban tanul, a pedagógus és a támogató tanár együttműködésével.',
+  exp:'A CES tanuló teljes munkaidőben a többségi osztályban tanul, támogató tanár közreműködésével.'
+},
+{
+  id:'def_w2_16', w:2, topic:'Integrációs modellek', type:'define', diff:2, points:2,
+  q:'Határozza meg a részleges integráció (vegyes modell) fogalmát!',
+  modelAnswer:'Részleges integráció (vegyes modell): olyan integrációs modell, amelyben a CES tanuló bizonyos tantárgyakat a többségi osztályban tanul, más tantárgyakból pedig egyéni vagy kiscsoportos fejlesztő foglalkozáson vesz részt.',
+  exp:'A CES tanuló egyes tantárgyakat a többségi osztályban, másokat egyéni/kiscsoportos fejlesztésen tanul.'
+},
+{
+  id:'def_w2_17', w:2, topic:'Hallássérülés', type:'define', diff:2, points:2,
+  q:'Jellemezze pedagógiai szempontból a nagyothalló tanulót!',
+  modelAnswer:'Nagyothalló: 26–70 dB közötti hallásveszteséggel élő tanuló, aki hallókészülékkel vagy anélkül részlegesen érzékeli a hangokat; a beszédfejlődés érintett, de nem kizárt.',
+  exp:'26–70 dB hallásveszteség; a hangokat részlegesen érzékeli, a beszédfejlődés érintett, de nem kizárt.'
+},
+{
+  id:'def_w2_18', w:2, topic:'Hallássérülés', type:'define', diff:2, points:2,
+  q:'Jellemezze pedagógiai szempontból a siket tanulót!',
+  modelAnswer:'Siket: 70 dB feletti hallásveszteséggel élő személy, akinél a hangos beszéd hallás útján nem vagy alig érzékelhető; a kommunikáció elsősorban vizuális csatornán (jelnyelv, szájról olvasás) alapul.',
+  exp:'70 dB feletti hallásveszteség; a hangos beszéd alig érzékelhető, a kommunikáció vizuális (jelnyelv, szájról olvasás).'
+},
+{
+  id:'def_w2_19', w:2, topic:'Látássérülés', type:'define', diff:2, points:2,
+  q:'Jellemezze pedagógiai szempontból a gyengénlátó tanulót!',
+  modelAnswer:'Gyengénlátó: 10–33%-os látóélességgel élő tanuló, aki nagyítással és speciális eszközökkel képes a vizuális információ részleges befogadására; a nyomtatott szöveg módosított formában olvasható.',
+  exp:'10–33%-os látóélesség; nagyítással részlegesen fogadja be a vizuális információt, a szöveg módosított formában olvasható.'
+},
+{
+  id:'def_w2_20', w:2, topic:'Látássérülés', type:'define', diff:2, points:2,
+  q:'Jellemezze pedagógiai szempontból a vak tanulót!',
+  modelAnswer:'Vak: 10% alatti látóélességű vagy teljesen vak személy, akinél az oktatás elsősorban tapintásos és hallás útján valósul meg; Braille-írás és auditív eszközök szükségesek.',
+  exp:'10% alatti látóélesség; az oktatás tapintásos és hallás útján zajlik, Braille-írással és auditív eszközökkel.'
+},
+{
+  id:'def_w2_21', w:2, topic:'Demutizálás', type:'define', diff:2, points:2,
+  q:'Határozza meg a totális kommunikáció fogalmát!',
+  modelAnswer:'Totális kommunikáció: olyan kommunikációs módszer, amely egyszerre több csatornát alkalmaz – jelnyelvet, szájmozgást, hangos beszédet, gesztusokat, írást és képi kommunikációt –, és rugalmasan igazodik a tanuló kommunikációs szintjéhez és szükségletéhez.',
+  exp:'Több csatornát (jelnyelv, szájmozgás, hangos beszéd, gesztus, írás, kép) egyszerre alkalmazó, rugalmas módszer.'
+},
+{
+  id:'def_w2_22', w:2, topic:'Siketvakság', type:'define', diff:3, points:2,
+  q:'Határozza meg a Lorm-ábécé fogalmát!',
+  modelAnswer:'Lorm-ábécé: speciális tenyérírás-rendszer, amelyben a betűk a tenyér meghatározott pontjain tett érintéseknek felelnek meg; gyors és diszkrét kommunikációt tesz lehetővé, elsősorban siketvak személyek számára.',
+  exp:'Tenyérírás-rendszer: a betűk a tenyér pontjain tett érintések; gyors, diszkrét kommunikáció siketvakoknak.'
+},
+{
+  id:'def_w2_23', w:2, topic:'Olvasás-írás módszerek', type:'define', diff:3, points:2,
+  q:'Határozza meg a fonetikus-analitikus-szintetikus módszer lényegét!',
+  modelAnswer:'Fonetikus-analitikus-szintetikus módszer: elterjedt olvasás-írás-tanítási eljárás, amely három egymást kiegészítő folyamaton alapul: fonetikus alap (a hangzó nyelvre építés), analitikus eljárás (egész szó vagy mondat elemzése szótagokra, majd hangokra) és szintetikus eljárás (a megismert hangok és betűk összerakása szavakká, mondatokká).',
+  exp:'Három folyamat: fonetikus alap (hangzó nyelv), analitikus (szó→szótag→hang), szintetikus (hang/betű→szó).'
+},
+{
+  id:'def_w2_24', w:2, topic:'Segítő technológia', type:'define', diff:2, points:2,
+  q:'Határozza meg az FM-rendszer fogalmát!',
+  modelAnswer:'FM-rendszer (frekvenciamoduláción alapuló hangátviteli rendszer): hallássérült tanulók számára alkalmazott segítő technológia, amelyben a pedagógus mikrofonba beszél, és a jel közvetlenül a tanuló hallókészülékébe vagy fejhallgatójába kerül, kiküszöbölve a háttérzajt és a távolság miatti csillapítást.',
+  exp:'Hangátviteli rendszer: a pedagógus hangja közvetlenül a hallókészülékbe kerül, kiküszöbölve a háttérzajt és a távolságot.'
+},
 
 // ══════════════════════════════════════════════
 // VÁLTOZAT 2

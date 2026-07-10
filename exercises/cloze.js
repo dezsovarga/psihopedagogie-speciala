@@ -272,5 +272,79 @@ const EXERCISES_CLOZE = [
     q: 'Egészítsd ki a kooperatív tanulás meghatározását!',
     text: 'A kooperatív tanulás során a tanulók kis {{csoportokban}} együttműködve oldanak meg feladatokat; a tanulás kölcsönös {{segítségen}} és párbeszéden alapul.',
     exp: 'Kis csoportos, együttműködésen és kölcsönös segítségen alapuló aktív módszer.'
+  },
+
+  // ─── 2. Változat – a bővített define-készlethez tartozó cloze kérdések ──────
+  {
+    id: 'cloze_w2_02', w: 2, topic: 'Inkluzív oktatás', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a sokféleség tiszteletének elvét!',
+    text: 'A sokféleség tiszteletének elve szerint a különbségek nem {{problémák}}, hanem a tanulás természetes {{velejárói}} és gazdagító tényezők.',
+    exp: 'A különbségek nem problémák, hanem a tanulás természetes, gazdagító velejárói.'
+  },
+  {
+    id: 'cloze_w2_03', w: 2, topic: 'Inkluzív oktatás', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az együttműködés elvét!',
+    text: 'Az együttműködés elve szerint a sikeres inklúzió feltétele a pedagógusok, szakemberek, {{szülők}} és a helyi {{közösség}} összehangolt munkája.',
+    exp: 'A sikeres inklúzió feltétele a pedagógusok, szakemberek, szülők és a közösség összehangolt munkája.'
+  },
+  {
+    id: 'cloze_w2_04', w: 2, topic: 'Integrációs modellek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a teljes integráció meghatározását!',
+    text: 'A teljes integrációban a CES tanuló {{teljes}} munkaidőben a {{többségi}} osztályban tanul, a támogató tanár együttműködésével.',
+    exp: 'A CES tanuló teljes munkaidőben a többségi osztályban tanul, támogató tanárral.'
+  },
+  {
+    id: 'cloze_w2_05', w: 2, topic: 'Integrációs modellek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a részleges integráció meghatározását!',
+    text: 'A részleges integrációban a CES tanuló bizonyos {{tantárgyakat}} a többségi osztályban tanul, másokból egyéni vagy {{kiscsoportos}} fejlesztő foglalkozáson vesz részt.',
+    exp: 'A tanuló egyes tantárgyakat a többségi osztályban, másokat egyéni/kiscsoportos fejlesztésen tanul.'
+  },
+  {
+    id: 'cloze_w2_06', w: 2, topic: 'Hallássérülés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a nagyothalló tanuló jellemzését!',
+    text: 'A nagyothalló tanuló {{26}}–70 dB közötti hallásveszteséggel él, a hangokat {{részlegesen}} érzékeli; a beszédfejlődés érintett, de nem kizárt.',
+    exp: '26–70 dB hallásveszteség; részleges hangérzékelés, érintett beszédfejlődés.'
+  },
+  {
+    id: 'cloze_w2_07', w: 2, topic: 'Hallássérülés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a siket tanuló jellemzését!',
+    text: 'A siket személynél {{70}} dB feletti a hallásveszteség; a kommunikáció elsősorban {{vizuális}} csatornán (jelnyelv, szájról olvasás) alapul.',
+    exp: '70 dB feletti hallásveszteség; a kommunikáció vizuális csatornán alapul.'
+  },
+  {
+    id: 'cloze_w2_08', w: 2, topic: 'Látássérülés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a gyengénlátó tanuló jellemzését!',
+    text: 'A gyengénlátó tanuló {{10}}–33%-os látóélességgel él, és {{nagyítással}}, speciális eszközökkel részlegesen fogadja be a vizuális információt.',
+    exp: '10–33%-os látóélesség; nagyítással részleges vizuális információfeldolgozás.'
+  },
+  {
+    id: 'cloze_w2_09', w: 2, topic: 'Látássérülés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a vak tanuló jellemzését!',
+    text: 'A vak tanulónál az oktatás elsősorban {{tapintásos}} és hallás útján valósul meg; {{Braille}}-írás és auditív eszközök szükségesek.',
+    exp: 'Az oktatás tapintásos és hallás útján zajlik, Braille-írással és auditív eszközökkel.'
+  },
+  {
+    id: 'cloze_w2_10', w: 2, topic: 'Demutizálás', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a totális kommunikáció meghatározását!',
+    text: 'A totális kommunikáció egyszerre több {{csatornát}} alkalmaz – jelnyelvet, szájmozgást, hangos beszédet, gesztusokat –, és {{rugalmasan}} igazodik a tanuló szükségletéhez.',
+    exp: 'Több csatornát egyszerre alkalmazó, a tanuló szükségletéhez rugalmasan igazodó módszer.'
+  },
+  {
+    id: 'cloze_w2_11', w: 2, topic: 'Siketvakság', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a Lorm-ábécé meghatározását!',
+    text: 'A Lorm-ábécé speciális {{tenyérírás}}-rendszer, amelyben a betűk a tenyér meghatározott pontjain tett {{érintéseknek}} felelnek meg.',
+    exp: 'Tenyérírás-rendszer: a betűk a tenyér pontjain tett érintések; siketvak személyeknek.'
+  },
+  {
+    id: 'cloze_w2_12', w: 2, topic: 'Olvasás-írás módszerek', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a fonetikus-analitikus-szintetikus módszer lényegét!',
+    text: 'A módszer az {{analitikus}} eljárásban egész szót vagy mondatot bont szótagokra és hangokra, a {{szintetikus}} eljárásban pedig a hangokat és betűket szavakká rakja össze.',
+    exp: 'Analitikus = szó/mondat lebontása hangokra; szintetikus = hangok/betűk összerakása szavakká.'
+  },
+  {
+    id: 'cloze_w2_13', w: 2, topic: 'Segítő technológia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az FM-rendszer meghatározását!',
+    text: 'Az FM-rendszerben a pedagógus {{mikrofonba}} beszél, és a jel közvetlenül a tanuló {{hallókészülékébe}} kerül, kiküszöbölve a háttérzajt.',
+    exp: 'A pedagógus hangja mikrofonon át közvetlenül a hallókészülékbe kerül, kiküszöbölve a háttérzajt.'
   }
 ];
