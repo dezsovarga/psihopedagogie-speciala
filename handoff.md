@@ -1,34 +1,82 @@
-# Session Handoff — 2026-07-09
+# Session Handoff — 2026-07-10
 
-> History: 2026-06-26 (essay type, mic input, Claude eval, Cloudflare proxy) →
-> 2026-07-03 (worksheets 4–7, disabled gyalap mode, `define`/`list` types) →
-> **2026-07-09 (this session): exam tips, and the "Valós vizsgatételek" real
-> past-exam sections for 2017–2020).** The 2026-07-09 additions are summarized
-> first; the 2026-07-03 details follow below as reference.
+> History: 2026-06-26 (essay type, mic, Claude eval, Cloudflare proxy) →
+> 2026-07-03 (worksheets 4–7, disabled gyalap, `define`/`list` types) →
+> 2026-07-09 (exam tips, real past-exam sections 2017–2020) →
+> **2026-07-10 (this session): real exams 2021–2022, the `cloze` question type +
+> accent-tolerant grading, a question-type filter in Settings, and big
+> define+cloze expansions of worksheets 7, 1, 2.** Newest section first; older
+> sections follow as reference.
 
 ## Current state at a glance
 
-- **617 exercises total**, live at https://dezsovarga.github.io/psihopedagogie-speciala/
+- **783 exercises total**, live at https://dezsovarga.github.io/psihopedagogie-speciala/
 - **7 worksheets** (`w:1`–`7`), each a full exam variant, plus `w:0` shared (Vegyes)
-- **4 real past-exam years** — "Valós vizsgatételek": 2017, 2018, 2019, 2020 (`w = year`)
+- **6 real past-exam years** — "Valós vizsgatételek": 2017–2022 (`w = year`), 234 questions
 - **Gyógyped. Alapismeretek** study-guide mode (`w:101`–`103`) exists but is **DISABLED**
 - Question types and counts:
 
   | Type | Count | Graded by |
   |------|-------|-----------|
-  | `mc` (feleletválasztós) | 244 | local |
-  | `define` (fogalommeghatározás) | 128 | Claude Haiku |
-  | `list` (felsorolás / enumeration) | 63 | local, partial-credit checklist |
-  | `tf` (igaz/hamis) | 51 | local |
-  | `essay` (esszé) | 30 | Claude Haiku |
-  | `fill` (kiegészítés) | 28 | local |
-  | `order` (sorrendezés) | 25 | local |
-  | `match` (párosítás) | 25 | local |
-  | `short` (rövid válasz) | 23 | local (keyword) |
+  | `mc` (feleletválasztós) | 265 | local |
+  | `define` (fogalommeghatározás) | 189 | Claude Haiku |
+  | `list` (felsorolás / enumeration) | 73 | local, partial-credit checklist |
+  | `tf` (igaz/hamis) | 57 | local |
+  | `cloze` (szövegkiegészítés) | 54 | local, per-blank + accent-tolerant |
+  | `essay` (esszé) | 34 | Claude Haiku |
+  | `fill` (kiegészítés) | 30 | local |
+  | `order` (sorrendezés) | 28 | local |
+  | `match` (párosítás) | 28 | local |
+  | `short` (rövid válasz) | 25 | local (keyword) |
 
-- **141 tests pass** (`npm test`).
+- **170 tests pass** (`npm test`).
 
-## What was built THIS session (2026-07-09)
+## What was built THIS session (2026-07-10)
+
+### A. Real past-exam years 2021 & 2022
+Two more "Valós vizsgatételek" year sections (now 2017–2022, 6 years), same
+reusable per-year pattern (`w = year`, one self-contained file, ≥10 defines each,
+standalone). 2021: nyelvi zavarok / komplex értékelés / esettanulmány. 2022:
+spec. pszichopedagógia / hallássérülés / problémafelvető tanulás. Both are
+included in the general mix/structured/random pools (like the other years);
+labels `2021-es` / `2022-es` in `REAL_EXAM_LABELS`.
+
+### B. `cloze` (szövegkiegészítés) — NEW question type
+A definition text with `{{blanked}}` key terms, rendered as inline inputs each
+showing a **first-letter "faded" hint**. Graded **locally, per blank**.
+
+- Schema: `q` (instruction) + `text` (with `{{blanks}}`) + `exp`. Lives in
+  `exercises/cloze.js` (`EXERCISES_CLOZE`). Slots into the "other" session bucket
+  (no session-selection changes).
+- `parseCloze(text)` → `{parts, answers}`; `clozeBlankMatches(user, answer)` grades.
+- **Grading tolerance:** accent-insensitive (á→a, é→e, í→i, ó/ö/ő→o, ú/ü/ű→u via
+  `foldHungarianAccents`) **plus** one edit of typo tolerance (`levenshtein ≤ 1`)
+  on the folded forms. So dropping accents (e.g. `azonositasa` for `azonosítása`)
+  is always accepted, plus one extra typo.
+- **54 cloze** total (grounded in the solution files).
+
+### C. Question-type filter in ⚙ Settings
+A checkbox per question type; **only checked types appear in any practice
+session** (all modes incl. review). Persisted immediately to `localStorage`
+(`psp_enabled_types`); `getEnabledTypes()` (defaults to all, never empty) filters
+the session `pool` in `startSession`. A live **"Elérhető kérdés: N"** count is
+rendered above the checkboxes (`countAvailableQuestions`) — counts enabled types
+within the practiceable pool (worksheets + real exams; disabled gyalap excluded).
+Also: the settings modal is now a scrollable flex column (`max-height: 90vh`) so
+the taller content is never clipped.
+
+### D. Define + cloze expansion of worksheets 7, 1, 2
+Added every remaining clearly-defined concept from each solution DOCX as a
+`define`, plus **2–3 `cloze` per new define** (each blanking different key terms):
+- **W7:** 7 → **20** defines, **28** cloze
+- **W1:** 16 → **26** defines, +10 cloze
+- **W2:** 12 → **24** defines, +12 cloze
+> Worksheets **3, 4, 5, 6 still pending** the same treatment (each currently has
+> 12 / 12 / 12 / 7 defines and ~0–1 cloze). Repeat the pattern: extract the
+> `exam_subjects/gyakorlas_N_megoldasok_cl.docx`, list existing `def_wN_*` to
+> avoid duplicates, add new defines to `essays.js` + 2–3 cloze each to `cloze.js`.
+
+## What was built 2026-07-09 (reference)
 
 ### A. Exam tips — "Tippek és tanácsok" (`tips.js`)
 One random exam tip is shown on the exercise screen, styled as a lightbulb card

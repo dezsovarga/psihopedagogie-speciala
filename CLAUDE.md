@@ -30,10 +30,11 @@ chapter-select screen markup are kept so it can be re-enabled later.
 exercises/
   worksheet_1.js … worksheet_7.js  ← w:1–7 exercises (standard types)
   gyalap_ch1.js … gyalap_ch3.js    ← w:101–114 Gyógyped. Alapismeretek (DISABLED)
-  real_2017.js … real_2020.js      ← real past-exam years (w = year); one file per year
+  real_2017.js … real_2022.js      ← real past-exam years (w = year); one file per year
   mixed.js         ← w:0 shared exercises
   essays.js        ← define + essay questions (AI-evaluated; manually maintained)
   lists.js         ← list (enumeration) questions for all worksheets; hand-maintained
+  cloze.js         ← cloze (szövegkiegészítés) questions; hand-maintained
 tips.js            ← EXAM_TIPS: one random exam tip, rotated per question on the exercise screen
 data.js            ← combines all exercise arrays + helper functions
 app.js             ← session logic, spaced repetition, progress (localStorage)
@@ -77,7 +78,10 @@ built-in worker) **and** the **question-type filter** (`localStorage` key
 `psp_enabled_types`, a JSON array of enabled types). The type filter is applied
 to the session `pool` in `startSession` (`getEnabledTypes()`), so only the
 checked types appear in any practice session; it defaults to all types and is
-never allowed to be empty. Toggling a checkbox saves immediately.
+never allowed to be empty. Toggling a checkbox saves immediately, and a live
+"Elérhető kérdés: N" count (`countAvailableQuestions`) is shown above the
+checkboxes. The 10 filterable types are `mc, tf, fill, match, order, short, list,
+cloze, define, essay` (`ALL_QUESTION_TYPES` in `app.js`).
 
 - Max 2 essay + define questions of each kind appear per session (per-type caps
   in `startSession`)
@@ -173,7 +177,7 @@ via a `<script src="tips.js">` before `data.js`; integrity tested in
 ## Exercise format (for manual edits or review)
 
 ```js
-// Standard types (mc | tf | fill | match | order | short | list)
+// Standard types (mc | tf | fill | match | order | short | list | cloze)
 {
   id: 'w4_01',        // unique; w = worksheet number (0 = shared)
   w: 4,
@@ -204,6 +208,20 @@ via a `<script src="tips.js">` before `data.js`; integrity tested in
   ],
   need: 4,            // optional: how many items pass the question (default = all)
   exp: 'Explanation / full list shown after answering',
+  diff: 2
+}
+
+// Cloze type (szövegkiegészítés) — a definition text with {{blanked}} key terms,
+// each rendered as an inline input with a first-letter hint. Graded locally per
+// blank; accent-insensitive + Levenshtein ≤ 1 typo tolerance. Lives in cloze.js.
+{
+  id: 'cloze_w7_02',
+  w: 7,
+  topic: 'Tanulási zavarok',
+  type: 'cloze',
+  q: 'Egészítsd ki a diszgráfia meghatározását!',   // instruction shown as the question
+  text: 'A diszgráfia specifikus {{írászavar}}, amely érinti a {{helyesírási}} készséget.',
+  exp: 'Explanation shown after answering',
   diff: 2
 }
 
