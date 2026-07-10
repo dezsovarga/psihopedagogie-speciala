@@ -210,5 +210,67 @@ const EXERCISES_CLOZE = [
     q: 'Egészítsd ki az Orton-Gillingham megközelítés lényegét!',
     text: 'Az Orton-Gillingham megközelítésben a {{mozgásos}} memória is megerősíti a vizuális-{{auditív}} kapcsolatot.',
     exp: 'Az Orton-Gillingham elvnél a mozgásos memória is megerősíti a vizuális-auditív kapcsolatot.'
+  },
+
+  // ─── 1. Változat – a bővített define-készlethez tartozó cloze kérdések ──────
+  {
+    id: 'cloze_w1_02', w: 1, topic: 'Komplex értékelés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az individualitás elvét!',
+    text: 'Az individualitás elve szerint minden gyermek {{egyedi}}, ezért az értékelést az adott személy {{sajátosságaihoz}} igazítjuk.',
+    exp: 'Az individualitás elve: minden gyermek egyedi, az értékelés a sajátosságaihoz igazodik.'
+  },
+  {
+    id: 'cloze_w1_03', w: 1, topic: 'Komplex értékelés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a család bevonásának elvét!',
+    text: 'A család bevonásának elve szerint a {{szülők}} aktív résztvevői az értékelésnek, mert nélkülözhetetlen {{információval}} rendelkeznek gyermekük fejlődéséről.',
+    exp: 'A szülők aktív résztvevők, mert egyedülálló információval rendelkeznek a gyermekről.'
+  },
+  {
+    id: 'cloze_w1_04', w: 1, topic: 'Pszichomotorika', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a térbeli tájékozódás meghatározását!',
+    text: 'A térbeli tájékozódás a tér {{irányainak}} (fent-lent, jobbra-balra) ismerete és alkalmazása a saját {{testhez}} és tárgyakhoz viszonyítva.',
+    exp: 'A tér irányainak ismerete és alkalmazása saját testhez és tárgyakhoz viszonyítva.'
+  },
+  {
+    id: 'cloze_w1_05', w: 1, topic: 'Pszichomotorika', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az időbeli tájékozódás meghatározását!',
+    text: 'Az időbeli tájékozódás a {{ritmus}}, az időtartam és az időbeli {{sorrend}} érzékelésének és értelmezésének képessége.',
+    exp: 'A ritmus, időtartam és időbeli sorrend érzékelésének és értelmezésének képessége.'
+  },
+  {
+    id: 'cloze_w1_06', w: 1, topic: 'Curriculum-adaptáció', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a curriculumdifferenciálás meghatározását!',
+    text: 'A curriculumdifferenciálás az oktatási tartalom vagy módszer {{módosítása}} a képességszinthez úgy, hogy mindenki ugyanazon {{általános}} célok felé halad.',
+    exp: 'Az oktatási tartalom/módszer módosítása a képességszinthez, közös általános célok mellett.'
+  },
+  {
+    id: 'cloze_w1_07', w: 1, topic: 'Curriculum-adaptáció', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az individualizálás meghatározását!',
+    text: 'Az individualizálás {{egyéni}} szintű tervezés, amely kizárólag az adott tanuló {{szükségleteit}} és erősségeit veszi figyelembe, jellemzően a PIP keretében.',
+    exp: 'Egyéni szintű tervezés kizárólag az adott tanuló szükségleteire és erősségeire.'
+  },
+  {
+    id: 'cloze_w1_08', w: 1, topic: 'Curriculum-adaptáció', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a hozzáférési adaptáció meghatározását!',
+    text: 'A hozzáférési adaptáció az eszközök, módszerek vagy környezet {{módosítása}}, hogy a tanuló fizikailag és {{kognitívan}} hozzáférjen az ismeretekhez (pl. Braille-írás).',
+    exp: 'Az eszközök/módszerek/környezet módosítása a fizikai és kognitív hozzáférésért.'
+  },
+  {
+    id: 'cloze_w1_09', w: 1, topic: 'Curriculum-adaptáció', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a tartalmi módosítás meghatározását!',
+    text: 'A tartalmi módosítás az elsajátítandó tananyag {{mennyiségének}} vagy {{komplexitásának}} csökkentése vagy átalakítása a tanuló képességszintjéhez.',
+    exp: 'A tananyag mennyiségének/komplexitásának csökkentése vagy átalakítása a képességszinthez.'
+  },
+  {
+    id: 'cloze_w1_10', w: 1, topic: 'PIP', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az egyéni intervenciós terv (PIP) meghatározását!',
+    text: 'Az egyéni intervenciós terv (PIP) rögzíti a tanuló funkcionális {{szintjét}}, a hosszú és rövid távú {{célokat}}, a módszereket és az értékelési eljárást.',
+    exp: 'A PIP rögzíti a funkcionális szintet, a célokat, a módszereket és az értékelési eljárást.'
+  },
+  {
+    id: 'cloze_w1_11', w: 1, topic: 'Aktív módszerek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a kooperatív tanulás meghatározását!',
+    text: 'A kooperatív tanulás során a tanulók kis {{csoportokban}} együttműködve oldanak meg feladatokat; a tanulás kölcsönös {{segítségen}} és párbeszéden alapul.',
+    exp: 'Kis csoportos, együttműködésen és kölcsönös segítségen alapuló aktív módszer.'
   }
 ];

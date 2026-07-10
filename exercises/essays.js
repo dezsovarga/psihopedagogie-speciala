@@ -103,6 +103,66 @@ const EXERCISES_ESSAYS = [
   modelAnswer:'ADL (Activities of Daily Living – mindennapi életviteli tevékenységek): Az önkiszolgáláshoz és az önálló életvitelhez szükséges alapvető tevékenységek összessége, mint az öltözködés, étkezés és higiénia. A foglalkozásterápiában ezek valós vagy szimulált környezetben való gyakorlása az autonómiafejlesztés egyik legfontosabb módja.',
   exp:'Az ADL az önkiszolgálási alapkészségek (öltözés, étkezés, higiénia) összessége – valós/szimulált környezetben való gyakorlása az autonómiafejlesztés alapja.'
 },
+{
+  id:'def_w1_17', w:1, topic:'Komplex értékelés', type:'define', diff:2, points:2,
+  q:'Mit jelent az individualitás elve a pszichopedagógiai értékelésben?',
+  modelAnswer:'Individualitás elve: az az alapelv, amely szerint minden gyermek egyedi, ezért az értékelést az adott személy sajátosságaihoz kell igazítani, nem pedig egységes, mindenkire egyformán alkalmazott mércével mérni.',
+  exp:'Minden gyermek egyedi – az értékelést az adott személy sajátosságaihoz igazítjuk.'
+},
+{
+  id:'def_w1_18', w:1, topic:'Komplex értékelés', type:'define', diff:2, points:2,
+  q:'Mit jelent a család bevonásának elve a pszichopedagógiai értékelésben?',
+  modelAnswer:'A család bevonásának elve: az az alapelv, amely szerint a szülők aktív résztvevői az értékelési folyamatnak, mivel nélkülözhetetlen információval rendelkeznek gyermekük fejlődéséről, korai viselkedéséről és otthoni környezetéről; bevonásuk nélkül az értékelés hiányos képet adna.',
+  exp:'A szülők aktív résztvevők az értékelésben, mert egyedülálló információval rendelkeznek gyermekükről.'
+},
+{
+  id:'def_w1_19', w:1, topic:'Pszichomotorika', type:'define', diff:2, points:2,
+  q:'Mit jelent a térbeli tájékozódás a pszichomotorika összetevői között?',
+  modelAnswer:'Térbeli tájékozódás (orientarea spațială): a tér irányainak (fent-lent, jobbra-balra, előre-hátra) ismerete és alkalmazása a saját testhez, tárgyakhoz és más személyekhez viszonyítva.',
+  exp:'A tér irányainak (fent-lent, jobbra-balra, előre-hátra) ismerete és alkalmazása saját testhez és tárgyakhoz viszonyítva.'
+},
+{
+  id:'def_w1_20', w:1, topic:'Pszichomotorika', type:'define', diff:2, points:2,
+  q:'Mit jelent az időbeli tájékozódás a pszichomotorika összetevői között?',
+  modelAnswer:'Időbeli tájékozódás (orientarea temporală): a ritmus, az időtartam és az időbeli sorrend érzékelésének és értelmezésének képessége.',
+  exp:'A ritmus, az időtartam és az időbeli sorrend érzékelésének és értelmezésének képessége.'
+},
+{
+  id:'def_w1_21', w:1, topic:'Curriculum-adaptáció', type:'define', diff:2, points:2,
+  q:'Határozza meg a curriculumdifferenciálás fogalmát!',
+  modelAnswer:'Curriculumdifferenciálás: az oktatási tartalom, folyamat vagy értékelési módszer módosítása úgy, hogy az a tanulók eltérő képességszintjéhez igazodjon, miközben az osztályban mindenki ugyanazon általános célok felé halad.',
+  exp:'Az oktatási tartalom/folyamat/értékelés módosítása a képességszinthez, közös általános célok mellett.'
+},
+{
+  id:'def_w1_22', w:1, topic:'Curriculum-adaptáció', type:'define', diff:2, points:2,
+  q:'Határozza meg az individualizálás fogalmát a speciális oktatásban!',
+  modelAnswer:'Individualizálás: egyéni szintű tervezés és fejlesztés, amely kizárólag az adott tanuló sajátos szükségleteit, erősségeit és fejlesztési céljait veszi figyelembe – jellemzően a személyre szabott beavatkozási terv (PIP) keretében valósul meg.',
+  exp:'Egyéni szintű tervezés kizárólag az adott tanuló szükségleteire, erősségeire, céljaira – a PIP keretében.'
+},
+{
+  id:'def_w1_23', w:1, topic:'Curriculum-adaptáció', type:'define', diff:3, points:2,
+  q:'Határozza meg a hozzáférési adaptáció fogalmát!',
+  modelAnswer:'Hozzáférési adaptáció: az oktatási eszközök, módszerek vagy környezet módosítása annak érdekében, hogy a tanuló fizikailag és kognitívan hozzá tudjon férni az ismeretek elsajátításához (pl. Braille-írás, képes instrukciók, hangrögzítő eszköz).',
+  exp:'Az eszközök/módszerek/környezet módosítása a fizikai és kognitív hozzáférésért (pl. Braille, képes instrukció).'
+},
+{
+  id:'def_w1_24', w:1, topic:'Curriculum-adaptáció', type:'define', diff:3, points:2,
+  q:'Határozza meg a tartalmi módosítás fogalmát!',
+  modelAnswer:'Tartalmi módosítás: az elsajátítandó tananyag mennyiségének vagy komplexitásának csökkentése vagy átalakítása a tanuló képességszintjéhez igazodva (pl. egyszerűbb szöveg, kevesebb fogalom, konkrétabb feladatok).',
+  exp:'A tananyag mennyiségének/komplexitásának csökkentése vagy átalakítása a képességszinthez.'
+},
+{
+  id:'def_w1_25', w:1, topic:'PIP', type:'define', diff:2, points:2,
+  q:'Határozza meg az egyéni intervenciós terv (PIP) fogalmát!',
+  modelAnswer:'Egyéni intervenciós terv (PIP): olyan egyéni pedagógiai dokumentum, amely rögzíti a tanuló jelenlegi funkcionális szintjét, a hosszú és rövid távú célokat, az alkalmazott módszereket és eszközöket, a felelős személyeket és szolgáltatásokat, valamint az értékelési eljárást és a felülvizsgálat időpontját.',
+  exp:'Egyéni pedagógiai dokumentum: funkcionális szint, hosszú/rövid távú célok, módszerek, felelősök, értékelési eljárás.'
+},
+{
+  id:'def_w1_26', w:1, topic:'Aktív módszerek', type:'define', diff:2, points:2,
+  q:'Határozza meg a kooperatív tanulás fogalmát!',
+  modelAnswer:'Kooperatív tanulás: aktív-részvételi módszer, amelyben a tanulók kis csoportokban, egymással együttműködve oldanak meg feladatokat; mindenki aktív szerepet kap, és a tanulás kölcsönös segítségen és párbeszéden alapul. CES tanulóknál a szociális interakció és a gyakorlati tevékenység elősegíti a kognitív fejlődést.',
+  exp:'Kis csoportos, együttműködésen és kölcsönös segítségen alapuló aktív módszer; mindenki aktív szerepet kap.'
+},
 
 // ══════════════════════════════════════════════
 // VÁLTOZAT 1
