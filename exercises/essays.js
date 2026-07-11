@@ -1092,6 +1092,84 @@ Adaptálás autizmus spektrumon lévő tanuló számára:
   modelAnswer:'Többszintű tanulás (învățare pe niveluri): Ugyanazon téma feldolgozása eltérő nehézségi és támogatási szinteken úgy, hogy minden tanuló a saját képességszintjén, de közös célhoz kapcsolódóan haladjon. Például egy szöveg feldolgozásánál az alap szint kiterjedt támogatással (képsorrend), a középszint segítséggel (kérdések, kulcsszó-térkép), a haladó szint önállóan (értelmezés, saját befejezés) dolgozik – mindhárom ugyanahhoz a közös célhoz kötődik.',
   exp:'A többszintű tanulás azonos témát dolgoz fel eltérő nehézségi/támogatási szinteken, közös célhoz kapcsolódva.'
 },
+{
+  id:'def_w6_08', w:6, topic:'Intellektuális fogyatékosság', type:'define', diff:2, points:2,
+  q:'Határozza meg a funkcionális készség fogalmát!',
+  modelAnswer:'Funkcionális készség (abilitate funcțională): olyan, közvetlenül a mindennapi életben hasznosítható képesség (pl. öltözködés, pénzkezelés, közlekedés, egyszerű írás-olvasás alkalmazása), amely a tanuló önállóságát és társadalmi beilleszkedését szolgálja.',
+  exp:'Közvetlenül a mindennapi életben hasznosítható képesség (öltözködés, pénzkezelés, közlekedés) az önállóságért.'
+},
+{
+  id:'def_w6_09', w:6, topic:'Intellektuális fogyatékosság', type:'define', diff:3, points:2,
+  q:'Határozza meg a tanulási potenciál fogalmát!',
+  modelAnswer:'Tanulási potenciál (potențial de învățare): az egyén fejleszthetőségének, a megfelelő támogatás melletti fejlődési tartalékának mértéke; a Vigotszkij-féle legközelebbi fejlődési zóna (ZPD) elve alapján értelmezhető – nem a jelenlegi teljesítmény, hanem a segítséggel elérhető teljesítmény a mérvadó.',
+  exp:'A fejleszthetőség, a támogatás melletti fejlődési tartalék mértéke (ZPD); a segítséggel elérhető teljesítmény a mérvadó.'
+},
+{
+  id:'def_w6_10', w:6, topic:'Tanulásszervezés', type:'define', diff:2, points:2,
+  q:'Határozza meg az egyéni tanulás (învățare individuală) fogalmát!',
+  modelAnswer:'Egyéni tanulás (învățare individuală): olyan szervezési forma, amelyben a tanuló saját ütemében, személyre szabott feladatokkal, önállóan vagy egyéni tanári/segítő támogatással dolgozik, lehetővé téve a maximális differenciálást.',
+  exp:'Szervezési forma: a tanuló saját ütemében, személyre szabott feladatokkal dolgozik – maximális differenciálás.'
+},
+{
+  id:'def_w6_11', w:6, topic:'Tanulásszervezés', type:'define', diff:2, points:2,
+  q:'Határozza meg a kiscsoportos tanulás (învățare în grupuri mici) fogalmát!',
+  modelAnswer:'Kiscsoportos tanulás (învățare în grupuri mici): 3–6 fős, homogén vagy heterogén összetételű csoportokban zajló tevékenység, amely lehetővé teszi a kortárs interakciót és együttműködést, miközben a tanári figyelem még koncentrált maradhat.',
+  exp:'3–6 fős csoportos forma: kortárs interakció és együttműködés, koncentrált tanári figyelem mellett.'
+},
+{
+  id:'def_w6_12', w:6, topic:'Ludoterápia', type:'define', diff:2, points:2,
+  q:'Jellemezze a gyakorlójáték (szenzomotoros játék) szakaszát!',
+  modelAnswer:'Gyakorlójáték / szenzomotoros játék (kb. 0–2 év): a játékfejlődés első szakasza, amelyben ismétlődő, manipulatív, a testi mozgásra és érzékelésre épülő cselekvések jelennek meg (pl. tárgyak dobálása, rágcsálása).',
+  exp:'0–2 év: ismétlődő, manipulatív, testi mozgásra és érzékelésre épülő játék.'
+},
+{
+  id:'def_w6_13', w:6, topic:'Ludoterápia', type:'define', diff:2, points:2,
+  q:'Jellemezze a szimbolikus (szerep-) játék szakaszát!',
+  modelAnswer:'Szimbolikus / szerepjáték (kb. 2–7 év): a játékfejlődés szakasza, amelyben megjelenik a „mintha" játék, a szerepek felvétele és a tárgyak jelképes használata (pl. a seprű „lóvá" válik); ekkor jelenik meg a fantázia és az érzelmi feldolgozás lehetősége.',
+  exp:'2–7 év: „mintha" játék, szerepfelvétel, tárgyak jelképes használata; a fantázia és érzelmi feldolgozás megjelenése.'
+},
+{
+  id:'def_w6_14', w:6, topic:'Ludoterápia', type:'define', diff:2, points:2,
+  q:'Jellemezze a szabályjáték szakaszát!',
+  modelAnswer:'Szabályjáték (kb. 7 év felett): a játékfejlődés szakasza, amelyben a gyermek képes elfogadni és betartani előre rögzített szabályokat, együttműködni és versengeni társaival, ami az önszabályozás és a szociális kogníció fejlődését jelzi (Piaget nyomán).',
+  exp:'7 év felett: előre rögzített szabályok betartása, együttműködés, versengés; az önszabályozás és szociális kogníció jele.'
+},
+{
+  id:'def_w6_15', w:6, topic:'Ludoterápia', type:'define', diff:2, points:2,
+  q:'Határozza meg a konstrukciós játék fejlesztő szerepét!',
+  modelAnswer:'Konstrukciós játék (építőkockák, puzzle): olyan játékforma, amely fejleszti a téri-vizuális készségeket, a finommotorikát, a problémamegoldást és a kitartást.',
+  exp:'Építőkocka/puzzle: téri-vizuális készségek, finommotorika, problémamegoldás és kitartás fejlesztése.'
+},
+{
+  id:'def_w6_16', w:6, topic:'Intellektuális fogyatékosság', type:'define', diff:3, points:2,
+  q:'Mit jelent a transzferálási nehézség intellektuális fogyatékosság esetén?',
+  modelAnswer:'Transzferálási nehézség: a megtanultak új helyzetre, kontextusra való átvitelének nehezítettsége; ezért szükséges a tanultak tudatos, ismételt gyakoroltatása több eltérő helyzetben (a transzfer/általánosítás elősegítésére).',
+  exp:'A megtanultak új helyzetre/kontextusra való átvitelének nehézsége; több helyzetben való gyakoroltatást igényel.'
+},
+{
+  id:'def_w6_17', w:6, topic:'Intellektuális fogyatékosság', type:'define', diff:2, points:2,
+  q:'Mit jelent az absztrakciós nehézség intellektuális fogyatékosság esetén?',
+  modelAnswer:'Absztrakciós nehézség: az elvont fogalmak, általánosítások és szimbólumok megértésének korlátozottsága; a tanuló konkrét, szemléltetett tapasztalatra szorul az elvont tartalmak elsajátításához.',
+  exp:'Az elvont fogalmak, általánosítások, szimbólumok korlátozott megértése; konkrét, szemléltetett tapasztalatot igényel.'
+},
+{
+  id:'def_w6_18', w:6, topic:'Komplex értékelés', type:'define', diff:3, points:2,
+  q:'Határozza meg a komplex értékelés (evaluare complexă) fogalmát!',
+  modelAnswer:'Komplex értékelés (evaluare complexă, CJRAE/CMBRAE szinten): az intellektuális képességek, az adaptív viselkedés, a részvétel/szociális szerepek, az egészségi állapot és a kontextus együttes, csapatmunkában (pszichológus, pszichopedagógus, orvos, tanár, szociális munkás) történő vizsgálata; célja nem a „besorolás", hanem az egyénre szabott támogatási terv (PIP) megalapozása.',
+  exp:'Az öt szempont csapatmunkában való együttes vizsgálata; célja nem a besorolás, hanem a PIP megalapozása.'
+},
+{
+  id:'def_w6_19', w:6, topic:'Tanulási alapelvek', type:'define', diff:2, points:2,
+  q:'Mit jelent a konkretizálás elve az intellektuális fogyatékosságú tanulók tanításában?',
+  modelAnswer:'Konkretizálás: a tanulási folyamat alapelve, amely szerint az elvont tartalmakat mindig szemléltetéssel, valós tárgyakkal, képekkel és cselekvéssel kell közvetíteni, mielőtt a szimbolikus szintre lépnénk.',
+  exp:'Az elvont tartalmak közvetítése szemléltetéssel, valós tárgyakkal és cselekvéssel a szimbolikus szint előtt.'
+},
+{
+  id:'def_w6_20', w:6, topic:'Értékelés', type:'define', diff:3, points:2,
+  q:'Határozza meg a kritériumalapú (curriculum-based) mérés fogalmát!',
+  modelAnswer:'Kritériumalapú (curriculum-based) mérés: fejlődést mérő eljárás, amely nem a kortársakhoz, hanem a tanuló saját korábbi teljesítményéhez és az egyénre szabott célokhoz viszonyít.',
+  exp:'Fejlődésmérés, amely a tanuló saját korábbi teljesítményéhez és egyéni céljaihoz viszonyít (nem a kortársakhoz).'
+},
 
 // ══════════════════════════════════════════════
 // ESSZÉ KÉRDÉSEK – 6. VÁLTOZAT

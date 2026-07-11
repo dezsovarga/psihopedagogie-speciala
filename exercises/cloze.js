@@ -586,5 +586,164 @@ const EXERCISES_CLOZE = [
     q: 'Egészítsd ki a magzati alkohol-spektrum zavar (FASD) meghatározását!',
     text: 'A FASD prenatális, {{alkohol}} okozta állapot, amelynek következménye intellektuális fogyatékosság, figyelemzavar és jellegzetes {{arcvonások}}.',
     exp: 'Prenatális, alkohol (teratogén) okozta állapot: intellektuális fogyatékosság, figyelemzavar, jellegzetes arcvonások.'
+  },
+
+  // ─── 6. Változat – a bővített define-készlethez tartozó cloze kérdések ──────
+  {
+    id: 'cloze_w6_02', w: 6, topic: 'Intellektuális fogyatékosság', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a funkcionális készség meghatározását!',
+    text: 'A funkcionális készség közvetlenül a {{mindennapi}} életben hasznosítható képesség (pl. öltözködés, pénzkezelés), amely a tanuló {{önállóságát}} szolgálja.',
+    exp: 'Közvetlenül a mindennapi életben hasznosítható képesség az önállóságért.'
+  },
+  {
+    id: 'cloze_w6_03', w: 6, topic: 'Intellektuális fogyatékosság', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a tanulási potenciál meghatározását!',
+    text: 'A tanulási potenciál a fejleszthetőség mértéke; a Vigotszkij-féle legközelebbi {{fejlődési}} zóna alapján nem a jelenlegi, hanem a {{segítséggel}} elérhető teljesítmény a mérvadó.',
+    exp: 'A fejleszthetőség mértéke (ZPD); a segítséggel elérhető teljesítmény a mérvadó.'
+  },
+  {
+    id: 'cloze_w6_04', w: 6, topic: 'Tanulásszervezés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az egyéni tanulás meghatározását!',
+    text: 'Az egyéni tanulásban a tanuló saját {{ütemében}}, személyre szabott feladatokkal dolgozik, ami lehetővé teszi a maximális {{differenciálást}}.',
+    exp: 'A tanuló saját ütemében, személyre szabott feladatokkal dolgozik – maximális differenciálás.'
+  },
+  {
+    id: 'cloze_w6_05', w: 6, topic: 'Tanulásszervezés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a kiscsoportos tanulás meghatározását!',
+    text: 'A kiscsoportos tanulás {{3}}–6 fős csoportokban zajlik, lehetővé téve a {{kortárs}} interakciót és együttműködést.',
+    exp: '3–6 fős csoportos forma: kortárs interakció és együttműködés.'
+  },
+  {
+    id: 'cloze_w6_06', w: 6, topic: 'Ludoterápia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a gyakorlójáték szakaszát!',
+    text: 'A gyakorlójáték (kb. 0–2 év) ismétlődő, {{manipulatív}}, a testi {{mozgásra}} és érzékelésre épülő cselekvésekből áll.',
+    exp: '0–2 év: ismétlődő, manipulatív, testi mozgásra és érzékelésre épülő játék.'
+  },
+  {
+    id: 'cloze_w6_07', w: 6, topic: 'Ludoterápia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a szimbolikus (szerep-) játék szakaszát!',
+    text: 'A szimbolikus játékban (kb. 2–7 év) megjelenik a „{{mintha}}" játék és a tárgyak {{jelképes}} használata.',
+    exp: '2–7 év: „mintha" játék, szerepfelvétel, tárgyak jelképes használata.'
+  },
+  {
+    id: 'cloze_w6_08', w: 6, topic: 'Ludoterápia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a szabályjáték szakaszát!',
+    text: 'A szabályjátékban (kb. 7 év felett) a gyermek képes előre rögzített {{szabályokat}} betartani, együttműködni és {{versengeni}}.',
+    exp: '7 év felett: előre rögzített szabályok betartása, együttműködés, versengés.'
+  },
+  {
+    id: 'cloze_w6_09', w: 6, topic: 'Ludoterápia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a konstrukciós játék fejlesztő szerepét!',
+    text: 'A konstrukciós játék (építőkockák, puzzle) fejleszti a {{téri}}-vizuális készségeket, a {{finommotorikát}} és a problémamegoldást.',
+    exp: 'Téri-vizuális készségek, finommotorika, problémamegoldás, kitartás.'
+  },
+  {
+    id: 'cloze_w6_10', w: 6, topic: 'Intellektuális fogyatékosság', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a transzferálási nehézség meghatározását!',
+    text: 'A transzferálási nehézség a megtanultak új {{helyzetre}} való átvitelének nehézsége; ezért szükséges a tanultak több {{helyzetben}} való gyakoroltatása.',
+    exp: 'A megtanultak új helyzetre való átvitelének nehézsége; több helyzetben gyakoroltatandó.'
+  },
+  {
+    id: 'cloze_w6_11', w: 6, topic: 'Intellektuális fogyatékosság', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az absztrakciós nehézség meghatározását!',
+    text: 'Az absztrakciós nehézség az elvont {{fogalmak}} és szimbólumok korlátozott megértése; a tanuló {{konkrét}}, szemléltetett tapasztalatra szorul.',
+    exp: 'Az elvont fogalmak/szimbólumok korlátozott megértése; konkrét, szemléltetett tapasztalatot igényel.'
+  },
+  {
+    id: 'cloze_w6_12', w: 6, topic: 'Komplex értékelés', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a komplex értékelés meghatározását!',
+    text: 'A komplex értékelés az öt szempont együttes, {{csapatmunkában}} történő vizsgálata; célja nem a besorolás, hanem a {{PIP}} megalapozása.',
+    exp: 'Az öt szempont csapatmunkában való vizsgálata; célja a PIP megalapozása.'
+  },
+  {
+    id: 'cloze_w6_13', w: 6, topic: 'Tanulási alapelvek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a konkretizálás elvét!',
+    text: 'A konkretizálás elve szerint az elvont tartalmakat {{szemléltetéssel}}, valós tárgyakkal és cselekvéssel kell közvetíteni, mielőtt a {{szimbolikus}} szintre lépnénk.',
+    exp: 'Az elvont tartalmak közvetítése szemléltetéssel a szimbolikus szint előtt.'
+  },
+  {
+    id: 'cloze_w6_14', w: 6, topic: 'Értékelés', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a kritériumalapú mérés meghatározását!',
+    text: 'A kritériumalapú (curriculum-based) mérés nem a {{kortársakhoz}}, hanem a tanuló saját korábbi {{teljesítményéhez}} és egyéni céljaihoz viszonyít.',
+    exp: 'A tanuló saját korábbi teljesítményéhez és egyéni céljaihoz viszonyít (nem a kortársakhoz).'
+  },
+  // 6. Változat – második cloze minden új fogalomhoz
+  {
+    id: 'cloze_w6_15', w: 6, topic: 'Intellektuális fogyatékosság', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a funkcionális készség példáit!',
+    text: 'Funkcionális készség például az {{öltözködés}}, a pénzkezelés, a közlekedés és az egyszerű {{írás-olvasás}} alkalmazása.',
+    exp: 'Példák: öltözködés, pénzkezelés, közlekedés, egyszerű írás-olvasás alkalmazása.'
+  },
+  {
+    id: 'cloze_w6_16', w: 6, topic: 'Intellektuális fogyatékosság', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a tanulási potenciál lényegét!',
+    text: 'A tanulási potenciál a megfelelő {{támogatás}} melletti fejlődési {{tartalék}} mértéke.',
+    exp: 'A támogatás melletti fejlődési tartalék mértéke.'
+  },
+  {
+    id: 'cloze_w6_17', w: 6, topic: 'Tanulásszervezés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az egyéni tanulás korlátját!',
+    text: 'Az egyéni tanulás korlátja, hogy hiányzik a {{kortárssal}} való interakció, és {{erőforrás}}-igényes a tanár számára.',
+    exp: 'Korlátok: hiányzó kortársi interakció, erőforrás- és időigény, izoláció.'
+  },
+  {
+    id: 'cloze_w6_18', w: 6, topic: 'Tanulásszervezés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a kiscsoportos tanulás előnyét!',
+    text: 'A kiscsoportos tanulás előnye a társas tanulás és a kortárs {{modellkövetés}}, valamint a {{kommunikációs}} és együttműködési készségek fejlődése.',
+    exp: 'Előnyök: társas tanulás, kortárs modellkövetés, kommunikációs és együttműködési készségek.'
+  },
+  {
+    id: 'cloze_w6_19', w: 6, topic: 'Ludoterápia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a gyakorlójáték életkorát és jellegét!',
+    text: 'A gyakorlójáték a játékfejlődés {{első}} szakasza (kb. 0–2 év), amely a testi mozgásra és {{érzékelésre}} épül.',
+    exp: 'A játékfejlődés első szakasza (0–2 év), testi mozgásra és érzékelésre épül.'
+  },
+  {
+    id: 'cloze_w6_20', w: 6, topic: 'Ludoterápia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a szimbolikus játék fejlődési jelentőségét!',
+    text: 'A szimbolikus játékban jelenik meg a {{fantázia}} és az {{érzelmi}} feldolgozás lehetősége.',
+    exp: 'A fantázia és az érzelmi feldolgozás lehetőségének megjelenése.'
+  },
+  {
+    id: 'cloze_w6_21', w: 6, topic: 'Ludoterápia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a szabályjáték fejlődési jelentőségét!',
+    text: 'A szabályjáték az {{önszabályozás}} és a szociális {{kogníció}} fejlődését jelzi (Piaget nyomán).',
+    exp: 'Az önszabályozás és a szociális kogníció fejlődését jelzi (Piaget).'
+  },
+  {
+    id: 'cloze_w6_22', w: 6, topic: 'Ludoterápia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a szimbolikus/szerepjáték fejlesztő szerepét!',
+    text: 'A szimbolikus/szerepjáték fejleszti a nyelvi {{kifejezőkészséget}}, az {{empátiát}} és a szociális szerepek megértését.',
+    exp: 'Fejleszti a nyelvi kifejezőkészséget, empátiát, szociális szerepek megértését.'
+  },
+  {
+    id: 'cloze_w6_23', w: 6, topic: 'Intellektuális fogyatékosság', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a transzferálási nehézség kezelését!',
+    text: 'A transzferálási nehézség miatt a tanultakat {{tudatosan}}, ismételten kell gyakoroltatni, hogy {{általánosíthatóvá}} váljanak.',
+    exp: 'A tanultak tudatos, ismételt gyakoroltatása több helyzetben az általánosításért.'
+  },
+  {
+    id: 'cloze_w6_24', w: 6, topic: 'Intellektuális fogyatékosság', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az absztrakciós nehézség következményét!',
+    text: 'Az absztrakciós nehézség miatt a tanulónak {{konkrét}}, {{szemléltetett}} tapasztalatra van szüksége az elvont tartalmak elsajátításához.',
+    exp: 'Konkrét, szemléltetett tapasztalat szükséges az elvont tartalmakhoz.'
+  },
+  {
+    id: 'cloze_w6_25', w: 6, topic: 'Komplex értékelés', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a komplex értékelés résztvevőit!',
+    text: 'A komplex értékelés csapatmunkában zajlik: {{pszichológus}}, pszichopedagógus, orvos, tanár és szociális {{munkás}} részvételével.',
+    exp: 'Csapatmunka: pszichológus, pszichopedagógus, orvos, tanár, szociális munkás.'
+  },
+  {
+    id: 'cloze_w6_26', w: 6, topic: 'Tanulási alapelvek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a konkretizálás indoklását!',
+    text: 'A konkretizálás azért szükséges, mert az intellektuális fogyatékosságú tanulónak nehéz az {{elvont}} fogalmak megértése {{szemléltetés}} nélkül.',
+    exp: 'Az elvont fogalmak megértése szemléltetés nélkül nehéz.'
+  },
+  {
+    id: 'cloze_w6_27', w: 6, topic: 'Értékelés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a kritériumalapú mérés lényegét!',
+    text: 'A kritériumalapú mérés a tanuló saját {{korábbi}} teljesítményéhez és az egyénre szabott {{célokhoz}} viszonyít.',
+    exp: 'A saját korábbi teljesítményhez és az egyéni célokhoz viszonyít.'
   }
 ];
