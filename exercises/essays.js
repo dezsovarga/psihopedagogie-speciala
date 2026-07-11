@@ -528,6 +528,78 @@ Három alkalmazható kommunikációs módszer:
   modelAnswer:'Univerzális tanulástervezés (UDL/DUA): Olyan tervezési keretrendszer, amely az oktatási tartalom, módszer és értékelés rugalmas, eleve sokféle tanulóra gondolt kialakítását célozza, csökkentve az utólagos adaptáció szükségességét. Alapelve: a különbség nem kivétel, hanem norma.',
   exp:'Az UDL/DUA elve: a tanítást eleve rugalmasan, sokféle tanulóra tervezni – a különbség norma, nem kivétel.'
 },
+{
+  id:'def_w3_13', w:3, topic:'ASD-módszerek', type:'define', diff:2, points:2,
+  q:'Határozza meg a szociális narratívák (Social Stories) módszerét!',
+  modelAnswer:'Szociális narratívák (Social Stories): Carol Gray által kidolgozott módszer, amelynek lényege, hogy rövid, személyre szabott történeteken keresztül ismerteti meg a tanulóval egy adott szociális helyzet menetét, az elvárható viselkedést és a mások nézőpontját. Pedagógiai felhasználása: szociális helyzetek előkészítése, viselkedési elvárások tisztázása, szorongáscsökkentés.',
+  exp:'Carol Gray módszere: rövid, személyre szabott történetek egy szociális helyzet menetéről és az elvárt viselkedésről.'
+},
+{
+  id:'def_w3_14', w:3, topic:'Viselkedéstámogatás', type:'define', diff:2, points:2,
+  q:'Határozza meg a pozitív viselkedéstámogatás (PBS) fogalmát!',
+  modelAnswer:'Pozitív viselkedéstámogatás (PBS – Positive Behavior Support): proaktív, megelőző szemléletű megközelítés, amely a kívánatos viselkedések rendszeres megerősítésére, a tanulási környezet előzetes kialakítására és a tanuló erősségeire épít, ahelyett hogy kizárólag a problémás viselkedésekre reagálna büntető eszközökkel. Bizonyítékalapú, az emberi méltóságot tiszteletben tartó módszer, amely önszabályozást épít ki.',
+  exp:'Proaktív, erősségalapú, bizonyítékalapú megközelítés: a kívánatos viselkedést erősíti, nem büntet; önszabályozást épít.'
+},
+{
+  id:'def_w3_15', w:3, topic:'Logikai-matematikai', type:'define', diff:2, points:2,
+  q:'Határozza meg az osztályozás (szeriáció) fogalmát a logikai-matematikai fejlesztésben!',
+  modelAnswer:'Osztályozás: tárgyak vagy képek csoportosítása közös tulajdonság (szín, forma, méret, funkció) alapján. Alapvető logikai-matematikai művelet, amely a kategóriaalkotás és a fogalomalkotás előfeltétele.',
+  exp:'Tárgyak/képek csoportosítása közös tulajdonság (szín, forma, méret, funkció) alapján.'
+},
+{
+  id:'def_w3_16', w:3, topic:'Logikai-matematikai', type:'define', diff:2, points:2,
+  q:'Határozza meg a sorozatalkotás (szeriálás) fogalmát!',
+  modelAnswer:'Sorozatalkotás (szeriálás): tárgyak, képek vagy számok sorba rendezése növekvő vagy csökkenő sorrend szerint (pl. méret, magasság). A rendezettség és a mennyiségi viszonyok megértését alapozza meg.',
+  exp:'Tárgyak, képek vagy számok sorba rendezése növekvő vagy csökkenő sorrend szerint.'
+},
+{
+  id:'def_w3_17', w:3, topic:'Logikai-matematikai', type:'define', diff:3, points:2,
+  q:'Határozza meg a megfeleltetés (bijekció) fogalmát!',
+  modelAnswer:'Megfeleltetés (bijekció): elemek egy-egy-egy hozzárendelése két halmaz között, amely az egyenlő mennyiség fogalmának megalapozását szolgálja (pl. minden tányérhoz pontosan egy villát rendelünk).',
+  exp:'Elemek egy-az-egyhez hozzárendelése két halmaz között; az egyenlő mennyiség fogalmát alapozza meg.'
+},
+{
+  id:'def_w3_18', w:3, topic:'Logikai-matematikai', type:'define', diff:3, points:2,
+  q:'Határozza meg a megmaradás elvének fogalmát!',
+  modelAnswer:'Megmaradás elve: annak felismerése, hogy egy mennyiség nem változik meg pusztán attól, hogy más formában vagy elrendezésben jelenik meg (pl. azonos mennyiségű víz széles és keskeny pohárban).',
+  exp:'Egy mennyiség nem változik pusztán a forma vagy elrendezés megváltozásától (Piaget).'
+},
+{
+  id:'def_w3_19', w:3, topic:'Autonómia', type:'define', diff:2, points:2,
+  q:'Határozza meg a személyes és társadalmi autonómia fogalmát!',
+  modelAnswer:'Személyes és társadalmi autonómia: az egyén azon képessége, hogy mindennapi életének szükségleteit lehetőség szerint önállóan kielégítse, döntéseket hozzon saját életéről, és tevékeny tagja legyen közösségének. Fogyatékossággal élőknél a cél nem a teljes önellátás kényszere, hanem a lehető legmagasabb fokú függetlenség a személyes erősségek és segítő technológiák bevonásával.',
+  exp:'A mindennapi szükségletek önálló kielégítésének és a döntéshozatalnak a képessége; cél a legmagasabb fokú függetlenség.'
+},
+{
+  id:'def_w3_20', w:3, topic:'Autonómia', type:'define', diff:3, points:2,
+  q:'Határozza meg a láncolás (chaining) módszerét!',
+  modelAnswer:'Láncolás (chaining): a feladatelemzésen alapuló tanítási eljárás, amely a lépéseket egymáshoz kapcsolja. Előretartó láncolásnál a tanuló az első lépéstől kezd önállóan dolgozni, majd fokozatosan hozzáadódnak a többiek; visszatartó láncolásnál a pedagógus végzi minden lépést az utolsó kivételével, így a tanuló mindig a befejező lépésnél él át sikerélményt.',
+  exp:'Feladatelemzésre épülő eljárás: előretartó (elölről) vagy visszatartó (a záró lépéstől) láncolással kapcsolja össze a lépéseket.'
+},
+{
+  id:'def_w3_21', w:3, topic:'Curriculum és UDL', type:'define', diff:2, points:2,
+  q:'Határozza meg a differenciált curriculum fogalmát!',
+  modelAnswer:'Differenciált curriculum: az oktatási tartalom, folyamat, produktum és tanulási környezet tudatos, tanulóhoz igazított módosítása, amelynek célja, hogy a különböző képességszintű és tanulási stílusú tanulók mindegyike optimálisan fejlődhessen, miközben közös célok felé haladnak.',
+  exp:'A tartalom/folyamat/produktum/környezet tanulóhoz igazított módosítása közös célok mellett.'
+},
+{
+  id:'def_w3_22', w:3, topic:'Curriculum és UDL', type:'define', diff:2, points:2,
+  q:'Határozza meg az adaptált curriculum fogalmát!',
+  modelAnswer:'Adaptált curriculum: a többségi tantervtől tudatosan eltérő, egyéni szükségletekre szabott oktatási terv, amelyet CES tanulók számára dolgoznak ki. Csökkentett, módosított vagy alternatív célokat tartalmazhat, és az egyéni intervenciós terv (PIP) részét képezi.',
+  exp:'A többségi tantervtől eltérő, egyéni szükségletekre szabott terv (csökkentett/módosított/alternatív célok); a PIP része.'
+},
+{
+  id:'def_w3_23', w:3, topic:'Segítő technológia', type:'define', diff:2, points:2,
+  q:'Határozza meg a segítő technológia (assistive technology) fogalmát!',
+  modelAnswer:'Segítő technológia (assistive technology): minden olyan eszköz, szoftver vagy rendszer, amely fogyatékossággal élő személyek számára lehetővé teszi vagy megkönnyíti a tanulást, a kommunikációt vagy a mindennapi funkcionálást (pl. képernyőolvasó, kommunikációs tábla, szövegfelolvasó szoftver, adaptált billentyűzet).',
+  exp:'Eszköz/szoftver/rendszer, amely a tanulást, kommunikációt vagy mindennapi funkcionálást teszi lehetővé/könnyíti meg.'
+},
+{
+  id:'def_w3_24', w:3, topic:'Módszertan', type:'define', diff:2, points:2,
+  q:'Határozza meg a multimédiás tanulás fogalmát!',
+  modelAnswer:'Multimédiás tanulás: olyan tanítási-tanulási megközelítés, amely egyszerre több érzékszervi csatornán (vizuális, auditív, kinesztetikus) közvetíti az információt – képek, videók, hanganyagok, interaktív elemek kombinációjával –, hogy a különböző tanulási stílusú tanulók hatékonyabban sajátítsák el az ismereteket.',
+  exp:'Az információ egyszerre több érzékszervi csatornán (kép, videó, hang, interaktív elem) való közvetítése.'
+},
 
 // ══════════════════════════════════════════════
 // VÁLTOZAT 3

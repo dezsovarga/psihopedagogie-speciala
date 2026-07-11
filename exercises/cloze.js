@@ -346,5 +346,91 @@ const EXERCISES_CLOZE = [
     q: 'Egészítsd ki az FM-rendszer meghatározását!',
     text: 'Az FM-rendszerben a pedagógus {{mikrofonba}} beszél, és a jel közvetlenül a tanuló {{hallókészülékébe}} kerül, kiküszöbölve a háttérzajt.',
     exp: 'A pedagógus hangja mikrofonon át közvetlenül a hallókészülékbe kerül, kiküszöbölve a háttérzajt.'
+  },
+
+  // ─── 3. Változat – a bővített define-készlethez tartozó cloze kérdések ──────
+  {
+    id: 'cloze_w3_01', w: 3, topic: 'ASD-módszerek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a szociális narratívák meghatározását!',
+    text: 'A szociális narratívák (Carol Gray) rövid, személyre szabott {{történeteken}} keresztül mutatják be egy szociális helyzet menetét és az elvárható {{viselkedést}}.',
+    exp: 'Carol Gray módszere: személyre szabott történetek egy szociális helyzet menetéről és az elvárt viselkedésről.'
+  },
+  {
+    id: 'cloze_w3_02', w: 3, topic: 'ASD-módszerek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a szociális narratívák felhasználását!',
+    text: 'A szociális narratívák szociális helyzeteket {{előkészítenek}}, tisztázzák a viselkedési elvárásokat, és csökkentik a {{szorongást}} ismeretlen helyzetekben.',
+    exp: 'Szociális helyzetek előkészítése, viselkedési elvárások tisztázása, szorongáscsökkentés.'
+  },
+  {
+    id: 'cloze_w3_03', w: 3, topic: 'Viselkedéstámogatás', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a pozitív viselkedéstámogatás (PBS) meghatározását!',
+    text: 'A pozitív viselkedéstámogatás {{proaktív}}, megelőző szemléletű, amely a kívánatos viselkedések {{megerősítésére}} és a tanuló erősségeire épít, nem büntető eszközökre.',
+    exp: 'Proaktív, erősségalapú megközelítés: a kívánatos viselkedést erősíti, nem büntet.'
+  },
+  {
+    id: 'cloze_w3_04', w: 3, topic: 'Viselkedéstámogatás', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a PBS jellemzőjét!',
+    text: 'A PBS bizonyítékalapú, az emberi {{méltóságot}} tiszteletben tartó módszer, amely {{önszabályozást}} épít ki és erősíti a tanuló–pedagógus kapcsolatot.',
+    exp: 'Bizonyítékalapú, méltóságtisztelő módszer, amely önszabályozást épít.'
+  },
+  {
+    id: 'cloze_w3_05', w: 3, topic: 'Logikai-matematikai', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az osztályozás meghatározását!',
+    text: 'Az osztályozás tárgyak vagy képek {{csoportosítása}} közös {{tulajdonság}} (szín, forma, méret) alapján.',
+    exp: 'Tárgyak/képek csoportosítása közös tulajdonság alapján.'
+  },
+  {
+    id: 'cloze_w3_06', w: 3, topic: 'Logikai-matematikai', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a sorozatalkotás meghatározását!',
+    text: 'A sorozatalkotás (szeriálás) tárgyak, képek vagy számok {{sorba}} rendezése {{növekvő}} vagy csökkenő sorrend szerint.',
+    exp: 'Sorba rendezés növekvő vagy csökkenő sorrend szerint.'
+  },
+  {
+    id: 'cloze_w3_07', w: 3, topic: 'Logikai-matematikai', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a megfeleltetés meghatározását!',
+    text: 'A megfeleltetés (bijekció) elemek egy-az-egyhez {{hozzárendelése}} két halmaz között, amely az egyenlő {{mennyiség}} fogalmát alapozza meg.',
+    exp: 'Egy-az-egyhez hozzárendelés két halmaz között; az egyenlő mennyiség fogalmát alapozza meg.'
+  },
+  {
+    id: 'cloze_w3_08', w: 3, topic: 'Logikai-matematikai', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a megmaradás elvének meghatározását!',
+    text: 'A megmaradás elve annak felismerése, hogy egy {{mennyiség}} nem változik meg pusztán attól, hogy más {{formában}} vagy elrendezésben jelenik meg.',
+    exp: 'Egy mennyiség nem változik a forma vagy elrendezés megváltozásától (Piaget).'
+  },
+  {
+    id: 'cloze_w3_09', w: 3, topic: 'Autonómia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a személyes és társadalmi autonómia meghatározását!',
+    text: 'Az autonómia az egyén képessége, hogy mindennapi {{szükségleteit}} önállóan kielégítse és {{döntéseket}} hozzon saját életéről.',
+    exp: 'A mindennapi szükségletek önálló kielégítésének és a döntéshozatalnak a képessége.'
+  },
+  {
+    id: 'cloze_w3_10', w: 3, topic: 'Autonómia', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a láncolás (chaining) meghatározását!',
+    text: 'A láncolás feladatelemzésre épül: az {{előretartó}} láncolás az első lépéstől halad, a {{visszatartó}} láncolás pedig a záró lépéstől, ahol a tanuló sikerélményt él át.',
+    exp: 'Feladatelemzésre épülő eljárás: előretartó (elölről) vagy visszatartó (a záró lépéstől).'
+  },
+  {
+    id: 'cloze_w3_11', w: 3, topic: 'Curriculum és UDL', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a differenciált curriculum meghatározását!',
+    text: 'A differenciált curriculum az oktatási tartalom, folyamat és produktum tanulóhoz igazított {{módosítása}}, miközben a tanulók {{közös}} célok felé haladnak.',
+    exp: 'A tartalom/folyamat/produktum tanulóhoz igazított módosítása közös célok mellett.'
+  },
+  {
+    id: 'cloze_w3_12', w: 3, topic: 'Curriculum és UDL', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az adaptált curriculum meghatározását!',
+    text: 'Az adaptált curriculum a többségi tantervtől eltérő, egyéni {{szükségletekre}} szabott terv, amely csökkentett vagy alternatív célokat tartalmazhat, és a {{PIP}} része.',
+    exp: 'A többségi tantervtől eltérő, egyéni szükségletekre szabott terv; a PIP része.'
+  },
+  {
+    id: 'cloze_w3_13', w: 3, topic: 'Segítő technológia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a segítő technológia meghatározását!',
+    text: 'A segítő technológia minden olyan {{eszköz}} vagy szoftver, amely a fogyatékossággal élők tanulását, {{kommunikációját}} vagy mindennapi funkcionálását megkönnyíti (pl. képernyőolvasó).',
+    exp: 'Eszköz/szoftver, amely a tanulást, kommunikációt vagy mindennapi funkcionálást könnyíti meg.'
+  },
+  {
+    id: 'cloze_w3_14', w: 3, topic: 'Módszertan', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a multimédiás tanulás meghatározását!',
+    text: 'A multimédiás tanulás egyszerre több érzékszervi {{csatornán}} (vizuális, auditív, kinesztetikus) közvetíti az {{információt}}.',
+    exp: 'Az információ egyszerre több érzékszervi csatornán való közvetítése.'
   }
 ];
