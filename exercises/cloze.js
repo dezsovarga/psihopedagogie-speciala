@@ -432,5 +432,85 @@ const EXERCISES_CLOZE = [
     q: 'Egészítsd ki a multimédiás tanulás meghatározását!',
     text: 'A multimédiás tanulás egyszerre több érzékszervi {{csatornán}} (vizuális, auditív, kinesztetikus) közvetíti az {{információt}}.',
     exp: 'Az információ egyszerre több érzékszervi csatornán való közvetítése.'
+  },
+
+  // ─── 4. Változat – a bővített define-készlethez tartozó cloze kérdések ──────
+  {
+    id: 'cloze_w4_01', w: 4, topic: 'Integrált terápia', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a komplex, integrált oktatási terápia jellegét!',
+    text: 'A komplex, integrált oktatási terápia {{holisztikus}} megközelítés, amely az oktatást, nevelést és terápiát egyetlen, egységes {{keretben}} szervezi meg.',
+    exp: 'Holisztikus megközelítés: az oktatást, nevelést és terápiát egységes keretben, szervesen integrálva szervezi.'
+  },
+  {
+    id: 'cloze_w4_02', w: 4, topic: 'Integrált terápia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az integrált terápia alapelvét!',
+    text: 'Az integrált terápiában a fejlesztés minden mozzanata egyszerre {{pedagógiai}} és {{terápiás}} értékkel bír.',
+    exp: 'A fejlesztés minden mozzanata egyszerre pedagógiai és terápiás értékű.'
+  },
+  {
+    id: 'cloze_w4_03', w: 4, topic: 'Nyelvi zavartípusok', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a dysarthria meghatározását!',
+    text: 'A dysarthria {{neurológiai}} károsodás miatti motorikus beszédzavar, amelyet az artikulációs izmok {{gyengesége}} vagy spaszticitása jellemez.',
+    exp: 'Neurológiai károsodás miatti motorikus beszédzavar: gyenge/spasztikus artikulációs izmok.'
+  },
+  {
+    id: 'cloze_w4_04', w: 4, topic: 'Nyelvi zavartípusok', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a specifikus nyelvi zavar (SLI/DLD) meghatározását!',
+    text: 'A specifikus nyelvi zavar a nyelvi fejlődés tartós zavara, amely főleg a {{grammatikai}} struktúrák elsajátítását érinti, {{normál}} kognitív fejlődés mellett.',
+    exp: 'A nyelvi fejlődés tartós zavara (főleg grammatika), normál kognitív fejlődés mellett.'
+  },
+  {
+    id: 'cloze_w4_05', w: 4, topic: 'Nyelvi zavartípusok', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az afázia meghatározását!',
+    text: 'Az afázia a korábban ép nyelvhasználat elvesztése {{agyi}} sérülés miatt; lehet {{expresszív}} (produkció) vagy receptív (megértés) formájú.',
+    exp: 'Korábban ép nyelvhasználat elvesztése agyi sérülés miatt; expresszív vagy receptív forma.'
+  },
+  {
+    id: 'cloze_w4_06', w: 4, topic: 'Nyelvi zavartípusok', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a mutizmus meghatározását!',
+    text: 'A mutizmus {{szorongásos}} alapú állapot, amelyben a gyermek bizonyos helyzetekben nem szólal meg, máshol {{normálisan}} kommunikál.',
+    exp: 'Szorongásos állapot: bizonyos helyzetekben néma, máshol normálisan kommunikál.'
+  },
+  {
+    id: 'cloze_w4_07', w: 4, topic: 'Nyelvi zavarok', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a pragmatikai zavar meghatározását!',
+    text: 'A pragmatikai zavar a nyelv {{szociális}} használatának zavara (párbeszéd, metaforák, kontextus); az {{ASD}} egyik meghatározó jellemzője.',
+    exp: 'A nyelv szociális használatának zavara; az ASD meghatározó jellemzője.'
+  },
+  {
+    id: 'cloze_w4_08', w: 4, topic: 'Tanulási mechanizmusok', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az utánzás (imitáció) meghatározását!',
+    text: 'Az utánzás alapvető tanulási mechanizmus: a tanuló {{megfigyel}} egy cselekvést, majd {{reprodukálja}} azt; ASD-nál explicit tanítást igényel.',
+    exp: 'Egy cselekvés megfigyelése és reprodukálása; ASD-nál explicit tanítást igényel.'
+  },
+  {
+    id: 'cloze_w4_09', w: 4, topic: 'Tanulási mechanizmusok', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a feladatelemzés meghatározását!',
+    text: 'A feladatelemzés összetett készségeket apró, egymást követő, {{mérhető}} lépésekre {{bont}}, így azonosítható, melyik lépésnél kell segítség.',
+    exp: 'Összetett készség apró, mérhető lépésekre bontása.'
+  },
+  {
+    id: 'cloze_w4_10', w: 4, topic: 'Aktív módszerek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a projektmunka meghatározását!',
+    text: 'A projektmunka során a tanulók egy valós, értelmes {{problémát}} oldanak meg több {{tantárgy}} integrálásával, önállóan szervezett keretek között.',
+    exp: 'Valós probléma megoldása több tantárgy integrálásával, önállóan szervezett keretben.'
+  },
+  {
+    id: 'cloze_w4_11', w: 4, topic: 'Hagyományos módszerek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a magyarázat (expozíció) meghatározását!',
+    text: 'A magyarázat során a pedagógus {{strukturált}} sorrendben ismertet egy fogalmat; lehet {{induktív}} (példától az elvhez) vagy deduktív.',
+    exp: 'Strukturált szóbeli ismertetés, induktív vagy deduktív felépítéssel.'
+  },
+  {
+    id: 'cloze_w4_12', w: 4, topic: 'Oktatási eszközök', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az érzékszervi integrációs eszközök meghatározását!',
+    text: 'Az érzékszervi integrációs eszközök (súlyozott {{takarók}}, rezgő párnák) proprioceptív és vesztibuláris ingert adnak a szenzoros {{szabályozáshoz}}.',
+    exp: 'Proprioceptív/vesztibuláris ingert adó eszközök a szenzoros szabályozáshoz.'
+  },
+  {
+    id: 'cloze_w4_13', w: 4, topic: 'Logopédiai módszerek', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a Schultze-módszer lényegét!',
+    text: 'A Schultze-módszer orrhangzós kiejtési zavaroknál a {{levegőáram}} helyes irányítását és az orr- és {{szájüreg}} elválasztásának tudatosítását célozza.',
+    exp: 'A levegőáram helyes irányítása és az orr-/szájüreg elválasztásának tudatosítása (rhinolalia).'
   }
 ];

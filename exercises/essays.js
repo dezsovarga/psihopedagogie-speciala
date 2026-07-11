@@ -732,6 +732,78 @@ Segítség fokozatos elhalványítása (prompt fading): Az intervenció kezdeté
   modelAnswer:'Hagyományos módszerek: A tanár áll a tanítási folyamat középpontjában, az információ egyirányúan, a pedagógustól a tanuló felé áramlik – a tanuló befogadó szerepben van (pl. magyarázat, bemutatás). Aktív-részvételi módszerek: A tanuló aktív, cselekvő résztvevője a tanulásnak; a tudás felfedezésen, együttműködésen és tapasztalaton keresztül épül fel – a pedagógus facilitátorként vesz részt (pl. kooperatív tanulás, projektmunka).',
   exp:'Hagyományos = tanárközpontú, egyirányú (magyarázat, bemutatás); aktív-részvételi = tanulóközpontú, felfedezéses, együttműködésen alapuló (kooperatív, projekt).'
 },
+{
+  id:'def_w4_13', w:4, topic:'Integrált terápia', type:'define', diff:3, points:2,
+  q:'Határozza meg a komplex, integrált oktatási terápia jellegét!',
+  modelAnswer:'Komplex, integrált oktatási terápia (terapia educațională complexă și integrată): holisztikus fejlesztési megközelítés, amely a CES tanuló oktatását, nevelését és terápiáját egyetlen, egységes keretben szervezi meg. Nem a tantárgyak és terápiás foglalkozások párhuzamos, független futtatását jelenti, hanem azok szerves integrációját: a fejlesztés minden mozzanata egyszerre pedagógiai és terápiás értékkel bír.',
+  exp:'Holisztikus megközelítés: az oktatást, nevelést és terápiát egységes keretben, szervesen integrálva szervezi.'
+},
+{
+  id:'def_w4_14', w:4, topic:'Nyelvi zavartípusok', type:'define', diff:3, points:2,
+  q:'Határozza meg a dysarthria fogalmát!',
+  modelAnswer:'Dysarthria: neurológiai károsodás (pl. cerebrális paresis) következtében kialakult motorikus beszédzavar, amelyet az artikulációs izmok gyengesége, spaszticitása vagy koordinációs zavara jellemez; a hangok torzítottak, a beszédtempó és a ritmus rendellenes.',
+  exp:'Neurológiai károsodás miatti motorikus beszédzavar: gyenge/spasztikus artikulációs izmok, torzított hangok.'
+},
+{
+  id:'def_w4_15', w:4, topic:'Nyelvi zavartípusok', type:'define', diff:3, points:2,
+  q:'Határozza meg a specifikus nyelvi zavar (SLI/DLD) fogalmát!',
+  modelAnswer:'Specifikus nyelvi zavar (SLI/DLD): a nyelvi fejlődés tartós zavara, amely elsősorban a grammatikai struktúrák elsajátítását érinti (rövid, egyszerűsített mondatstruktúrák, morfológiai hibák, korlátozott szintaktikai komplexitás), normál kognitív és szenzoros fejlődés mellett.',
+  exp:'A nyelvi fejlődés tartós zavara (főleg a grammatika), normál kognitív és szenzoros fejlődés mellett.'
+},
+{
+  id:'def_w4_16', w:4, topic:'Nyelvi zavartípusok', type:'define', diff:2, points:2,
+  q:'Határozza meg az afázia fogalmát!',
+  modelAnswer:'Afázia (szerzett nyelvi zavar): korábban normálisan fejlett nyelvhasználat elvesztése vagy súlyos korlátozódása agyi sérülés (stroke, traumás agysérülés, daganat) következtében; érintheti a produkciót (expresszív afázia) vagy a megértést (receptív afázia).',
+  exp:'Korábban ép nyelvhasználat elvesztése agyi sérülés miatt; expresszív (produkció) vagy receptív (megértés) formában.'
+},
+{
+  id:'def_w4_17', w:4, topic:'Nyelvi zavartípusok', type:'define', diff:2, points:2,
+  q:'Határozza meg a (szelektív/elektív) mutizmus fogalmát!',
+  modelAnswer:'Mutizmus (elektív mutizmus): szorongásos alapú állapot, amelyben a gyermek bizonyos szociális helyzetekben (pl. iskolában) képtelen megszólalni, miközben más kontextusokban (pl. otthon) normálisan kommunikál. Oka nem organikus, hanem pszichológiai – súlyos szociális szorongás.',
+  exp:'Szorongásos állapot: a gyermek bizonyos helyzetekben nem szólal meg, máshol normálisan kommunikál; pszichológiai eredet.'
+},
+{
+  id:'def_w4_18', w:4, topic:'Nyelvi zavarok', type:'define', diff:3, points:2,
+  q:'Határozza meg a pragmatikai zavar fogalmát!',
+  modelAnswer:'Pragmatikai zavar: a nyelv szociális használatának zavara – nehézség a kölcsönös párbeszéd fenntartásában, a metaforák és a nem szó szerinti tartalmak értelmezésében, valamint a kommunikációs kontextus rugalmas alkalmazásában; az ASD egyik meghatározó jellemzője.',
+  exp:'A nyelv szociális használatának zavara (párbeszéd, metaforák, kontextus); az ASD meghatározó jellemzője.'
+},
+{
+  id:'def_w4_19', w:4, topic:'Tanulási mechanizmusok', type:'define', diff:2, points:2,
+  q:'Határozza meg az utánzás (imitáció) mint tanulási mechanizmus fogalmát!',
+  modelAnswer:'Utánzás (imitáció): alapvető tanulási mechanizmus, amelynek során a tanuló megfigyel egy cselekvést vagy kommunikatív megnyilvánulást, majd reprodukálja azt. CES tanulóknál – különösen ASD esetén, ahol az imitáció spontán megjelenése korlátozott – szándékos, explicit fejlesztése a fejlesztés alapeleme.',
+  exp:'Alapvető tanulási mechanizmus: egy cselekvés megfigyelése és reprodukálása; ASD-nál explicit tanítást igényel.'
+},
+{
+  id:'def_w4_20', w:4, topic:'Tanulási mechanizmusok', type:'define', diff:2, points:2,
+  q:'Határozza meg a feladatelemzés (task analysis) módszerét!',
+  modelAnswer:'Feladatelemzés (task analysis): módszer, amelyben összetett, több lépésből álló készségeket apró, egymást követő, mérhető lépésekre bontunk. Minden lépés pontosan leírható, megfigyelhető és értékelhető, így a tanuló nem az egész feladattal szembesül egyszerre, és a pedagógus azonosítani tudja, melyik lépésnél szorul segítségre.',
+  exp:'Összetett készség apró, mérhető lépésekre bontása; azonosítható, melyik lépésnél kell segítség.'
+},
+{
+  id:'def_w4_21', w:4, topic:'Aktív módszerek', type:'define', diff:2, points:2,
+  q:'Határozza meg a projektmunka mint aktív-részvételi módszer fogalmát!',
+  modelAnswer:'Projektmunka: aktív-részvételi módszer, amelyben a tanulók egy valós, értelmes problémát oldanak meg több tantárgy integrálásával, önállóan szervezett keretek között; a tudás felfedezésen, együttműködésen és saját tapasztalaton keresztül épül fel.',
+  exp:'Valós probléma megoldása több tantárgy integrálásával, önállóan szervezett, felfedezéses keretben.'
+},
+{
+  id:'def_w4_22', w:4, topic:'Hagyományos módszerek', type:'define', diff:2, points:2,
+  q:'Határozza meg a magyarázat (expozíció) mint hagyományos módszer fogalmát!',
+  modelAnswer:'Magyarázat (expozíció, direkt oktatás): hagyományos módszer, amelyben a pedagógus szóban, strukturált és logikus sorrendben ismertet egy fogalmat, folyamatot vagy összefüggést; lehet induktív (példától az elvhez) vagy deduktív (elvtől a példához), és kérdésekkel ellenőrzi a megértést.',
+  exp:'A pedagógus strukturált szóbeli ismertetése (induktív/deduktív), a megértés kérdésekkel ellenőrizve.'
+},
+{
+  id:'def_w4_23', w:4, topic:'Oktatási eszközök', type:'define', diff:2, points:2,
+  q:'Határozza meg az érzékszervi integrációs eszközök fogalmát!',
+  modelAnswer:'Érzékszervi integrációs eszközök: súlyozott takarók, rezgő párnák, textúrázott felületek és más, proprioceptív és vesztibuláris ingereket nyújtó eszközök, amelyeket ASD és szenzoros feldolgozási zavarral élő tanulók idegrendszerének szabályozásához alkalmaznak.',
+  exp:'Proprioceptív/vesztibuláris ingert adó eszközök (súlyozott takaró, rezgő párna) a szenzoros szabályozáshoz.'
+},
+{
+  id:'def_w4_24', w:4, topic:'Logopédiai módszerek', type:'define', diff:3, points:2,
+  q:'Határozza meg a Schultze-módszert (a nazális rezonancia fejlesztését)!',
+  modelAnswer:'Schultze-módszer: az orrhangzósítással kapcsolatos kiejtési zavaroknál (pl. rhinolalia) alkalmazott logopédiai módszer, amely a levegőáram helyes irányítását és az orrüreg/szájüreg elválasztásának tudatosítását célozza (pl. tükörfogás gyakorlattal, amely vizuális visszajelzést ad a levegő kiszivárgásáról).',
+  exp:'Orrhangzós kiejtési zavarokra: a levegőáram helyes irányítása és az orr-/szájüreg elválasztásának tudatosítása.'
+},
 
 // ══════════════════════════════════════════════
 // VÁLTOZAT 4
