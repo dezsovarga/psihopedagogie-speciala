@@ -512,5 +512,79 @@ const EXERCISES_CLOZE = [
     q: 'Egészítsd ki a Schultze-módszer lényegét!',
     text: 'A Schultze-módszer orrhangzós kiejtési zavaroknál a {{levegőáram}} helyes irányítását és az orr- és {{szájüreg}} elválasztásának tudatosítását célozza.',
     exp: 'A levegőáram helyes irányítása és az orr-/szájüreg elválasztásának tudatosítása (rhinolalia).'
+  },
+
+  // ─── 5. Változat – a bővített define-készlethez tartozó cloze kérdések ──────
+  {
+    id: 'cloze_w5_02', w: 5, topic: 'Fejlődési tényezők', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az öröklés szerepét!',
+    text: 'Az öröklés meghatározza a biológiai adottságokat és a fejlődési lehetőségek {{keretét}} (reakciónorma), de nem a {{végeredményt}}.',
+    exp: 'A genotípus a fejlődési lehetőségek terét jelöli ki, nem a végeredményt.'
+  },
+  {
+    id: 'cloze_w5_03', w: 5, topic: 'Fejlődési tényezők', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a környezet szerepét!',
+    text: 'A környezet a fizikai, {{szociális}}, kulturális és gazdasági körülmények összessége, amely az idegrendszer {{érését}} és a személyiséget formálja.',
+    exp: 'A fejlődés körülményeinek összessége, amely az idegrendszer érését és a személyiséget formálja.'
+  },
+  {
+    id: 'cloze_w5_04', w: 5, topic: 'Fejlődési tényezők', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a nevelés szerepét!',
+    text: 'A nevelés tudatosan tervezett, {{célirányos}} hatásrendszer; az egyetlen tényező, amelyre a pedagógus közvetlen {{ráhatással}} bír.',
+    exp: 'Tudatosan tervezett, célirányos hatásrendszer; erre hat a pedagógus közvetlenül.'
+  },
+  {
+    id: 'cloze_w5_05', w: 5, topic: 'Etiológia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a prevalenciaadatok jelentőségét!',
+    text: 'A prevalenciaadatok a fogyatékossággal élők {{aránya}} a népességben; tervezési eszközök a szükséges {{szakemberigény}} és infrastruktúra meghatározásához.',
+    exp: 'A fogyatékossággal élők aránya a népességben; tervezési eszköz a szakember- és infrastruktúra-igényhez.'
+  },
+  {
+    id: 'cloze_w5_06', w: 5, topic: 'Szindrómák', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a Down-szindróma jellemzését!',
+    text: 'A Down-szindróma ({{trisomia}} 21) enyhe–közepes intellektuális fogyatékossággal és izomtónus-csökkenéssel ({{hipotónia}}) jár.',
+    exp: 'Trisomia 21: enyhe–közepes intellektuális fogyatékosság + hipotónia.'
+  },
+  {
+    id: 'cloze_w5_07', w: 5, topic: 'Szindrómák', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a Fragile X-szindróma jellemzését!',
+    text: 'A Fragile X-szindrómát intellektuális fogyatékosság és szociális {{szorongás}}, szenzoros érzékenység jellemzi; erős a {{vizuális}}-téri feldolgozás.',
+    exp: 'Törékeny X: intellektuális fogyatékosság + szociális szorongás; erős vizuális-téri feldolgozás.'
+  },
+  {
+    id: 'cloze_w5_08', w: 5, topic: 'Szindrómák', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a Prader–Willi-szindróma jellemzését!',
+    text: 'A Prader–Willi-szindrómát kontrollálatlan {{étvágy}} (hyperphagia) és enyhe–közepes intellektuális fogyatékosság jellemzi; az iskolai {{étkezési}} rend szigorú strukturálása elengedhetetlen.',
+    exp: 'Hyperphagia + enyhe–közepes intellektuális fogyatékosság; szigorú étkezési rend.'
+  },
+  {
+    id: 'cloze_w5_09', w: 5, topic: 'Fogyatékossági kategóriák', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az intellektuális fogyatékosság meghatározását!',
+    text: 'Az intellektuális fogyatékosság a kognitív funkciók és az {{adaptív}} viselkedés tartós korlátozottsága (IQ általában {{70}} alatt), fejlődési kezdettel.',
+    exp: 'A kognitív funkciók és az adaptív viselkedés tartós korlátozottsága (IQ ~70 alatt).'
+  },
+  {
+    id: 'cloze_w5_10', w: 5, topic: 'Fogyatékossági kategóriák', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a mozgásfogyatékosság meghatározását!',
+    text: 'A mozgásfogyatékosság a mozgásszervrendszer vagy az {{idegrendszer}} károsodásából eredő tartós motoros {{funkciókiesés}} (pl. cerebrális paresis).',
+    exp: 'A mozgásszervrendszer vagy idegrendszer károsodásából eredő tartós motoros funkciókiesés.'
+  },
+  {
+    id: 'cloze_w5_11', w: 5, topic: 'Curriculum', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az interdiszciplináris curriculum meghatározását!',
+    text: 'Az interdiszciplináris curriculum több {{tantárgy}} tartalmát egy összefüggő tanulási egységbe integrálja, lebontva a tantárgyi {{határokat}}.',
+    exp: 'Több tantárgy tartalmát egy összefüggő egységbe integrálja, lebontva a tantárgyi határokat.'
+  },
+  {
+    id: 'cloze_w5_12', w: 5, topic: 'Curriculum', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a moduláris curriculum meghatározását!',
+    text: 'A moduláris curriculum az oktatási tartalmat önálló, {{lezárható}} egységekre ({{modulokra}}) tagolja, amelyek rugalmasan kombinálhatók.',
+    exp: 'Önálló, lezárható, rugalmasan kombinálható modulokra tagolt tartalom.'
+  },
+  {
+    id: 'cloze_w5_13', w: 5, topic: 'Etiológia', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a magzati alkohol-spektrum zavar (FASD) meghatározását!',
+    text: 'A FASD prenatális, {{alkohol}} okozta állapot, amelynek következménye intellektuális fogyatékosság, figyelemzavar és jellegzetes {{arcvonások}}.',
+    exp: 'Prenatális, alkohol (teratogén) okozta állapot: intellektuális fogyatékosság, figyelemzavar, jellegzetes arcvonások.'
   }
 ];

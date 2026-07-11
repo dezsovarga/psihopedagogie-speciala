@@ -974,6 +974,78 @@ Adaptálás autizmus spektrumon lévő tanuló számára:
   modelAnswer:'Operacionalizált cél: Pontosan meghatározott fejlesztési cél, amely megfigyelhető és mérhető viselkedésben fogalmazódik meg. Három kötelező eleme: (1) Megfigyelhető viselkedés – mit fog a tanuló tenni. (2) Feltétel – milyen körülmények között (eszköz, helyszín, segítség szintje). (3) Teljesítménykritérium – mikor tekinthető teljesítettnek (pl. 4-ből 3 alkalom, 80% pontosság).',
   exp:'Az operacionalizált cél 3 eleme: megfigyelhető viselkedés + feltétel + teljesítménykritérium (arány/pontosság + időkeret).'
 },
+{
+  id:'def_w5_13', w:5, topic:'Fejlődési tényezők', type:'define', diff:2, points:2,
+  q:'Határozza meg az öröklés szerepét a fejlődésben!',
+  modelAnswer:'Öröklés: a genetikai állomány meghatározza az egyén biológiai adottságait, fejlődési lehetőségeinek kereteit és a különböző hatásokra való fogékonyságát (reakciónorma). Az öröklés nem sors: a genotípus csupán a fejlődési lehetőségek terét jelöli ki, nem a végeredményt.',
+  exp:'A genetikai állomány meghatározza a biológiai adottságokat és a fejlődési lehetőségek keretét (reakciónorma), de nem a végeredményt.'
+},
+{
+  id:'def_w5_14', w:5, topic:'Fejlődési tényezők', type:'define', diff:2, points:2,
+  q:'Határozza meg a környezet szerepét a fejlődésben!',
+  modelAnswer:'Környezet: a fizikai, szociális, kulturális és gazdasági körülmények összessége, amelyben a fejlődés zajlik. A szenzoros ingerek, az érzelmi biztonság, a táplálkozás, a lakókörnyezet minősége és a társas kapcsolatok mind formálják az idegrendszer érését és a személyiség alakulását.',
+  exp:'A fejlődés fizikai, szociális, kulturális és gazdasági körülményeinek összessége, amely az idegrendszer érését és a személyiséget formálja.'
+},
+{
+  id:'def_w5_15', w:5, topic:'Fejlődési tényezők', type:'define', diff:2, points:2,
+  q:'Határozza meg a nevelés szerepét a fejlődésben!',
+  modelAnswer:'Nevelés: tudatosan tervezett, célirányos hatásrendszer, amely az öröklés adta lehetőségeket a kedvező környezeti feltételek megteremtésével és pedagógiai beavatkozásokkal maximálisan igyekszik kibontakoztatni. A nevelés az egyetlen tényező, amelyre a pedagógus közvetlen ráhatással bír.',
+  exp:'Tudatosan tervezett, célirányos hatásrendszer, amely az öröklött lehetőségeket kibontakoztatja; erre hat a pedagógus közvetlenül.'
+},
+{
+  id:'def_w5_16', w:5, topic:'Etiológia', type:'define', diff:2, points:2,
+  q:'Mit jelentenek a prevalenciaadatok, és mi a pedagógiai jelentőségük?',
+  modelAnswer:'Prevalenciaadatok: az adott fogyatékossággal élő személyek aránya a népességen belül. Pedagógiai jelentőségük, hogy alapvető tervezési eszközök: segítségükkel meghatározható, hány CES tanulóval kell számolni, milyen szakemberigény és fejlesztő infrastruktúra szükséges; változásaik (pl. az ASD-diagnózisok növekedése) a képzési és támogatási rendszer fejlődési irányát jelzik.',
+  exp:'A fogyatékossággal élők aránya a népességben; tervezési eszköz a szakember- és infrastruktúra-igény meghatározásához.'
+},
+{
+  id:'def_w5_17', w:5, topic:'Szindrómák', type:'define', diff:2, points:2,
+  q:'Jellemezze a Down-szindrómát (tünetek és pedagógiai következmény)!',
+  modelAnswer:'Down-szindróma (trisomia 21): kromoszóma-anomália, amelyet enyhe–közepes intellektuális fogyatékosság (lassabb információfeldolgozás, gyenge rövidtávú memória, elvont gondolkodás nehézségei) és izomtónus-csökkenés (hipotónia) jellemez, ami a motoros fejlődést késlelteti. Pedagógiai következmény: lassabb tempó, sok ismétlés, vizuális megerősítés, konkrét manipulatív eszközök, rövid, egyszerű instrukciók.',
+  exp:'Trisomia 21: enyhe–közepes intellektuális fogyatékosság + hipotónia; lassabb tempó, sok ismétlés, vizuális megerősítés.'
+},
+{
+  id:'def_w5_18', w:5, topic:'Szindrómák', type:'define', diff:3, points:2,
+  q:'Jellemezze a Fragile X-szindrómát (tünetek és pedagógiai következmény)!',
+  modelAnswer:'Fragile X-szindróma (törékeny X-szindróma): örökletes állapot, amelyet intellektuális fogyatékosság (erős vizuális-téri feldolgozás, gyenge szekvenciális gondolkodás és munkamemória), valamint szociális szorongás, szemkontaktus-kerülés, szenzoros érzékenység, hiperaktivitás és impulzivitás jellemez (részleges átfedés az ASD-vel). Pedagógiai következmény: strukturált, kiszámítható környezet, a szenzoros ingerek csökkentése, a vizuális memória kihasználása.',
+  exp:'Törékeny X: intellektuális fogyatékosság + szociális szorongás/szenzoros érzékenység; strukturált, ingerszegény környezet, vizuális erősségek.'
+},
+{
+  id:'def_w5_19', w:5, topic:'Szindrómák', type:'define', diff:3, points:2,
+  q:'Jellemezze a Prader–Willi-szindrómát (tünetek és pedagógiai következmény)!',
+  modelAnswer:'Prader–Willi-szindróma: állapot, amelyet kontrollálatlan étvágy (hyperphagia) és elhízásra való fokozott hajlam, valamint enyhe–közepes intellektuális fogyatékosság (erős vizuális-téri képességek, gyenge rövidtávú memória, rugalmatlan gondolkodás, érzelmi szabályozási nehézségek) jellemez. Pedagógiai következmény: az étkezési rend szigorú strukturálása, pozitív viselkedéstámogató terv, a vizuális erősségek középpontba állítása.',
+  exp:'Hyperphagia + enyhe–közepes intellektuális fogyatékosság; szigorú étkezési rend, PBS, vizuális erősségek.'
+},
+{
+  id:'def_w5_20', w:5, topic:'Fogyatékossági kategóriák', type:'define', diff:2, points:2,
+  q:'Határozza meg az intellektuális fogyatékosság fogalmát!',
+  modelAnswer:'Intellektuális fogyatékosság: a kognitív funkciók és az adaptív viselkedés tartós, jelentős korlátozottsága (IQ általában 70 alatt), amely a fejlődési időszakban jelenik meg.',
+  exp:'A kognitív funkciók és az adaptív viselkedés tartós, jelentős korlátozottsága (IQ ~70 alatt), fejlődési kezdettel.'
+},
+{
+  id:'def_w5_21', w:5, topic:'Fogyatékossági kategóriák', type:'define', diff:2, points:2,
+  q:'Határozza meg a mozgásfogyatékosság (motoros fogyatékosság) fogalmát!',
+  modelAnswer:'Mozgásfogyatékosság (motoros fogyatékosság): a mozgásszervrendszer vagy az idegrendszer károsodásából eredő tartós motoros funkciókiesés (pl. cerebrális paresis, spina bifida).',
+  exp:'A mozgásszervrendszer vagy idegrendszer károsodásából eredő tartós motoros funkciókiesés (pl. cerebrális paresis).'
+},
+{
+  id:'def_w5_22', w:5, topic:'Curriculum', type:'define', diff:2, points:2,
+  q:'Határozza meg az interdiszciplináris curriculum fogalmát!',
+  modelAnswer:'Interdiszciplináris curriculum: több tantárgy tartalmát és szemléletmódját egyetlen, összefüggő tanulási egységbe integrálja, lebontva a hagyományos tantárgyi határokat (pl. „Az erdő" tematikus projekt, amelyben a természetismeret, a matematika, a rajz és az anyanyelv egyszerre jelenik meg).',
+  exp:'Több tantárgy tartalmát egy összefüggő tanulási egységbe integrálja, lebontva a tantárgyi határokat.'
+},
+{
+  id:'def_w5_23', w:5, topic:'Curriculum', type:'define', diff:2, points:2,
+  q:'Határozza meg a moduláris curriculum fogalmát!',
+  modelAnswer:'Moduláris curriculum: az oktatási tartalmat önálló, lezárható és tetszőleges sorrendben elvégezhető egységekre (modulokra) tagolja, amelyek rugalmasan kombinálhatók (pl. egy „Elsősegélynyújtás" modul önállóan elvégezhető és külön igazolható).',
+  exp:'Az oktatási tartalom önálló, lezárható, rugalmasan kombinálható modulokra tagolása.'
+},
+{
+  id:'def_w5_24', w:5, topic:'Etiológia', type:'define', diff:3, points:2,
+  q:'Határozza meg a magzati alkohol-spektrum zavar (FASD) fogalmát!',
+  modelAnswer:'Magzati alkohol-spektrum zavar (FASD): prenatális, alkohol okozta állapot (az alkohol a legismertebb teratogén anyag), amelynek következményei intellektuális fogyatékosság, figyelemzavar, a végrehajtó funkciók gyengesége, jellegzetes arcvonások és viselkedésszabályozási nehézségek.',
+  exp:'Prenatális, alkohol (teratogén) okozta állapot: intellektuális fogyatékosság, figyelemzavar, jellegzetes arcvonások.'
+},
 
 // ══════════════════════════════════════════════
 // FOGALOMMEGHATÁROZÁSOK – 6. VÁLTOZAT (I–III. FELADAT)
