@@ -65,16 +65,21 @@ within the practiceable pool (worksheets + real exams; disabled gyalap excluded)
 Also: the settings modal is now a scrollable flex column (`max-height: 90vh`) so
 the taller content is never clipped.
 
-### D. Define + cloze expansion of worksheets 7, 1, 2
+### D. Define + cloze expansion of ALL worksheets (1–7) — COMPLETE
 Added every remaining clearly-defined concept from each solution DOCX as a
 `define`, plus **2–3 `cloze` per new define** (each blanking different key terms):
-- **W7:** 7 → **20** defines, **28** cloze
-- **W1:** 16 → **26** defines, +10 cloze
-- **W2:** 12 → **24** defines, +12 cloze
-> Worksheets **3, 4, 5, 6 still pending** the same treatment (each currently has
-> 12 / 12 / 12 / 7 defines and ~0–1 cloze). Repeat the pattern: extract the
-> `exam_subjects/gyakorlas_N_megoldasok_cl.docx`, list existing `def_wN_*` to
-> avoid duplicates, add new defines to `essays.js` + 2–3 cloze each to `cloze.js`.
+- **W1:** 16 → 26 defines (+10 cloze)
+- **W2:** 12 → 24 defines (+12 cloze)
+- **W3:** 12 → 24 defines (+14 cloze)
+- **W4:** 12 → 24 defines (+13 cloze)
+- **W5:** 12 → 24 defines (+12 cloze)
+- **W6:** 7 → 20 defines (+26 cloze)
+- **W7:** 7 → 20 defines (+28 cloze)
+
+Totals across the app: **238 define, 119 cloze, 897 exercises.** All grounded
+verbatim in the `exam_subjects/gyakorlas_N_megoldasok_cl.docx` solution files, no
+duplicate concepts within a worksheet, all standalone. The real-exam years
+(2017–2022) were NOT part of this expansion (they already had ≥10 defines each).
 
 ## What was built 2026-07-09 (reference)
 
