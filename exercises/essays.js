@@ -1616,108 +1616,144 @@ Adaptálás autizmus spektrumon lévő tanuló számára:
 {
   id:'def_w10_01', w:10, topic:'Preprofesszionalizáció', type:'define', diff:2, points:2,
   q:'Határozza meg a preprofesszionalizáció fogalmát!',
+  hint:'Emeld ki, hogy KORAI, ISKOLAI alapozásról van szó, MÉG a konkrét szakmaválasztás ELŐTT — általános munkaszokások, nem egy adott szakma fogásai.',
+  hintKeywords:['korai, iskolai keret','munkaszokások, attitűdök','feladattartás, pontosság, együttműködés','szakmaválasztás előtt'],
   modelAnswer:'Preprofesszionalizáció: a munkavégzéshez szükséges alapvető munkaszokások, magatartásformák és attitűdök (pl. feladattartás, pontosság, együttműködés) korai, iskolai keretek közötti megalapozása, még mielőtt konkrét szakma vagy foglalkozás választására sor kerülne.',
   exp:'Az alapvető munkaszokások, magatartásformák és attitűdök korai, iskolai megalapozása a konkrét szakmaválasztás előtt.'
 },
 {
   id:'def_w10_02', w:10, topic:'Professzionalizáció', type:'define', diff:2, points:2,
   q:'Határozza meg a professzionalizáció fogalmát!',
+  hint:'Állítsd szembe a preprofesszionalizációval: itt már EGY KONKRÉT munkakör/szakma technikai ismereteiről van szó.',
+  hintKeywords:['konkrét munkakör/szakmacsoport','szakmai ismeretek','technikai készségek'],
   modelAnswer:'Professzionalizáció: egy meghatározott munkakörre vagy szakmacsoportra irányuló, konkrét szakmai ismeretek és technikai készségek elsajátítása.',
   exp:'Egy meghatározott munkakörre/szakmacsoportra irányuló, konkrét szakmai ismeretek és technikai készségek elsajátítása.'
 },
 {
   id:'def_w10_03', w:10, topic:'Munkakészség', type:'define', diff:2, points:2,
   q:'Határozza meg a munkakészség (pregătire pentru muncă) fogalmát!',
+  hint:'Nevezd meg a három készségtípust és a célt: mit tesz lehetővé a munkahelyen.',
+  hintKeywords:['viselkedéses, kommunikációs, funkcionális készségek','munkahelyi elvárásrendszer','instrukciókövetés, önellenőrzés, együttműködés'],
   modelAnswer:'Munkakészség (pregătire pentru muncă): azoknak a viselkedéses, kommunikációs és funkcionális készségeknek az együttese, amelyek lehetővé teszik egy munkahelyi elvárásrendszernek való tényleges megfelelést (instrukciókövetés, önellenőrzés, kollegiális együttműködés).',
   exp:'Viselkedéses, kommunikációs és funkcionális készségek együttese a munkahelyi elvárásoknak való megfeleléshez.'
 },
 {
   id:'def_w10_04', w:10, topic:'Tranzíció', type:'define', diff:2, points:2,
   q:'Határozza meg a tranzíció (átmenet) fogalmát!',
+  hint:'Hangsúlyozd: iskolából a felnőtt élet színterei felé, TERVEZETT és FOKOZATOS, több évig tartó folyamat.',
+  hintKeywords:['iskolából a felnőtt életbe','munka, lakhatás, közösségi részvétel','tervezett, fokozatos','több évre visszanyúló előkészítés'],
   modelAnswer:'Tranzíció (átmenet): az iskolai környezetből a felnőtt élet különböző színterei (munka, önálló vagy támogatott lakhatás, közösségi részvétel) felé történő, tervezett és fokozatos átmenet folyamata, amely tudatos, több évre visszanyúló előkészítést igényel.',
   exp:'Az iskolából a felnőtt élet színterei felé történő, tervezett, fokozatos, több évre visszanyúló átmenet.'
 },
 {
   id:'def_w10_05', w:10, topic:'Támogatott foglalkoztatás', type:'define', diff:3, points:2,
   q:'Határozza meg a támogatott foglalkoztatás (angajare asistată) fogalmát!',
+  hint:'Kulcs: NYÍLT munkaerőpiac, VALÓDI bér, és a JOB COACH (munkahelyi mentor) támogatása.',
+  hintKeywords:['nyílt munkaerőpiac','valódi munkahely, valódi bér','job coach / munkahelyi mentor','tartós beilleszkedés'],
   modelAnswer:'Támogatott foglalkoztatás (angajare asistată/sprijinită): olyan foglalkoztatási forma, amelyben a fogyatékossággal élő személy a nyílt munkaerőpiacon, valódi munkahelyen, valódi bérért dolgozik, miközben munkahelyi mentor (job coach) és egyéb személyre szabott támogatás segíti a betanulást és a tartós beilleszkedést.',
   exp:'A nyílt munkaerőpiacon, valódi bérért végzett munka job coach és személyre szabott támogatás mellett.'
 },
 {
   id:'def_w10_06', w:10, topic:'Munkakészség-területek', type:'define', diff:2, points:2,
   q:'Határozza meg a funkcionális akadémiai készségek fogalmát a munkavégzés kontextusában!',
+  hint:'A „funkcionális” azt jelenti: a munkához SZÜKSÉGES mértékű, gyakorlati alkalmazás — nem iskolai tananyagszint.',
+  hintKeywords:['alapszintű olvasás, számolás','idő- és pénzkezelés','munkához szükséges mérték'],
   modelAnswer:'Funkcionális akadémiai készségek: a munkavégzéshez szükséges mértékű alapszintű olvasás, számolás, valamint idő- és pénzkezelés; azaz az akadémiai készségek gyakorlati, a munkahelyi feladatokhoz igazodó alkalmazása.',
   exp:'A munkavégzéshez szükséges alapszintű olvasás, számolás, idő- és pénzkezelés.'
 },
 {
   id:'def_w10_07', w:10, topic:'Preprofesszionális tevékenységek', type:'define', diff:2, points:2,
   q:'Határozza meg a job shadowing fogalmát!',
+  hint:'Röviden: valós munkahelyen való MEGFIGYELÉS; sorold be a preprofesszionális tevékenységek közé.',
+  hintKeywords:['munkahelyi látogatás/megfigyelés','valós szakmai környezet','preprofesszionális tevékenység'],
   modelAnswer:'Job shadowing: munkahelyi látogatás és megfigyelés különböző valós szakmai környezetekben, amelynek célja, hogy a fiatal közvetlen tapasztalatot szerezzen a munka világáról — egy preprofesszionális tevékenység.',
   exp:'Munkahelyi látogatás és megfigyelés valós szakmai környezetekben (preprofesszionális tevékenység).'
 },
 {
   id:'def_w10_08', w:10, topic:'Pályaorientáció', type:'define', diff:2, points:3,
   q:'Határozza meg a pályaorientáció (orientare școlară și profesională) fogalmát!',
+  hint:'Folyamat: önismeret (érdeklődés, képességek, értékek) + ezek ÖSSZEKAPCSOLÁSA a lehetséges utakkal.',
+  hintKeywords:['érdeklődés, képességek, értékek','tudatos összekapcsolás','tanulási és szakmai utak'],
   modelAnswer:'Pályaorientáció (orientare școlară și profesională): az a folyamat, amely segíti a személyt saját érdeklődésének, képességeinek és értékeinek megismerésében, valamint ezek tudatos összekapcsolásában a lehetséges tanulási és szakmai utakkal.',
   exp:'Az érdeklődés, képességek és értékek megismerése és összekapcsolása a lehetséges tanulási/szakmai utakkal.'
 },
 {
   id:'def_w10_09', w:10, topic:'Pályatanácsadás', type:'define', diff:2, points:2,
   q:'Határozza meg a pályatanácsadás (consiliere vocațională) fogalmát!',
+  hint:'A pályaorientáció SZEMÉLYRE SZABOTT, bizalmi kapcsolatban zajló, döntéstámogató formája.',
+  hintKeywords:['személyre szabott','bizalmi tanácsadói kapcsolat','döntéshozatal támogatása'],
   modelAnswer:'Pályatanácsadás (consiliere vocațională): a pályaorientációs folyamat személyre szabott, bizalmi tanácsadói kapcsolatban megvalósuló, segítő formája, amely konkrét döntéshozatali helyzetekben nyújt célzott támogatást.',
   exp:'A pályaorientáció személyre szabott, bizalmi tanácsadói kapcsolatban zajló, döntéstámogató formája.'
 },
 {
   id:'def_w10_10', w:10, topic:'Önrendelkezés', type:'define', diff:3, points:2,
   q:'Határozza meg az önrendelkezés (autodeterminare) fogalmát!',
+  hint:'A saját élet feletti DÖNTÉS képessége/lehetősége; kösd a motivációhoz és az életminőséghez.',
+  hintKeywords:['saját élet feletti döntéshozatal','motiváció, elköteleződés','életminőség'],
   modelAnswer:'Önrendelkezés (autodeterminare): a saját élet feletti döntéshozatal képessége és lehetősége, amely a motiváció, az elköteleződés és az életminőség egyik kulcstényezője. Ha a fiatal helyett mások döntenek, csökken a döntés iránti belső elköteleződés és a megvalósítás melletti kitartás.',
   exp:'A saját élet feletti döntéshozatal képessége és lehetősége; a motiváció, elköteleződés és életminőség kulcstényezője.'
 },
 {
   id:'def_w10_11', w:10, topic:'Támogatott döntéshozatal', type:'define', diff:3, points:2,
   q:'Határozza meg a támogatott döntéshozatal fogalmát!',
+  hint:'Kulcs a szembeállítás: NEM helyettesítő, hanem SEGÍTETT döntés — a fiatal preferenciái a középpontban.',
+  hintKeywords:['nem helyettesítő, hanem segített','a fiatal saját preferenciái','adaptált információ, fokozatos támogatás'],
   modelAnswer:'Támogatott döntéshozatal: nem helyettesítő, hanem segített döntéshozatal, amely biztosítja, hogy jelentős kognitív vagy kommunikációs korlátozottság esetén is a fiatal saját preferenciái álljanak a döntés középpontjában, megfelelően adaptált információ és fokozatos, szükséglethez igazított támogatás mellett.',
   exp:'Nem helyettesítő, hanem segített döntéshozatal, ahol a fiatal saját preferenciái állnak a középpontban, adaptált támogatással.'
 },
 {
   id:'def_w10_12', w:10, topic:'Pályaválasztási profil', type:'define', diff:2, points:2,
   q:'Határozza meg a funkcionális önállósági szint fogalmát a pályaválasztási profilban!',
+  hint:'A napi ÖNÁLLÓSÁG mértéke, a pályaválasztási profil egyik értékelendő területeként.',
+  hintKeywords:['napi életvezetés','közlekedés','kommunikációs önállóság'],
   modelAnswer:'Funkcionális önállósági szint: a pályaválasztási profil egyik értékelendő területe, amely a napi életvezetési, közlekedési és kommunikációs önállóság mértékét írja le.',
   exp:'A napi életvezetési, közlekedési és kommunikációs önállóság mértéke.'
 },
 {
   id:'def_w10_13', w:10, topic:'Pályaorientációs módszerek', type:'define', diff:3, points:2,
   q:'Határozza meg a személyközpontú tervezés (person-centered planning) fogalmát!',
+  hint:'Egyéni ülés, ahol a tanuló és támogatói KÖZÖSEN, a tanuló preferenciáira építve alakítják a célokat.',
+  hintKeywords:['egyéni tervezési ülés','tanuló + fontos támogató személyek','közös célalakítás','preferenciák, erősségek'],
   modelAnswer:'Személyközpontú tervezés (person-centered planning): egyéni tervezési ülések formája, ahol a tanuló és a fontos támogató személyek közösen alakítják ki a célokat, a tanuló preferenciáit és erősségeit középpontba állítva.',
   exp:'Egyéni tervezési ülés, ahol a tanuló és támogatói közösen, a tanuló preferenciáira építve alakítják a célokat.'
 },
 {
   id:'def_w10_14', w:10, topic:'Pályaorientációs módszerek', type:'define', diff:2, points:2,
   q:'Határozza meg a portfólió-alapú önismereti gyűjtemény fogalmát!',
+  hint:'Gyűjtemény: feladatok + visszajelzések + önreflexiók DOKUMENTÁLÁSA az önismeret és a fejlődés nyomon követésére.',
+  hintKeywords:['elvégzett feladatok','kapott visszajelzések','önreflexiók dokumentálása','önismeret'],
   modelAnswer:'Portfólió-alapú önismereti gyűjtemény: pályaorientációs eszköz, amelyben az elvégzett feladatokat, a kapott visszajelzéseket és a tanuló önreflexióit dokumentálják, támogatva az önismeret és a fejlődés nyomon követését.',
   exp:'Az elvégzett feladatok, visszajelzések és önreflexiók dokumentálása az önismeret támogatására.'
 },
 {
   id:'def_w10_15', w:10, topic:'Modul tervezése', type:'define', diff:2, points:2,
   q:'Határozza meg a mérhető tanulási cél fogalmát!',
+  hint:'A „mérhető” a kulcs: konkrét TELJESÍTMÉNYKRITÉRIUM (pl. 80%), ami megfigyelhető és értékelhető.',
+  hintKeywords:['konkrét teljesítménykritérium','megfigyelhető, értékelhető','pl. 80%-os pontosság'],
   modelAnswer:'Mérhető tanulási cél: olyan, konkrét teljesítménykritériummal megfogalmazott cél, amelynek elérése megfigyelhető és értékelhető (pl. a tanuló önállóan, instrukció alapján el tud végezni egy háromlépéses munkafeladatot legalább 80%-os pontossággal).',
   exp:'Konkrét teljesítménykritériummal megfogalmazott, megfigyelhető és értékelhető cél.'
 },
 {
   id:'def_w10_16', w:10, topic:'Munkahelyi szimuláció', type:'define', diff:2, points:2,
   q:'Határozza meg a munkahelyi szimuláció fogalmát a munkára felkészítő modulban!',
+  hint:'Osztálytermi, valós munkát utánzó gyakorlat; térj ki a BIZTONSÁGI és a TÁRSAS szabályokra is.',
+  hintKeywords:['valós helyzetet utánzó gyakorlat','biztonsági szempontok','társas szabályok'],
   modelAnswer:'Munkahelyi szimuláció: az osztályteremben létrehozott, valós munkahelyi helyzetet utánzó gyakorlat (pl. „csomagolóüzemi” szimuláció), amelyben a tanulók biztonsági szempontokat (testtartás, eszközhasználat, segítségkérés) és társas szabályokat (köszönés, munkaidő, együttműködés) gyakorolnak.',
   exp:'Valós munkahelyi helyzetet utánzó osztálytermi gyakorlat, amelyben biztonsági és társas szabályokat gyakorolnak.'
 },
 {
   id:'def_w10_17', w:10, topic:'Reflexió, transzfer, utókövetés', type:'define', diff:3, points:2,
   q:'Határozza meg a transzfer fogalmát a munkára felkészítő modul kontextusában!',
+  hint:'A készség ÁTVITELE más helyzetekre/helyszínekre, hogy ne maradjon egyetlen kontextushoz kötött.',
+  hintKeywords:['készségek átvitele','más helyzetek/helyszínek','általánosulás'],
   modelAnswer:'Transzfer: a megszerzett készségek tudatos gyakoroltatása más helyzetekben és helyszíneken is (pl. otthon, valós munkahelyi látogatás során), hogy a tanulás ne maradjon egyetlen kontextushoz kötött, hanem általánosuljon.',
   exp:'A megszerzett készségek tudatos gyakorlása más helyzetekben/helyszíneken, hogy ne maradjon egyetlen kontextushoz kötött.'
 },
 {
   id:'def_w10_18', w:10, topic:'Munkakészség-területek', type:'define', diff:2, points:2,
   q:'Határozza meg az önszabályozási és problémamegoldó készségek fogalmát a munkavégzésben!',
+  hint:'Sorold a tartalmát: stressztűrés, váratlan helyzetek kezelése, önellenőrzés/hibajavítás.',
+  hintKeywords:['stressztűrés','váratlan helyzetek kezelése','önellenőrzés, hibajavítás'],
   modelAnswer:'Önszabályozási és problémamegoldó készségek: a munkavégzéshez szükséges készségterület, amely magában foglalja a stressztűrést, a váratlan helyzetek kezelését, valamint az önellenőrzést és hibajavítást.',
   exp:'Stressztűrés, a váratlan helyzetek kezelése, önellenőrzés és hibajavítás.'
 },
@@ -1728,18 +1764,24 @@ Adaptálás autizmus spektrumon lévő tanuló számára:
 {
   id:'essay_w10_01', w:10, topic:'Átmenet lépései', type:'essay', diff:3, points:5,
   q:'Mutassa be az iskolából a felnőtt életbe történő átmenet öt lépését!',
+  hint:'Öt lépés időrendben: korai tervezés → felmérés → készségfejlesztés/tapasztalat → koordinált terv → átadás + utókövetés.',
+  hintKeywords:['korai tranzíciós tervezés','érdeklődés/erősségek felmérése','célzott készségfejlesztés, tapasztalat','koordinált tranzíciós terv','fokozatos átadás és utókövetés'],
   modelAnswer:'1. Korai tranzíciós tervezés megkezdése, jellemzően már a serdülőkor elején, nem csupán az utolsó tanévben.\n2. A fiatal érdeklődésének, erősségeinek és preferenciáinak felmérése, személyközpontú tervezési szemlélettel.\n3. Célzott készségfejlesztés és valós tapasztalatszerzési lehetőségek biztosítása (gyakorlatok, munkatapasztalat, önálló életvezetési gyakorlás).\n4. Koordinált tranzíciós terv kidolgozása az iskola, a család és a fogadó szolgáltatók/munkaadók bevonásával.\n5. Fokozatos átadás és utókövetés az új környezetbe (munkahely, felnőttképzés, közösségi szolgáltatás), rendszeres visszacsatolással és szükség szerinti korrekcióval.',
   exp:'Az öt lépés: 1. korai tranzíciós tervezés, 2. az érdeklődés/erősségek felmérése, 3. célzott készségfejlesztés és valós tapasztalatszerzés, 4. koordinált tranzíciós terv, 5. fokozatos átadás és utókövetés.'
 },
 {
   id:'essay_w10_02', w:10, topic:'Munkába állás tényezői', type:'essay', diff:3, points:5,
   q:'Elemezze, milyen tényezők segítik vagy akadályozzák a CES fiatalok munkába állását (legalább ötöt)!',
+  hint:'Csoportosítsd: személyes, környezeti, társadalmi és rendszerszintű tényezők — mindegyik segíthet VAGY akadályozhat.',
+  hintKeywords:['funkcionális készségek, önértékelés','kommunikáció, alkalmazkodás','fizikai/kommunikációs akadálymentesítés','munkaadói attitűdök, előítéletek','támogató szolgáltatások (job coaching)'],
   modelAnswer:'1. Személyes tényező: a funkcionális készségek és az önértékelés/motiváció szintje — fejlett készségek és pozitív önkép esetén segítő, alacsony szint esetén akadályozó hatású.\n2. Személyes tényező: a kommunikációs képességek és az alkalmazkodóképesség új helyzetekhez.\n3. Környezeti tényező: a munkahely fizikai és kommunikációs akadálymentesítettsége, illetve az elvégzendő feladatok adaptálhatósága.\n4. Társadalmi tényező: a munkaadók és munkatársak attitűdje és tájékozottsága a fogyatékossággal kapcsolatban — az előítéletek jelentős akadályozó tényezőt jelentenek.\n5. Rendszerszintű tényező: a támogató szolgáltatások (job coaching, közösségi és munkaügyi szolgáltatások) elérhetősége, koordináltsága és folytonossága az átmenet során.',
   exp:'Öt tényező: a funkcionális készségek/önértékelés; a kommunikáció/alkalmazkodás; a környezeti akadálymentesítés; a munkaadói-társadalmi attitűdök; és a támogató szolgáltatások elérhetősége.'
 },
 {
   id:'essay_w10_03', w:10, topic:'Modul tervezése', type:'essay', diff:3, points:6,
   q:'Mutassa be egy munkára és önálló életre felkészítő tanulási modul hat szerkezeti elemét!',
+  hint:'Hat elem sorrendben, a ráhangolódástól a zárásig; érdemes az időkeretet is jelölni.',
+  hintKeywords:['ráhangolódás/bevezetés','alapkészség-felidézés','új tartalom bemutatása/modellezés','vezetett gyakorlás','önálló, differenciált gyakorlás','zárás, reflexió, értékelés'],
   modelAnswer:'1. Ráhangolódás/bevezetés (kb. 5–10 perc): a napi téma és cél bemutatása, motiválás.\n2. Alapkészség-felidézés (kb. 10 perc): a korábbi ismeretek/rutinok rövid átismétlése.\n3. Új tartalom bemutatása/modellezés (kb. 15 perc): a pedagógus bemutatja és modellezi az új feladatot vagy készséget.\n4. Vezetett gyakorlás (kb. 15–20 perc): a tanulók támogatással, fokozatosan csökkenő segítségnyújtás mellett gyakorolják a feladatot.\n5. Önálló, differenciált gyakorlás (kb. 15–20 perc): a tanulók a saját támogatási szintjüknek megfelelő feladatváltozatot végzik.\n6. Zárás, reflexió és értékelés (kb. 10 perc): közös megbeszélés, visszajelzés, a következő lépések kijelölése.',
   exp:'A hat elem: ráhangolódás, alapkészség-felidézés, új tartalom bemutatása/modellezés, vezetett gyakorlás, önálló differenciált gyakorlás, zárás-reflexió-értékelés.'
 },

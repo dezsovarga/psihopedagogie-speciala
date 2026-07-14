@@ -242,6 +242,13 @@ via a `<script src="tips.js">` before `data.js`; integrity tested in
 `define` and `essay` share the same schema; `define` is used for short
 "Határozza meg a … fogalmát" concept questions, `essay` for longer subquestions.
 
+**Optional "Segítség" (Get Help) hint** — `define`/`essay` may carry a `hint`
+(short guidance string) and `hintKeywords` (array of important terms). When
+present, the exercise screen shows a 💡 Segítség button that reveals them before
+the learner answers (`renderHelp`/`toggleHelp` in `app.js`). Currently piloted on
+worksheet 10 only; a test in `exercises.test.js` enforces the fields on every
+w:10 define/essay and validates their shape wherever else they appear.
+
 ## Testing
 
 Run the test suite before committing any change:

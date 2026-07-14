@@ -497,6 +497,10 @@ function buildExerciseHTML(ex) {
       <span class="essay-points-badge">${ex.points} pont</span>
     </div>
     <div id="mic-interim" class="mic-interim-preview"></div>`;
+    // "Segítség" (get help): reveals a hint + important keywords, if provided.
+    if (ex.hint || (Array.isArray(ex.hintKeywords) && ex.hintKeywords.length)) {
+      html += renderHelp(ex);
+    }
   }
 
   return html;
@@ -539,6 +543,34 @@ function attachExerciseListeners(ex) {
       document.getElementById('btn-check').disabled = inp.value.trim().length < 5;
     });
   }
+}
+
+// ─── "Segítség" (Get Help) hint for define/essay ──────────────────────────────
+// Renders a toggle button and a hidden panel with a guidance hint and the
+// important keywords to include. Piloted on worksheet 10.
+function renderHelp(ex) {
+  const keywords = Array.isArray(ex.hintKeywords) ? ex.hintKeywords : [];
+  const chips = keywords.map(k => `<span class="help-chip">${k}</span>`).join('');
+  return `
+    <div class="help-wrap">
+      <button type="button" class="btn-help" id="btn-help" onclick="toggleHelp()"
+        aria-expanded="false" aria-controls="help-panel">💡 Segítség</button>
+      <div id="help-panel" class="help-panel" hidden>
+        ${ex.hint ? `<p class="help-hint">${ex.hint}</p>` : ''}
+        ${chips ? `<div class="help-keywords-label">Fontos kulcsszavak:</div><div class="help-chips">${chips}</div>` : ''}
+      </div>
+    </div>`;
+}
+
+function toggleHelp() {
+  const panel = document.getElementById('help-panel');
+  const btn   = document.getElementById('btn-help');
+  if (!panel || !btn) return;
+  const open = panel.hidden;                       // about to open?
+  panel.hidden = !open;
+  btn.setAttribute('aria-expanded', String(open));
+  btn.classList.toggle('active', open);
+  btn.textContent = open ? '💡 Segítség elrejtése' : '💡 Segítség';
 }
 
 // ─── Mic / Speech Recognition ─────────────────────────────────────────────────

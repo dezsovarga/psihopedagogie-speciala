@@ -1247,3 +1247,52 @@ body {
   .modal-box { margin: 0; border-radius: var(--radius) var(--radius) 0 0; align-self: flex-end; }
   .modal-overlay { align-items: flex-end; padding: 0; }
 }
+
+/* ─── "Segítség" (Get Help) hint for define/essay ─────────────────────────── */
+.help-wrap { margin-top: 12px; }
+.btn-help {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #7E3FF2;
+  background: #F3E8FF;
+  border: 2px solid #C99BF0;
+  border-radius: 99px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition: background .15s ease, transform .1s ease;
+}
+.btn-help:hover { background: #E9D5FF; }
+.btn-help:active { transform: translateY(1px); }
+.btn-help.active { background: #7E3FF2; color: #fff; border-color: #7E3FF2; }
+.help-panel {
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: #F8F2FF;
+  border: 2px solid #C99BF0;
+  border-left: 6px solid #7E3FF2;
+  border-radius: var(--radius);
+  animation: tip-pop .2s ease;
+}
+.help-panel[hidden] { display: none; }
+.help-hint { margin: 0; font-size: 14px; line-height: 1.5; color: var(--gray-700); }
+.help-keywords-label {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #7E3FF2;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+.help-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.help-chip {
+  font-size: 13px;
+  font-weight: 600;
+  color: #5B21B6;
+  background: #EDE0FF;
+  border: 1px solid #C99BF0;
+  border-radius: 99px;
+  padding: 4px 10px;
+}

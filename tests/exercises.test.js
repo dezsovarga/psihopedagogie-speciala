@@ -278,6 +278,38 @@ describe('essay questions', () => {
   });
 });
 
+// ─── "Segítség" (Get Help) hint on define/essay ──────────────────────────────
+// A help button reveals a hint + important keywords so the learner knows what to
+// include. Piloted on worksheet 10 first; when present the fields must be valid.
+describe('define/essay help hints', () => {
+  const helpables = () => EXERCISES.filter(e => e.type === 'define' || e.type === 'essay');
+
+  test('every worksheet 10 define/essay has a non-empty hint string', () => {
+    const bad = helpables().filter(e => e.w === 10 &&
+      (typeof e.hint !== 'string' || !e.hint.trim()));
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+
+  test('every worksheet 10 define/essay has a non-empty hintKeywords array of strings', () => {
+    const bad = helpables().filter(e => e.w === 10 && (
+      !Array.isArray(e.hintKeywords) || e.hintKeywords.length === 0 ||
+      e.hintKeywords.some(k => typeof k !== 'string' || !k.trim())
+    ));
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+
+  test('where present, hint is a string and hintKeywords is a non-empty string array', () => {
+    const bad = helpables().filter(e => {
+      if (e.hint !== undefined && (typeof e.hint !== 'string' || !e.hint.trim())) return true;
+      if (e.hintKeywords !== undefined && (!Array.isArray(e.hintKeywords) ||
+          e.hintKeywords.length === 0 ||
+          e.hintKeywords.some(k => typeof k !== 'string' || !k.trim()))) return true;
+      return false;
+    });
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
+});
+
 // ─── Session slot coverage ────────────────────────────────────────────────────
 
 describe('Session slot coverage', () => {
