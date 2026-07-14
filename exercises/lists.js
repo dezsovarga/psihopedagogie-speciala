@@ -575,5 +575,78 @@ const EXERCISES_LISTS = [
       { label:'A fenntarthatóság (támogatási kapacitás, költség, motiváció)', alt:['fenntarthatóság', 'költség', 'támogatási kapacitás', 'motiváció'] }
     ],
     exp:'Öt szempont: a tanuló motoros/érzékelési profilja, a kognitív-nyelvi szint, a feladat követelményei, a használati környezet és a fenntarthatóság.'
+  },
+
+  // ─── 9. VÁLTOZAT ──────────────────────────────────────────────────────────
+  {
+    id:'list_w9_01', w:9, topic:'Adaptív viselkedés', type:'list', diff:2, need:3,
+    q:'Sorolja fel az adaptív viselkedés három területét!',
+    items:[
+      { label:'Fogalmi (konceptuális) terület', alt:['fogalmi', 'konceptuális', 'nyelv', 'szám- és idő'] },
+      { label:'Szociális terület', alt:['szociális', 'társas', 'normák', 'szabályok'] },
+      { label:'Gyakorlati (praktikus) terület', alt:['gyakorlati', 'praktikus', 'önkiszolgálás', 'életvezetés'] }
+    ],
+    exp:'A három terület: fogalmi (konceptuális), szociális és gyakorlati (praktikus).'
+  },
+  {
+    id:'list_w9_02', w:9, topic:'Kognitív sajátosságok', type:'list', diff:3, need:4,
+    q:'Sorolja fel azokat a kognitív területeket, amelyeken fogyatékosságnál sajátosságok jelenhetnek meg (legalább négyet)!',
+    items:[
+      { label:'Érzékelés', alt:['érzékelés', 'ingerfelvétel'] },
+      { label:'Észlelés', alt:['észlelés', 'alak-háttér', 'téri'] },
+      { label:'Figyelem', alt:['figyelem'] },
+      { label:'Emlékezet', alt:['emlékezet', 'memória'] },
+      { label:'Gondolkodás', alt:['gondolkodás', 'elvont', 'általánosít'] },
+      { label:'Végrehajtó funkciók', alt:['végrehajtó', 'tervezés', 'gátlás', 'önmonitorozás'] }
+    ],
+    exp:'Az érintett területek: érzékelés, észlelés, figyelem, emlékezet, gondolkodás és végrehajtó funkciók.'
+  },
+  {
+    id:'list_w9_03', w:9, topic:'Védőfaktorok', type:'list', diff:2, need:3,
+    q:'Sorolja fel a személyiségfejlődést támogató erősség- vagy védőfaktorokat (legalább hármat)!',
+    items:[
+      { label:'Biztonságos, elfogadó családi kötődés', alt:['családi kötődés', 'család', 'kötődés'] },
+      { label:'Korai, jól illeszkedő szakmai támogatás', alt:['korai támogatás', 'korai intervenció', 'szakmai támogatás'] },
+      { label:'Pozitív kortárskapcsolatok és befogadó környezet', alt:['kortárskapcsolat', 'befogadó', 'kortárs'] },
+      { label:'Erősségekre épülő, sikerélményt biztosító tevékenységek', alt:['erősség', 'sikerélmény', 'érdeklődés', 'önhatékonyság'] }
+    ],
+    exp:'Négy védőfaktor: biztonságos családi kötődés, korai szakmai támogatás, pozitív kortárskapcsolatok, és az erősségekre épülő, sikerélményt adó tevékenységek.'
+  },
+  {
+    id:'list_w9_04', w:9, topic:'AAC felmérése', type:'list', diff:3, need:4,
+    q:'Sorolja fel az AAC felmérésének és kiválasztásának lépéseit (legalább négyet)!',
+    items:[
+      { label:'Többforrású felmérés', alt:['többforrású', 'jelenlegi formák', 'megfigyelés', 'interjú'] },
+      { label:'A motoros, érzékelési és kognitív képességek felmérése', alt:['motoros', 'érzékelési', 'kognitív', 'csatorna'] },
+      { label:'A kommunikációs célok és partnerek azonosítása', alt:['célok', 'partnerek', 'üzenettípus'] },
+      { label:'Az eszköz/rendszer kipróbálása valós helyzetekben (trial)', alt:['kipróbálás', 'trial', 'tesztelés'] },
+      { label:'Döntés, bevezetés és folyamatos felülvizsgálat', alt:['döntés', 'bevezetés', 'felülvizsgálat', 'újraértékelés'] }
+    ],
+    exp:'Az öt lépés: többforrású felmérés, a képességek felmérése, a célok/partnerek azonosítása, kipróbálás valós helyzetekben, döntés-bevezetés-felülvizsgálat.'
+  },
+  {
+    id:'list_w9_05', w:9, topic:'Kommunikációs partneri stratégiák', type:'list', diff:3, need:3,
+    q:'Sorolja fel a kommunikációspartneri stratégiákat (legalább hármat)!',
+    items:[
+      { label:'Várakozás és tér biztosítása a válaszadásra', alt:['várakozás', 'válaszidő', 'kommunikációs idő'] },
+      { label:'Modellezés (aided language stimulation)', alt:['modellezés', 'aided language', 'mintaadás'] },
+      { label:'Nyitott kérdések és választási lehetőségek felkínálása', alt:['nyitott kérdés', 'választási lehetőség', 'választás'] },
+      { label:'A kommunikációs kezdeményezések azonnali megerősítése', alt:['megerősítés', 'kezdeményezés megerősítése'] },
+      { label:'A tanuló kommunikációs csatornájának elfogadása', alt:['csatorna elfogadása', 'ráhangolódás'] }
+    ],
+    exp:'Öt stratégia: várakozás/válaszidő, modellezés, nyitott kérdések, a kezdeményezések megerősítése, és a tanuló csatornájának elfogadása.'
+  },
+  {
+    id:'list_w9_06', w:9, topic:'Esettanulmány', type:'list', diff:3, need:4,
+    q:'Sorolja fel az esettanulmány módszer lépéseit (legalább négyet)!',
+    items:[
+      { label:'Az eset kiválasztása és bemutatása', alt:['eset kiválasztása', 'bemutatás'] },
+      { label:'Adatgyűjtés és többforrású információszerzés', alt:['adatgyűjtés', 'információszerzés'] },
+      { label:'A kulcskérdés/probléma azonosítása', alt:['kulcskérdés', 'probléma azonosítása'] },
+      { label:'Többszempontú elemzés', alt:['elemzés', 'többszempontú', 'nézőpont'] },
+      { label:'Megoldási alternatívák/ajánlások kidolgozása', alt:['megoldási alternatíva', 'ajánlás'] },
+      { label:'Szintézis, következtetések és reflexió', alt:['szintézis', 'következtetés', 'reflexió', 'tanulság'] }
+    ],
+    exp:'A hat lépés: az eset kiválasztása, adatgyűjtés, a kulcskérdés azonosítása, többszempontú elemzés, megoldási alternatívák kidolgozása, szintézis és reflexió.'
   }
 ];

@@ -12,6 +12,7 @@ const EXERCISES = [
   ...(typeof EXERCISES_W6          !== 'undefined' ? EXERCISES_W6          : []),
   ...(typeof EXERCISES_W7          !== 'undefined' ? EXERCISES_W7          : []),
   ...(typeof EXERCISES_W8          !== 'undefined' ? EXERCISES_W8          : []),
+  ...(typeof EXERCISES_W9          !== 'undefined' ? EXERCISES_W9          : []),
   ...(typeof EXERCISES_MIXED       !== 'undefined' ? EXERCISES_MIXED       : []),
   ...(typeof EXERCISES_ESSAYS      !== 'undefined' ? EXERCISES_ESSAYS      : []),
   ...(typeof EXERCISES_LISTS       !== 'undefined' ? EXERCISES_LISTS       : []),

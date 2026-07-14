@@ -1474,4 +1474,139 @@ Adaptálás autizmus spektrumon lévő tanuló számára:
   exp:'Előnyök: nagyobb önállóság/részvétel; pontosabb tudásfelmérés. Korlátok: idő- és tréningigényes bevezetés; meghibásodás/finanszírozás kockázata miatt alacsony technológiájú tartalék kell.'
 },
 
+// ══════════════════════════════════════════════
+// FOGALOMMEGHATÁROZÁSOK – 9. VÁLTOZAT
+// (Pszichofizikai/társadalmi fejlődés · Kommunikáció individualizálása · Esettanulmány)
+// ══════════════════════════════════════════════
+{
+  id:'def_w9_01', w:9, topic:'Pszichofizikai fejlődés', type:'define', diff:2, points:2,
+  q:'Határozza meg a pszichofizikai fejlődés fogalmát!',
+  modelAnswer:'Pszichofizikai fejlődés: a személy testi (motoros, szenzoros, biológiai érési) és pszichés (kognitív, érzelmi, szociális) funkcióinak életkorral együtt járó, egymással szoros kölcsönhatásban zajló, minőségi és mennyiségi átalakulása.',
+  exp:'A testi és pszichés funkciók életkorral együtt járó, szoros kölcsönhatásban zajló, minőségi és mennyiségi átalakulása.'
+},
+{
+  id:'def_w9_02', w:9, topic:'Kompenzáció', type:'define', diff:2, points:2,
+  q:'Határozza meg a kompenzáció fogalmát!',
+  modelAnswer:'Kompenzáció: az a pszichés és funkcionális folyamat, amelynek során a sérült vagy korlátozottan működő funkciót más, épen maradt funkciók vagy alternatív stratégiák helyettesítik vagy egészítik ki (pl. a látássérült személy fokozott tapintási-hallási tájékozódása).',
+  exp:'A sérült funkció helyettesítése/kiegészítése ép funkciókkal vagy alternatív stratégiákkal (pl. látássérült fokozott tapintási-hallási tájékozódása).'
+},
+{
+  id:'def_w9_03', w:9, topic:'Adaptív működés', type:'define', diff:2, points:2,
+  q:'Határozza meg az adaptív működés (funcționare adaptativă) fogalmát!',
+  modelAnswer:'Adaptív működés (funcționare adaptativă): azoknak a fogalmi, szociális és gyakorlati készségeknek az együttese, amelyeket a személy a mindennapi, önálló életvitelhez és a környezeti elvárásoknak való megfeleléshez alkalmaz (pl. önkiszolgálás, problémamegoldás, társas viselkedés).',
+  exp:'A fogalmi, szociális és gyakorlati készségek együttese az önálló életvitelhez és a környezeti elvárásoknak való megfeleléshez.'
+},
+{
+  id:'def_w9_04', w:9, topic:'Társadalmi részvétel', type:'define', diff:2, points:2,
+  q:'Határozza meg a társadalmi részvétel (participare socială) fogalmát!',
+  modelAnswer:'Társadalmi részvétel (participare socială): a személy tényleges bevonódása és aktív jelenléte az élet különböző területein (oktatás, munka, közösségi élet, kapcsolatok) — nem csupán a fizikai jelenlét, hanem az érdemi, értelemmel bíró közreműködés értelmében.',
+  exp:'A tényleges bevonódás és érdemi közreműködés az élet különböző területein — nem csupán fizikai jelenlét.'
+},
+{
+  id:'def_w9_05', w:9, topic:'Személyiség', type:'define', diff:3, points:2,
+  q:'Határozza meg a személyiség fogalmát!',
+  modelAnswer:'Személyiség: a viszonylag stabil, egyéni jellegzetes gondolkodási, érzelmi és viselkedési mintázatok integrált rendszere, amely a biológiai adottságok, a tapasztalatok és a szociális környezet kölcsönhatásában alakul ki, és amelyet fogyatékosság esetén is elsősorban a személyes fejlődéstörténet, nem a diagnózis határoz meg.',
+  exp:'Az egyéni gondolkodási, érzelmi és viselkedési mintázatok stabil rendszere; fogyatékosság esetén is a fejlődéstörténet, nem a diagnózis határozza meg.'
+},
+{
+  id:'def_w9_06', w:9, topic:'Kognitív sajátosságok', type:'define', diff:3, points:2,
+  q:'Határozza meg a végrehajtó funkciók fogalmát!',
+  modelAnswer:'Végrehajtó funkciók: a tervezés, a gátlás, a kognitív rugalmasság és az önmonitorozás folyamatai. Az e területen mutatkozó nehézségek (pl. impulzivitás, nehezített stratégiaváltás) számos fejlődési zavarnál (ADHD, autizmus, szerzett agysérülés) központi jellemzők.',
+  exp:'A tervezés, gátlás, kognitív rugalmasság és önmonitorozás folyamatai; nehézségük ADHD-nál, autizmusnál, agysérülésnél központi.'
+},
+{
+  id:'def_w9_07', w:9, topic:'Motiváció és érzelmek', type:'define', diff:2, points:2,
+  q:'Határozza meg a tanult tehetetlenség (learned helplessness) fogalmát!',
+  modelAnswer:'Tanult tehetetlenség (learned helplessness): az ismételt kudarcélmények következtében kialakuló állapot, amely csökkenti a feladatokba való belefogás hajlandóságát. Éppen ezért kulcsfontosságú a sikerélmény tudatos megszervezése.',
+  exp:'Az ismételt kudarcok nyomán kialakuló állapot, amely csökkenti a feladatokba fogás hajlandóságát; ellenszere a tudatos sikerélmény.'
+},
+{
+  id:'def_w9_08', w:9, topic:'Adaptív viselkedés', type:'define', diff:2, points:2,
+  q:'Határozza meg az adaptív viselkedés fogalmi (konceptuális) területét!',
+  modelAnswer:'Az adaptív viselkedés fogalmi (konceptuális) területe a nyelvhasználatot és kommunikációt, valamint az alapvető szám- és időfogalmak gyakorlati alkalmazását (pl. pénz kezelése, órarend követése) foglalja magában.',
+  exp:'Nyelvhasználat, kommunikáció és alapvető szám- és időfogalmak gyakorlati alkalmazása.'
+},
+{
+  id:'def_w9_09', w:9, topic:'Adaptív viselkedés', type:'define', diff:2, points:2,
+  q:'Határozza meg az adaptív viselkedés szociális területét!',
+  modelAnswer:'Az adaptív viselkedés szociális területe a szabályok és normák betartását társas helyzetekben (pl. sorban állás, kérés-köszönés), valamint a mások érzelmi jelzéseinek felismerését és a megfelelő reagálást foglalja magában.',
+  exp:'Szabályok/normák betartása társas helyzetekben és mások érzelmi jelzéseinek felismerése, megfelelő reagálás.'
+},
+{
+  id:'def_w9_10', w:9, topic:'Adaptív viselkedés', type:'define', diff:2, points:2,
+  q:'Határozza meg az adaptív viselkedés gyakorlati (praktikus) területét!',
+  modelAnswer:'Az adaptív viselkedés gyakorlati (praktikus) területe az önkiszolgálási készségeket (öltözködés, étkezés, higiénia) és a mindennapi életvezetési készségeket (közlekedés, egyszerű háztartási feladatok, biztonsági szabályok betartása) foglalja magában.',
+  exp:'Önkiszolgálási készségek (öltözködés, étkezés, higiénia) és mindennapi életvezetési készségek (közlekedés, háztartás, biztonság).'
+},
+{
+  id:'def_w9_11', w:9, topic:'Védőfaktorok', type:'define', diff:2, points:2,
+  q:'Határozza meg a védőfaktor (erősségfaktor) fogalmát a személyiségfejlődés kontextusában!',
+  modelAnswer:'Védőfaktor (erősségfaktor): olyan tényező, amely támogatja a személyiségfejlődést és csökkenti a másodlagos nehézségek kockázatát — pl. biztonságos, elfogadó családi kötődés; korai, jól illeszkedő szakmai támogatás; pozitív kortárskapcsolatok és befogadó szociális környezet; valamint az erősségekre és érdeklődésre épülő, sikerélményt biztosító tevékenységek.',
+  exp:'A személyiségfejlődést támogató, a másodlagos nehézségek kockázatát csökkentő tényező (családi kötődés, korai támogatás, kortárskapcsolatok, sikerélmény).'
+},
+{
+  id:'def_w9_12', w:9, topic:'Integráció akadályai', type:'define', diff:3, points:2,
+  q:'Határozza meg a társadalmi részvétel strukturális akadályának fogalmát!',
+  modelAnswer:'A társadalmi részvétel strukturális akadályai a fizikai, kommunikációs vagy attitűdbeli akadálymentesítés hiányából fakadó korlátok, amelyek nem a személy képességeiből, hanem a környezet felkészületlenségéből erednek — ez az akadálymentesítés és az inkluzív szemlélet megerősítésének fő indoka.',
+  exp:'A fizikai, kommunikációs vagy attitűdbeli akadálymentesítés hiánya; nem a személy képességeiből, hanem a környezet felkészületlenségéből fakad.'
+},
+{
+  id:'def_w9_13', w:9, topic:'Hozzáférhető kommunikáció', type:'define', diff:2, points:2,
+  q:'Határozza meg a hozzáférhető kommunikáció fogalmát!',
+  modelAnswer:'Hozzáférhető kommunikáció: a kommunikációs csatorna, forma és tempó igazodik a személy érzékelési, motoros és kognitív lehetőségeihez, így ő ténylegesen fel tudja fogni és létre tudja hozni az üzeneteket.',
+  exp:'A csatorna, forma és tempó a személy érzékelési, motoros és kognitív lehetőségeihez igazodik, hogy fel- és létrehozhassa az üzeneteket.'
+},
+{
+  id:'def_w9_14', w:9, topic:'Funkcionális kommunikáció', type:'define', diff:2, points:2,
+  q:'Határozza meg a funkcionális kommunikáció fogalmát!',
+  modelAnswer:'Funkcionális kommunikáció: olyan kommunikáció, amely valós, a mindennapi életben releváns célokat szolgál (igény kifejezése, választás, társas kapcsolattartás), azaz nem elszigetelt gyakorlat, hanem a személy önrendelkezését és részvételét ténylegesen növelő eszköz.',
+  exp:'Valós, mindennapi célokat szolgáló kommunikáció (igény, választás, kapcsolattartás); az önrendelkezést és részvételt növeli.'
+},
+{
+  id:'def_w9_15', w:9, topic:'Kommunikációs partneri stratégiák', type:'define', diff:3, points:2,
+  q:'Határozza meg a modellezés (aided language stimulation) fogalmát!',
+  modelAnswer:'Modellezés (aided language stimulation): olyan kommunikációspartneri stratégia, amelyben a partner a kommunikációs eszközt/szimbólumrendszert folyamatosan, a saját beszédével párhuzamosan használja, ezzel mintát adva a tanulónak a rendszer használatához.',
+  exp:'A partner a kommunikációs eszközt/szimbólumrendszert a saját beszédével párhuzamosan használja, mintát adva a tanulónak.'
+},
+{
+  id:'def_w9_16', w:9, topic:'Esettanulmány', type:'define', diff:2, points:2,
+  q:'Határozza meg az esettanulmány (studiu de caz) fogalmát!',
+  modelAnswer:'Esettanulmány (studiu de caz): olyan módszer, amely egy konkrét, valós vagy valósághű, komplex helyzet mélyreható, több szempontú vizsgálatára épül; a hangsúly az elemzésen, az összefüggések feltárásán és a reflektív értelmezésen van, nem feltétlenül egyetlen „helyes” megoldás megtalálásán.',
+  exp:'Egy konkrét, komplex helyzet mélyreható, többszempontú vizsgálata; a hangsúly az elemzésen és reflexión, nem egyetlen „helyes” megoldáson.'
+},
+{
+  id:'def_w9_17', w:9, topic:'Problémamegoldó tanulás', type:'define', diff:2, points:2,
+  q:'Határozza meg a problémamegoldó tanulás fogalmát!',
+  modelAnswer:'Problémamegoldó tanulás (învățare bazată pe rezolvarea de probleme): olyan módszer, amely egy konkrét, jól körülhatárolt probléma megoldására irányul, meghatározott célú, gyakran lépésről lépésre strukturált folyamatban; a hangsúly a megoldási stratégia kidolgozásán, kipróbálásán és az eredmény értékelésén van, aktív, cselekvésközpontú tanulói szerepvállalással.',
+  exp:'Egy jól körülhatárolt probléma megoldására irányuló, strukturált folyamat; a hangsúly a stratégia kidolgozásán, kipróbálásán és értékelésén, aktív tanulói szereppel.'
+},
+{
+  id:'def_w9_18', w:9, topic:'Kognitív sajátosságok', type:'define', diff:3, points:2,
+  q:'Határozza meg az észlelés fogalmát, és mivel áll szemben az érzékeléssel!',
+  modelAnswer:'Az észlelés a beérkező ingerek értelmezése (pl. alak-háttér megkülönböztetés, téri észlelés), amely egyes fejlődési zavaroknál (pl. tanulási zavarok) ép érzékszervek mellett is nehezített lehet — szemben az érzékeléssel, amely az elsődleges ingerfelvétel folyamata.',
+  exp:'Az észlelés az ingerek értelmezése (alak-háttér, téri észlelés), ép érzékszervek mellett is nehezített lehet; az érzékelés az elsődleges ingerfelvétel.'
+},
+
+// ══════════════════════════════════════════════
+// ESSZÉ KÉRDÉSEK – 9. VÁLTOZAT
+// ══════════════════════════════════════════════
+{
+  id:'essay_w9_01', w:9, topic:'Integráció akadályai', type:'essay', diff:3, points:5,
+  q:'Ismertesse a fogyatékosság öt lehetséges következményét az alkalmazkodásra és a társadalmi integrációra!',
+  modelAnswer:'1. Korlátozott hozzáférés a tipikus tanulási és társas tapasztalatokhoz, ami közvetetten lassíthatja a fogalmi és szociális fejlődést, még ha az elsődleges károsodás ezt közvetlenül nem is indokolná.\n2. A környezet negatív attitűdjei és alacsony elvárásai (stigma, túlvédés vagy kirekesztés) másodlagos akadályt jelenthetnek, amely súlyosabb is lehet, mint maga az eredeti károsodás.\n3. A kortárskapcsolatok beszűkülése, ha a kommunikációs vagy viselkedési különbségek megnehezítik a spontán társas interakciókat, ami elszigetelődéshez vezethet.\n4. Fokozott érzelmi terhelés és megküzdési kihívások a gyakori kudarcélmények, összehasonlítások és az esetleges kirekesztő tapasztalatok miatt.\n5. A társadalmi részvétel strukturális akadályai (fizikai, kommunikációs vagy attitűdbeli akadálymentesítés hiánya), amelyek nem a személy képességeiből, hanem a környezet felkészületlenségéből fakadnak.',
+  exp:'Öt következmény: korlátozott tapasztalati hozzáférés, negatív környezeti attitűdök, beszűkülő kortárskapcsolatok, fokozott érzelmi terhelés, és a részvétel strukturális akadályai.'
+},
+{
+  id:'essay_w9_02', w:9, topic:'AAC felmérése', type:'essay', diff:3, points:5,
+  q:'Mutassa be az augmentatív és alternatív kommunikáció (AAC) felmérésének és kiválasztásának öt lépését!',
+  modelAnswer:'1. Többforrású felmérés: a jelenlegi kommunikációs formák, szükségletek és kontextusok feltérképezése (megfigyelés, családi és pedagógusi interjú, korábbi értékelések áttekintése).\n2. A motoros, érzékelési és kognitív képességek felmérése: annak meghatározása, mely bemeneti/kimeneti csatorna (pl. kézmozgás, szemkontroll, hallás) a legmegbízhatóbb.\n3. A kommunikációs célok és partnerek azonosítása: milyen helyzetekben, kikkel és milyen üzenettípusokra (kérés, elutasítás, társalgás) van elsősorban szükség.\n4. Az eszköz/rendszer kipróbálása (trial) valós helyzetekben: különböző alacsony és magas technológiájú lehetőségek tesztelése, nem csupán elméleti alkalmasság alapján.\n5. Döntés, bevezetés és folyamatos felülvizsgálat: a kiválasztott rendszer fokozatos beépítése a mindennapokba, majd a hatékonyság rendszeres, adatalapú újraértékelése és szükség szerinti módosítása.',
+  exp:'Az öt lépés: 1. többforrású felmérés, 2. a motoros/érzékelési/kognitív képességek felmérése, 3. a célok és partnerek azonosítása, 4. kipróbálás valós helyzetekben, 5. döntés, bevezetés és folyamatos felülvizsgálat.'
+},
+{
+  id:'essay_w9_03', w:9, topic:'Esettanulmány', type:'essay', diff:3, points:6,
+  q:'Mutassa be az esettanulmány módszer hat lépését!',
+  modelAnswer:'1. Az eset kiválasztása és bemutatása: egy releváns, a tanulók fejlettségi szintjéhez és tapasztalataihoz illeszkedő, konkrét helyzet ismertetése.\n2. Adatgyűjtés és többforrású információszerzés: a helyzethez kapcsolódó releváns tények, körülmények, szereplői nézőpontok összegyűjtése.\n3. A kulcskérdés/probléma azonosítása: annak tisztázása, pontosan mi az elemzendő dilemma vagy kihívás az esetben.\n4. Többszempontú elemzés: az eset vizsgálata különböző nézőpontokból (pl. érintett szereplők, lehetséges okok, következmények).\n5. Megoldási alternatívák/ajánlások kidolgozása: lehetséges válaszok, döntések megfogalmazása, azok várható következményeinek mérlegelésével.\n6. Szintézis, következtetések levonása és reflexió: az esetből levonható általánosabb tanulságok megfogalmazása, kapcsolódás a tanulók saját tapasztalataihoz.',
+  exp:'A hat lépés: 1. az eset kiválasztása és bemutatása, 2. adatgyűjtés, 3. a kulcskérdés azonosítása, 4. többszempontú elemzés, 5. megoldási alternatívák kidolgozása, 6. szintézis, következtetések és reflexió.'
+},
+
 ]; // end EXERCISES_ESSAYS

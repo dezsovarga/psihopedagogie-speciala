@@ -927,5 +927,187 @@ const EXERCISES_CLOZE = [
     q: 'Egészítsd ki a segítő technológia korlátjára vonatkozó mondatot!',
     text: 'Meghibásodás vagy finanszírozási nehézség esetén a hozzáférés hirtelen megszakadhat, ezért mindig szükséges alacsony technológiájú {{tartalék}} megoldás (pl. papíralapú kommunikációs {{tábla}}).',
     exp: 'Mindig kell alacsony technológiájú tartalék (pl. papíralapú kommunikációs tábla).'
+  },
+
+  // ─── 9. VÁLTOZAT ──────────────────────────────────────────────────────────
+  {
+    id: 'cloze_w9_01', w: 9, topic: 'Pszichofizikai fejlődés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a pszichofizikai fejlődés meghatározását!',
+    text: 'A pszichofizikai fejlődés a személy {{testi}} és {{pszichés}} funkcióinak életkorral együtt járó, egymással szoros {{kölcsönhatásban}} zajló átalakulása.',
+    exp: 'A testi és pszichés funkciók szoros kölcsönhatásban zajló átalakulása.'
+  },
+  {
+    id: 'cloze_w9_02', w: 9, topic: 'Kompenzáció', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a kompenzáció meghatározását!',
+    text: 'A kompenzáció során a {{sérült}} funkciót más, épen maradt funkciók vagy alternatív {{stratégiák}} helyettesítik vagy egészítik ki.',
+    exp: 'A sérült funkciót ép funkciók vagy alternatív stratégiák helyettesítik/egészítik ki.'
+  },
+  {
+    id: 'cloze_w9_03', w: 9, topic: 'Adaptív működés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az adaptív működés meghatározását!',
+    text: 'Az adaptív működés a {{fogalmi}}, szociális és {{gyakorlati}} készségek együttese, amelyeket a személy az önálló életvitelhez alkalmaz.',
+    exp: 'A fogalmi, szociális és gyakorlati készségek együttese az önálló életvitelhez.'
+  },
+  {
+    id: 'cloze_w9_04', w: 9, topic: 'Társadalmi részvétel', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a társadalmi részvétel meghatározását!',
+    text: 'A társadalmi részvétel a személy tényleges {{bevonódása}} és aktív jelenléte az élet területein — nem csupán a {{fizikai}} jelenlét, hanem az érdemi közreműködés értelmében.',
+    exp: 'Tényleges bevonódás és érdemi közreműködés, nem csupán fizikai jelenlét.'
+  },
+  {
+    id: 'cloze_w9_05', w: 9, topic: 'Személyiség', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a személyiség meghatározását!',
+    text: 'A személyiséget fogyatékosság esetén is elsősorban a személyes {{fejlődéstörténet}}, nem a {{diagnózis}} határozza meg.',
+    exp: 'A fejlődéstörténet, nem a diagnózis határozza meg.'
+  },
+  {
+    id: 'cloze_w9_06', w: 9, topic: 'Kognitív sajátosságok', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a végrehajtó funkciók felsorolását!',
+    text: 'A végrehajtó funkciók: a {{tervezés}}, a gátlás, a kognitív {{rugalmasság}} és az {{önmonitorozás}}.',
+    exp: 'Tervezés, gátlás, kognitív rugalmasság és önmonitorozás.'
+  },
+  {
+    id: 'cloze_w9_07', w: 9, topic: 'Kognitív sajátosságok', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az érzékelés és az észlelés megkülönböztetését!',
+    text: 'Az {{érzékelés}} az elsődleges ingerfelvétel, míg az {{észlelés}} a beérkező ingerek értelmezése, amely ép érzékszervek mellett is nehezített lehet.',
+    exp: 'Az érzékelés az ingerfelvétel; az észlelés az ingerek értelmezése.'
+  },
+  {
+    id: 'cloze_w9_08', w: 9, topic: 'Motiváció és érzelmek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a tanult tehetetlenség meghatározását!',
+    text: 'A tanult tehetetlenség az ismételt {{kudarcélmények}} nyomán kialakuló állapot, amely csökkenti a feladatokba való belefogás {{hajlandóságát}}.',
+    exp: 'Az ismételt kudarcok nyomán csökken a feladatokba fogás hajlandósága.'
+  },
+  {
+    id: 'cloze_w9_09', w: 9, topic: 'Motiváció és érzelmek', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az affektivitásra vonatkozó mondatot!',
+    text: 'Autizmus spektrumzavarnál az érzelmek eltérő kifejezése nem az érzelmek {{hiányát}}, hanem azok másképp történő {{megnyilvánulását}} jelenti.',
+    exp: 'Nem az érzelmek hiánya, hanem másképp történő megnyilvánulása.'
+  },
+  {
+    id: 'cloze_w9_10', w: 9, topic: 'Adaptív viselkedés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az adaptív viselkedés gyakorlati területét!',
+    text: 'Az adaptív viselkedés gyakorlati területe az {{önkiszolgálási}} készségeket (öltözködés, étkezés, higiénia) és a mindennapi {{életvezetési}} készségeket foglalja magában.',
+    exp: 'Önkiszolgálási és mindennapi életvezetési készségek.'
+  },
+  {
+    id: 'cloze_w9_11', w: 9, topic: 'Integráció akadályai', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a környezeti attitűdökre vonatkozó mondatot!',
+    text: 'A környezet negatív attitűdjei és alacsony {{elvárásai}} (stigma, túlvédés) másodlagos akadályt jelenthetnek, amely súlyosabb is lehet, mint maga az eredeti {{károsodás}}.',
+    exp: 'A negatív attitűdök súlyosabb akadályt jelenthetnek, mint az eredeti károsodás.'
+  },
+  {
+    id: 'cloze_w9_12', w: 9, topic: 'Integráció akadályai', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a strukturális akadályokra vonatkozó mondatot!',
+    text: 'A társadalmi részvétel strukturális akadályai nem a személy {{képességeiből}}, hanem a környezet {{felkészületlenségéből}} fakadnak.',
+    exp: 'Nem a személy képességeiből, hanem a környezet felkészületlenségéből fakadnak.'
+  },
+  {
+    id: 'cloze_w9_13', w: 9, topic: 'Hozzáférhető kommunikáció', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a hozzáférhető kommunikáció meghatározását!',
+    text: 'A hozzáférhető kommunikáció azt jelenti, hogy a {{csatorna}}, forma és {{tempó}} igazodik a személy érzékelési, motoros és kognitív lehetőségeihez.',
+    exp: 'A csatorna, forma és tempó a személy lehetőségeihez igazodik.'
+  },
+  {
+    id: 'cloze_w9_14', w: 9, topic: 'Funkcionális kommunikáció', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a funkcionális kommunikáció meghatározását!',
+    text: 'A funkcionális kommunikáció valós, a mindennapi életben {{releváns}} célokat szolgál, és a személy {{önrendelkezését}} és részvételét ténylegesen növeli.',
+    exp: 'Valós, mindennapi célokat szolgál; növeli az önrendelkezést és a részvételt.'
+  },
+  {
+    id: 'cloze_w9_15', w: 9, topic: 'Kommunikációs partneri stratégiák', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a modellezés meghatározását!',
+    text: 'A modellezés (aided language stimulation) a kommunikációs eszköz folyamatos, a saját {{beszéddel}} párhuzamos használata a partner részéről, {{mintát}} adva a tanulónak.',
+    exp: 'A partner a saját beszédével párhuzamosan használja az eszközt, mintát adva.'
+  },
+  {
+    id: 'cloze_w9_16', w: 9, topic: 'Kommunikációs partneri stratégiák', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a válaszadásra vonatkozó partneri stratégiát!',
+    text: 'Fontos a {{várakozás}} és tér biztosítása a válaszadásra, ahelyett hogy a partner kitalálná és {{megelőzné}} az üzenetet.',
+    exp: 'Várakozás és tér a válaszadásra, a megelőzés helyett.'
+  },
+  {
+    id: 'cloze_w9_17', w: 9, topic: 'Kommunikációs fejlődés mutatói', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a kommunikációs fejlődés mutatóit!',
+    text: 'Fejlődési mutató a {{spontán}} kezdeményezett megnyilvánulások gyakoriságának növekedése és a kommunikáció {{generalizálódása}} különböző partnerek és helyzetek között.',
+    exp: 'A spontán kezdeményezések gyakorisága és a generalizálódás.'
+  },
+  {
+    id: 'cloze_w9_18', w: 9, topic: 'Fogyatékosságspecifikus adaptáció', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a hallássérülés esetén ajánlott adaptációt!',
+    text: 'Hallássérülésnél a {{vizuális}} információ dominanciáját kell biztosítani, és a pedagógusnak {{szemből}}, jól látható artikulációval kell beszélnie.',
+    exp: 'A vizuális információ dominanciája és a szemből, látható artikulációval beszéd.'
+  },
+  {
+    id: 'cloze_w9_19', w: 9, topic: 'Fogyatékosságspecifikus adaptáció', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az autizmus esetén ajánlott nyelvhasználatot!',
+    text: 'Autizmus spektrumzavarnál {{konkrét}}, egyértelmű, metaforáktól és {{iróniától}} mentes nyelvhasználat ajánlott, vizuális támogatókkal.',
+    exp: 'Konkrét, metaforáktól és iróniától mentes nyelv, vizuális támogatókkal.'
+  },
+  {
+    id: 'cloze_w9_20', w: 9, topic: 'Esettanulmány', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az esettanulmány meghatározását!',
+    text: 'Az esettanulmány egy konkrét, komplex {{helyzet}} mélyreható, több szempontú vizsgálata; a hangsúly az {{elemzésen}} és a reflektív értelmezésen van.',
+    exp: 'Egy komplex helyzet többszempontú vizsgálata; a hangsúly az elemzésen és reflexión.'
+  },
+  {
+    id: 'cloze_w9_21', w: 9, topic: 'Problémamegoldó tanulás', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a problémamegoldó tanulás meghatározását!',
+    text: 'A problémamegoldó tanulás egy jól körülhatárolt {{probléma}} megoldására irányul; a hangsúly a megoldási {{stratégia}} kidolgozásán, kipróbálásán és értékelésén van.',
+    exp: 'Egy jól körülhatárolt probléma megoldása; a hangsúly a stratégián.'
+  },
+  {
+    id: 'cloze_w9_22', w: 9, topic: 'Esettanulmány', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az esettanulmány első és utolsó lépését!',
+    text: 'Az esettanulmány az eset {{kiválasztása}} és bemutatása lépéssel kezdődik, és a szintézissel, következtetésekkel és {{reflexióval}} zárul.',
+    exp: 'Az eset kiválasztásától a szintézisig és reflexióig.'
+  },
+  {
+    id: 'cloze_w9_23', w: 9, topic: 'Módszer előnyei és korlátai', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az esettanulmány korlátját!',
+    text: 'Az esettanulmány {{időigényes}} módszer, amely gondos {{előkészítést}} és rugalmas óraszervezést igényel.',
+    exp: 'Időigényes, gondos előkészítést és rugalmas óraszervezést igényel.'
+  },
+  {
+    id: 'cloze_w9_24', w: 9, topic: 'Etikai és pedagógiai követelmények', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a valós személyeken alapuló esettanulmány etikai követelményét!',
+    text: 'Ha az eset valós személyek helyzetén alapul, biztosítani kell az {{anonimitást}} és az érintettek tájékozott {{beleegyezését}}.',
+    exp: 'Anonimitás és tájékozott beleegyezés biztosítása.'
+  },
+  {
+    id: 'cloze_w9_25', w: 9, topic: 'Részvétel értékelése', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a részvétel megfigyelési lapjának elemeit!',
+    text: 'A megfigyelési lap eleme a {{bevonódás}} mértéke, a kommunikációs hozzájárulás formája, a társakkal való {{együttműködés}} és az önállóság szintje.',
+    exp: 'Bevonódás, kommunikációs hozzájárulás, együttműködés, önállóság.'
+  },
+  {
+    id: 'cloze_w9_26', w: 9, topic: 'Védőfaktorok', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a védőfaktorokra vonatkozó mondatot!',
+    text: 'Védőfaktor a biztonságos, elfogadó családi {{kötődés}}, valamint a korai, jól illeszkedő szakmai {{támogatás}}.',
+    exp: 'Biztonságos családi kötődés és korai szakmai támogatás.'
+  },
+  {
+    id: 'cloze_w9_27', w: 9, topic: 'Kommunikációt támogató környezet', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a kommunikációt támogató környezet elemét!',
+    text: 'A kommunikációt támogatja az eszközök/szimbólumok állandó, {{kiszámítható}} elérhetősége minden releváns helyzetben, nem csak a kommunikációs {{órán}}.',
+    exp: 'Az eszközök állandó, kiszámítható elérhetősége minden helyzetben.'
+  },
+  {
+    id: 'cloze_w9_28', w: 9, topic: 'Inkluzív tervezés', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az inkluzív közös tevékenység elvét!',
+    text: 'A közös tevékenység {{kerete}} minden tanuló számára azonos marad, csak a kifejezés {{formája}} és eszköze adaptálódik, így a tevékenység valóban inkluzív.',
+    exp: 'A közös keret azonos, csak a kifejezés formája/eszköze adaptálódik.'
+  },
+  {
+    id: 'cloze_w9_29', w: 9, topic: 'Alkalmazás CES-tanulóknál', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az autizmusnál alkalmazott esettanulmány indoklását!',
+    text: 'Az esettanulmány a társas helyzetek {{explicit}}, strukturált elemzését teszi lehetővé, ami autizmusnál gyakran spontán módon nehezebben alakul ki: mások {{nézőpontjának}} lépésenkénti végiggondolása.',
+    exp: 'A társas helyzetek explicit elemzése; mások nézőpontjának végiggondolása.'
+  },
+  {
+    id: 'cloze_w9_30', w: 9, topic: 'Alkalmazás CES-tanulóknál', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a generalizációra vonatkozó mondatot!',
+    text: 'A funkcionális probléma lépéssorát hasonló mindennapi helyzetekben is {{gyakorolják}} a {{generalizáció}} érdekében.',
+    exp: 'A lépéssort más helyzetekben is gyakorolják a generalizációért.'
   }
 ];

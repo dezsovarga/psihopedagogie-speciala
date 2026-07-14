@@ -65,6 +65,7 @@ describe('worksheet label (shown in random mode)', () => {
     expect(worksheetLabel(1)).toBe('1. Változat');
     expect(worksheetLabel(7)).toBe('7. Változat');
     expect(worksheetLabel(8)).toBe('8. Változat');
+    expect(worksheetLabel(9)).toBe('9. Változat');
   });
   test('shared exercises (w:0) map to "Vegyes"', () => {
     expect(worksheetLabel(0)).toBe('Vegyes');
