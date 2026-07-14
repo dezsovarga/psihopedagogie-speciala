@@ -745,5 +745,187 @@ const EXERCISES_CLOZE = [
     q: 'Egészítsd ki a kritériumalapú mérés lényegét!',
     text: 'A kritériumalapú mérés a tanuló saját {{korábbi}} teljesítményéhez és az egyénre szabott {{célokhoz}} viszonyít.',
     exp: 'A saját korábbi teljesítményhez és az egyéni célokhoz viszonyít.'
+  },
+
+  // ─── 8. VÁLTOZAT ──────────────────────────────────────────────────────────
+  {
+    id: 'cloze_w8_01', w: 8, topic: 'Motoros fogyatékosság', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a motoros fogyatékosság meghatározását!',
+    text: 'A motoros fogyatékosság a {{mozgásszervrendszer}} vagy az idegrendszer mozgásszabályozó funkcióinak {{károsodásából}} ered, és korlátozza a helyváltoztatást és a {{testtartás}} fenntartását.',
+    exp: 'A mozgásszervrendszer vagy az idegrendszer károsodásából ered; korlátozza a helyváltoztatást és a testtartást.'
+  },
+  {
+    id: 'cloze_w8_02', w: 8, topic: 'Motoros fogyatékosság', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a motoros fogyatékosság eredetét!',
+    text: 'A motoros fogyatékosság lehet {{veleszületett}} (pl. végtaghiány) vagy {{szerzett}} (baleset, betegség következménye).',
+    exp: 'Lehet veleszületett vagy szerzett.'
+  },
+  {
+    id: 'cloze_w8_03', w: 8, topic: 'Neuromotoros zavar', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a neuromotoros zavar meghatározását!',
+    text: 'A neuromotoros zavar a központi vagy perifériás {{idegrendszer}} károsodásából eredő mozgászavar, amelynél sérül az izomtónus szabályozása, a koordináció, az egyensúly vagy a mozgástervezés, azaz a {{praxis}}.',
+    exp: 'Az idegrendszer károsodásából eredő mozgászavar; a mozgástervezés = praxis.'
+  },
+  {
+    id: 'cloze_w8_04', w: 8, topic: 'Cerebrális parézis', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a cerebrális parézis meghatározását!',
+    text: 'A cerebrális parézis nem {{progresszív}}, de a fejlődés során változó megjelenésű mozgás- és testtartászavar, amely a fejlődő {{agy}} károsodásából ered.',
+    exp: 'Nem progresszív, a fejlődő agy károsodásából eredő mozgás- és testtartászavar.'
+  },
+  {
+    id: 'cloze_w8_05', w: 8, topic: 'Cerebrális parézis', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a CP társuló zavaraira vonatkozó mondatot!',
+    text: 'A cerebrális parézishez gyakran társulnak érzékelési, kognitív, kommunikációs, viselkedési zavarok és {{epilepszia}}.',
+    exp: 'Gyakran társul érzékelési, kognitív, kommunikációs, viselkedési zavar és epilepszia.'
+  },
+  {
+    id: 'cloze_w8_06', w: 8, topic: 'Halmozott fogyatékosság', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a halmozott fogyatékosság meghatározását!',
+    text: 'A halmozott fogyatékosság két vagy több, minőségileg {{különböző}} fogyatékossági terület egyidejű fennállása, ahol a területek kölcsönösen {{felerősítik}} egymás hatását.',
+    exp: 'Két vagy több, minőségileg különböző terület, amelyek felerősítik egymást.'
+  },
+  {
+    id: 'cloze_w8_07', w: 8, topic: 'Halmozott fogyatékosság', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a halmozott fogyatékosság támogatási szemléletét!',
+    text: 'A halmozott fogyatékosságnál a támogatási szükséglet nem az egyes fogyatékosságok {{összegeként}}, hanem minőségileg új, {{komplex}} profilként értelmezendő.',
+    exp: 'Nem az egyes területek összege, hanem minőségileg új, komplex profil.'
+  },
+  {
+    id: 'cloze_w8_08', w: 8, topic: 'Funkcionális mobilitás', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a funkcionális mobilitás meghatározását!',
+    text: 'A funkcionális mobilitás gyakorlati képesség a biztonságos helyzet- és helyváltoztatásra; a hangsúly a {{tevékenységi}} szintű teljesítményen van, nem a mozgásminta {{normalitásán}}.',
+    exp: 'A tevékenységi szintű teljesítményen van a hangsúly, nem a mozgásminta normalitásán.'
+  },
+  {
+    id: 'cloze_w8_09', w: 8, topic: 'Etiológia és osztályozás', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az érintettség időpontja szerinti osztályozást!',
+    text: 'Az érintettség időpontja szerint a károsodás lehet {{prenatális}}, {{perinatális}} (pl. oxigénhiány szülés közben) és {{posztnatális}} eredetű.',
+    exp: 'Prenatális, perinatális és posztnatális eredet.'
+  },
+  {
+    id: 'cloze_w8_10', w: 8, topic: 'Etiológia és osztályozás', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az érintett terület kiterjedése szerinti típusokat!',
+    text: 'A kiterjedés szerint: {{monoplégia}} (egy végtag), hemiplégia (test egyik fele), {{diplégia}} (alsó végtagok) és quadriplégia (mind a négy végtag).',
+    exp: 'Monoplégia, hemiplégia, diplégia, quadriplégia/tetraplégia.'
+  },
+  {
+    id: 'cloze_w8_11', w: 8, topic: 'Etiológia és osztályozás', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az izomtónus jellege szerinti típusokat!',
+    text: 'Az izomtónus jellege szerint: {{spasztikus}} (fokozott tónus), {{dyskinetikus}} (ingadozó, akaratlan mozgások) és {{ataxiás}} (egyensúly- és koordinációzavar).',
+    exp: 'Spasztikus, dyskinetikus, ataxiás (és hypotóniás, kevert).'
+  },
+  {
+    id: 'cloze_w8_12', w: 8, topic: 'Cerebrális parézis', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a spasztikus CP jellemzését!',
+    text: 'A spasztikus CP a leggyakoribb típus: {{fokozott}} izomtónus és jellegzetes, „ollózó” {{mozgásminta}} jellemzi.',
+    exp: 'A leggyakoribb típus: fokozott tónus, „ollózó” mozgásminta.'
+  },
+  {
+    id: 'cloze_w8_13', w: 8, topic: 'Cerebrális parézis', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a dyskinetikus CP jellemzését!',
+    text: 'A dyskinetikus/atetoid CP-t {{ingadozó}} izomtónus és {{akaratlan}}, célra nem irányuló mozgások jellemzik, gyakran érintett az artikuláció.',
+    exp: 'Ingadozó tónus, akaratlan mozgások, gyakran érintett artikuláció.'
+  },
+  {
+    id: 'cloze_w8_14', w: 8, topic: 'Cerebrális parézis', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az ataxiás CP jellemzését!',
+    text: 'Az ataxiás CP-t {{egyensúly}}- és koordinációzavar, bizonytalan, széles alapú {{járás}} és célzási nehézség jellemzi.',
+    exp: 'Egyensúly- és koordinációzavar, széles alapú járás, célzási nehézség.'
+  },
+  {
+    id: 'cloze_w8_15', w: 8, topic: 'Korai intervenció', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a korai intervenció meghatározását!',
+    text: 'A korai intervenció koordinált, {{család}}- és gyermekközpontú szolgáltatások összessége, jellemzően {{0–6/7}} éves korban.',
+    exp: 'Család- és gyermekközpontú szolgáltatások, jellemzően 0–6/7 éves korban.'
+  },
+  {
+    id: 'cloze_w8_16', w: 8, topic: 'Korai intervenció', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a korai intervenció céljait!',
+    text: 'A korai intervenció a fejlődés legérzékenyebb, a {{plaszticitás}} szempontjából legkedvezőbb időszakát használja ki, megelőzi a {{másodlagos}} nehézségeket, és megerősíti a család {{kompetenciáit}}.',
+    exp: 'A plaszticitás időszakát használja, megelőzi a másodlagos nehézségeket, erősíti a család kompetenciáit.'
+  },
+  {
+    id: 'cloze_w8_17', w: 8, topic: 'Családközpontú alapelvek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az erősségalapú megközelítés lényegét!',
+    text: 'Az erősségalapú megközelítés a család és a gyermek meglévő {{erőforrásaira}} és kompetenciáira épít, nem kizárólag a {{hiányosságokra}}.',
+    exp: 'A meglévő erőforrásokra épít, nem csak a hiányosságokra.'
+  },
+  {
+    id: 'cloze_w8_18', w: 8, topic: 'Családközpontú alapelvek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a rutinba ágyazott fejlesztés elvét!',
+    text: 'A beavatkozás nem elszigetelt terápiás órákban, hanem a család természetes napi {{tevékenységeiben}} (étkezés, játék, fürdetés) valósul meg leghatékonyabban.',
+    exp: 'A fejlesztés a mindennapi rutinokba (étkezés, játék, fürdetés) ágyazva a leghatékonyabb.'
+  },
+  {
+    id: 'cloze_w8_19', w: 8, topic: 'Értékelés a korai intervencióban', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a szűrés (screening) jellemzését!',
+    text: 'A szűrés célja nem a {{diagnózis}} felállítása, hanem annak jelzése, hogy szükséges-e részletesebb kivizsgálás; alacsony {{specificitású}}, de magas {{érzékenységű}} eszköz.',
+    exp: 'Nem diagnózist ad, hanem jelez; alacsony specificitás, magas érzékenység.'
+  },
+  {
+    id: 'cloze_w8_20', w: 8, topic: 'Értékelés a korai intervencióban', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a diagnosztikus értékelés jellemzését!',
+    text: 'A diagnosztikus értékelés részletes, több {{szakterületet}} bevonó folyamat, amely a román rendszerben a {{CJRAE}}/CMBRAE komplex kiértékelő szolgálatán keresztül zajlik.',
+    exp: 'Részletes, multidiszciplináris folyamat a CJRAE/CMBRAE keretében.'
+  },
+  {
+    id: 'cloze_w8_21', w: 8, topic: 'Értékelés a korai intervencióban', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a fejlődésmonitorozás meghatározását!',
+    text: 'A fejlődésmonitorozás {{folyamatos}}, ismétlődő nyomon követés a program egésze alatt, amely a célok és módszerek rendszeres {{felülvizsgálatát}} szolgálja.',
+    exp: 'Folyamatos nyomon követés; a célok és módszerek rendszeres felülvizsgálata.'
+  },
+  {
+    id: 'cloze_w8_22', w: 8, topic: 'Team-munka', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a transzdiszciplináris team-modell lényegét!',
+    text: 'A transzdiszciplináris modellben egy {{kulcsszakember}} (key worker) hangolja össze és közvetíti a szakterületek javaslatait a {{család}} felé, csökkentve a szolgáltatások töredezettségét.',
+    exp: 'Egy kulcsszakember (key worker) fogja össze és közvetíti a javaslatokat a család felé.'
+  },
+  {
+    id: 'cloze_w8_23', w: 8, topic: 'Korai intervenciós folyamat', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a generalizáció meghatározását!',
+    text: 'A generalizáció a megtanult készség {{átvitele}} más személyekre, helyszínekre és helyzetekre; fogyatékossággal élő gyermeknél a spontán átvitel gyakran nem működik {{automatikusan}}.',
+    exp: 'A készség átvitele más kontextusokra; a spontán átvitel gyakran nem automatikus.'
+  },
+  {
+    id: 'cloze_w8_24', w: 8, topic: 'Korai intervenciós folyamat', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az átmenet-tervezés jelentőségét!',
+    text: 'Az intézményi {{átmenetek}} különösen sérülékeny pontok, ezért az átmenet-tervezés (dokumentáció átadása, közös látogatások, fokozatos {{beillesztés}}) nélkülözhetetlen.',
+    exp: 'Az átmenetek sérülékeny pontok; az átmenet-tervezés nélkülözhetetlen.'
+  },
+  {
+    id: 'cloze_w8_25', w: 8, topic: 'Segítő technológia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a segítő technológia meghatározását!',
+    text: 'A segítő technológia minden olyan eszköz vagy rendszer — az alacsony {{technológiájú}} megoldástól a komplexig —, amely a személy {{funkcionális}} képességeit növeli, fenntartja vagy javítja.',
+    exp: 'Bármely eszköz az alacsony technológiájútól a komplexig, amely a funkcionális képességeket segíti.'
+  },
+  {
+    id: 'cloze_w8_26', w: 8, topic: 'Segítő technológia', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az alternatív hozzáférés meghatározását!',
+    text: 'Az alternatív hozzáférés lehetővé teszi, hogy a hagyományos {{beviteli}} móddal élni nem tudó felhasználó is interakcióba léphessen — pl. kapcsoló (switch), {{szemkövető}} rendszer, fejmozgás-vezérlés.',
+    exp: 'A hagyományos bevitelt nem használó személynek is lehetővé teszi az interakciót (kapcsoló, szemkövetés).'
+  },
+  {
+    id: 'cloze_w8_27', w: 8, topic: 'Segítő technológia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az AAC meghatározását!',
+    text: 'Az augmentatív és alternatív kommunikáció a beszédet {{kiegészítő}} vagy {{helyettesítő}} kommunikációs formák és eszközök összessége korlátozott beszédprodukció esetén.',
+    exp: 'A beszédet kiegészítő (augmentatív) vagy helyettesítő (alternatív) kommunikáció.'
+  },
+  {
+    id: 'cloze_w8_28', w: 8, topic: 'Segítő technológia', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a pozicionálás meghatározását!',
+    text: 'A pozicionálás a test funkcionálisan optimális és biztonságos {{testtartásának}} biztosítása, amely alapfeltétele a kéz-, fej- és {{szemkontroll}} hatékony használatának.',
+    exp: 'Az optimális testtartás biztosítása; alapfeltétele a kéz-, fej- és szemkontrollnak.'
+  },
+  {
+    id: 'cloze_w8_29', w: 8, topic: 'Segítő technológia', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a környezetvezérlés meghatározását!',
+    text: 'A környezetvezérlés olyan rendszer, amely a {{környezeti}} elemek (fény, ajtó, eszközök) önálló, adaptált működtetését teszi lehetővé, növelve az {{autonómiát}}.',
+    exp: 'A környezeti elemek önálló, adaptált működtetése; növeli az autonómiát.'
+  },
+  {
+    id: 'cloze_w8_30', w: 8, topic: 'Technológia előnyei és korlátai', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a segítő technológia korlátjára vonatkozó mondatot!',
+    text: 'Meghibásodás vagy finanszírozási nehézség esetén a hozzáférés hirtelen megszakadhat, ezért mindig szükséges alacsony technológiájú {{tartalék}} megoldás (pl. papíralapú kommunikációs {{tábla}}).',
+    exp: 'Mindig kell alacsony technológiájú tartalék (pl. papíralapú kommunikációs tábla).'
   }
 ];

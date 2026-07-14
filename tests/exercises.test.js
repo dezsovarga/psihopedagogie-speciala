@@ -18,6 +18,7 @@ const EXERCISE_FILES = [
   'exercises/worksheet_5.js',
   'exercises/worksheet_6.js',
   'exercises/worksheet_7.js',
+  'exercises/worksheet_8.js',
   'exercises/mixed.js',
   'exercises/essays.js',
   'exercises/lists.js',
@@ -258,7 +259,7 @@ describe('define questions', () => {
   });
 
   test('w is a valid worksheet (1–7) or real-exam year (>= 2000), not shared (0)', () => {
-    const bad = EXERCISES.filter(e => e.type === 'define' && ![1,2,3,4,5,6,7].includes(e.w) && e.w < 2000);
+    const bad = EXERCISES.filter(e => e.type === 'define' && ![1,2,3,4,5,6,7,8].includes(e.w) && e.w < 2000);
     expect(bad.map(e => e.id)).toEqual([]);
   });
 });
@@ -270,7 +271,7 @@ describe('essay questions', () => {
   });
 
   test('w is a valid worksheet (1–7) or real-exam year (>= 2000), not shared (0)', () => {
-    const bad = EXERCISES.filter(e => e.type === 'essay' && ![1,2,3,4,5,6,7].includes(e.w) && e.w < 2000);
+    const bad = EXERCISES.filter(e => e.type === 'essay' && ![1,2,3,4,5,6,7,8].includes(e.w) && e.w < 2000);
     expect(bad.map(e => e.id)).toEqual([]);
   });
 });
@@ -293,7 +294,7 @@ describe('Session slot coverage', () => {
     expect(count).toBeGreaterThanOrEqual(2);
   });
 
-  test.each([1, 2, 3, 4, 5, 6, 7])('worksheet %i has enough questions for a full session (need >= 10)', (w) => {
+  test.each([1, 2, 3, 4, 5, 6, 7, 8])('worksheet %i has enough questions for a full session (need >= 10)', (w) => {
     const count = EXERCISES.filter(e => e.w === w).length;
     expect(count).toBeGreaterThanOrEqual(10);
   });
@@ -308,7 +309,7 @@ describe('Session slot coverage', () => {
     expect(count).toBeGreaterThanOrEqual(20);
   });
 
-  test.each([2, 3, 4, 5, 6, 7])('worksheet %i has at least 3 define questions', (w) => {
+  test.each([2, 3, 4, 5, 6, 7, 8])('worksheet %i has at least 3 define questions', (w) => {
     const count = EXERCISES.filter(e => e.type === 'define' && e.w === w).length;
     expect(count).toBeGreaterThanOrEqual(3);
   });
@@ -320,13 +321,13 @@ describe('Session slot coverage', () => {
   });
 
   // Each worksheet must have defines from more than just I. feladat (Fogalommeghatározás)
-  test.each([1, 2, 3, 4, 5, 6, 7])('worksheet %i has define questions outside the Fogalommeghatározás topic', (w) => {
+  test.each([1, 2, 3, 4, 5, 6, 7, 8])('worksheet %i has define questions outside the Fogalommeghatározás topic', (w) => {
     const count = EXERCISES.filter(e => e.type === 'define' && e.w === w && e.topic !== 'Fogalommeghatározás').length;
     expect(count).toBeGreaterThanOrEqual(1);
   });
 
   // Enumeration (list) type — every worksheet must have enough list questions
-  test.each([1, 2, 3, 4, 5, 6, 7])('worksheet %i has at least 5 list (enumeration) questions', (w) => {
+  test.each([1, 2, 3, 4, 5, 6, 7, 8])('worksheet %i has at least 5 list (enumeration) questions', (w) => {
     const count = EXERCISES.filter(e => e.type === 'list' && e.w === w).length;
     expect(count).toBeGreaterThanOrEqual(5);
   });

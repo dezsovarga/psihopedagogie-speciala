@@ -153,7 +153,7 @@ function updateHomeUI() {
   const mastered = Object.values(progress).filter(p => p.interval >= 4).length;
   document.getElementById('stat-mastered').textContent = mastered;
 
-  [1, 2, 3, 4, 5, 6, 7].forEach(w => {
+  [1, 2, 3, 4, 5, 6, 7, 8].forEach(w => {
     const wEx = EXERCISES.filter(e => e.w === w);
     const done = wEx.filter(e => (progress[e.id]?.interval||1) >= 2).length;
     const pct = wEx.length ? Math.round(done / wEx.length * 100) : 0;

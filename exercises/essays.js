@@ -1327,4 +1327,151 @@ Adaptálás autizmus spektrumon lévő tanuló számára:
   exp:'Az értékelést a PIP céljaihoz kell igazítani: módszer, item-típus, időkeret és segédeszközök adaptálása; ipszatív szemlélet; a torzítások (halo, Pygmalion) kerülése; etikus, megbélyegzésmentes lebonyolítás.'
 },
 
+// ══════════════════════════════════════════════
+// FOGALOMMEGHATÁROZÁSOK – 8. VÁLTOZAT
+// (Motoros/neuromotoros/halmozott fogyatékosság · Korai intervenció · Segítő technológiák)
+// ══════════════════════════════════════════════
+{
+  id:'def_w8_01', w:8, topic:'Motoros fogyatékosság', type:'define', diff:2, points:2,
+  q:'Határozza meg a motoros fogyatékosság (deficiență motorie) fogalmát!',
+  modelAnswer:'Motoros fogyatékosság (deficiență motorie): olyan tartós állapot, amely a mozgásszervrendszer (csontok, izmok, ízületek) vagy az idegrendszer mozgásszabályozó funkcióinak károsodásából ered, és jelentősen korlátozza a helyváltoztatást, a testtartás fenntartását és/vagy a finommotoros tevékenységeket. Lehet veleszületett (pl. végtaghiány, gerincvelő-dysraphia) vagy szerzett (baleset, betegség következménye).',
+  exp:'Tartós állapot a mozgásszervrendszer vagy az idegrendszer mozgásszabályozó funkcióinak károsodásából; korlátozza a helyváltoztatást, testtartást, finommotorikát; lehet veleszületett vagy szerzett.'
+},
+{
+  id:'def_w8_02', w:8, topic:'Neuromotoros zavar', type:'define', diff:2, points:2,
+  q:'Határozza meg a neuromotoros zavar fogalmát!',
+  modelAnswer:'Neuromotoros zavar: a központi vagy perifériás idegrendszer károsodásából eredő mozgászavar, amelynél az izomtónus szabályozása, a mozgáskoordináció, az egyensúly vagy a mozgástervezés (praxis) sérül. Ide tartozik pl. a cerebrális parézis, a spina bifida neurológiai vetülete, egyes neuromuszkuláris betegségek (pl. izomdisztrófia).',
+  exp:'Az idegrendszer károsodásából eredő mozgászavar: sérül az izomtónus-szabályozás, a koordináció, az egyensúly vagy a mozgástervezés (pl. CP, izomdisztrófia).'
+},
+{
+  id:'def_w8_03', w:8, topic:'Cerebrális parézis', type:'define', diff:2, points:2,
+  q:'Határozza meg a cerebrális parézis (CP, infantilis agyi bénulás) fogalmát!',
+  modelAnswer:'Cerebrális parézis (CP, infantilis agyi bénulás): nem progresszív, de a fejlődés során változó megjelenésű mozgás- és testtartászavar-együttes, amely a fejlődő agy (magzati vagy csecsemőkori) károsodásából ered. Gyakran társulnak hozzá érzékelési, kognitív, kommunikációs, viselkedési zavarok és epilepszia.',
+  exp:'Nem progresszív, de változó megjelenésű mozgás- és testtartászavar a fejlődő agy károsodásából; gyakran társulnak érzékelési, kognitív, kommunikációs zavarok és epilepszia.'
+},
+{
+  id:'def_w8_04', w:8, topic:'Halmozott fogyatékosság', type:'define', diff:3, points:2,
+  q:'Határozza meg a halmozott fogyatékosság (plurihandicap) fogalmát!',
+  modelAnswer:'Halmozott fogyatékosság (dizabilitate multiplă/plurihandicap): két vagy több, egymástól minőségileg különböző fogyatékossági terület (pl. motoros + értelmi, vagy motoros + érzékszervi) egyidejű fennállása ugyanazon személynél, ahol a területek kölcsönösen felerősítik egymás hatását, ezért a támogatási szükséglet nem az egyes fogyatékosságok összegeként, hanem minőségileg új, komplex profilként értelmezendő.',
+  exp:'Két vagy több, minőségileg különböző fogyatékossági terület egyidejű fennállása, amelyek kölcsönösen felerősítik egymást — a támogatás minőségileg új, komplex profil, nem az egyes területek összege.'
+},
+{
+  id:'def_w8_05', w:8, topic:'Funkcionális mobilitás', type:'define', diff:2, points:2,
+  q:'Határozza meg a funkcionális mobilitás fogalmát!',
+  modelAnswer:'Funkcionális mobilitás: az a gyakorlati képesség, amellyel a személy a mindennapi élet helyzeteiben biztonságosan és hatékonyan változtat helyzetet és helyet (pl. ágyból székbe ülés, teremben közlekedés, lépcsőhasználat) — függetlenül attól, hogy ez önálló járással, segédeszközzel vagy kerekesszékkel valósul meg. A hangsúly a tevékenységi szintű teljesítményen van, nem a mozgásminta normalitásán.',
+  exp:'A mindennapi helyzetekben való biztonságos, hatékony helyzet- és helyváltoztatás gyakorlati képessége; a hangsúly a tevékenységi teljesítményen van, nem a mozgásminta normalitásán.'
+},
+{
+  id:'def_w8_06', w:8, topic:'Cerebrális parézis', type:'define', diff:2, points:2,
+  q:'Határozza meg a spasztikus cerebrális parézis fogalmát!',
+  modelAnswer:'Spasztikus CP: a cerebrális parézis leggyakoribb típusa, amelyet fokozott izomtónus és jellegzetes, „ollózó” mozgásminta jellemez. Pedagógiai következménye, hogy az írási-rajzolási feladatoknál adaptált eszközökre (vastagított ceruzafogó, dőlt írólap, digitális alternatíva) és hosszabb végrehajtási időre van szükség, valamint az ülő testtartás stabilizálása elengedhetetlen a figyelem fenntartásához.',
+  exp:'A leggyakoribb CP-típus: fokozott izomtónus, „ollózó” mozgásminta; adaptált íróeszközöket, hosszabb időt és stabil testtartást igényel.'
+},
+{
+  id:'def_w8_07', w:8, topic:'Cerebrális parézis', type:'define', diff:3, points:2,
+  q:'Határozza meg a dyskinetikus/atetoid cerebrális parézis fogalmát!',
+  modelAnswer:'Dyskinetikus/atetoid CP: cerebrális parézis-típus, amelyet ingadozó izomtónus és akaratlan, célra nem irányuló mozgások jellemeznek, gyakran érintett az artikuláció. Pedagógiai következménye, hogy a kommunikáció támogatására augmentatív-alternatív kommunikációs (AAC) eszközök bevezetése indokolt lehet, és a feladatvégzéshez stabil, rögzített munkafelület és testhelyzet szükséges, mert a mozgások kontrollálatlansága rontja a pontosságot.',
+  exp:'Ingadozó tónus, akaratlan, célra nem irányuló mozgások, gyakran érintett artikuláció; AAC-eszközök és rögzített munkafelület indokolt.'
+},
+{
+  id:'def_w8_08', w:8, topic:'Cerebrális parézis', type:'define', diff:3, points:2,
+  q:'Határozza meg az ataxiás cerebrális parézis fogalmát!',
+  modelAnswer:'Ataxiás CP: cerebrális parézis-típus, amelyet egyensúly- és koordinációzavar, bizonytalan, széles alapú járás és célzási nehézség jellemez. Pedagógiai következménye, hogy a téri tájékozódást és egyensúlyt igénylő tevékenységeknél (pl. testnevelés, közlekedés a teremben) fokozott biztosításra és lassabb tempóra van szükség, az írásnál pedig a vonalvezetés bizonytalansága miatt vastagabb vonalú, nagyobb méretű feladatlapok segítenek.',
+  exp:'Egyensúly- és koordinációzavar, széles alapú járás, célzási nehézség; fokozott biztosítást, lassabb tempót és nagyobb méretű feladatlapokat igényel.'
+},
+{
+  id:'def_w8_09', w:8, topic:'Korai intervenció', type:'define', diff:2, points:3,
+  q:'Határozza meg a korai intervenció (intervenție timpurie) fogalmát!',
+  modelAnswer:'A korai intervenció (intervenție timpurie) azoknak a koordinált, család- és gyermekközpontú szolgáltatásoknak az összessége, amelyeket a fejlődési kockázatnak kitett vagy már azonosított fejlődési eltéréssel/fogyatékossággal élő kisgyermek (jellemzően 0–6/7 éves kor) és családja számára nyújtanak, azzal a céllal, hogy a fejlődés legérzékenyebb (plaszticitás szempontjából legkedvezőbb) időszakában segítsék elő a gyermek fejlődési potenciáljának kibontakozását, megelőzzék a másodlagos nehézségek kialakulását, és megerősítsék a család kompetenciáit.',
+  exp:'Koordinált, család- és gyermekközpontú szolgáltatások 0–6/7 éves, kockázatnak kitett vagy eltéréssel élő gyermek és családja számára; a plaszticitás időszakát használja, megelőz és megerősíti a családot.'
+},
+{
+  id:'def_w8_10', w:8, topic:'Értékelés a korai intervencióban', type:'define', diff:2, points:2,
+  q:'Határozza meg a szűrés (screening) fogalmát a korai intervenció kontextusában!',
+  modelAnswer:'Szűrés (screening): rövid, gyors, széles populáción alkalmazható eljárás (pl. fejlődési kérdőívek, szűrőtesztek), amelynek célja nem a diagnózis felállítása, hanem annak jelzése, hogy szükséges-e részletesebb kivizsgálás. Alacsony specificitású, de magas érzékenységű eszköz.',
+  exp:'Rövid, gyors, széles populáción alkalmazott jelzőeljárás; nem diagnózist ad, hanem a további kivizsgálás szükségességét jelzi; magas érzékenység, alacsony specificitás.'
+},
+{
+  id:'def_w8_11', w:8, topic:'Értékelés a korai intervencióban', type:'define', diff:3, points:2,
+  q:'Határozza meg a diagnosztikus értékelés (evaluare complexă/diagnostică) fogalmát!',
+  modelAnswer:'Diagnosztikus értékelés (evaluare complexă/diagnostică): részletes, több szakterületet (pszichológia, orvosi terület, logopédia, pszichopedagógia) bevonó folyamat, amely a román rendszerben jellemzően a CJRAE/CMBRAE komplex kiértékelő szolgálatán keresztül zajlik, és amelynek eredménye a fogyatékosság/CES típusának és fokának megállapítása, valamint a szolgáltatási terv (plan de servicii individualizat, PSI) alapja.',
+  exp:'Részletes, multidiszciplináris folyamat (CJRAE/CMBRAE); megállapítja a fogyatékosság/CES típusát és fokát, és megalapozza a szolgáltatási tervet (PSI).'
+},
+{
+  id:'def_w8_12', w:8, topic:'Értékelés a korai intervencióban', type:'define', diff:2, points:2,
+  q:'Határozza meg a fejlődésmonitorozás (monitorizarea dezvoltării) fogalmát!',
+  modelAnswer:'Fejlődésmonitorozás (monitorizarea dezvoltării): folyamatos, ismétlődő nyomon követés a program teljes időtartama alatt, amely nem egyszeri döntést, hanem a célok és módszerek rendszeres felülvizsgálatát és korrekcióját szolgálja.',
+  exp:'Folyamatos, ismétlődő nyomon követés a program egésze alatt; a célok és módszerek rendszeres felülvizsgálata és korrekciója, nem egyszeri döntés.'
+},
+{
+  id:'def_w8_13', w:8, topic:'Team-munka', type:'define', diff:3, points:2,
+  q:'Határozza meg a transzdiszciplináris team-modell fogalmát (a key worker szerepével)!',
+  modelAnswer:'Transzdiszciplináris team-modell: a multidiszciplináris modellnél integráltabb együttműködési forma, amelyben egy „kulcsszakember” (key worker) hangolja össze és közvetíti a többi szakterület javaslatait a család felé, csökkentve a család terhelését és a szolgáltatások közötti töredezettséget. A család mindkét modellben egyenrangú partner, nem csupán információforrás.',
+  exp:'Integrált team-modell, amelyben egy kulcsszakember (key worker) fogja össze és közvetíti a szakterületek javaslatait a család felé, csökkentve a terhelést és a töredezettséget.'
+},
+{
+  id:'def_w8_14', w:8, topic:'Korai intervenciós folyamat', type:'define', diff:2, points:2,
+  q:'Határozza meg a generalizáció fogalmát a korai intervencióban!',
+  modelAnswer:'Generalizáció: a megtanult készség átvitele más személyekre, helyszínekre és helyzetekre. Fejlődésében veszélyeztetett vagy fogyatékossággal élő gyermeknél a spontán átvitel gyakran nem működik automatikusan, ezért a korai intervenciós programnak tudatosan több kontextusban (otthon, óvoda, tágabb közösség) kell gyakoroltatnia a készségeket.',
+  exp:'A megtanult készség átvitele más személyekre, helyszínekre, helyzetekre; mivel a spontán átvitel gyakran nem automatikus, tudatosan több kontextusban kell gyakoroltatni.'
+},
+{
+  id:'def_w8_15', w:8, topic:'Korai intervenciós folyamat', type:'define', diff:3, points:2,
+  q:'Határozza meg az intézményi átmenet-tervezés (transition planning) fogalmát!',
+  modelAnswer:'Átmenet-tervezés (transition planning): az intézményi átmenetek (pl. korai intervencióból óvodába, óvodából iskolába) tudatos előkészítése, mivel ezek különösen sérülékeny pontok — a szolgáltatások, a szakemberek és gyakran a módszertan is megváltozik. Elemei: a dokumentáció átadása, közös látogatások, fokozatos beillesztés és a fogadó intézmény felkészítése, hogy a korábban elért fejlődési eredmények ne vesszenek el.',
+  exp:'Az intézmények közötti átmenet tudatos előkészítése (dokumentáció-átadás, közös látogatások, fokozatos beillesztés, a fogadó intézmény felkészítése), hogy az elért eredmények ne vesszenek el.'
+},
+{
+  id:'def_w8_16', w:8, topic:'Segítő technológia', type:'define', diff:2, points:2,
+  q:'Határozza meg a segítő technológia (tehnologie asistivă) fogalmát!',
+  modelAnswer:'Segítő technológia (tehnologie asistivă): minden olyan eszköz, berendezés vagy rendszer (a legegyszerűbb, alacsony technológiájú megoldástól — pl. vastagított fogantyú — a komplex elektronikus rendszerekig), amely a fogyatékossággal élő személy funkcionális képességeit növeli, fenntartja vagy javítja.',
+  exp:'Bármely eszköz vagy rendszer az alacsony technológiájútól a komplexig, amely a funkcionális képességeket növeli, fenntartja vagy javítja.'
+},
+{
+  id:'def_w8_17', w:8, topic:'Segítő technológia', type:'define', diff:3, points:2,
+  q:'Határozza meg az alternatív hozzáférés (acces alternativ) fogalmát!',
+  modelAnswer:'Alternatív hozzáférés (acces alternativ): azok a módszerek és eszközök, amelyek lehetővé teszik, hogy a hagyományos beviteli móddal (egérrel, billentyűzettel, kézi íróeszközzel) élni nem tudó felhasználó mégis interakcióba léphessen egy eszközzel vagy tevékenységgel — pl. kapcsoló (switch), szemkövető rendszer, fejmozgás-vezérlés.',
+  exp:'Módszerek/eszközök, amelyek a hagyományos bevitelt (egér, billentyűzet, kézírás) nem használó személynek is lehetővé teszik az interakciót — pl. kapcsoló, szemkövetés, fejmozgás-vezérlés.'
+},
+{
+  id:'def_w8_18', w:8, topic:'Segítő technológia', type:'define', diff:2, points:2,
+  q:'Határozza meg az augmentatív és alternatív kommunikáció (AAC) fogalmát!',
+  modelAnswer:'Augmentatív és alternatív kommunikáció (AAC): a beszédet kiegészítő (augmentatív) vagy helyettesítő (alternatív) kommunikációs formák és eszközök összessége — a gesztusoktól és képkártyáktól a beszédgeneráló szoftverekig —, amelyek célja a kifejezőkészség biztosítása korlátozott beszédprodukció esetén.',
+  exp:'A beszédet kiegészítő vagy helyettesítő formák és eszközök összessége (gesztus, képkártya, beszédgenerátor) a kifejezőkészség biztosítására korlátozott beszédprodukciónál.'
+},
+{
+  id:'def_w8_19', w:8, topic:'Segítő technológia', type:'define', diff:2, points:2,
+  q:'Határozza meg a pozicionálás (poziționare) fogalmát!',
+  modelAnswer:'Pozicionálás (poziționare): a test megfelelő, funkcionálisan optimális és biztonságos testtartásának biztosítása speciális eszközök (adaptált szék, állító keret, ékpárna) segítségével, amely alapfeltétele a kéz-, fej- és szemkontroll hatékony használatának.',
+  exp:'A test funkcionálisan optimális, biztonságos testtartásának biztosítása speciális eszközökkel; alapfeltétele a kéz-, fej- és szemkontrollnak.'
+},
+{
+  id:'def_w8_20', w:8, topic:'Segítő technológia', type:'define', diff:3, points:2,
+  q:'Határozza meg a környezetvezérlés (control al mediului) fogalmát!',
+  modelAnswer:'Környezetvezérlés (control al mediului): olyan technológiai rendszerek, amelyek lehetővé teszik a személy számára a környezeti elemek (fény, ajtó, elektronikus eszközök) önálló, adaptált kapcsoló vagy vezérlőfelület általi működtetését, növelve az autonómiát.',
+  exp:'Technológiai rendszerek, amelyek a környezeti elemek (fény, ajtó, eszközök) önálló, adaptált működtetését teszik lehetővé, növelve az autonómiát.'
+},
+
+// ══════════════════════════════════════════════
+// ESSZÉ KÉRDÉSEK – 8. VÁLTOZAT
+// ══════════════════════════════════════════════
+{
+  id:'essay_w8_01', w:8, topic:'Halmozott fogyatékosság', type:'essay', diff:3, points:5,
+  q:'Fejtse ki, miért jelent a halmozott fogyatékosság önálló támogatási profilt, és szemléltesse három példával!',
+  modelAnswer:'A halmozott fogyatékosság esetében a különböző területek (pl. motoros és érzékszervi, vagy motoros és értelmi) nem egymás mellett, additív módon, hanem kölcsönhatásban jelentkeznek: az egyik terület korlátozottsága megváltoztatja, hogy a másik terület hogyan fejlődhet és hogyan kompenzálható. Emiatt egyetlen standard, fogyatékosság-specifikus program sem alkalmazható változtatás nélkül; a támogatásnak személyre szabott, integrált tervben (egyéni fejlesztési terv – plan de intervenție personalizat, PIP) kell testet öltenie, amelyet a román rendszerben a CJRAE/CMBRAE keretében működő komplex kiértékelési folyamat alapoz meg.\n\nPéldák:\n1. Motoros fogyatékosság + látássérülés: a mozgáskorlátozottság miatt a tanuló nem tudja spontán módon kompenzálni a látásveszteséget mozgással/tapintással való felfedezéssel, így a téri tájékozódás fejlesztése speciálisan adaptált, vezetett módszereket igényel.\n2. Cerebrális parézis + súlyos beszédmotoros zavar: a kognitív képességek beszéd alapú felmérése torzított eredményt adna, ezért a diagnosztikának AAC-alapú vagy nonverbális eszközöket kell alkalmaznia — az értékelési módszer megválasztása maga is a halmozottság következménye.\n3. Motoros fogyatékosság + intellektuális képességzavar: a mozgásfejlesztés és a fogalmi fejlesztés célkitűzéseit egyetlen integrált tevékenységbe (funkcionális, cselekvésbe ágyazott tanulás) kell szervezni, mert a két terület elkülönített fejlesztése nem hoz átvitelt a mindennapi működésbe.',
+  exp:'A területek kölcsönhatásban, nem additív módon jelentkeznek, ezért személyre szabott, integrált terv (PIP, CJRAE/CMBRAE) kell. Három példa: motoros+látás, CP+beszédmotoros zavar, motoros+értelmi.'
+},
+{
+  id:'essay_w8_02', w:8, topic:'Korai intervenciós folyamat', type:'essay', diff:3, points:6,
+  q:'Mutassa be egy korai intervenciós program hat lépését a felméréstől az újraértékelésig!',
+  modelAnswer:'1. Beutalás/jelzés (referire): a családorvos, óvodapedagógus vagy szülő jelzi az aggodalmat, illetve megtörténik a kezdeti szűrés.\n2. Komplex felmérés (evaluare inițială): a multi-/transzdiszciplináris team felméri a gyermek fejlődési szintjét minden területen, valamint a család szükségleteit és erőforrásait.\n3. Célmeghatározás a családdal közösen: funkcionális, a mindennapi életre vonatkozó, mérhető célok kitűzése, amelyeket a szülő is sajátjának érez.\n4. A beavatkozási/szolgáltatási terv kidolgozása (PSI/PIP): konkrét stratégiák, felelősök, gyakoriság és helyszín (otthon, óvoda) meghatározása.\n5. A terv megvalósítása a mindennapi rutinokba ágyazva: a szakemberek modelleznek, tréningeznek, és folyamatos konzultációt nyújtanak a szülőnek/gondozónak.\n6. Rendszeres újraértékelés és a terv korrekciója: a fejlődés nyomon követése alapján a célok és módszerek periodikus felülvizsgálata, szükség esetén új szolgáltatások bevonása vagy az átmenet előkészítése.',
+  exp:'A hat lépés: 1. beutalás/jelzés, 2. komplex felmérés, 3. közös célmeghatározás, 4. a terv kidolgozása (PSI/PIP), 5. megvalósítás a rutinokba ágyazva, 6. rendszeres újraértékelés és korrekció.'
+},
+{
+  id:'essay_w8_03', w:8, topic:'Segítő technológia', type:'essay', diff:2, points:4,
+  q:'Ismertessen két előnyt és két korlátot a segítő technológia iskolai alkalmazásával kapcsolatban!',
+  modelAnswer:'Előnyök:\n1. Növeli a tanuló önállóságát és részvételi lehetőségét a tantervi tevékenységekben, csökkentve a felnőtt-függőséget.\n2. Lehetővé teszi a valós tudás és kompetenciák pontosabb felmérését, mivel a válaszadás motoros korlátja többé nem torzítja az értékelést.\n\nKorlátok:\n1. Az eszköz bevezetése és hatékony használata idő- és tréningigényes (tanuló, pedagógus és család részéről egyaránt), ami kezdetben lassíthatja a folyamatot.\n2. Technikai meghibásodás, karbantartási vagy finanszírozási nehézség esetén a tanuló kommunikációs/tanulási hozzáférése hirtelen megszakadhat, ezért mindig szükséges alacsony technológiájú tartalék megoldás (pl. papíralapú kommunikációs tábla) is.',
+  exp:'Előnyök: nagyobb önállóság/részvétel; pontosabb tudásfelmérés. Korlátok: idő- és tréningigényes bevezetés; meghibásodás/finanszírozás kockázata miatt alacsony technológiájú tartalék kell.'
+},
+
 ]; // end EXERCISES_ESSAYS

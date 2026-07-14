@@ -61,9 +61,10 @@ function worksheetLabel(w) {
 }
 
 describe('worksheet label (shown in random mode)', () => {
-  test('worksheet numbers 1–7 map to "N. Változat"', () => {
+  test('worksheet numbers 1–8 map to "N. Változat"', () => {
     expect(worksheetLabel(1)).toBe('1. Változat');
     expect(worksheetLabel(7)).toBe('7. Változat');
+    expect(worksheetLabel(8)).toBe('8. Változat');
   });
   test('shared exercises (w:0) map to "Vegyes"', () => {
     expect(worksheetLabel(0)).toBe('Vegyes');

@@ -502,5 +502,78 @@ const EXERCISES_LISTS = [
       { label:'Egyéni fejlődéshez viszonyított (ipszatív)', alt:['ipszatív', 'egyéni fejlődés', 'saját korábbi'] }
     ],
     exp:'A három mód: kritériumorientált (standardhoz), normaorientált (csoportátlaghoz) és ipszatív (saját korábbi teljesítményhez) viszonyító értékelés.'
+  },
+
+  // ─── 8. VÁLTOZAT ──────────────────────────────────────────────────────────
+  {
+    id:'list_w8_01', w:8, topic:'Etiológia és osztályozás', type:'list', diff:2, need:3,
+    q:'Sorolja fel a motoros/neuromotoros fogyatékosság etiológiai és osztályozási szempontjait (legalább hármat)!',
+    items:[
+      { label:'Az érintettség időpontja (prenatális/perinatális/posztnatális)', alt:['érintettség időpontja', 'prenatális', 'perinatális', 'posztnatális'] },
+      { label:'Az érintett terület kiterjedése (mono-/hemi-/di-/quadriplégia)', alt:['kiterjedés', 'monoplégia', 'hemiplégia', 'diplégia', 'quadriplégia', 'tetraplégia'] },
+      { label:'Az izomtónus jellege (spasztikus/dyskinetikus/ataxiás)', alt:['izomtónus', 'spasztikus', 'dyskinetikus', 'ataxiás', 'hypotóniás'] },
+      { label:'A funkcionális súlyosság (GMFCS I–V.)', alt:['funkcionális súlyosság', 'GMFCS'] },
+      { label:'Az etiológiai eredet jellege (genetikai/strukturális/traumás stb.)', alt:['etiológiai eredet', 'genetikai', 'strukturális', 'traumás', 'multifaktoriális'] }
+    ],
+    exp:'Öt szempont: az érintettség időpontja, az érintett terület kiterjedése, az izomtónus jellege, a funkcionális súlyosság (GMFCS) és az etiológiai eredet jellege.'
+  },
+  {
+    id:'list_w8_02', w:8, topic:'Cerebrális parézis', type:'list', diff:2, need:3,
+    q:'Sorolja fel a cerebrális parézis három fő típusát az izomtónus/mozgásmintázat szerint!',
+    items:[
+      { label:'Spasztikus (fokozott tónus, „ollózó” mozgás)', alt:['spasztikus'] },
+      { label:'Dyskinetikus/atetoid (ingadozó tónus, akaratlan mozgások)', alt:['dyskinetikus', 'atetoid'] },
+      { label:'Ataxiás (egyensúly- és koordinációzavar)', alt:['ataxiás'] }
+    ],
+    exp:'A három fő CP-típus: spasztikus, dyskinetikus/atetoid és ataxiás.'
+  },
+  {
+    id:'list_w8_03', w:8, topic:'Családközpontú alapelvek', type:'list', diff:2, need:4,
+    q:'Sorolja fel a korai intervenció családközpontú alapelveit (legalább négyet)!',
+    items:[
+      { label:'A család mint elsődleges partner', alt:['elsődleges partner', 'család mint partner', 'aktív résztvevő'] },
+      { label:'Erősségalapú megközelítés', alt:['erősségalapú', 'erőforrás', 'kompetenciákra épít'] },
+      { label:'Individualizáció', alt:['individualizáció', 'egyedi kontextus', 'személyre szabott'] },
+      { label:'A mindennapi rutinokba ágyazott fejlesztés', alt:['mindennapi rutin', 'rutinokba ágyazott', 'természetes tevékenység'] },
+      { label:'Átlátható és folyamatos információmegosztás', alt:['információ', 'tájékoztatás', 'átlátható', 'tájékozott beleegyezés'] }
+    ],
+    exp:'Öt alapelv: a család mint elsődleges partner, erősségalapú megközelítés, individualizáció, rutinokba ágyazott fejlesztés, és átlátható, folyamatos információmegosztás.'
+  },
+  {
+    id:'list_w8_04', w:8, topic:'Korai intervenciós folyamat', type:'list', diff:3, need:4,
+    q:'Sorolja fel a korai intervenciós program lépéseit a felméréstől az újraértékelésig (legalább négyet)!',
+    items:[
+      { label:'Beutalás/jelzés (referire) és kezdeti szűrés', alt:['beutalás', 'jelzés', 'referire', 'szűrés'] },
+      { label:'Komplex felmérés (evaluare inițială)', alt:['komplex felmérés', 'evaluare', 'felmérés'] },
+      { label:'Célmeghatározás a családdal közösen', alt:['célmeghatározás', 'célok kitűzése', 'közös cél'] },
+      { label:'A beavatkozási/szolgáltatási terv kidolgozása (PSI/PIP)', alt:['terv kidolgozása', 'PSI', 'PIP', 'beavatkozási terv'] },
+      { label:'A terv megvalósítása a rutinokba ágyazva', alt:['megvalósítás', 'rutinokba ágyazva'] },
+      { label:'Rendszeres újraértékelés és korrekció', alt:['újraértékelés', 'korrekció', 'felülvizsgálat'] }
+    ],
+    exp:'A hat lépés: 1. beutalás/jelzés, 2. komplex felmérés, 3. közös célmeghatározás, 4. terv kidolgozása (PSI/PIP), 5. megvalósítás a rutinokba ágyazva, 6. újraértékelés és korrekció.'
+  },
+  {
+    id:'list_w8_05', w:8, topic:'Segítő technológia', type:'list', diff:2, need:3,
+    q:'Sorolja fel a segítő és hozzáférési technológiák kulcsfogalmait (legalább hármat)!',
+    items:[
+      { label:'Segítő technológia (tehnologie asistivă)', alt:['segítő technológia', 'tehnologie asistivă'] },
+      { label:'Alternatív hozzáférés (kapcsoló, szemkövetés)', alt:['alternatív hozzáférés', 'acces alternativ', 'kapcsoló', 'switch', 'szemkövet'] },
+      { label:'Augmentatív és alternatív kommunikáció (AAC)', alt:['AAC', 'augmentatív', 'alternatív kommunikáció'] },
+      { label:'Pozicionálás (poziționare)', alt:['pozicionálás', 'poziționare', 'testtartás'] },
+      { label:'Környezetvezérlés (control al mediului)', alt:['környezetvezérlés', 'control al mediului'] }
+    ],
+    exp:'Öt kulcsfogalom: segítő technológia, alternatív hozzáférés, AAC, pozicionálás és környezetvezérlés.'
+  },
+  {
+    id:'list_w8_06', w:8, topic:'Technológiaválasztás', type:'list', diff:3, need:3,
+    q:'Sorolja fel a segítő technológia kiválasztásának személy-, feladat- és környezetközpontú szempontjait (legalább hármat)!',
+    items:[
+      { label:'A tanuló motoros és érzékelési profilja', alt:['motoros profil', 'érzékelési profil', 'megbízható mozgás'] },
+      { label:'A kognitív és nyelvi szint', alt:['kognitív szint', 'nyelvi szint'] },
+      { label:'A konkrét tevékenység/feladat követelményei', alt:['feladat követelményei', 'tevékenység követelményei'] },
+      { label:'A használati környezet jellemzői', alt:['használati környezet', 'osztályterem', 'hordozhatóság'] },
+      { label:'A fenntarthatóság (támogatási kapacitás, költség, motiváció)', alt:['fenntarthatóság', 'költség', 'támogatási kapacitás', 'motiváció'] }
+    ],
+    exp:'Öt szempont: a tanuló motoros/érzékelési profilja, a kognitív-nyelvi szint, a feladat követelményei, a használati környezet és a fenntarthatóság.'
   }
 ];
