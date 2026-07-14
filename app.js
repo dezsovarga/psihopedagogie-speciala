@@ -497,8 +497,10 @@ function buildExerciseHTML(ex) {
       <span class="essay-points-badge">${ex.points} pont</span>
     </div>
     <div id="mic-interim" class="mic-interim-preview"></div>`;
-    // "Segítség" (get help): reveals a hint + important keywords, if provided.
-    if (ex.hint || (Array.isArray(ex.hintKeywords) && ex.hintKeywords.length)) {
+    // "Segítség" (get help): reveals a guidance hint + important keywords before
+    // answering. Shown on every define/essay — uses the authored `hint` when
+    // present, otherwise falls back to `exp`; keyword chips appear where authored.
+    if (ex.hint || ex.exp || (Array.isArray(ex.hintKeywords) && ex.hintKeywords.length)) {
       html += renderHelp(ex);
     }
   }
@@ -549,6 +551,7 @@ function attachExerciseListeners(ex) {
 // Renders a toggle button and a hidden panel with a guidance hint and the
 // important keywords to include. Piloted on worksheet 10.
 function renderHelp(ex) {
+  const hintText = ex.hint || ex.exp || '';       // authored hint, else the exp guidance
   const keywords = Array.isArray(ex.hintKeywords) ? ex.hintKeywords : [];
   const chips = keywords.map(k => `<span class="help-chip">${k}</span>`).join('');
   return `
@@ -556,7 +559,7 @@ function renderHelp(ex) {
       <button type="button" class="btn-help" id="btn-help" onclick="toggleHelp()"
         aria-expanded="false" aria-controls="help-panel">💡 Segítség</button>
       <div id="help-panel" class="help-panel" hidden>
-        ${ex.hint ? `<p class="help-hint">${ex.hint}</p>` : ''}
+        ${hintText ? `<p class="help-hint">${hintText}</p>` : ''}
         ${chips ? `<div class="help-keywords-label">Fontos kulcsszavak:</div><div class="help-chips">${chips}</div>` : ''}
       </div>
     </div>`;

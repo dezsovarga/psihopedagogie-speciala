@@ -279,10 +279,19 @@ describe('essay questions', () => {
 });
 
 // ─── "Segítség" (Get Help) hint on define/essay ──────────────────────────────
-// A help button reveals a hint + important keywords so the learner knows what to
-// include. Piloted on worksheet 10 first; when present the fields must be valid.
+// A help button reveals a guidance hint + important keywords so the learner
+// knows what to include. It is shown on EVERY define/essay (in all session
+// modes): it uses the authored `hint` when present, otherwise falls back to
+// `exp`. Worksheet 10 additionally carries authored `hint` + `hintKeywords`.
 describe('define/essay help hints', () => {
   const helpables = () => EXERCISES.filter(e => e.type === 'define' || e.type === 'essay');
+
+  test('every define/essay has renderable help content (hint or exp)', () => {
+    const bad = helpables().filter(e =>
+      !(typeof e.hint === 'string' && e.hint.trim()) &&
+      !(typeof e.exp === 'string' && e.exp.trim()));
+    expect(bad.map(e => e.id)).toEqual([]);
+  });
 
   test('every worksheet 10 define/essay has a non-empty hint string', () => {
     const bad = helpables().filter(e => e.w === 10 &&
