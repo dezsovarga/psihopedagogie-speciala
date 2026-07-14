@@ -1109,5 +1109,187 @@ const EXERCISES_CLOZE = [
     q: 'Egészítsd ki a generalizációra vonatkozó mondatot!',
     text: 'A funkcionális probléma lépéssorát hasonló mindennapi helyzetekben is {{gyakorolják}} a {{generalizáció}} érdekében.',
     exp: 'A lépéssort más helyzetekben is gyakorolják a generalizációért.'
+  },
+
+  // ─── 10. VÁLTOZAT ─────────────────────────────────────────────────────────
+  {
+    id: 'cloze_w10_01', w: 10, topic: 'Preprofesszionalizáció', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a preprofesszionalizáció meghatározását!',
+    text: 'A preprofesszionalizáció az alapvető {{munkaszokások}}, magatartásformák és attitűdök korai, iskolai megalapozása, még a konkrét {{szakma}} választása előtt.',
+    exp: 'Az alapvető munkaszokások és attitűdök korai megalapozása a szakmaválasztás előtt.'
+  },
+  {
+    id: 'cloze_w10_02', w: 10, topic: 'Professzionalizáció', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a professzionalizáció meghatározását!',
+    text: 'A professzionalizáció egy meghatározott {{munkakörre}} irányuló, konkrét szakmai ismeretek és {{technikai}} készségek elsajátítása.',
+    exp: 'Egy meghatározott munkakörre irányuló szakmai ismeretek és technikai készségek elsajátítása.'
+  },
+  {
+    id: 'cloze_w10_03', w: 10, topic: 'Munkakészség', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a munkakészség meghatározását!',
+    text: 'A munkakészség viselkedéses, kommunikációs és {{funkcionális}} készségek együttese, amely lehetővé teszi egy munkahelyi {{elvárásrendszernek}} való megfelelést.',
+    exp: 'Viselkedéses, kommunikációs és funkcionális készségek a munkahelyi elvárásoknak való megfeleléshez.'
+  },
+  {
+    id: 'cloze_w10_04', w: 10, topic: 'Tranzíció', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a tranzíció meghatározását!',
+    text: 'A tranzíció az iskolai környezetből a {{felnőtt}} élet színterei felé történő, tervezett és {{fokozatos}} átmenet, amely több évre visszanyúló előkészítést igényel.',
+    exp: 'Az iskolából a felnőtt élet felé történő tervezett, fokozatos átmenet.'
+  },
+  {
+    id: 'cloze_w10_05', w: 10, topic: 'Támogatott foglalkoztatás', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a támogatott foglalkoztatás meghatározását!',
+    text: 'A támogatott foglalkoztatásban a személy a {{nyílt}} munkaerőpiacon, valódi {{bérért}} dolgozik, miközben munkahelyi mentor (job coach) segíti a beilleszkedést.',
+    exp: 'A nyílt munkaerőpiacon, valódi bérért, job coach segítségével.'
+  },
+  {
+    id: 'cloze_w10_06', w: 10, topic: 'Munkakészség-területek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a funkcionális akadémiai készségek meghatározását!',
+    text: 'A funkcionális akadémiai készségek a munkavégzéshez szükséges mértékű alapszintű {{olvasás}}, számolás, valamint idő- és {{pénzkezelés}}.',
+    exp: 'Alapszintű olvasás, számolás, idő- és pénzkezelés.'
+  },
+  {
+    id: 'cloze_w10_07', w: 10, topic: 'Preprofesszionális tevékenységek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a job shadowing meghatározását!',
+    text: 'A job shadowing munkahelyi {{látogatás}} és megfigyelés különböző valós {{szakmai}} környezetekben.',
+    exp: 'Munkahelyi látogatás és megfigyelés valós szakmai környezetekben.'
+  },
+  {
+    id: 'cloze_w10_08', w: 10, topic: 'Együttműködés az átmenetben', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az átmenet szereplőinek együttműködésére vonatkozó mondatot!',
+    text: 'A sikeres átmenethez a {{család}}, a munkaadó és a közösségi szolgáltatások tartós, {{koordinált}} együttműködése szükséges.',
+    exp: 'A család, a munkaadó és a közösségi szolgáltatások koordinált együttműködése.'
+  },
+  {
+    id: 'cloze_w10_09', w: 10, topic: 'Munkába állás tényezői', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a munkába állás társadalmi tényezőjére vonatkozó mondatot!',
+    text: 'A munkaadók és munkatársak {{attitűdje}} és tájékozottsága döntő: az {{előítéletek}} jelentős akadályozó tényezőt jelentenek.',
+    exp: 'A munkaadói-társadalmi attitűdök döntők; az előítéletek akadályoznak.'
+  },
+  {
+    id: 'cloze_w10_10', w: 10, topic: 'Pályaorientáció', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a pályaorientáció meghatározását!',
+    text: 'A pályaorientáció segíti a személyt saját {{érdeklődésének}}, képességeinek és értékeinek megismerésében, és ezek összekapcsolásában a lehetséges {{utakkal}}.',
+    exp: 'Az érdeklődés, képességek, értékek megismerése és összekapcsolása a lehetséges utakkal.'
+  },
+  {
+    id: 'cloze_w10_11', w: 10, topic: 'Pályatanácsadás', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a pályatanácsadás meghatározását!',
+    text: 'A pályatanácsadás a pályaorientáció személyre szabott, {{bizalmi}} tanácsadói kapcsolatban megvalósuló, {{segítő}} formája.',
+    exp: 'A pályaorientáció személyre szabott, bizalmi, segítő formája.'
+  },
+  {
+    id: 'cloze_w10_12', w: 10, topic: 'Önrendelkezés', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az önrendelkezés meghatározását!',
+    text: 'Az önrendelkezés (autodeterminare) a saját élet feletti {{döntéshozatal}} képessége és lehetősége, amely a motiváció és az {{életminőség}} kulcstényezője.',
+    exp: 'A saját élet feletti döntéshozatal képessége; a motiváció és életminőség kulcstényezője.'
+  },
+  {
+    id: 'cloze_w10_13', w: 10, topic: 'Támogatott döntéshozatal', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a támogatott döntéshozatal meghatározását!',
+    text: 'A támogatott döntéshozatal nem {{helyettesítő}}, hanem segített döntéshozatal, amelyben a fiatal saját {{preferenciái}} állnak a középpontban.',
+    exp: 'Nem helyettesítő, hanem segített döntéshozatal a fiatal preferenciáival a középpontban.'
+  },
+  {
+    id: 'cloze_w10_14', w: 10, topic: 'Pályaválasztási profil', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a funkcionális önállósági szint meghatározását!',
+    text: 'A funkcionális önállósági szint a napi {{életvezetési}}, közlekedési és {{kommunikációs}} önállóság mértékét írja le.',
+    exp: 'A napi életvezetési, közlekedési és kommunikációs önállóság mértéke.'
+  },
+  {
+    id: 'cloze_w10_15', w: 10, topic: 'Tanácsadási folyamat', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a tanácsadási folyamat első és utolsó szakaszát!',
+    text: 'A pályatanácsadás a {{kapcsolatfelvétel}} és bizalmi viszony kialakításával kezdődik, és a cselekvési terv kidolgozásával, valamint a {{nyomon}} követéssel zárul.',
+    exp: 'A kapcsolatfelvételtől a cselekvési tervig és nyomon követésig.'
+  },
+  {
+    id: 'cloze_w10_16', w: 10, topic: 'Pályaorientációs módszerek', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a személyközpontú tervezés meghatározását!',
+    text: 'A személyközpontú tervezés (person-centered planning) egyéni ülés, ahol a {{tanuló}} és a fontos támogató személyek {{közösen}} alakítják a célokat.',
+    exp: 'A tanuló és támogatói közösen alakítják a célokat.'
+  },
+  {
+    id: 'cloze_w10_17', w: 10, topic: 'Pályaorientációs módszerek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a portfólió-alapú gyűjtemény meghatározását!',
+    text: 'A portfólió-alapú önismereti gyűjtemény az elvégzett feladatokat, a kapott {{visszajelzéseket}} és a tanuló {{önreflexióit}} dokumentálja.',
+    exp: 'Elvégzett feladatok, visszajelzések és önreflexiók dokumentálása.'
+  },
+  {
+    id: 'cloze_w10_18', w: 10, topic: 'Intézményi partnerek', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a pályaorientáció intézményi partnereire vonatkozó mondatot!',
+    text: 'A {{CJRAE}}/CMBRAE koordinálja a pályaorientációs felmérést és tanácsadást, a {{munkaügyi}} szolgáltató pedig álláskeresési támogatást és támogatott foglalkoztatást közvetít.',
+    exp: 'A CJRAE/CMBRAE koordinál; a munkaügyi szolgáltató álláskeresést közvetít.'
+  },
+  {
+    id: 'cloze_w10_19', w: 10, topic: 'Modul tervezése', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a mérhető tanulási cél jellemzőjét!',
+    text: 'A mérhető tanulási cél konkrét {{teljesítménykritériummal}} van megfogalmazva (pl. legalább 80%-os {{pontossággal}}), így megfigyelhető és értékelhető.',
+    exp: 'Konkrét teljesítménykritériummal (pl. 80%-os pontosság) megfogalmazott, értékelhető cél.'
+  },
+  {
+    id: 'cloze_w10_20', w: 10, topic: 'Modul szerkezete', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a modul gyakorlási szakaszait!',
+    text: 'A modulban a {{vezetett}} gyakorlás fokozatosan csökkenő segítségnyújtással történik, majd az önálló, {{differenciált}} gyakorlás a saját támogatási szintnek megfelelően.',
+    exp: 'Vezetett gyakorlás csökkenő segítséggel, majd önálló, differenciált gyakorlás.'
+  },
+  {
+    id: 'cloze_w10_21', w: 10, topic: 'Modul szerkezete', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a modul nyitó és záró elemét!',
+    text: 'A modul a {{ráhangolódás}}/bevezetéssel kezdődik, és a zárás, {{reflexió}} és értékelés szakasszal fejeződik be.',
+    exp: 'A ráhangolódástól a zárás-reflexió-értékelésig.'
+  },
+  {
+    id: 'cloze_w10_22', w: 10, topic: 'Munkahelyi szimuláció', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a munkahelyi szimuláció biztonsági szempontját!',
+    text: 'A szimuláció biztonsági szempontja a megfelelő {{testtartás}} és eszközhasználat, valamint a vészhelyzeti jelzés/{{segítségkérés}} módjának ismerete.',
+    exp: 'Megfelelő testtartás/eszközhasználat és a segítségkérés ismerete.'
+  },
+  {
+    id: 'cloze_w10_23', w: 10, topic: 'Munkahelyi szimuláció', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a munkahelyi szimuláció társas szabályait!',
+    text: 'A szimuláció társas szabályai közé tartozik a {{köszönés}} és bemutatkozás gyakorlása, valamint a munkaidő és a {{szünet}} rendjének betartása.',
+    exp: 'Köszönés/bemutatkozás és a munkaidő-szünet rendjének betartása.'
+  },
+  {
+    id: 'cloze_w10_24', w: 10, topic: 'Reflexió, transzfer, utókövetés', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a transzfer meghatározását!',
+    text: 'A transzfer a megszerzett készségek tudatos {{gyakoroltatása}} más helyzetekben és helyszíneken is, hogy a tanulás ne maradjon egyetlen {{kontextushoz}} kötött.',
+    exp: 'A készségek gyakorlása más helyzetekben, hogy ne maradjon egy kontextushoz kötött.'
+  },
+  {
+    id: 'cloze_w10_25', w: 10, topic: 'Reflexió, transzfer, utókövetés', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az utókövetés meghatározását!',
+    text: 'Az utókövetés a modul lezárása után periodikus, {{dokumentált}} visszacsatolás arról, hogy a készségek {{fennmaradtak}}-e és alkalmazásra kerülnek-e.',
+    exp: 'Periodikus, dokumentált visszacsatolás a készségek fennmaradásáról.'
+  },
+  {
+    id: 'cloze_w10_26', w: 10, topic: 'Differenciálás', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a magas támogatási szükségletű tanuló feladatát!',
+    text: 'Magas támogatási szükségletnél kéz a kézben történő, {{vezetett}} segítségnyújtás és {{leegyszerűsített}}, kevés lépéses feladat alkalmazandó.',
+    exp: 'Kéz a kézben vezetett, leegyszerűsített, kevés lépéses feladat.'
+  },
+  {
+    id: 'cloze_w10_27', w: 10, topic: 'Differenciálás', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki a közepes támogatási szükségletű tanuló feladatát!',
+    text: 'Közepes támogatási szükségletnél {{vizuális}} lépéssor (képes kártyák) alapján, eseti {{szóbeli}} megerősítéssel végzett feladat javasolt.',
+    exp: 'Vizuális lépéssor (képes kártyák) eseti szóbeli megerősítéssel.'
+  },
+  {
+    id: 'cloze_w10_28', w: 10, topic: 'Kompetencia és célok', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki a segítségkérés jelzésmódjait!',
+    text: 'A tanuló megfelelő módon — szóban, {{gesztussal}} vagy {{AAC}}-eszközzel — jelzi, ha segítségre van szüksége a feladat közben.',
+    exp: 'Szóban, gesztussal vagy AAC-eszközzel jelzi a segítségkérést.'
+  },
+  {
+    id: 'cloze_w10_29', w: 10, topic: 'Életre felkészítő tevékenységek', type: 'cloze', diff: 2,
+    q: 'Egészítsd ki az életre felkészítő tevékenységek példáit!',
+    text: 'Életre felkészítő tevékenység az önálló {{életvezetési}} készségek gyakorlása (bevásárlás, étkészítés, közlekedés) és a {{pénzkezelési}} gyakorlatok.',
+    exp: 'Önálló életvezetési készségek és pénzkezelési gyakorlatok.'
+  },
+  {
+    id: 'cloze_w10_30', w: 10, topic: 'Munkakészség-területek', type: 'cloze', diff: 3,
+    q: 'Egészítsd ki az önszabályozási és problémamegoldó készségek meghatározását!',
+    text: 'Az önszabályozási és problémamegoldó készségek magukban foglalják a {{stressztűrést}}, a váratlan helyzetek kezelését, valamint az {{önellenőrzést}} és hibajavítást.',
+    exp: 'Stressztűrés, váratlan helyzetek kezelése, önellenőrzés és hibajavítás.'
   }
 ];

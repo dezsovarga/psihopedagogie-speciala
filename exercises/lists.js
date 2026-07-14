@@ -648,5 +648,78 @@ const EXERCISES_LISTS = [
       { label:'Szintézis, következtetések és reflexió', alt:['szintézis', 'következtetés', 'reflexió', 'tanulság'] }
     ],
     exp:'A hat lépés: az eset kiválasztása, adatgyűjtés, a kulcskérdés azonosítása, többszempontú elemzés, megoldási alternatívák kidolgozása, szintézis és reflexió.'
+  },
+
+  // ─── 10. VÁLTOZAT ─────────────────────────────────────────────────────────
+  {
+    id:'list_w10_01', w:10, topic:'Munkakészség-területek', type:'list', diff:3, need:4,
+    q:'Sorolja fel a munkavégzéshez szükséges készségterületeket (legalább négyet)!',
+    items:[
+      { label:'Munkaszokások és feladattartás', alt:['munkaszokás', 'feladattartás', 'pontosság', 'munkatempó'] },
+      { label:'Kommunikációs és együttműködési készségek', alt:['kommunikáció', 'együttműködés', 'instrukciókövetés', 'segítségkérés'] },
+      { label:'Szociális-viselkedési készségek', alt:['szociális', 'viselkedési', 'normák', 'konfliktus'] },
+      { label:'Funkcionális akadémiai készségek', alt:['funkcionális akadémiai', 'olvasás', 'számolás', 'pénzkezelés'] },
+      { label:'Önszabályozási és problémamegoldó készségek', alt:['önszabályozás', 'problémamegoldó', 'stressztűrés', 'önellenőrzés'] }
+    ],
+    exp:'Öt terület: munkaszokások/feladattartás, kommunikáció/együttműködés, szociális-viselkedési, funkcionális akadémiai, önszabályozási és problémamegoldó készségek.'
+  },
+  {
+    id:'list_w10_02', w:10, topic:'Átmenet lépései', type:'list', diff:3, need:4,
+    q:'Sorolja fel az iskolából a felnőtt életbe történő átmenet lépéseit (legalább négyet)!',
+    items:[
+      { label:'Korai tranzíciós tervezés megkezdése', alt:['korai tervezés', 'tranzíciós tervezés', 'serdülőkor elején'] },
+      { label:'Az érdeklődés, erősségek és preferenciák felmérése', alt:['érdeklődés felmérése', 'erősségek', 'preferenciák'] },
+      { label:'Célzott készségfejlesztés és valós tapasztalatszerzés', alt:['készségfejlesztés', 'tapasztalatszerzés', 'munkatapasztalat'] },
+      { label:'Koordinált tranzíciós terv kidolgozása', alt:['tranzíciós terv', 'koordinált terv'] },
+      { label:'Fokozatos átadás és utókövetés', alt:['átadás', 'utókövetés'] }
+    ],
+    exp:'Az öt lépés: korai tranzíciós tervezés, az érdeklődés/erősségek felmérése, célzott készségfejlesztés és tapasztalatszerzés, koordinált tranzíciós terv, fokozatos átadás és utókövetés.'
+  },
+  {
+    id:'list_w10_03', w:10, topic:'Pályaválasztási profil', type:'list', diff:2, need:3,
+    q:'Sorolja fel a pályaválasztási profil kialakításához értékelendő területeket (legalább hármat)!',
+    items:[
+      { label:'Érdeklődési kör', alt:['érdeklődés', 'preferencia'] },
+      { label:'Képességek és készségek', alt:['képességek', 'készségek', 'erősségek'] },
+      { label:'Munkával kapcsolatos értékek és motivációk', alt:['értékek', 'motiváció'] },
+      { label:'Funkcionális önállósági szint', alt:['önállóság', 'funkcionális önállóság'] },
+      { label:'Támogatási szükségletek jellege', alt:['támogatási szükséglet', 'segítség típusa'] }
+    ],
+    exp:'Öt terület: érdeklődési kör, képességek/készségek, munkával kapcsolatos értékek, funkcionális önállósági szint, támogatási szükségletek jellege.'
+  },
+  {
+    id:'list_w10_04', w:10, topic:'Tanácsadási folyamat', type:'list', diff:3, need:4,
+    q:'Sorolja fel a pályatanácsadási folyamat szakaszait (legalább négyet)!',
+    items:[
+      { label:'Kapcsolatfelvétel és bizalmi viszony kialakítása', alt:['kapcsolatfelvétel', 'bizalmi viszony', 'bizalom'] },
+      { label:'Felmérés (érdeklődés, képességek, önismeret)', alt:['felmérés', 'önismeret'] },
+      { label:'Információnyújtás az elérhető utakról', alt:['információnyújtás', 'elérhető utak', 'lehetőségek'] },
+      { label:'Közös célmeghatározás és döntéstámogatás', alt:['célmeghatározás', 'döntéshozatal', 'döntéstámogatás'] },
+      { label:'Cselekvési terv és nyomon követés', alt:['cselekvési terv', 'nyomon követés'] }
+    ],
+    exp:'Az öt szakasz: kapcsolatfelvétel/bizalom, felmérés, információnyújtás, közös célmeghatározás és döntéstámogatás, cselekvési terv és nyomon követés.'
+  },
+  {
+    id:'list_w10_05', w:10, topic:'Intézményi partnerek', type:'list', diff:2, need:3,
+    q:'Sorolja fel a pályaorientáció intézményi vagy közösségi partnereit (legalább hármat)!',
+    items:[
+      { label:'CJRAE/CMBRAE (iskolai tanácsadó/pszichopedagógus)', alt:['CJRAE', 'CMBRAE', 'iskolai tanácsadó', 'pszichopedagógus'] },
+      { label:'Munkaügyi/foglalkoztatási szolgáltató', alt:['munkaügyi', 'foglalkoztatási szolgáltató'] },
+      { label:'Szakképző és felnőttképzési szolgáltatók', alt:['szakképző', 'felnőttképzés'] },
+      { label:'Civil szervezetek és közösségi szociális szolgáltatások', alt:['civil szervezet', 'közösségi szolgáltatás', 'szociális szolgáltatás'] }
+    ],
+    exp:'Négy partner: CJRAE/CMBRAE, munkaügyi/foglalkoztatási szolgáltató, szakképző és felnőttképzési szolgáltatók, valamint civil/közösségi szolgáltatások.'
+  },
+  {
+    id:'list_w10_06', w:10, topic:'Értékelés', type:'list', diff:3, need:4,
+    q:'Sorolja fel a teljesítményrubrika/portfólióértékelés szempontjait (legalább négyet)!',
+    items:[
+      { label:'Feladatmegértés és instrukciókövetés szintje', alt:['feladatmegértés', 'instrukciókövetés'] },
+      { label:'Pontosság/minőség a végrehajtásban', alt:['pontosság', 'minőség'] },
+      { label:'Az önállóság mértéke', alt:['önállóság', 'segítség mértéke'] },
+      { label:'Munkahelyi és társas szabályok betartása', alt:['szabályok betartása', 'munkahelyi szabály', 'társas szabály'] },
+      { label:'Kommunikáció és segítségkérés megfelelősége', alt:['kommunikáció', 'segítségkérés'] }
+    ],
+    exp:'Öt szempont: feladatmegértés/instrukciókövetés, pontosság/minőség, önállóság mértéke, szabályok betartása, kommunikáció és segítségkérés megfelelősége.'
   }
 ];
