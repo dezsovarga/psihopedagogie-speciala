@@ -523,6 +523,25 @@ body {
 .btn-next { background: var(--blue); box-shadow: 0 4px 0 #0090D0; }
 .btn-next:hover { background: #18A0E0; }
 
+/* "Újra megpróbálom" — retry a define/essay; secondary action above Tovább */
+.btn-retry {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 8px;
+  background: none;
+  border: 2px solid #C99BF0;
+  border-radius: var(--radius);
+  color: #7E3FF2;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all .1s ease;
+}
+.btn-retry:hover { background: #F3E8FF; transform: translateY(-1px); }
+.btn-retry:active { transform: translateY(2px); }
+
 .btn-skip {
   display: block;
   width: 100%;

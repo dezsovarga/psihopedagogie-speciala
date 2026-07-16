@@ -570,3 +570,74 @@ describe('no auto-advance on correct answer', () => {
     expect(true).toBe(true); // sentinel — update if regression is found
   });
 });
+
+// ─── Define/essay "Újra megpróbálom" (retry) rolls back the previous attempt ──
+// Mirrors snapshotAttempt()/rollbackAttempt() in app.js. A retry must be a
+// genuinely fresh attempt: the recorded result of the previous attempt is undone
+// so XP, lives, spaced-repetition progress and the session.results tally are not
+// double-counted.
+describe('retry rolls back the recorded attempt', () => {
+  function snapshotAttempt(id, sess, prog, stats) {
+    return {
+      id,
+      progress: JSON.parse(JSON.stringify(prog[id] || { seen: 0, correct: 0, interval: 1 })),
+      xpEarned: sess.xpEarned,
+      lives: sess.lives,
+      totalXp: stats.totalXp || 0,
+      resultsLen: sess.results.length,
+    };
+  }
+  function rollbackAttempt(snap, sess, prog, stats) {
+    if (!snap) return;
+    prog[snap.id] = snap.progress;
+    sess.xpEarned = snap.xpEarned;
+    sess.lives = snap.lives;
+    stats.totalXp = snap.totalXp;
+    sess.results.length = snap.resultsLen;
+  }
+
+  test('a wrong attempt then retry restores lives, progress and results', () => {
+    const prog = { def_x: { seen: 2, correct: 1, interval: 4 } };
+    const sess = { xpEarned: 30, lives: 3, results: [{ id: 'a' }] };
+    const stats = { totalXp: 100 };
+    const snap = snapshotAttempt('def_x', sess, prog, stats);
+
+    // simulate a WRONG attempt being recorded
+    prog.def_x.seen++; prog.def_x.interval = 1; sess.lives--;
+    sess.results.push({ id: 'def_x', correct: false });
+
+    rollbackAttempt(snap, sess, prog, stats);
+
+    expect(prog.def_x).toEqual({ seen: 2, correct: 1, interval: 4 });
+    expect(sess.lives).toBe(3);
+    expect(sess.results).toHaveLength(1);
+    expect(stats.totalXp).toBe(100);
+  });
+
+  test('a correct attempt then retry removes the awarded XP and result', () => {
+    const prog = { def_y: { seen: 0, correct: 0, interval: 1 } };
+    const sess = { xpEarned: 0, lives: 3, results: [] };
+    const stats = { totalXp: 50 };
+    const snap = snapshotAttempt('def_y', sess, prog, stats);
+
+    // simulate a CORRECT attempt being recorded
+    prog.def_y.seen++; prog.def_y.correct++; prog.def_y.interval = 2;
+    sess.xpEarned += 20; stats.totalXp += 20;
+    sess.results.push({ id: 'def_y', correct: true });
+
+    rollbackAttempt(snap, sess, prog, stats);
+
+    expect(prog.def_y).toEqual({ seen: 0, correct: 0, interval: 1 });
+    expect(sess.xpEarned).toBe(0);
+    expect(stats.totalXp).toBe(50);
+    expect(sess.results).toHaveLength(0);
+  });
+
+  test('rollback with no snapshot is a safe no-op', () => {
+    const sess = { xpEarned: 5, lives: 2, results: [{}] };
+    const prog = {}; const stats = { totalXp: 1 };
+    expect(() => rollbackAttempt(null, sess, prog, stats)).not.toThrow();
+    expect(sess.results).toHaveLength(1);
+    expect(stats.totalXp).toBe(1);
+  });
+});

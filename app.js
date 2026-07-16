@@ -326,13 +326,63 @@ function renderExercise() {
   const btnCheck = document.getElementById('btn-check');
   const btnNext  = document.getElementById('btn-next');
   const btnSkip  = document.getElementById('btn-skip');
+  const btnRetry = document.getElementById('btn-retry');
   btnCheck.style.display = 'block';
   btnCheck.disabled = true;
   btnNext.style.display = 'none';
   btnSkip.style.display = 'block';
+  if (btnRetry) btnRetry.style.display = 'none';
+
+  // Snapshot the pre-attempt state so a define/essay "Újra megpróbálom" (retry)
+  // can roll the recorded result back into a genuinely fresh attempt.
+  retrySnapshot = snapshotAttempt(ex);
 
   document.getElementById('exercise-body').innerHTML = buildExerciseHTML(ex);
   attachExerciseListeners(ex);
+}
+
+// ─── Define/essay retry ("Újra megpróbálom") ──────────────────────────────────
+let retrySnapshot = null;
+
+function snapshotAttempt(ex) {
+  return {
+    id: ex.id,
+    progress: JSON.parse(JSON.stringify(getProgress(ex.id))),
+    xpEarned: session.xpEarned,
+    lives: session.lives,
+    totalXp: globalStats.totalXp || 0,
+    resultsLen: session.results.length,
+  };
+}
+
+function rollbackAttempt(snap, sess, prog, stats) {
+  if (!snap) return;
+  prog[snap.id] = snap.progress;
+  sess.xpEarned = snap.xpEarned;
+  sess.lives = snap.lives;
+  stats.totalXp = snap.totalXp;
+  sess.results.length = snap.resultsLen;
+}
+
+// Shown after a define/essay is evaluated; lets the learner discard the result
+// and re-attempt the same question. Only offered for define/essay.
+function showRetryButton(ex) {
+  if (ex.type !== 'define' && ex.type !== 'essay') return;
+  const btnRetry = document.getElementById('btn-retry');
+  if (btnRetry) btnRetry.style.display = 'block';
+}
+
+function retryExercise() {
+  const ex = session.queue[session.index];
+  // Undo the recorded attempt so the retry is a clean, fresh attempt.
+  if (retrySnapshot && retrySnapshot.id === ex.id) {
+    rollbackAttempt(retrySnapshot, session, progress, globalStats);
+    saveState();
+  }
+  session.answered = false;
+  // Re-render the same question: clears the feedback panel, any revealed help
+  // hint, the input state and all buttons — no info from the previous attempt.
+  renderExercise();
 }
 
 // Split a cloze `text` into literal segments and {{blank}} tokens.
@@ -872,6 +922,7 @@ async function checkAnswerEssay(ex) {
     document.getElementById('evaluating-state').style.display = 'none';
     showNoApiKeyFeedback(ex);
     document.getElementById('btn-next').style.display = 'block';
+    showRetryButton(ex);
     return;
   }
 
@@ -888,6 +939,7 @@ async function checkAnswerEssay(ex) {
 
     showEssayFeedback(result, score, ex);
     document.getElementById('btn-next').style.display = 'block';
+    showRetryButton(ex);
   } catch(err) {
     document.getElementById('evaluating-state').style.display = 'none';
     // Network / CORS errors → fall back to self-assessment so the app still works
@@ -1182,6 +1234,7 @@ function selfAssess(ratio) {
   }
 
   document.getElementById('btn-next').style.display = 'block';
+  showRetryButton(ex);
 }
 
 function showApiErrorFeedback(msg) {

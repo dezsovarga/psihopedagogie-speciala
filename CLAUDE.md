@@ -254,6 +254,15 @@ that every define/essay has renderable help content (`hint` or `exp`), that all
 w:10 define/essay have the authored fields, and validate the fields' shape
 wherever they appear.
 
+**"Újra megpróbálom" (retry)** — after a `define`/`essay` is evaluated, an
+`btn-retry` button appears just above **Tovább**. Clicking it (`retryExercise`
+in `app.js`) rolls the recorded attempt back to a pre-attempt snapshot
+(`snapshotAttempt`/`rollbackAttempt`, taken in `renderExercise`) so XP, lives,
+spaced-repetition progress and the `session.results` tally are not
+double-counted, then re-renders the same question fresh — clearing the feedback,
+any revealed help hint and the input. Only offered for define/essay. Rollback
+logic is unit-tested in `session.test.js`.
+
 ## Testing
 
 Run the test suite before committing any change:
