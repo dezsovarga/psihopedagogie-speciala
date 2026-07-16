@@ -372,8 +372,14 @@ function showRetryButton(ex) {
   if (btnRetry) btnRetry.style.display = 'block';
 }
 
+// The answer box is "ready" (Ellenőrzés enabled) once there's enough to grade.
+function essayAnswerReady(text) {
+  return (text || '').trim().length >= 5;
+}
+
 function retryExercise() {
   const ex = session.queue[session.index];
+  const prevAnswer = document.getElementById('essay-input')?.value || '';
   // Undo the recorded attempt so the retry is a clean, fresh attempt.
   if (retrySnapshot && retrySnapshot.id === ex.id) {
     rollbackAttempt(retrySnapshot, session, progress, globalStats);
@@ -381,8 +387,16 @@ function retryExercise() {
   }
   session.answered = false;
   // Re-render the same question: clears the feedback panel, any revealed help
-  // hint, the input state and all buttons — no info from the previous attempt.
+  // hint and the buttons. The learner's previous answer is kept so they can
+  // continue editing from where they left off.
   renderExercise();
+  const inp = document.getElementById('essay-input');
+  if (inp) {
+    inp.value = prevAnswer;
+    document.getElementById('btn-check').disabled = !essayAnswerReady(prevAnswer);
+    inp.focus();
+    inp.setSelectionRange(prevAnswer.length, prevAnswer.length);   // cursor at end
+  }
 }
 
 // Split a cloze `text` into literal segments and {{blank}} tokens.
@@ -592,7 +606,7 @@ function attachExerciseListeners(ex) {
   if (ex.type === 'essay' || ex.type === 'define') {
     const inp = document.getElementById('essay-input');
     if (inp) inp.addEventListener('input', () => {
-      document.getElementById('btn-check').disabled = inp.value.trim().length < 5;
+      document.getElementById('btn-check').disabled = !essayAnswerReady(inp.value);
     });
   }
 }

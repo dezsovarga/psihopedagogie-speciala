@@ -259,9 +259,10 @@ wherever they appear.
 in `app.js`) rolls the recorded attempt back to a pre-attempt snapshot
 (`snapshotAttempt`/`rollbackAttempt`, taken in `renderExercise`) so XP, lives,
 spaced-repetition progress and the `session.results` tally are not
-double-counted, then re-renders the same question fresh — clearing the feedback,
-any revealed help hint and the input. Only offered for define/essay. Rollback
-logic is unit-tested in `session.test.js`.
+double-counted, then re-renders the same question — clearing the feedback and
+any revealed help hint, but **keeping the learner's previous answer** in the box
+(restored after re-render, cursor at end) so they can continue editing. Only
+offered for define/essay. Rollback logic is unit-tested in `session.test.js`.
 
 ## Testing
 

@@ -640,4 +640,22 @@ describe('retry rolls back the recorded attempt', () => {
     expect(sess.results).toHaveLength(1);
     expect(stats.totalXp).toBe(1);
   });
+
+  // Mirrors essayAnswerReady() in app.js: after retry the previous answer is kept
+  // in the box, so the Ellenőrzés button must be re-enabled for a non-trivial
+  // answer (and stay disabled for an empty/too-short one).
+  function essayAnswerReady(text) {
+    return (text || '').trim().length >= 5;
+  }
+
+  test('restored non-trivial answer keeps Ellenőrzés enabled after retry', () => {
+    expect(essayAnswerReady('A korai intervenció ...')).toBe(true);
+    expect(essayAnswerReady('Öt lépés')).toBe(true);
+  });
+
+  test('empty or too-short restored answer keeps Ellenőrzés disabled', () => {
+    expect(essayAnswerReady('')).toBe(false);
+    expect(essayAnswerReady('   ')).toBe(false);
+    expect(essayAnswerReady('ok')).toBe(false);
+  });
 });
